@@ -6,3 +6,11 @@ D:\Repository\GGSG\Assets\MRTK\Providers\WindowsMixedReality\Shared\DotNetAdapte
 D:\Repository\GGSG\Assets\MRTK\Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\netstandard2.0\Microsoft.Windows.MixedReality.DotNetWinRT\x64\MonoSupport.dll.meta
 D:\Repository\GGSG\Assets\MRTK\Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\netstandard2.0\DotNetAdapter.deps.json
 D:\Repository\GGSG\Assets\MRTK\Providers\WindowsMixedReality\Shared\DotNetAdapter\.obj\Release\netstandard2.0\DotNetAdapter.csprojAssemblyReference.cache
+D:\Repository\WISEUI-GGSG\GGSG\Assets\MRTK\Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\netstandard2.0\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Editor.asmdef
+D:\Repository\WISEUI-GGSG\GGSG\Assets\MRTK\Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\netstandard2.0\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Editor.asmdef.meta
+D:\Repository\WISEUI-GGSG\GGSG\Assets\MRTK\Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\netstandard2.0\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Init.cs
+D:\Repository\WISEUI-GGSG\GGSG\Assets\MRTK\Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\netstandard2.0\Microsoft.Windows.MixedReality.DotNetWinRT\Editor\Microsoft.Windows.MixedReality.DotNetWinRT.Init.cs.meta
+D:\Repository\WISEUI-GGSG\GGSG\Assets\MRTK\Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\netstandard2.0\Microsoft.Windows.MixedReality.DotNetWinRT\x64\MonoSupport.dll
+D:\Repository\WISEUI-GGSG\GGSG\Assets\MRTK\Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\netstandard2.0\Microsoft.Windows.MixedReality.DotNetWinRT\x64\MonoSupport.dll.meta
+D:\Repository\WISEUI-GGSG\GGSG\Assets\MRTK\Providers\WindowsMixedReality\Shared\DotNetAdapter\.bin\netstandard2.0\DotNetAdapter.deps.json
+D:\Repository\WISEUI-GGSG\GGSG\Assets\MRTK\Providers\WindowsMixedReality\Shared\DotNetAdapter\.obj\Release\netstandard2.0\DotNetAdapter.csprojAssemblyReference.cache

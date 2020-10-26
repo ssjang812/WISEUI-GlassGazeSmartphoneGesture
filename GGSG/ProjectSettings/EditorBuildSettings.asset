@@ -54,12 +54,18 @@ EditorBuildSettings:
     path: Assets/MRTK/Examples/Demos/HandTracking/Scenes/NearMenuExamples.unity
     guid: bf3eb3415bffceb41810526380c2c71c
   - enabled: 1
-    path: Assets/Scenes/NetworkLobby.unity
+    path: Assets/01.Scenes/NetworkLobby.unity
     guid: 171a9b3ed671da74c88786a7f808b2bc
-  - enabled: 1
-    path: Assets/Scenes/SmartphoneConnected.unity
-    guid: 5b3b85b7dfe3abb4b9454f1b072ad96b
   - enabled: 0
-    path: Assets/Scenes/SmartglassConnected.unity
+    path: Assets/01.Scenes/SmartphoneConnected.unity
+    guid: 5b3b85b7dfe3abb4b9454f1b072ad96b
+  - enabled: 1
+    path: Assets/01.Scenes/SmartglassConnected.unity
     guid: 958fd1119944983469ee879808045521
+  - enabled: 0
+    path: Assets/Lean/Touch/Examples/14 Transform 2D.unity
+    guid: 6ca3a849c7527dc4284d2a0c0373ce6c
+  - enabled: 0
+    path: Assets/Lean/Touch/Examples/07 Finger Tap.unity
+    guid: 9288129b03a30fd4590f54bacfa4fc2b
   m_configObjects: {}
