@@ -56,10 +56,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01.Scenes/NetworkLobby.unity
     guid: 171a9b3ed671da74c88786a7f808b2bc
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/SmartphoneConnected.unity
     guid: 5b3b85b7dfe3abb4b9454f1b072ad96b
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/SmartglassConnected.unity
     guid: 958fd1119944983469ee879808045521
   - enabled: 0

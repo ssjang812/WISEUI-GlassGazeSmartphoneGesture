@@ -7,6 +7,10 @@ TagManager:
   - WorldEvent
   - DebugText
   - DebugText2
+  - Sphere_FindSameImage
+  - Cube_FindSameImage
+  - Capsule_FindSameImage
+  - Cylinder_FindSameImage
   layers:
   - Default
   - TransparentFX

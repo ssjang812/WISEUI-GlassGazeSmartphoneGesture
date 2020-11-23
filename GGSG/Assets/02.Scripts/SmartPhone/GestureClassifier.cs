@@ -1,4 +1,5 @@
 ﻿using Lean.Touch;
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,10 +9,15 @@ public class GestureClassifier : MonoBehaviour
 {
     public LeanFingerFilter Use = new LeanFingerFilter(true);
 
+    private GameObject WorldEvent;
+    private PhotonView PV;
+
+    /*
     private GameObject textObj;
     private TMP_Text textScript;
     private GameObject textObj2;
     private TMP_Text textScript2;
+    */
 
 #if UNITY_EDITOR
     protected virtual void Reset()
@@ -26,10 +32,15 @@ public class GestureClassifier : MonoBehaviour
 
     void Start()
     {
+        /*
         textObj = GameObject.FindGameObjectWithTag("DebugText");
         textScript = textObj.GetComponent<TMP_Text>();
         textObj2 = GameObject.FindGameObjectWithTag("DebugText2");
         textScript2 = textObj2.GetComponent<TMP_Text>();
+        */
+
+        WorldEvent = GameObject.FindGameObjectWithTag("WorldEvent");
+        PV = WorldEvent.GetComponent<PhotonView>();
     }
 
     protected virtual void Update()
@@ -49,25 +60,25 @@ public class GestureClassifier : MonoBehaviour
 
 	public void Pinch()
     {
+        /*
         textScript.SetText("Pinch");
         textScript2.SetText("GazeAtNull");
-        Debug.Log("Pinch");
-        if (RPC_EyegazeState.gazeOnObject != null)
-        {
-            textScript2.SetText("GazePinch");
-        }
+        */
+
+        PV.RPC("RPC_Pinch", RpcTarget.All);
     }
 
     public void OneFingerTap(LeanFinger finger)
     {
+        /*
         textScript.SetText("OneFingerTap");
         textScript2.SetText("GazeAtNull");
         Debug.Log("FingerTap : " + finger.TapCount);
-        if (RPC_EyegazeState.gazeOnObject != null)
-        {
-            textScript2.SetText("GazeOneFinger");
-        }
+        */
+
+        PV.RPC("RPC_OneFingerTap", RpcTarget.All);
     }
+    /*
     public void TwoFingerTap(LeanFinger finger)
     {
         textScript.SetText("TwoFingerTap");
@@ -78,15 +89,16 @@ public class GestureClassifier : MonoBehaviour
             textScript2.SetText("GazeTwoFinger");
         }
     }
+    */
 
     public void SwipeDown(LeanFinger finger)
     {
+        /*
         textScript.SetText("SwipeDown");
         textScript2.SetText("GazeAtNull");
         Debug.Log("SwipeDown");
-        if (RPC_EyegazeState.gazeOnObject != null)
-        {
-            textScript2.SetText("GazeSwipeDown");
-        }
+        */
+
+        PV.RPC("RPC_SwipeDown", RpcTarget.All);
     }
 }

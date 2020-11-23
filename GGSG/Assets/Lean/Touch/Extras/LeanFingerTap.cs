@@ -84,7 +84,7 @@ namespace Lean.Touch
 		protected virtual void OnDisable()
 		{
 			LeanTouch.OnFingerTap -= HandleFingerTap;
-			LeanTouch.OnOneFingerTap += HandleOneFingerTap; // custome code
+			LeanTouch.OnOneFingerTap -= HandleOneFingerTap; // custome code
 			LeanTouch.OnTwoFingerTap -= HandleTwoFingerTap; // custome code
 		}
 

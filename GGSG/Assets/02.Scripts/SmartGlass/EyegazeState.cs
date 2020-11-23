@@ -5,21 +5,13 @@ using UnityEngine;
 
 public class EyegazeState : MonoBehaviour
 {
-    private GameObject EyegazeStateManager;
+    private GameObject WorldEvent;
     private PhotonView PV;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        EyegazeStateManager = GameObject.FindGameObjectWithTag("WorldEvent");
-        PV = EyegazeStateManager.GetComponent<PhotonView>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        WorldEvent = GameObject.FindGameObjectWithTag("WorldEvent");
+        PV = WorldEvent.GetComponent<PhotonView>();
     }
 
     public void SetGazeOn()

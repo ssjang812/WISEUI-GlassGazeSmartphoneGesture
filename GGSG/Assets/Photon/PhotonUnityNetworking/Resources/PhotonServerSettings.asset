@@ -48,6 +48,9 @@ MonoBehaviour:
   - RPC_TMPdrpSync
   - RPC_GazeNull
   - RPC_GazeOnObj
+  - RPC_OneFingerTap
+  - RPC_Pinch
+  - RPC_SwipeDown
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

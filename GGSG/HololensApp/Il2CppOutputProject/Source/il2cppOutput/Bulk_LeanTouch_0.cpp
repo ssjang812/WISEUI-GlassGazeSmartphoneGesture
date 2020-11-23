@@ -10269,6 +10269,8 @@ extern "C" IL2CPP_METHOD_ATTR void LeanTouch_add_OnOneFingerTap_m6F79A4B164DA53A
 extern "C" IL2CPP_METHOD_ATTR void LeanTouch_add_OnTwoFingerTap_m565AE829DFB26E75A21560575117F5E64C221E6C (Action_1_t6F3AA5DEBE40F8D6A5B7ACEF350A3D1B6B61ACA3 * ___value0, const RuntimeMethod* method);
 // System.Void Lean.Touch.LeanTouch::remove_OnFingerTap(System.Action`1<Lean.Touch.LeanFinger>)
 extern "C" IL2CPP_METHOD_ATTR void LeanTouch_remove_OnFingerTap_m1EDF4E38C0F6410832696BA0308A716E82BD55F4 (Action_1_t6F3AA5DEBE40F8D6A5B7ACEF350A3D1B6B61ACA3 * ___value0, const RuntimeMethod* method);
+// System.Void Lean.Touch.LeanTouch::remove_OnOneFingerTap(System.Action`1<Lean.Touch.LeanFinger>)
+extern "C" IL2CPP_METHOD_ATTR void LeanTouch_remove_OnOneFingerTap_mC67FEB0B9BC3785D318A8B710A71EE9F464C6079 (Action_1_t6F3AA5DEBE40F8D6A5B7ACEF350A3D1B6B61ACA3 * ___value0, const RuntimeMethod* method);
 // System.Void Lean.Touch.LeanTouch::remove_OnTwoFingerTap(System.Action`1<Lean.Touch.LeanFinger>)
 extern "C" IL2CPP_METHOD_ATTR void LeanTouch_remove_OnTwoFingerTap_mA7D05A977150B0EF58E215750AE9C30873FAF2D1 (Action_1_t6F3AA5DEBE40F8D6A5B7ACEF350A3D1B6B61ACA3 * ___value0, const RuntimeMethod* method);
 // System.Void UnityEngine.Events.UnityEvent`1<System.Int32>::Invoke(!0)
@@ -16657,10 +16659,10 @@ extern "C" IL2CPP_METHOD_ATTR void LeanFingerTap_OnDisable_mA7C49E81A34BCE33646B
 		Action_1__ctor_mBB4FDE40F174F69673652E51ABB2966173B0315E(L_0, __this, (intptr_t)((intptr_t)LeanFingerTap_HandleFingerTap_m13064BB1FDBD55B74F9FF9FF15FB2E35A4B84E16_RuntimeMethod_var), /*hidden argument*/Action_1__ctor_mBB4FDE40F174F69673652E51ABB2966173B0315E_RuntimeMethod_var);
 		IL2CPP_RUNTIME_CLASS_INIT(LeanTouch_tECC655E5BCC1A8DD00E84C0A32FEA8EAAAAFD22D_il2cpp_TypeInfo_var);
 		LeanTouch_remove_OnFingerTap_m1EDF4E38C0F6410832696BA0308A716E82BD55F4(L_0, /*hidden argument*/NULL);
-		// LeanTouch.OnOneFingerTap += HandleOneFingerTap; // custome code
+		// LeanTouch.OnOneFingerTap -= HandleOneFingerTap; // custome code
 		Action_1_t6F3AA5DEBE40F8D6A5B7ACEF350A3D1B6B61ACA3 * L_1 = (Action_1_t6F3AA5DEBE40F8D6A5B7ACEF350A3D1B6B61ACA3 *)il2cpp_codegen_object_new(Action_1_t6F3AA5DEBE40F8D6A5B7ACEF350A3D1B6B61ACA3_il2cpp_TypeInfo_var);
 		Action_1__ctor_mBB4FDE40F174F69673652E51ABB2966173B0315E(L_1, __this, (intptr_t)((intptr_t)LeanFingerTap_HandleOneFingerTap_m2BBBF1B8A303A4738E5C608E6E34CBD3DAD56999_RuntimeMethod_var), /*hidden argument*/Action_1__ctor_mBB4FDE40F174F69673652E51ABB2966173B0315E_RuntimeMethod_var);
-		LeanTouch_add_OnOneFingerTap_m6F79A4B164DA53A16B9A04D7C8071DF190FA9629(L_1, /*hidden argument*/NULL);
+		LeanTouch_remove_OnOneFingerTap_mC67FEB0B9BC3785D318A8B710A71EE9F464C6079(L_1, /*hidden argument*/NULL);
 		// LeanTouch.OnTwoFingerTap -= HandleTwoFingerTap; // custome code
 		Action_1_t6F3AA5DEBE40F8D6A5B7ACEF350A3D1B6B61ACA3 * L_2 = (Action_1_t6F3AA5DEBE40F8D6A5B7ACEF350A3D1B6B61ACA3 *)il2cpp_codegen_object_new(Action_1_t6F3AA5DEBE40F8D6A5B7ACEF350A3D1B6B61ACA3_il2cpp_TypeInfo_var);
 		Action_1__ctor_mBB4FDE40F174F69673652E51ABB2966173B0315E(L_2, __this, (intptr_t)((intptr_t)LeanFingerTap_HandleTwoFingerTap_m8646BA04E0443C0FBB951DC2053FD0AB38402F4D_RuntimeMethod_var), /*hidden argument*/Action_1__ctor_mBB4FDE40F174F69673652E51ABB2966173B0315E_RuntimeMethod_var);

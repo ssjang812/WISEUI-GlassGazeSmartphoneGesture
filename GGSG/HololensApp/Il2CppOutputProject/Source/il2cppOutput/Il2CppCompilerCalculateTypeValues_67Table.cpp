@@ -2617,10 +2617,14 @@ struct  GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287  : public Mo
 public:
 	// Lean.Touch.LeanFingerFilter GestureClassifier::Use
 	LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE  ___Use_4;
+	// UnityEngine.GameObject GestureClassifier::textObj
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___textObj_5;
+	// TMPro.TMP_Text GestureClassifier::textScript
+	TMP_Text_t7BA5B6522651EBED2D8E2C92CBE3F17C14075CE7 * ___textScript_6;
 	// UnityEngine.GameObject GestureClassifier::textObj2
-	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___textObj2_5;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___textObj2_7;
 	// TMPro.TMP_Text GestureClassifier::textScript2
-	TMP_Text_t7BA5B6522651EBED2D8E2C92CBE3F17C14075CE7 * ___textScript2_6;
+	TMP_Text_t7BA5B6522651EBED2D8E2C92CBE3F17C14075CE7 * ___textScript2_8;
 
 public:
 	inline static int32_t get_offset_of_Use_4() { return static_cast<int32_t>(offsetof(GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287, ___Use_4)); }
@@ -2631,22 +2635,40 @@ public:
 		___Use_4 = value;
 	}
 
-	inline static int32_t get_offset_of_textObj2_5() { return static_cast<int32_t>(offsetof(GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287, ___textObj2_5)); }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_textObj2_5() const { return ___textObj2_5; }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_textObj2_5() { return &___textObj2_5; }
-	inline void set_textObj2_5(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
+	inline static int32_t get_offset_of_textObj_5() { return static_cast<int32_t>(offsetof(GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287, ___textObj_5)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_textObj_5() const { return ___textObj_5; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_textObj_5() { return &___textObj_5; }
+	inline void set_textObj_5(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
 	{
-		___textObj2_5 = value;
-		Il2CppCodeGenWriteBarrier((&___textObj2_5), value);
+		___textObj_5 = value;
+		Il2CppCodeGenWriteBarrier((&___textObj_5), value);
 	}
 
-	inline static int32_t get_offset_of_textScript2_6() { return static_cast<int32_t>(offsetof(GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287, ___textScript2_6)); }
-	inline TMP_Text_t7BA5B6522651EBED2D8E2C92CBE3F17C14075CE7 * get_textScript2_6() const { return ___textScript2_6; }
-	inline TMP_Text_t7BA5B6522651EBED2D8E2C92CBE3F17C14075CE7 ** get_address_of_textScript2_6() { return &___textScript2_6; }
-	inline void set_textScript2_6(TMP_Text_t7BA5B6522651EBED2D8E2C92CBE3F17C14075CE7 * value)
+	inline static int32_t get_offset_of_textScript_6() { return static_cast<int32_t>(offsetof(GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287, ___textScript_6)); }
+	inline TMP_Text_t7BA5B6522651EBED2D8E2C92CBE3F17C14075CE7 * get_textScript_6() const { return ___textScript_6; }
+	inline TMP_Text_t7BA5B6522651EBED2D8E2C92CBE3F17C14075CE7 ** get_address_of_textScript_6() { return &___textScript_6; }
+	inline void set_textScript_6(TMP_Text_t7BA5B6522651EBED2D8E2C92CBE3F17C14075CE7 * value)
 	{
-		___textScript2_6 = value;
-		Il2CppCodeGenWriteBarrier((&___textScript2_6), value);
+		___textScript_6 = value;
+		Il2CppCodeGenWriteBarrier((&___textScript_6), value);
+	}
+
+	inline static int32_t get_offset_of_textObj2_7() { return static_cast<int32_t>(offsetof(GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287, ___textObj2_7)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_textObj2_7() const { return ___textObj2_7; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_textObj2_7() { return &___textObj2_7; }
+	inline void set_textObj2_7(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
+	{
+		___textObj2_7 = value;
+		Il2CppCodeGenWriteBarrier((&___textObj2_7), value);
+	}
+
+	inline static int32_t get_offset_of_textScript2_8() { return static_cast<int32_t>(offsetof(GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287, ___textScript2_8)); }
+	inline TMP_Text_t7BA5B6522651EBED2D8E2C92CBE3F17C14075CE7 * get_textScript2_8() const { return ___textScript2_8; }
+	inline TMP_Text_t7BA5B6522651EBED2D8E2C92CBE3F17C14075CE7 ** get_address_of_textScript2_8() { return &___textScript2_8; }
+	inline void set_textScript2_8(TMP_Text_t7BA5B6522651EBED2D8E2C92CBE3F17C14075CE7 * value)
+	{
+		___textScript2_8 = value;
+		Il2CppCodeGenWriteBarrier((&___textScript2_8), value);
 	}
 };
 
@@ -5021,11 +5043,13 @@ extern const int32_t g_FieldOffsetTable6739[1] =
 	EyegazeStateReceiver_tEF2970D9D657B43F803877EDD6A2763F05FA5D2B_StaticFields::get_offset_of_gazeOnObject_4(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize6740 = { sizeof (GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable6740[3] = 
+extern const int32_t g_FieldOffsetTable6740[5] = 
 {
 	GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287::get_offset_of_Use_4(),
-	GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287::get_offset_of_textObj2_5(),
-	GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287::get_offset_of_textScript2_6(),
+	GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287::get_offset_of_textObj_5(),
+	GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287::get_offset_of_textScript_6(),
+	GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287::get_offset_of_textObj2_7(),
+	GestureClassifier_tA2DF059DDDB1CC4E1D3592999030CFC90A032287::get_offset_of_textScript2_8(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize6741 = { sizeof (RPC_World_SmartPhone_t34DBC2D931852B9DFD4276CDCD8A33CD6E5184D3), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize6742 = { sizeof (TapClassifier_t0CF7CB2785EC2419469E56EDD2F78AAD51B82CCA), -1, 0, 0 };
