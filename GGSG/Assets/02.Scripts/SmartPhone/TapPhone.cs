@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TapClassifier : MonoBehaviour
+public class TapPhone : MonoBehaviour
 {
 	protected virtual void OnEnable()
 	{

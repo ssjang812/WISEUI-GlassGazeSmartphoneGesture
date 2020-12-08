@@ -18,6 +18,6 @@ public class EyegazeStateReceiver : MonoBehaviour
     void RPC_GazeNull()
     {
         Debug.Log("RPC_GazeNull");
-        RPC_EyegazeState.gazeOnObject = null;
+        RPC_EyegazeGlasses.gazeOnObjGlasses = null;
     }
 }

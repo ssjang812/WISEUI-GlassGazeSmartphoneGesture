@@ -9,9 +9,12 @@ public class CSVManager : MonoBehaviour
     private static string reportDirectoryName = "Report";
     private static string reportFileName = "Report.csv";
     private static string reportSeparator = ",";
-    private static string[] reportHeaders = new string[1]
+    private static string[] reportHeaders = new string[4]
     {
-        "eventName"
+        "trial",
+        "event",
+        "target",
+        "target point"
     };
     private static string timeStampHeader = "time stamp";
 
@@ -39,7 +42,6 @@ public class CSVManager : MonoBehaviour
 
     public static void CreateReport()
     {
-        reportFileName = "Report " + DateTime.Now.ToString();
         using (StreamWriter sw = File.CreateText(GetFilePath()))
         {
             string finalString = "";

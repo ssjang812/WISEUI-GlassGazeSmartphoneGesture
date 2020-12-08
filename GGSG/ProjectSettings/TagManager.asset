@@ -11,6 +11,45 @@ TagManager:
   - Cube_FindSameImage
   - Capsule_FindSameImage
   - Cylinder_FindSameImage
+  - Sphere_FindSameObject
+  - Cube_FindSameObject
+  - Capsule_FindSameObject
+  - Cylinder_FindSameObject
+  - Spot1_PlaceWithEyeGaze
+  - Spot2_PlaceWithEyeGaze
+  - Spot3_PlaceWithEyeGaze
+  - Spot4_PlaceWithEyeGaze
+  - Sphere_RetrieveInfo
+  - Cube_RetrieveInfo
+  - Capsule_RetrieveInfo
+  - Cylinder_RetrieveInfo
+  - FindSameImageScene
+  - FindSameObjectScene
+  - PlaceWithEyeGazeScene
+  - RetrieveInfoScene
+  - ExpStartButton
+  - PracticeSelectButton
+  - FindSameImageCanvas
+  - FindSameObjectCanvas
+  - PlaceWithEyeGazeCanvas
+  - RetrieveInfoCanvas
+  - SphereButton_FindSameImage
+  - CubeButton_FindSameImage
+  - CapsuleButton_FindSameImage
+  - CylinderButton_FindSameImage
+  - SphereButton_FindSameObject
+  - CubeButton_FindSameObject
+  - CapsuleButton_FindSameObject
+  - CylinderButton_FindSameObject
+  - SphereButton_PlaceWithEyeGaze
+  - CubeButton_PlaceWithEyeGaze
+  - CapsuleButton_PlaceWithEyeGaze
+  - CylinderButton_PlaceWithEyeGaze
+  - SphereButton_RetrieveInfo
+  - CubeButton_RetrieveInfo
+  - CapsuleButton_RetrieveInfo
+  - CylinderButton_RetrieveInfo
+  - ExperimentManager
   layers:
   - Default
   - TransparentFX

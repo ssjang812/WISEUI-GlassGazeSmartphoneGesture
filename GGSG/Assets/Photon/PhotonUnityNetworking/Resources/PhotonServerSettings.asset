@@ -51,6 +51,26 @@ MonoBehaviour:
   - RPC_OneFingerTap
   - RPC_Pinch
   - RPC_SwipeDown
+  - RPC_PinchPhone
+  - RPC_OneFingerTapPhone
+  - RPC_SwipeDownPhone
+  - RPC_PinchGlasses
+  - RPC_SetFormalTarget
+  - RPC_SetFormalTask
+  - RPC_SetTarget
+  - RPC_SetTargetPoint
+  - RPC_SetTask
+  - RPC_SetTaskNum
+  - RPC_Trigger_EndExperiment
+  - RPC_Trigger_FindSameImage
+  - RPC_Trigger_FindSameObject
+  - RPC_Trigger_NextTask
+  - RPC_Trigger_PlaceWithEyeGaze
+  - RPC_Trigger_RetrieveInfo
+  - RPC_Trigger_StartExperiment
+  - RPC_onClickPhone
+  - RPC_touchGaze
+  - RPC_gazeTouch
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

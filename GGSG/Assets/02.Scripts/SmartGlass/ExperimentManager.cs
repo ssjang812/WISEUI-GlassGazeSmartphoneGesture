@@ -3,17 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static RPC_ExperimentState;
 
-public class ExperimentManager : MonoBehaviour
+public class ExperimentManager : MonoBehaviour //메인함수와 같은역할을하니 실행순서를 맨 마지막으로 설정해야 문제가없다. (다른 스크립트들의 설정값이 다셋팅된후 구동시작)
 {
     private GameObject WorldEvent;
     private PhotonView PV;
 
-    public GameObject findSameImageScene, findSameObjectScene, placeWithEyeGazeScene, retrieveInfoScene, expStartButton, practiceSelectButton;
+    private GameObject findSameImageScene, findSameObjectScene, placeWithEyeGazeScene, retrieveInfoScene, expStartButton, practiceSelectButton;
     public TextMeshPro description;
-    private List<int> taskList;
+    private List<Task> taskList; // 리스트를 전부 서버에 넘겨주려면 for 문으로 값을 하나하나 다 넘겨줘야할듯. 일단 그냥 로컬에서 하자. -> 끝나는 체크를 로컬에서 해줘야함
 
     private GameObject sphere_FindSameImage, cube_FindSameImage, capsule_FindSameImage, cylinder_FindSameImage;
+    private GameObject sphere_FindSameObject, cube_FindSameObject, capsule_FindSameObject, cylinder_FindSameObject;
+    private GameObject spot1_PlaceWithEyeGaze, spot2_PlaceWithEyeGaze, spot3_PlaceWithEyeGaze, spot4_PlaceWithEyeGaze;
+    private GameObject sphere_RetrieveInfo, cube_RetrieveInfo, capsule_RetrieveInfo, cylinder_RetrieveInfo;
 
 
     // Start is called before the first frame update
@@ -22,54 +26,106 @@ public class ExperimentManager : MonoBehaviour
         WorldEvent = GameObject.FindGameObjectWithTag("WorldEvent");
         PV = WorldEvent.GetComponent<PhotonView>();
 
-        findSameImageScene.SetActive(false);
-        findSameObjectScene.SetActive(false);
-        placeWithEyeGazeScene.SetActive(false);
-        retrieveInfoScene.SetActive(false);
+        findSameImageScene = GameObject.FindGameObjectWithTag("FindSameImageScene");
+        findSameObjectScene = GameObject.FindGameObjectWithTag("FindSameObjectScene");
+        placeWithEyeGazeScene = GameObject.FindGameObjectWithTag("PlaceWithEyeGazeScene");
+        retrieveInfoScene = GameObject.FindGameObjectWithTag("RetrieveInfoScene");
+        expStartButton = GameObject.FindGameObjectWithTag("ExpStartButton");
+        practiceSelectButton = GameObject.FindGameObjectWithTag("PracticeSelectButton");
+
+        findSameImageScene.SetActive(true);
+        findSameObjectScene.SetActive(true);
+        placeWithEyeGazeScene.SetActive(true);
+        retrieveInfoScene.SetActive(true);
 
         sphere_FindSameImage = GameObject.FindWithTag("Sphere_FindSameImage");
         cube_FindSameImage = GameObject.FindWithTag("Cube_FindSameImage");
         capsule_FindSameImage = GameObject.FindWithTag("Capsule_FindSameImage");
         cylinder_FindSameImage = GameObject.FindWithTag("Cylinder_FindSameImage");
 
+        /* 궂이 안가져와도 될듯하다. 여기선 씬형태를 바꾸는거지, 인터렉션 처리는 다른곳에서 하기때문
+        sphere_FindSameObject = GameObject.FindWithTag("Sphere_FindSameObject");
+        cube_FindSameObject = GameObject.FindWithTag("Cube_FindSameObject");
+        capsule_FindSameObject = GameObject.FindWithTag("Capsule_FindSameObject");
+        cylinder_FindSameObject = GameObject.FindWithTag("Cylinder_FindSameObject");
+
+        spot1_PlaceWithEyeGaze = GameObject.FindWithTag("Spot1_PlaceWithEyeGaze");
+        spot2_PlaceWithEyeGaze = GameObject.FindWithTag("Spot2_PlaceWithEyeGaze");
+        spot3_PlaceWithEyeGaze = GameObject.FindWithTag("Spot3_PlaceWithEyeGaze");
+        spot4_PlaceWithEyeGaze = GameObject.FindWithTag("Spot4_PlaceWithEyeGaze");
+
+        sphere_RetrieveInfo = GameObject.FindWithTag("Sphere_RetrieveInfo");
+        cube_RetrieveInfo = GameObject.FindWithTag("Cube_RetrieveInfo");
+        capsule_RetrieveInfo = GameObject.FindWithTag("Capsule_RetrieveInfo");
+        cylinder_RetrieveInfo = GameObject.FindWithTag("Cylinder_RetrieveInfo");
+        */
+
+        RPC_ExperimentState.event_FindSameImage.AddListener(SetFindSameImage);
+        RPC_ExperimentState.event_FindSameObject.AddListener(SetFindSameObject);
+        RPC_ExperimentState.event_PlaceWithEyeGaze.AddListener(SetPlaceWithEyeGaze);
+        RPC_ExperimentState.event_RetrieveInfo.AddListener(SetRetrieveInfo);
+        RPC_ExperimentState.event_NextTask.AddListener(NextTask);
+        RPC_ExperimentState.event_EndExperiment.AddListener(EndExperiment);
+
+        
+        sphere_FindSameImage.SetActive(false);
+        cube_FindSameImage.SetActive(false);
+        capsule_FindSameImage.SetActive(false);
+        cylinder_FindSameImage.SetActive(false);
+
+        findSameImageScene.SetActive(false);
+        findSameObjectScene.SetActive(false);
+        placeWithEyeGazeScene.SetActive(false);
+        retrieveInfoScene.SetActive(false);
+
         description.text = "오른쪽에 위치한 네 개의 버튼을 통해 \n각 테스크에 대한 수행연습을 할 수 있습니다.\n\n연습을 충분히 하셨다면 상단의 버튼을 눌러 실험참여를 시작해 주세요.";
     }
 
-    // 지금 RPC로 양쪽 데이터는 동기화시켜주고있음, 진행될때마다 rpc함수가 각 디바이스 지역 함수 콜해서 진행하는것도 구현해야함.
+    // 동기화는 중요 데이터, 각 이벤트의 발생여부, 데이터 기록과 같이 각 디바이스에서 동시에 일어나야하는것들만
+    // 실험의 흐름과 다음으로 진행여부 판단과같은 결정부는 둘중 한곳에서만 해야지 혼서이 생기지 않는다. -> 로컬에서 진행하고 결과만 동기화
     public void StartExperiment()
     {
-        // 실험시작됬음을 RPC로 기록
+        PV.RPC("RPC_Trigger_StartExperiment", RpcTarget.All);
+
         expStartButton.SetActive(false);
         practiceSelectButton.SetActive(false);
 
-        taskList = new List<int>();
+        taskList = new List<Task>();
         for (int j = 0; j < 10; j++)
         {
-            taskList.Add(1);
-            taskList.Add(2);
-            taskList.Add(3);
-            taskList.Add(4);
+            taskList.Add(Task.FindSameImage);
+            taskList.Add(Task.FindSameObject);
+            taskList.Add(Task.PlaceWithEyeGaze);
+            taskList.Add(Task.RetrieveInfo);
         }
 
-        int taskListCount = taskList.Count;
-        PV.RPC("RPC_SetTaskNum", RpcTarget.All, 41 - taskListCount);
-        int randomIndex = Random.Range(0, taskListCount);
-        int taskNumber = taskList[randomIndex];
+        PV.RPC("RPC_SetTaskNum", RpcTarget.All, 41 - taskList.Count);
+        int randomIndex = Random.Range(0, taskList.Count);
+        Task task = taskList[randomIndex];
+        PV.RPC("RPC_SetTask", RpcTarget.All, task);
         taskList.RemoveAt(randomIndex);
 
-        switch (taskNumber)
+        switch (task)
         {
-            case 1:
-                SetFindSameImage();
+            case Task.FindSameImage:
+                PV.RPC("RPC_SetTarget", RpcTarget.All, (Target)Random.Range(0, 4));
+                PV.RPC("RPC_SetTargetPoint", RpcTarget.All, 999);
+                PV.RPC("RPC_Trigger_FindSameImage", RpcTarget.All);
                 break;
-            case 2:
-                SetFindSameObject();
+            case Task.FindSameObject:
+                PV.RPC("RPC_SetTarget", RpcTarget.All, (Target)Random.Range(0, 4));
+                PV.RPC("RPC_SetTargetPoint", RpcTarget.All, 999);
+                PV.RPC("RPC_Trigger_FindSameObject", RpcTarget.All);
                 break;
-            case 3:
-                SetPlaceWithEyeGaze();
+            case Task.PlaceWithEyeGaze:
+                PV.RPC("RPC_SetTarget", RpcTarget.All, (Target)Random.Range(0, 4));
+                PV.RPC("RPC_SetTargetPoint", RpcTarget.All, (Target)Random.Range(0, 4));
+                PV.RPC("RPC_Trigger_PlaceWithEyeGaze", RpcTarget.All);
                 break;
-            case 4:
-                SetRetrieveInfo();
+            case Task.RetrieveInfo:
+                PV.RPC("RPC_SetTarget", RpcTarget.All, (Target)Random.Range(0, 4));
+                PV.RPC("RPC_SetTargetPoint", RpcTarget.All, 999);
+                PV.RPC("RPC_Trigger_RetrieveInfo", RpcTarget.All);
                 break;
             default:
                 break;
@@ -78,56 +134,54 @@ public class ExperimentManager : MonoBehaviour
 
     private void SetFindSameImage()
     {
-        PV.RPC("RPC_SetTask", RpcTarget.All, RPC_ExperimentState.Task.FindSameImage);
-        int target = Random.Range(0, 4);
-        PV.RPC("RPC_SetTarget", RpcTarget.All, (RPC_ExperimentState.Target)target);
-        PV.RPC("RPC_SetTargetPoint", RpcTarget.All, 999);
         findSameImageScene.SetActive(true);
 
-        switch (target)
+        switch (RPC_ExperimentState.target)
         {
-            case 1:
+            case Target.Sphere:
                 sphere_FindSameImage.SetActive(true);
                 break;
-            case 2:
+            case Target.Cube:
                 cube_FindSameImage.SetActive(true);
                 break;
-            case 3:
+            case Target.Capsule:
                 capsule_FindSameImage.SetActive(true);
                 break;
-            case 4:
+            case Target.Cylinder:
                 cylinder_FindSameImage.SetActive(true);
                 break;
             default:
                 break;
         }
 
-        //셋팅후 실험시작됬음을 기록
-        //인터렉션 모듈에선 모든종류의 인풋이들어올때마다 해당 사안을 기록
-        //그중 셋팅된 조건에 일치하는 인풋이 들어오면 기록후 다음으로 진행 (외부에서 next task를 호출)
+        //그중 셋팅된 조건에 일치하는 인풋이 들어오면 기록후 다음으로 진행 (외부에서 next task를 호출) -> 네가지 전부
     }
 
     private void EndFindSameImage()
     {
-        sphere_FindSameImage.SetActive(false);
-        cube_FindSameImage.SetActive(false);
-        capsule_FindSameImage.SetActive(false);
-        cylinder_FindSameImage.SetActive(false);
+        switch (RPC_ExperimentState.targetFormal)
+        {
+            case Target.Sphere:
+                sphere_FindSameImage.SetActive(false);
+                break;
+            case Target.Cube:
+                cube_FindSameImage.SetActive(false);
+                break;
+            case Target.Capsule:
+                capsule_FindSameImage.SetActive(false);
+                break;
+            case Target.Cylinder:
+                cylinder_FindSameImage.SetActive(false);
+                break;
+            default:
+                break;
+        }
         findSameImageScene.SetActive(false);
     }
 
     private void SetFindSameObject()
     {
-        PV.RPC("RPC_SetTask", RpcTarget.All, RPC_ExperimentState.Task.FindSameImage);
-        int target = Random.Range(0, 4);
-        PV.RPC("RPC_SetTarget", RpcTarget.All, (RPC_ExperimentState.Target)target);
-        PV.RPC("RPC_SetTargetPoint", RpcTarget.All, 999);
-
         findSameObjectScene.SetActive(true);
-        //셋팅후 실험시작됬음을 기록
-
-
-        //findSameObjectScene.SetActive(false);
     }
 
     private void EndFindSameObject()
@@ -137,15 +191,7 @@ public class ExperimentManager : MonoBehaviour
 
     private void SetPlaceWithEyeGaze()
     {
-        PV.RPC("RPC_SetTask", RpcTarget.All, RPC_ExperimentState.Task.FindSameImage);
-        int target = Random.Range(0, 4);
-        PV.RPC("RPC_SetTarget", RpcTarget.All, (RPC_ExperimentState.Target)target);
-        PV.RPC("RPC_SetTargetPoint", RpcTarget.All, Random.Range(0, 4));
         placeWithEyeGazeScene.SetActive(true);
-        //셋팅후 실험시작됬음을 기록
-
-
-        //placeWithEyeGazeScene.SetActive(false);
     }
 
     private void EndPlaceWithEyeGaze()
@@ -155,16 +201,7 @@ public class ExperimentManager : MonoBehaviour
 
     private void SetRetrieveInfo()
     {
-        PV.RPC("RPC_SetTask", RpcTarget.All, RPC_ExperimentState.Task.FindSameImage);
-        int target = Random.Range(0, 4);
-        PV.RPC("RPC_SetTarget", RpcTarget.All, (RPC_ExperimentState.Target)target);
-        PV.RPC("RPC_SetTargetPoint", RpcTarget.All, 999);
         retrieveInfoScene.SetActive(true);
-        //셋팅후 실험시작됬음을 기록
-
-
-
-        //retrieveInfoScene.SetActive(false);
     }
 
     private void EndRetrieveInfo()
@@ -172,50 +209,59 @@ public class ExperimentManager : MonoBehaviour
         retrieveInfoScene.SetActive(false);
     }
 
-    public void NextTask() // 인터렉션을 처리하는곳에서 모든 인터랙션을 기록, 유효 인풋이 들어오면 다음 이 함수를 호출해서 다음단계로 진행
+    //정답맞추면 로컬에서 이 함수를 콜해주면됨
+    public void NextTaskPreprocess() // next task 이전에 처리해줘야할 것들 처리 (기기마다 실행속도가 다를거기때문에 완전 미리해줘야할것들)
     {
-        int taskListCount = taskList.Count;
-        
-        if (taskListCount == 0) // 실험이 종료될 상황인지 체크
+        if (taskList.Count == 0) // 실험이 종료될 상황인지 체크, 선정한후에 리스트에서 삭제하므로 이전함수 call에서 리스트가 하나 줄어든 상태이다.
         {
-            // 기록을 저장하고 종료 -> RPC로 만들어야함
+            PV.RPC("RPC_Trigger_EndExperiment", RpcTarget.All);
         }
-
-        switch ((int)RPC_ExperimentState.taskNow) // 새로운거 열기전에 이전꺼를 꺼주기
+        else
         {
-            case 1:
+            PV.RPC("RPC_SetFormalTask", RpcTarget.All, RPC_ExperimentState.taskNow); //
+            PV.RPC("RPC_SetFormalTarget", RpcTarget.All, RPC_ExperimentState.target);
+            PV.RPC("RPC_Trigger_NextTask", RpcTarget.All);
+        }
+    }
+
+    private void NextTask() // 인터렉션을 처리하는곳에서 모든 인터랙션을 기록, 유효 인풋이 들어오면 다음 이 함수를 호출해서 다음단계로 진행
+    {
+        switch (RPC_ExperimentState.taskFormal) // 새로운거 열기전에 이전꺼를 꺼주기
+        {
+            case Task.FindSameImage:
                 EndFindSameImage();
                 break;
-            case 2:
+            case Task.FindSameObject:
                 EndFindSameObject();
                 break;
-            case 3:
+            case Task.PlaceWithEyeGaze:
                 EndPlaceWithEyeGaze();
                 break;
-            case 4:
+            case Task.RetrieveInfo:
                 EndRetrieveInfo();
                 break;
             default:
                 break;
         }
 
-        PV.RPC("RPC_SetTaskNum", RpcTarget.All, 41 - taskListCount);
-        int randomIndex = Random.Range(0, taskListCount); // 다음에 어떤 task할지 남은 task들중 랜덤으로 선정
-        int taskNumber = taskList[randomIndex];
+        PV.RPC("RPC_SetTaskNum", RpcTarget.All, 41 - taskList.Count);
+        int randomIndex = Random.Range(0, taskList.Count);
+        Task task = taskList[randomIndex];
+        PV.RPC("RPC_SetTask", RpcTarget.All, task);
         taskList.RemoveAt(randomIndex);
 
-        switch (taskNumber)
+        switch (task) // 스타트와 동일로 업데이트
         {
-            case 1:
+            case Task.FindSameImage:
                 SetFindSameImage();
                 break;
-            case 2:
+            case Task.FindSameObject:
                 SetFindSameObject();
                 break;
-            case 3:
+            case Task.PlaceWithEyeGaze:
                 SetPlaceWithEyeGaze();
                 break;
-            case 4:
+            case Task.RetrieveInfo:
                 SetRetrieveInfo();
                 break;
             default:
@@ -223,7 +269,9 @@ public class ExperimentManager : MonoBehaviour
         }
     }
 
-    // eye gaze 입력 될떄마다 기록하는 함수
-    // 스마트폰 제스쳐 입력 될떄마다 기록하는 함수
-    // 동시 입력될때마다 기록하는 함수
+    private void EndExperiment()
+    {
+        // 저장하고 종료
+        Application.Quit();
+    }
 }
