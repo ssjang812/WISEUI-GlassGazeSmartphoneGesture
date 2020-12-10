@@ -119,11 +119,11 @@ public class ExperimentManager : MonoBehaviour //메인함수와 같은역할을
                 break;
             case Task.PlaceWithEyeGaze:
                 PV.RPC("RPC_SetTarget", RpcTarget.All, (Target)Random.Range(0, 4));
-                PV.RPC("RPC_SetTargetPoint", RpcTarget.All, (Target)Random.Range(0, 4));
+                PV.RPC("RPC_SetTargetPoint", RpcTarget.All, (int)Random.Range(0, 4));
                 PV.RPC("RPC_Trigger_PlaceWithEyeGaze", RpcTarget.All);
                 break;
             case Task.RetrieveInfo:
-                PV.RPC("RPC_SetTarget", RpcTarget.All, (Target)Random.Range(0, 4));
+                PV.RPC("RPC_SetTarget", RpcTarget.All, (Target)Random.Range(1, 5));
                 PV.RPC("RPC_SetTargetPoint", RpcTarget.All, 999);
                 PV.RPC("RPC_Trigger_RetrieveInfo", RpcTarget.All);
                 break;

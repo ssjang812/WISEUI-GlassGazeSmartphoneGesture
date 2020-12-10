@@ -8,107 +8,120 @@ using UnityEngine.UI;
 public class ButtonPhone : MonoBehaviour
 {
     private PhotonView PV;
+    private ExperimentManager experimentManager;
+    private Button button;
+    private EventTrigger eventTrigger;
+    private bool t4TargetFlag;
+    private bool t4PointFlag;
 
-    private GameObject btn1Obj;
-    private GameObject btn2Obj;
-    private GameObject btn3Obj;
-    private GameObject btn4Obj;
-    private Button btn1Btn;
-    private Button btn2Btn;
-    private Button btn3Btn;
-    private Button btn4Btn;
-    private EventTrigger btn1Trig;
-    private EventTrigger btn2Trig;
-    private EventTrigger btn3Trig;
-    private EventTrigger btn4Trig;
-
-    private bool isBtnDown;
-    private bool isTouchGazeRdy;
-
-    private string btnTag;
-
-
-    private void Start()
+    void Start()
     {
-        isBtnDown = false;
-        isTouchGazeRdy = false;
-
         PV = GameObject.FindGameObjectWithTag("WorldEvent").GetComponent<PhotonView>();
+        experimentManager = GameObject.FindGameObjectWithTag("ExperimentManager").GetComponent<ExperimentManager>();
+        button = gameObject.GetComponent<Button>();
+        eventTrigger = gameObject.GetComponent<EventTrigger>();
+        t4TargetFlag = false;
+        t4PointFlag = false;
 
-        btn1Obj = GameObject.FindGameObjectWithTag("Button1_FindSameImage");
-        btn2Obj = GameObject.FindGameObjectWithTag("Button2_FindSameImage");
-        btn3Obj = GameObject.FindGameObjectWithTag("Button3_FindSameImage");
-        btn4Obj = GameObject.FindGameObjectWithTag("Button4_FindSameImage");
-
-        btn1Btn = btn1Obj.GetComponent<Button>();
-        btn2Btn = btn2Obj.GetComponent<Button>();
-        btn3Btn = btn3Obj.GetComponent<Button>();
-        btn4Btn = btn4Obj.GetComponent<Button>();
-
-        btn1Trig = btn1Obj.GetComponent<EventTrigger>();
-        btn2Trig = btn2Obj.GetComponent<EventTrigger>();
-        btn3Trig = btn3Obj.GetComponent<EventTrigger>();
-        btn4Trig = btn4Obj.GetComponent<EventTrigger>();
-
-        btn1Btn.onClick.AddListener(TaskOnClick);
-        btn2Btn.onClick.AddListener(TaskOnClick);
-        btn3Btn.onClick.AddListener(TaskOnClick);
-        btn4Btn.onClick.AddListener(TaskOnClick);
-
-        EventTrigger.Entry entryPointerDown = new EventTrigger.Entry();
-        entryPointerDown.eventID = EventTriggerType.PointerDown;
-        entryPointerDown.callback.AddListener((data) => { OnPointerDownDelegate((PointerEventData)data); });
-        btn1Trig.triggers.Add(entryPointerDown);
-        btn2Trig.triggers.Add(entryPointerDown);
-        btn3Trig.triggers.Add(entryPointerDown);
-        btn4Trig.triggers.Add(entryPointerDown);
+        button.onClick.AddListener(OnButtonClick);
 
         EventTrigger.Entry entryPointerUp = new EventTrigger.Entry();
         entryPointerUp.eventID = EventTriggerType.PointerUp;
-        entryPointerUp.callback.AddListener((data) => { OnPointerUpDelegate((PointerEventData)data); });
-        btn1Trig.triggers.Add(entryPointerUp);
-        btn2Trig.triggers.Add(entryPointerUp);
-        btn3Trig.triggers.Add(entryPointerUp);
-        btn4Trig.triggers.Add(entryPointerUp);
+        entryPointerUp.callback.AddListener((data) => { OnPointerUp((PointerEventData)data); });
+        eventTrigger.triggers.Add(entryPointerUp);
     }
 
-    private void Update()
+    void OnButtonClick()
     {
-        if (isBtnDown)
+        PV.RPC("RPC_onClickButtonPhone", RpcTarget.All, gameObject.tag);
+
+        //Find Same Image 시나리오(1번) 이고 정답인지 판단
+        if (RPC_ExperimentState.taskNow == RPC_ExperimentState.Task.FindSameImage)
         {
-            if(RPC_EyegazeGlasses.gazeOnObjGlasses != null)
+            switch (RPC_ExperimentState.target)
             {
-                isTouchGazeRdy = true;
+                case RPC_ExperimentState.Target.Sphere:
+                    if (gameObject.tag == "SphereButton_FindSameImage")
+                        experimentManager.NextTaskPreprocess();
+                    break;
+                case RPC_ExperimentState.Target.Cube:
+                    if (gameObject.tag == "CubeButton_FindSameImage")
+                        experimentManager.NextTaskPreprocess();
+                    break;
+                case RPC_ExperimentState.Target.Capsule:
+                    if (gameObject.tag == "CapsuleButton_FindSameImage")
+                        experimentManager.NextTaskPreprocess();
+                    break;
+                case RPC_ExperimentState.Target.Cylinder:
+                    if (gameObject.tag == "CylinderButton_FindSameImage")
+                        experimentManager.NextTaskPreprocess();
+                    break;
+                default:
+                    break;
             }
-            else
+        }
+    }
+
+    void OnPointerUp(BaseEventData baseEventData)
+    {
+        PV.RPC("RPC_onPointerUpPhone", RpcTarget.All, gameObject.tag);
+
+        if(RPC_EyegazeGlasses.gazeOnObjGlasses != null)
+        {
+            PV.RPC("RPC_touchGaze", RpcTarget.All, gameObject.tag);
+            //Place with eyegaze 시나리오(3번) 이고 정답인지 판단 (타겟에 맞는 버튼을눌렀고 시선은 맞는 위치를 보고있는지)
+            if (RPC_ExperimentState.taskNow == RPC_ExperimentState.Task.PlaceWithEyeGaze)
             {
-                isTouchGazeRdy = false;
+                switch (RPC_ExperimentState.target)
+                {
+                    case RPC_ExperimentState.Target.Sphere:
+                        if (gameObject.tag == "SphereButton_PlaceWithEyeGaze")
+                            t4TargetFlag = true;
+                        break;
+                    case RPC_ExperimentState.Target.Cube:
+                        if (gameObject.tag == "CubeButton_PlaceWithEyeGaze")
+                            t4TargetFlag = true;
+                        break;
+                    case RPC_ExperimentState.Target.Capsule:
+                        if (gameObject.tag == "CapsuleButton_PlaceWithEyeGaze")
+                            t4TargetFlag = true;
+                        break;
+                    case RPC_ExperimentState.Target.Cylinder:
+                        if (gameObject.tag == "CylinderButton_PlaceWithEyeGaze")
+                            t4TargetFlag = true;
+                        break;
+                    default:
+                        break;
+                }
+
+                switch (RPC_ExperimentState.targetPoint)
+                {
+                    case 1:
+                        if (RPC_EyegazeGlasses.gazeOnObjGlasses == "Spot1_PlaceWithEyeGaze")
+                            t4PointFlag = true;
+                        break;
+                    case 2:
+                        if (RPC_EyegazeGlasses.gazeOnObjGlasses == "Spot2_PlaceWithEyeGaze")
+                            t4PointFlag = true;
+                        break;
+                    case 3:
+                        if (RPC_EyegazeGlasses.gazeOnObjGlasses == "Spot3_PlaceWithEyeGaze")
+                            t4PointFlag = true;
+                        break;
+                    case 4:
+                        if (RPC_EyegazeGlasses.gazeOnObjGlasses == "Spot4_PlaceWithEyeGaze")
+                            t4PointFlag = true;
+                        break;
+                    default:
+                        break;
+                }
+
+                if (t4TargetFlag && t4PointFlag)
+                    experimentManager.NextTaskPreprocess();
+
+                t4TargetFlag = false;
+                t4PointFlag = false;
             }
-        }
-        else
-        {
-            isTouchGazeRdy = false;
-        }
-    }
-
-    void TaskOnClick()
-    {
-        PV.RPC("RPC_onClickPhone", RpcTarget.All, gameObject.tag);
-    }
-
-    public void OnPointerDownDelegate(PointerEventData data)
-    {
-        btnTag = gameObject.tag;
-        isBtnDown = true;
-    }
-
-    public void OnPointerUpDelegate(PointerEventData data)
-    {
-        btnTag = gameObject.tag;
-        if(isTouchGazeRdy)
-        {
-            PV.RPC("RPC_touchGaze", RpcTarget.All, gameObject.tag, RPC_EyegazeGlasses.gazeOnObjGlasses);
-        }
-        isBtnDown = false;
+        }   
     }
 }

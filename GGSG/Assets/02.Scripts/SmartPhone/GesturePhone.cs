@@ -13,13 +13,8 @@ public class GesturePhone : MonoBehaviour
 
     private GameObject WorldEvent;
     private PhotonView PV;
+    private ExperimentManager experimentManager;
 
-    /*
-    private GameObject textObj;
-    private TMP_Text textScript;
-    private GameObject textObj2;
-    private TMP_Text textScript2;
-    */
 
 #if UNITY_EDITOR
     protected virtual void Reset()
@@ -34,16 +29,12 @@ public class GesturePhone : MonoBehaviour
 
     void Start()
     {
-        /*
-        textObj = GameObject.FindGameObjectWithTag("DebugText");
-        textScript = textObj.GetComponent<TMP_Text>();
-        textObj2 = GameObject.FindGameObjectWithTag("DebugText2");
-        textScript2 = textObj2.GetComponent<TMP_Text>();
-        */
-
         WorldEvent = GameObject.FindGameObjectWithTag("WorldEvent");
         PV = WorldEvent.GetComponent<PhotonView>();
+        experimentManager = GameObject.FindGameObjectWithTag("ExperimentManager").GetComponent<ExperimentManager>();
     }
+
+
 
     protected virtual void Update()
 	{
@@ -62,11 +53,6 @@ public class GesturePhone : MonoBehaviour
 
 	public void PinchPhone()
     {
-        /*
-        textScript.SetText("Pinch");
-        textScript2.SetText("GazeAtNull");
-        */
-
         PV.RPC("RPC_PinchPhone", RpcTarget.All);
 
         // Cross Device 제스쳐 판별 -> Cross-device trigger function call (각 디바이스마다 다르게 Implementation)
@@ -79,13 +65,41 @@ public class GesturePhone : MonoBehaviour
 
     public void OneFingerTapPhone(LeanFinger finger)
     {
-        /*
-        textScript.SetText("OneFingerTap");
-        textScript2.SetText("GazeAtNull");
-        Debug.Log("FingerTap : " + finger.TapCount);
-        */
-
         PV.RPC("RPC_OneFingerTapPhone", RpcTarget.All);
+        
+        // GazeTouch 발생여부 판단
+        if(RPC_EyegazeGlasses.gazeOnObjGlasses != null)
+        {
+            PV.RPC("RPC_gazeTouch", RpcTarget.All);
+
+            // retrieve info 시나리오(4)에서의 정답인지 판별
+            if(RPC_ExperimentState.taskNow == RPC_ExperimentState.Task.RetrieveInfo)
+            {
+                switch (RPC_ExperimentState.target)
+                {
+                    case RPC_ExperimentState.Target.Sphere:
+                        if (RPC_EyegazeGlasses.gazeOnObjGlasses == "Sphere_RetrieveInfo")
+                            experimentManager.NextTaskPreprocess();
+                        break;
+                    case RPC_ExperimentState.Target.Cube:
+                        if (RPC_EyegazeGlasses.gazeOnObjGlasses == "Cube_RetrieveInfo")
+                            experimentManager.NextTaskPreprocess();
+                        break;
+                    case RPC_ExperimentState.Target.Capsule:
+                        if (RPC_EyegazeGlasses.gazeOnObjGlasses == "Capsule_RetrieveInfo")
+                            experimentManager.NextTaskPreprocess();
+                        break;
+                    case RPC_ExperimentState.Target.Cylinder:
+                        if (RPC_EyegazeGlasses.gazeOnObjGlasses == "Cylinder_RetrieveInfo")
+                            experimentManager.NextTaskPreprocess();
+                        break;
+                    default:
+                        break;
+                }
+                // 다음 실험으로
+                experimentManager.NextTaskPreprocess();
+            }
+        }
     }
     /*
     public void TwoFingerTap(LeanFinger finger)

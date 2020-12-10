@@ -30,7 +30,7 @@ public class RPC_CrossDeviceInteraction : MonoBehaviour
     {
         returnable[0] = "N/A";
         returnable[1] = "TouchGaze";
-        //returnable[2] = pinchObjGlasses;  //버튼누르면 그 이름 받아뒀다가 여기 넣기
+        returnable[2] = RPC_ButtonPhone.onPointerUpButtonPhone;
         returnable[3] = RPC_EyegazeGlasses.gazeOnObjGlasses;
         return returnable;
     }
@@ -39,6 +39,7 @@ public class RPC_CrossDeviceInteraction : MonoBehaviour
     void RPC_gazeTouch()
     {
         // 로그에 기록
+        CSVManager.AppendToReport(GetReportGazeTouch());
         event_gazeTouch.Invoke();
     }
 
@@ -46,6 +47,7 @@ public class RPC_CrossDeviceInteraction : MonoBehaviour
     void RPC_touchGaze()
     {
         // 로그에 기록
+        CSVManager.AppendToReport(GetReportTouchGaze());
         event_touchGaze.Invoke();
     }
 }
