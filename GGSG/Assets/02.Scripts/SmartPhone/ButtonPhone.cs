@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+// 고쳐야할것 : experience manager는 글래스에있는데 여기서 접근하고있음, 전체 흐름 코드 전면 체크필요
 public class ButtonPhone : MonoBehaviour
 {
     private PhotonView PV;

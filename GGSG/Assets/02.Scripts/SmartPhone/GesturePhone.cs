@@ -5,8 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-// 동기화는 중요 데이터, 각 이벤트의 발생여부, 데이터 기록과 같이 각 디바이스에서 동시에 일어나야하는것들만
-// 실험의 흐름과 다음으로 진행여부 판단과같은 결정부는 둘중 한곳에서만 해야지 혼서이 생기지 않는다. -> 로컬에서 진행하고 결과만 동기화
+// 고쳐야할것 : experience manager는 글래스에있는데 여기서 접근하고있음, 전체 흐름 코드 전면 체크필요
 public class GesturePhone : MonoBehaviour
 {
     public LeanFingerFilter Use = new LeanFingerFilter(true);

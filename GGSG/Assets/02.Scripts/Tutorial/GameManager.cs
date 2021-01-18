@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [SerializeField] private CharacterData[] characterData; // 캐릭터 정보 입력
-    [SerializeField] private CHARACTERTYPE[] characters; // 싸울캐릭터 선택
+    [SerializeField] private CharacterData[] characterData = null; // 캐릭터 정보 입력
+    [SerializeField] private CHARACTERTYPE[] characters = null; // 싸울캐릭터 선택
     private CharacterData[] currentCharacters;
 
     [System.Serializable]
