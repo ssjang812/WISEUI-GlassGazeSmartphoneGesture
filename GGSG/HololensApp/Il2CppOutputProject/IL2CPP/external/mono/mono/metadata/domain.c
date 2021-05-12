@@ -853,6 +853,8 @@ mono_cleanup (void)
 {
 	mono_close_exe_image ();
 
+	mono_thread_info_cleanup ();
+
 	mono_defaults.corlib = NULL;
 
 	mono_config_cleanup ();
@@ -923,6 +925,7 @@ mono_domain_set_internal_with_options (MonoDomain *domain, gboolean migrate_exce
 
 	SET_APPDOMAIN (domain);
 	SET_APPCONTEXT (domain->default_context);
+    mono_gc_wbarrier_generic_nostore (&domain->default_context);	
 
 	if (migrate_exception) {
 		thread = mono_thread_internal_current ();
@@ -1316,6 +1319,12 @@ const char *
 mono_domain_get_friendly_name (MonoDomain *domain)
 {
 	return domain->friendly_name;
+}
+
+MonoAssembly*
+m_domain_get_corlib (MonoDomain *domain)
+{
+    return domain->domain->mbr.obj.vtable->klass->image->assembly;
 }
 
 /*

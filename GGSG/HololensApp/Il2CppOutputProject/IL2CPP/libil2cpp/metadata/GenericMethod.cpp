@@ -18,6 +18,7 @@
 #include "utils/Il2CppHashMap.h"
 #include "il2cpp-class-internals.h"
 #include "il2cpp-runtime-metadata.h"
+#include "il2cpp-runtime-stats.h"
 #include <string>
 
 using il2cpp::metadata::GenericMetadata;
@@ -118,7 +119,7 @@ namespace metadata
         else
         {
             // we only need RGCTX for generic instance methods
-            newMethod->rgctx_data = GenericMetadata::InflateRGCTX(methodDefinition->methodDefinition->rgctxStartIndex, methodDefinition->methodDefinition->rgctxCount, &gmethod->context);
+            newMethod->rgctx_data = GenericMetadata::InflateRGCTX(gmethod->methodDefinition->klass->image, gmethod->methodDefinition->token, &gmethod->context);
         }
 
         newMethod->invoker_method = MetadataCache::GetInvokerMethodPointer(methodDefinition, &gmethod->context);

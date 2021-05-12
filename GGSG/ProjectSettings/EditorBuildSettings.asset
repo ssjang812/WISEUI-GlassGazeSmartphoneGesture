@@ -39,27 +39,15 @@ EditorBuildSettings:
     path: Assets/MRTK/Examples/Demos/UX/Slider/Scenes/SliderExample.unity
     guid: 086aad2912678d04e968264b2398004b
   - enabled: 0
-    path: Assets/MRTK/Examples/Demos/EyeTracking/Scenes/EyeTrackingDemo-02-TargetSelection.unity
-    guid: 55643f7e4eceb734784192b162f565e0
-  - enabled: 0
-    path: Assets/MRTK/Examples/Demos/EyeTracking/Scenes/EyeTrackingDemo-03-Navigation.unity
-    guid: 5df475f0bf57b1f488d59e0e16040d9a
-  - enabled: 0
-    path: Assets/MRTK/Examples/Demos/EyeTracking/Scenes/EyeTrackingDemo-04-TargetPositioning.unity
-    guid: 91ded1f5ef2ae854ba4ac94eca7a2494
-  - enabled: 0
-    path: Assets/MRTK/Examples/Demos/EyeTracking/Scenes/EyeTrackingDemo-05-Visualizer.unity
-    guid: 2d6c43a82f3a88c4dbdc3b5e99a68d8a
-  - enabled: 0
     path: Assets/MRTK/Examples/Demos/HandTracking/Scenes/NearMenuExamples.unity
     guid: bf3eb3415bffceb41810526380c2c71c
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/NetworkLobby.unity
     guid: 171a9b3ed671da74c88786a7f808b2bc
   - enabled: 0
     path: Assets/01.Scenes/SmartphoneConnected.unity
     guid: 5b3b85b7dfe3abb4b9454f1b072ad96b
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/SmartglassConnected.unity
     guid: 958fd1119944983469ee879808045521
   - enabled: 0
@@ -68,4 +56,26 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Lean/Touch/Examples/07 Finger Tap.unity
     guid: 9288129b03a30fd4590f54bacfa4fc2b
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/MRTK/Examples/Demos/EyeTracking/Scenes/EyeTrackingDemo-00-RootScene.unity
+    guid: 27c3fbe0128089f48994cdc6af8668fc
+  - enabled: 1
+    path: Assets/MRTK/Examples/Demos/EyeTracking/Scenes/EyeTrackingDemo-01-BasicSetup.unity
+    guid: 3ac2cf3aa0e281340babd2053d8b7d46
+  - enabled: 1
+    path: Assets/MRTK/Examples/Demos/EyeTracking/Scenes/EyeTrackingDemo-02-TargetSelection.unity
+    guid: 55643f7e4eceb734784192b162f565e0
+  - enabled: 1
+    path: Assets/MRTK/Examples/Demos/EyeTracking/Scenes/EyeTrackingDemo-03-Navigation.unity
+    guid: 5df475f0bf57b1f488d59e0e16040d9a
+  - enabled: 1
+    path: Assets/MRTK/Examples/Demos/EyeTracking/Scenes/EyeTrackingDemo-04-TargetPositioning.unity
+    guid: 91ded1f5ef2ae854ba4ac94eca7a2494
+  - enabled: 1
+    path: Assets/MRTK/Examples/Demos/EyeTracking/Scenes/EyeTrackingDemo-05-Visualizer.unity
+    guid: 2d6c43a82f3a88c4dbdc3b5e99a68d8a
+  m_configObjects:
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: cfcf0a240d21d214cb0d9f7b8104a88a,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3014e69d1aab04b45b015e927bf584a4,
+      type: 2}

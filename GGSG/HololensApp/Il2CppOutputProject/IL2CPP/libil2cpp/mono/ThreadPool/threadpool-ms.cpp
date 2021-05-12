@@ -22,16 +22,17 @@
 
 #include "il2cpp-config.h"
 
-#if NET_4_0
 #include <stdlib.h>
 #define _USE_MATH_DEFINES // needed by MSVC to define math constants
 #include <algorithm>
 #include <cmath>
 #include <complex>
+#include "math.h"
 
 #include "il2cpp-api.h"
 #include "gc/GarbageCollector.h"
 #include "gc/GCHandle.h"
+#include "gc/WriteBarrier.h"
 #include "icalls/mscorlib/System.Threading/ThreadPool.h"
 #include "icalls/mscorlib/System.Runtime.Remoting.Messaging/MonoMethodMessage.h"
 #include "mono/ThreadPool/threadpool-ms.h"
@@ -115,7 +116,7 @@ mono_method_call_message_new(MethodInfo *method, void* *params, MethodInfo *invo
 		void* vpos;
 		Il2CppClass *klass;
 		Il2CppObject *arg;
-		
+
 			vpos = params[i];
 
 		klass = il2cpp_class_from_type(method->parameters[i].parameter_type);
@@ -740,7 +741,7 @@ Il2CppObject* threadpool_ms_end_invoke (Il2CppAsyncResult *ares, Il2CppArray **o
 	/* check if already finished */
 	il2cpp_monitor_enter((Il2CppObject*) ares);
 
-	if (ares->endinvoke_called) 
+	if (ares->endinvoke_called)
 	{
 		il2cpp::vm::Exception::Raise(il2cpp::vm::Exception::GetInvalidOperationException("Cannot call EndInvoke() repeatedly or concurrently on the same AsyncResult!"));
 		il2cpp_monitor_exit((Il2CppObject*) ares);
@@ -750,11 +751,11 @@ Il2CppObject* threadpool_ms_end_invoke (Il2CppAsyncResult *ares, Il2CppArray **o
 	ares->endinvoke_called = 1;
 
 	/* wait until we are really finished */
-	if (ares->completed) 
+	if (ares->completed)
 	{
 		il2cpp_monitor_exit((Il2CppObject *) ares);
 	}
-	else 
+	else
 	{
 
 		if (!ares->handle)
@@ -774,8 +775,8 @@ Il2CppObject* threadpool_ms_end_invoke (Il2CppAsyncResult *ares, Il2CppArray **o
 
 	ac = (Il2CppAsyncCall*) ares->object_data;
 	IL2CPP_ASSERT(ac);
-	
-	*exc = ((Il2CppMethodMessage*)ac->msg)->exc; /* FIXME: GC add write barrier */
+
+	il2cpp::gc::WriteBarrier::GenericStore(exc, ((Il2CppMethodMessage*)ac->msg)->exc);
 	*out_args = ac->out_args;
 	return ac->res;
 }
@@ -924,4 +925,3 @@ bool ves_icall_System_Threading_ThreadPool_IsThreadPoolHosted (void)
 {
 	return false;
 }
-#endif

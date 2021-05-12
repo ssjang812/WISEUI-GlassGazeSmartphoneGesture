@@ -1,6 +1,6 @@
 #pragma once
 
-#include "il2cpp-object-internals.h"
+#include "il2cpp-windowsruntime-types.h"
 #include "utils/StringView.h"
 
 namespace il2cpp

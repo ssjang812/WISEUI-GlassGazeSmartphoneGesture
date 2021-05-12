@@ -59,6 +59,8 @@ void *pthread_get_stackaddr_np(pthread_t);
 #define MIN_BOEHM_MAX_HEAP_SIZE (MIN_BOEHM_MAX_HEAP_SIZE_IN_MB << 20)
 
 static gboolean gc_initialized = FALSE;
+static gboolean gc_strict_wbarriers = FALSE;
+static gboolean gc_dont_gc_env = FALSE;
 static mono_mutex_t mono_gc_lock;
 
 typedef void (*GC_push_other_roots_proc)(void);
@@ -116,6 +118,8 @@ void
 mono_gc_base_init (void)
 {
 	char *env;
+	char *params_opts = NULL;
+	char *debug_opts = NULL;
 
 	if (gc_initialized)
 		return;
@@ -188,20 +192,25 @@ mono_gc_base_init (void)
 	/* If GC_no_dls is set to true, GC_find_limit is not called. This causes a seg fault on Android With Mono's Older Boehm. */
 	GC_no_dls = TRUE;
 #endif
+
+	debug_opts = mono_gc_debug_get();
+	if (debug_opts)
 	{
-		if ((env = g_getenv ("MONO_GC_DEBUG"))) {
-			char **opts = g_strsplit (env, ",", -1);
-			for (char **ptr = opts; ptr && *ptr; ptr ++) {
-				char *opt = *ptr;
-				if (!strcmp (opt, "do-not-finalize")) {
-					mono_do_not_finalize = 1;
-				} else if (!strcmp (opt, "log-finalizers")) {
-					log_finalizers = 1;
-				}
+		char **opts = g_strsplit (debug_opts, ",", -1);
+		for (char **ptr = opts; ptr && *ptr; ptr ++) {
+			char *opt = *ptr;
+			if (!strcmp (opt, "do-not-finalize")) {
+				mono_do_not_finalize = 1;
+			} else if (!strcmp (opt, "log-finalizers")) {
+				log_finalizers = 1;
 			}
-			g_free (env);
 		}
+		g_strfreev (opts);
+		g_free (debug_opts);
 	}
+
+	/* cache value rather than calling during collection since g_hasenv may take locks and can deadlock */
+	gc_dont_gc_env = g_hasenv ("GC_DONT_GC");
 
 	GC_init ();
 
@@ -212,10 +221,12 @@ mono_gc_base_init (void)
 	GC_init_gcj_malloc (5, NULL);
 	GC_allow_register_threads ();
 
-	if ((env = g_getenv ("MONO_GC_PARAMS"))) {
-		char **ptr, **opts = g_strsplit (env, ",", -1);
+	params_opts = mono_gc_params_get();
+	if (params_opts) {
+		char **ptr, **opts = g_strsplit (params_opts, ",", -1);
 		for (ptr = opts; *ptr; ++ptr) {
 			char *opt = *ptr;
+
 			if (g_str_has_prefix (opt, "max-heap-size=")) {
 				size_t max_heap;
 
@@ -247,7 +258,10 @@ mono_gc_base_init (void)
 			#endif					
 				}
 				continue;
-			} else {
+			} else if (g_str_has_prefix (opt, "strict-wbarriers")) {
+				gc_strict_wbarriers = TRUE;
+				continue;
+			}else {
 				/* Could be a parameter for sgen */
 				/*
 				fprintf (stderr, "MONO_GC_PARAMS must be a comma-delimited list of one or more of the following:\n");
@@ -256,8 +270,8 @@ mono_gc_base_init (void)
 				*/
 			}
 		}
-		g_free (env);
 		g_strfreev (opts);
+		g_free (params_opts);
 	}
 
 	mono_thread_callbacks_init ();
@@ -271,6 +285,24 @@ mono_gc_base_init (void)
 	GC_on_heap_resize = on_gc_heap_resize;
 
 	gc_initialized = TRUE;
+}
+
+void 
+mono_gc_dirty(void **ptr)
+{
+	GC_dirty (ptr);
+}
+
+void 
+mono_gc_dirty_range(void **ptr, size_t size)
+{
+	if (G_UNLIKELY(gc_strict_wbarriers))
+	{
+		for (int i = 0; i < size/sizeof(void*); i++)
+			GC_dirty(ptr + i);
+	}
+	else
+		GC_dirty (ptr);
 }
 
 void
@@ -298,6 +330,13 @@ mono_gc_collect (int generation)
 	mono_atomic_inc_i32 (&mono_perfcounters->gc_induced);
 #endif
 	GC_gcollect ();
+}
+
+
+int
+mono_gc_collect_a_little()
+{
+	return GC_collect_a_little();
 }
 
 /**
@@ -385,6 +424,47 @@ int64_t
 mono_gc_get_heap_size (void)
 {
 	return GC_get_heap_size ();
+}
+
+int64_t
+mono_gc_get_max_time_slice_ns()
+{
+#if HAVE_BDWGC_GC
+    return GC_get_time_limit_ns();
+#else
+	return 0;
+#endif		
+}
+
+void
+mono_gc_set_max_time_slice_ns(int64_t maxTimeSlice)
+{
+#if HAVE_BDWGC_GC
+	GC_set_time_limit_ns(maxTimeSlice);
+#endif	
+}
+
+MonoBoolean 
+mono_gc_is_incremental()
+{
+#if HAVE_BDWGC_GC
+    return GC_is_incremental_mode();
+#else
+	return FALSE;
+#endif		
+}
+
+void 
+mono_gc_set_incremental(MonoBoolean value)
+{
+#if HAVE_BDWGC_GC
+	if (GC_is_incremental_mode() == value)
+		return;
+    if (value)
+		GC_enable_incremental();
+	else
+		GC_disable_incremental();
+#endif		
 }
 
 gboolean
@@ -647,7 +727,7 @@ mono_gc_weak_link_add (void **link_addr, MonoObject *obj, gboolean track)
 {
 	/* libgc requires that we use HIDE_POINTER... */
 	*link_addr = (void*)HIDE_POINTER (obj);
-	GC_dirty (link_addr);
+	mono_gc_dirty (link_addr);
 	if (track)
 		GC_REGISTER_LONG_LINK (link_addr, obj);
 	else
@@ -892,57 +972,60 @@ void
 mono_gc_wbarrier_set_field (MonoObject *obj, gpointer field_ptr, MonoObject* value)
 {
 	*(void**)field_ptr = value;
-	GC_dirty (field_ptr);
+	mono_gc_dirty (field_ptr);
 }
 
 void
 mono_gc_wbarrier_set_arrayref (MonoArray *arr, gpointer slot_ptr, MonoObject* value)
 {
 	*(void**)slot_ptr = value;
-	GC_dirty (slot_ptr);
+	mono_gc_dirty (slot_ptr);
 }
 
 void
 mono_gc_wbarrier_arrayref_copy (gpointer dest_ptr, gpointer src_ptr, int count)
 {
 	mono_gc_memmove_aligned (dest_ptr, src_ptr, count * sizeof (gpointer));
-	GC_dirty (dest_ptr);
+	mono_gc_dirty_range (dest_ptr, count * sizeof(gpointer));
 }
 
 void
 mono_gc_wbarrier_generic_store (gpointer ptr, MonoObject* value)
 {
 	*(void**)ptr = value;
-	GC_dirty (ptr);
+	mono_gc_dirty (ptr);
 }
 
 void
 mono_gc_wbarrier_generic_store_atomic (gpointer ptr, MonoObject *value)
 {
 	mono_atomic_store_ptr ((volatile gpointer *)ptr, value);
-	GC_dirty (ptr);
+	mono_gc_dirty (ptr);
 }
 
 void
 mono_gc_wbarrier_generic_nostore (gpointer ptr)
 {
-	GC_dirty (ptr);
+	mono_gc_dirty (ptr);
 }
 
 void
 mono_gc_wbarrier_value_copy (gpointer dest, gpointer src, int count, MonoClass *klass)
 {
-	mono_gc_memmove_atomic (dest, src, count * mono_class_value_size (klass, NULL));
-	GC_dirty (dest);
+	size_t size = count * mono_class_value_size (klass, NULL);
+	mono_gc_memmove_atomic (dest, src, size);
+	mono_gc_dirty_range (dest, size);
 }
 
 void
 mono_gc_wbarrier_object_copy (MonoObject* obj, MonoObject *src)
 {
 	/* do not copy the sync state */
-	mono_gc_memmove_aligned ((char*)obj + sizeof (MonoObject), (char*)src + sizeof (MonoObject),
-			mono_object_class (obj)->instance_size - sizeof (MonoObject));
-	GC_dirty (obj);
+	size_t size = mono_object_class (obj)->instance_size - sizeof (MonoObject);
+	char * dstPtr = (char*)obj + sizeof (MonoObject);
+	mono_gc_memmove_aligned (dstPtr, (char*)src + sizeof (MonoObject),
+			size);
+	mono_gc_dirty_range ((void**)dstPtr, size);
 }
 
 void
@@ -1504,7 +1587,7 @@ mono_gc_is_moving (void)
 gboolean
 mono_gc_is_disabled (void)
 {
-	if (GC_dont_gc || g_hasenv ("GC_DONT_GC"))
+	if (GC_dont_gc || gc_dont_gc_env)
 		return TRUE;
 	else
 		return FALSE;
@@ -1514,7 +1597,7 @@ void
 mono_gc_wbarrier_range_copy (gpointer _dest, gpointer _src, int size)
 {
 	memcpy (_dest, _src, size);
-	GC_dirty (_dest);
+	mono_gc_dirty_range (_dest, size);
 }
 
 void*
@@ -1552,16 +1635,6 @@ FILE *
 mono_gc_get_logfile (void)
 {
 	return NULL;
-}
-
-void
-mono_gc_params_set (const char* options)
-{
-}
-
-void
-mono_gc_debug_set (const char* options)
-{
 }
 
 void
@@ -1875,7 +1948,7 @@ handle_data_grow (HandleData *handles, gboolean track)
 		gpointer *entries;
 		entries = (void **)mono_gc_alloc_fixed (sizeof (*handles->entries) * new_size, NULL, MONO_ROOT_SOURCE_GC_HANDLE, NULL, "GC Handle Table (Boehm)");
 		mono_gc_memmove_aligned (entries, handles->entries, sizeof (*handles->entries) * handles->size);
-		GC_dirty (entries);
+		mono_gc_dirty_range (entries, new_size * sizeof (*handles->entries));
 		mono_gc_free_fixed (handles->entries);
 		handles->entries = entries;
 	}
@@ -1908,7 +1981,7 @@ alloc_handle (HandleData *handles, MonoObject *obj, gboolean track)
 			mono_gc_weak_link_add (&(handles->entries [slot]), obj, track);
 	} else {
 		handles->entries [slot] = obj;
-		GC_dirty (handles->entries + slot);
+		mono_gc_dirty (handles->entries + slot);
 	}
 
 #ifndef DISABLE_PERFCOUNTERS
@@ -2026,7 +2099,7 @@ mono_gchandle_set_target (guint32 gchandle, MonoObject *obj)
 			handles->domain_ids [slot] = (obj ? mono_object_get_domain (obj) : mono_domain_get ())->domain_id;
 		} else {
 			handles->entries [slot] = obj;
-			GC_dirty (handles->entries + slot);
+			mono_gc_dirty (handles->entries + slot);
 		}
 	} else {
 		/* print a warning? */
@@ -2105,7 +2178,7 @@ mono_gchandle_free (guint32 gchandle)
 				mono_gc_weak_link_remove (&handles->entries [slot], handles->type == HANDLE_WEAK_TRACK);
 		} else {
 			handles->entries [slot] = NULL;
-			GC_dirty (handles->entries + slot);
+			mono_gc_dirty (handles->entries + slot);
 		}
 		vacate_slot (handles, slot);
 	} else {
@@ -2148,7 +2221,7 @@ mono_gchandle_free_domain (MonoDomain *domain)
 				if (handles->entries [slot] && mono_object_domain (handles->entries [slot]) == domain) {
 					vacate_slot (handles, slot);
 					handles->entries [slot] = NULL;
-					GC_dirty (handles->entries + slot);
+					mono_gc_dirty (handles->entries + slot);
 				}
 			}
 		}

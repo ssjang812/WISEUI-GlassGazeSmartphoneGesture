@@ -7,6 +7,9 @@
 #include "os/ErrorCodes.h"
 #include "utils/StringView.h"
 
+#undef FindFirstFile
+#undef FindNextFile
+
 namespace il2cpp
 {
 namespace os

@@ -16,7 +16,7 @@
 #include "os/WinRT/BrokeredFileSystem.h"
 #endif
 
-static inline int Win32ErrorToErrorCode(DWORD win32ErrorCode)
+static inline int DirectoryWin32ErrorToErrorCode(DWORD win32ErrorCode)
 {
     return win32ErrorCode;
 }
@@ -57,7 +57,7 @@ namespace os
         }
         else
         {
-            *error = Win32ErrorToErrorCode(::GetLastError());
+            *error = DirectoryWin32ErrorToErrorCode(::GetLastError());
         }
 
         return directory;
@@ -71,7 +71,7 @@ namespace os
         if (::SetCurrentDirectory((LPWSTR)utf16Path.c_str()))
             return true;
 
-        *error = Win32ErrorToErrorCode(::GetLastError());
+        *error = DirectoryWin32ErrorToErrorCode(::GetLastError());
         return false;
     }
 
@@ -93,7 +93,7 @@ namespace os
         }
 #endif
 
-        *error = Win32ErrorToErrorCode(lastError);
+        *error = DirectoryWin32ErrorToErrorCode(lastError);
         return false;
     }
 
@@ -115,7 +115,7 @@ namespace os
         }
 #endif
 
-        *error = Win32ErrorToErrorCode(lastError);
+        *error = DirectoryWin32ErrorToErrorCode(lastError);
         return false;
     }
 
@@ -137,7 +137,7 @@ namespace os
 #endif
 
             // Following the Mono implementation, do not treat a directory with no files as an error.
-            int errorCode = Win32ErrorToErrorCode(lastError);
+            int errorCode = DirectoryWin32ErrorToErrorCode(lastError);
             if (errorCode != ERROR_FILE_NOT_FOUND)
                 *error = errorCode;
             return files;

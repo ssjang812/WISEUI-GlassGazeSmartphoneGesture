@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Assets">
-      <UniqueIdentifier>{4fee20dd-52c1-4b80-a389-54f890b5cbb9}</UniqueIdentifier>
+      <UniqueIdentifier>{5ba9d663-bfbc-43c8-8462-75dbecbb498c}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="App.cpp" />
     <ClInclude Include="App.h" />
@@ -32,5 +32,8 @@
     <None Include="Assets\Wide310x150Logo.scale-200.png">
       <Filter>Assets</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

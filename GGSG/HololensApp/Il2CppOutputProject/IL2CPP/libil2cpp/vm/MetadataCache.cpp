@@ -5,6 +5,7 @@
 #include <limits>
 #include "il2cpp-class-internals.h"
 #include "il2cpp-tabledefs.h"
+#include "il2cpp-runtime-stats.h"
 #include "gc/GarbageCollector.h"
 #include "metadata/ArrayMetadata.h"
 #include "metadata/GenericMetadata.h"
@@ -32,6 +33,7 @@
 #include "utils/PathUtils.h"
 #include "vm/Assembly.h"
 #include "vm/Class.h"
+#include "vm/ClassInlines.h"
 #include "vm/GenericClass.h"
 #include "vm/MetadataAlloc.h"
 #include "vm/MetadataLoader.h"
@@ -44,47 +46,17 @@
 #include "vm-utils/NativeSymbol.h"
 #include "vm-utils/VmStringUtils.h"
 
-using namespace il2cpp;
-using namespace il2cpp::utils::collections;
-using namespace il2cpp::vm;
-
-using il2cpp::gc::GarbageCollector;
-using il2cpp::metadata::ArrayMetadata;
-using il2cpp::metadata::GenericMetadata;
-using il2cpp::metadata::GenericMethod;
-using il2cpp::metadata::Il2CppGenericContextCompare;
-using il2cpp::metadata::Il2CppGenericContextHash;
-using il2cpp::metadata::Il2CppGenericInstCompare;
-using il2cpp::metadata::Il2CppGenericInstHash;
-using il2cpp::metadata::Il2CppGenericMethodCompare;
-using il2cpp::metadata::Il2CppGenericMethodHash;
-using il2cpp::metadata::Il2CppTypeLess;
-using il2cpp::metadata::Il2CppTypeEqualityComparer;
-using il2cpp::metadata::Il2CppTypeHash;
-using il2cpp::metadata::Il2CppTypeVector;
-using il2cpp::metadata::Il2CppSignatureCompare;
-using il2cpp::metadata::Il2CppSignatureHash;
-using il2cpp::os::Atomic;
-using il2cpp::os::FastAutoLock;
-using il2cpp::os::FastMutex;
-using il2cpp::utils::CallOnce;
-using il2cpp::utils::HashUtils;
-using il2cpp::utils::OnceFlag;
-using il2cpp::utils::PointerHash;
-using il2cpp::utils::StringUtils;
-using il2cpp::utils::VmStringUtils;
-
 typedef std::map<Il2CppClass*, Il2CppClass*> PointerTypeMap;
-typedef Il2CppHashMap<const char*, Il2CppClass*, StringUtils::StringHasher<const char*>, VmStringUtils::CaseSensitiveComparer> WindowsRuntimeTypeNameToClassMap;
-typedef Il2CppHashMap<const Il2CppClass*, const char*, PointerHash<Il2CppClass> > ClassToWindowsRuntimeTypeNameMap;
+typedef Il2CppHashMap<const char*, Il2CppClass*, il2cpp::utils::StringUtils::StringHasher<const char*>, il2cpp::utils::VmStringUtils::CaseSensitiveComparer> WindowsRuntimeTypeNameToClassMap;
+typedef Il2CppHashMap<const Il2CppClass*, const char*, il2cpp::utils::PointerHash<Il2CppClass> > ClassToWindowsRuntimeTypeNameMap;
 
-typedef Il2CppHashSet<const Il2CppGenericMethod*, Il2CppGenericMethodHash, Il2CppGenericMethodCompare> Il2CppGenericMethodSet;
+typedef Il2CppHashSet<const Il2CppGenericMethod*, il2cpp::metadata::Il2CppGenericMethodHash, il2cpp::metadata::Il2CppGenericMethodCompare> Il2CppGenericMethodSet;
 typedef Il2CppGenericMethodSet::const_iterator Il2CppGenericMethodSetIter;
 static Il2CppGenericMethodSet s_GenericMethodSet;
 
 struct Il2CppMetadataCache
 {
-    FastMutex m_CacheMutex;
+    il2cpp::os::FastMutex m_CacheMutex;
     PointerTypeMap m_PointerTypes;
 };
 
@@ -100,14 +72,14 @@ static int32_t s_AssembliesCount = 0;
 static Il2CppAssembly* s_AssembliesTable = NULL;
 
 
-typedef Il2CppHashSet<const Il2CppGenericInst*, Il2CppGenericInstHash, Il2CppGenericInstCompare> Il2CppGenericInstSet;
+typedef Il2CppHashSet<const Il2CppGenericInst*, il2cpp::metadata::Il2CppGenericInstHash, il2cpp::metadata::Il2CppGenericInstCompare> Il2CppGenericInstSet;
 static Il2CppGenericInstSet s_GenericInstSet;
 
-typedef Il2CppHashMap<const Il2CppGenericMethod*, const Il2CppGenericMethodIndices*, Il2CppGenericMethodHash, Il2CppGenericMethodCompare> Il2CppMethodTableMap;
+typedef Il2CppHashMap<const Il2CppGenericMethod*, const Il2CppGenericMethodIndices*, il2cpp::metadata::Il2CppGenericMethodHash, il2cpp::metadata::Il2CppGenericMethodCompare> Il2CppMethodTableMap;
 typedef Il2CppMethodTableMap::const_iterator Il2CppMethodTableMapIter;
 static Il2CppMethodTableMap s_MethodTableMap;
 
-typedef Il2CppHashMap<il2cpp::utils::dynamic_array<const Il2CppType*>, Il2CppMethodPointer, Il2CppSignatureHash, Il2CppSignatureCompare> Il2CppUnresolvedSignatureMap;
+typedef Il2CppHashMap<il2cpp::utils::dynamic_array<const Il2CppType*>, Il2CppMethodPointer, il2cpp::metadata::Il2CppSignatureHash, il2cpp::metadata::Il2CppSignatureCompare> Il2CppUnresolvedSignatureMap;
 typedef Il2CppUnresolvedSignatureMap::const_iterator Il2CppUnresolvedSignatureMapIter;
 static Il2CppUnresolvedSignatureMap *s_pUnresolvedSignatureMap;
 
@@ -131,7 +103,7 @@ struct InteropDataToTypeConverter
     }
 };
 
-typedef il2cpp::utils::collections::ArrayValueMap<const Il2CppType*, Il2CppInteropData, InteropDataToTypeConverter, Il2CppTypeLess, Il2CppTypeEqualityComparer> InteropDataMap;
+typedef il2cpp::utils::collections::ArrayValueMap<const Il2CppType*, Il2CppInteropData, InteropDataToTypeConverter, il2cpp::metadata::Il2CppTypeLess, il2cpp::metadata::Il2CppTypeEqualityComparer> InteropDataMap;
 static InteropDataMap s_InteropData;
 
 struct WindowsRuntimeFactoryTableEntryToTypeConverter
@@ -163,7 +135,7 @@ static T MetadataOffset(void* metadata, size_t sectionOffset, size_t itemIndex)
     return reinterpret_cast<T>(reinterpret_cast<uint8_t*>(metadata) + sectionOffset) + itemIndex;
 }
 
-void MetadataCache::Register(const Il2CppCodeRegistration* const codeRegistration, const Il2CppMetadataRegistration* const metadataRegistration, const Il2CppCodeGenOptions* const codeGenOptions)
+void il2cpp::vm::MetadataCache::Register(const Il2CppCodeRegistration* const codeRegistration, const Il2CppMetadataRegistration* const metadataRegistration, const Il2CppCodeGenOptions* const codeGenOptions)
 {
     s_Il2CppCodeRegistration = codeRegistration;
     s_Il2CppMetadataRegistration = metadataRegistration;
@@ -171,7 +143,7 @@ void MetadataCache::Register(const Il2CppCodeRegistration* const codeRegistratio
 
     for (int32_t j = 0; j < metadataRegistration->genericClassesCount; j++)
         if (metadataRegistration->genericClasses[j]->typeDefinitionIndex != kTypeIndexInvalid)
-            metadata::GenericMetadata::RegisterGenericClass(metadataRegistration->genericClasses[j]);
+            il2cpp::metadata::GenericMetadata::RegisterGenericClass(metadataRegistration->genericClasses[j]);
 
     for (int32_t i = 0; i < metadataRegistration->genericInstsCount; i++)
         s_GenericInstSet.insert(metadataRegistration->genericInsts[i]);
@@ -183,11 +155,13 @@ void MetadataCache::Register(const Il2CppCodeRegistration* const codeRegistratio
 static void* s_GlobalMetadata;
 static const Il2CppGlobalMetadataHeader* s_GlobalMetadataHeader;
 
-bool MetadataCache::Initialize()
+bool il2cpp::vm::MetadataCache::Initialize()
 {
     s_GlobalMetadata = vm::MetadataLoader::LoadMetadataFile("global-metadata.dat");
-    if (s_GlobalMetadata == NULL)
+    if (!s_GlobalMetadata)
         return false;
+
+    il2cpp::metadata::GenericMetadata::SetMaximumRuntimeGenericDepth(s_Il2CppCodeGenOptions->maximumRuntimeGenericDepth);
 
     s_GlobalMetadataHeader = (const Il2CppGlobalMetadataHeader*)s_GlobalMetadata;
     IL2CPP_ASSERT(s_GlobalMetadataHeader->sanity == 0xFAB11BAF);
@@ -214,7 +188,7 @@ bool MetadataCache::Initialize()
         Il2CppImage* image = s_ImagesTable + imageIndex;
         image->name = GetStringFromIndex(imageDefinition->nameIndex);
 
-        std::string nameNoExt = utils::PathUtils::PathNoExtension(image->name);
+        std::string nameNoExt = il2cpp::utils::PathUtils::PathNoExtension(image->name);
         image->nameNoExt = (char*)IL2CPP_CALLOC(nameNoExt.size() + 1, sizeof(char));
         strcpy(const_cast<char*>(image->nameNoExt), nameNoExt.c_str());
 
@@ -227,6 +201,12 @@ bool MetadataCache::Initialize()
         image->token = imageDefinition->token;
         image->customAttributeStart = imageDefinition->customAttributeStart;
         image->customAttributeCount = imageDefinition->customAttributeCount;
+        for (uint32_t codeGenModuleIndex = 0; codeGenModuleIndex < s_Il2CppCodeRegistration->codeGenModulesCount; ++codeGenModuleIndex)
+        {
+            if (strcmp(image->name, s_Il2CppCodeRegistration->codeGenModules[codeGenModuleIndex]->moduleName) == 0)
+                image->codeGenModule = s_Il2CppCodeRegistration->codeGenModules[codeGenModuleIndex];
+        }
+        IL2CPP_ASSERT(image->codeGenModule);
         image->dynamic = false;
     }
 
@@ -237,7 +217,7 @@ bool MetadataCache::Initialize()
         const Il2CppAssemblyDefinition* assemblyDefinition = assemblyDefinitions + assemblyIndex;
         Il2CppAssembly* assembly = s_AssembliesTable + assemblyIndex;
 
-        assembly->image = MetadataCache::GetImageFromIndex(assemblyDefinition->imageIndex);
+        assembly->image = il2cpp::vm::MetadataCache::GetImageFromIndex(assemblyDefinition->imageIndex);
         assembly->token = assemblyDefinition->token;
         assembly->referencedAssemblyStart = assemblyDefinition->referencedAssemblyStart;
         assembly->referencedAssemblyCount = assemblyDefinition->referencedAssemblyCount;
@@ -247,10 +227,7 @@ bool MetadataCache::Initialize()
 
         assemblyName->name = GetStringFromIndex(assemblyNameDefinition->nameIndex);
         assemblyName->culture = GetStringFromIndex(assemblyNameDefinition->cultureIndex);
-        assemblyName->hash_value = GetStringFromIndex(assemblyNameDefinition->hashValueIndex);
-        assemblyName->public_key = GetStringFromIndex(assemblyNameDefinition->publicKeyIndex);
-        if (strcmp(assemblyName->public_key, "NULL") == 0)
-            assemblyName->public_key = NULL;
+        assemblyName->public_key = (const uint8_t*)GetStringFromIndex(assemblyNameDefinition->publicKeyIndex);
         assemblyName->hash_alg = assemblyNameDefinition->hash_alg;
         assemblyName->hash_len = assemblyNameDefinition->hash_len;
         assemblyName->flags = assemblyNameDefinition->flags;
@@ -283,7 +260,7 @@ bool MetadataCache::Initialize()
                 const Il2CppMethodDefinition* methodDefinition = GetMethodDefinitionFromIndex(type->methodStart + u);
                 MethodDefinitionKey currentMethodList;
                 currentMethodList.methodIndex = type->methodStart + u;
-                currentMethodList.method = GetMethodPointerFromIndex(methodDefinition->methodIndex);
+                currentMethodList.method = GetMethodPointer(image, methodDefinition->token);
                 if (currentMethodList.method)
                     managedMethods.push_back(currentMethodList);
             }
@@ -311,16 +288,15 @@ bool MetadataCache::Initialize()
 
     il2cpp::utils::NativeSymbol::RegisterMethods(managedMethods);
 #endif
-
     return true;
 }
 
-void MetadataCache::InitializeStringLiteralTable()
+void il2cpp::vm::MetadataCache::InitializeStringLiteralTable()
 {
-    s_StringLiteralTable = (Il2CppString**)GarbageCollector::AllocateFixed(s_GlobalMetadataHeader->stringLiteralCount / sizeof(Il2CppStringLiteral) * sizeof(Il2CppString*), NULL);
+    s_StringLiteralTable = (Il2CppString**)il2cpp::gc::GarbageCollector::AllocateFixed(s_GlobalMetadataHeader->stringLiteralCount / sizeof(Il2CppStringLiteral) * sizeof(Il2CppString*), NULL);
 }
 
-void MetadataCache::InitializeGenericMethodTable()
+void il2cpp::vm::MetadataCache::InitializeGenericMethodTable()
 {
     for (int32_t i = 0; i < s_Il2CppMetadataRegistration->genericMethodTableCount; i++)
     {
@@ -330,7 +306,7 @@ void MetadataCache::InitializeGenericMethodTable()
     }
 }
 
-void MetadataCache::InitializeWindowsRuntimeTypeNamesTables()
+void il2cpp::vm::MetadataCache::InitializeWindowsRuntimeTypeNamesTables()
 {
     int32_t typeCount = s_GlobalMetadataHeader->windowsRuntimeTypeNamesSize / sizeof(Il2CppWindowsRuntimeTypeNamePair);
     const Il2CppWindowsRuntimeTypeNamePair* windowsRuntimeTypeNames = MetadataOffset<Il2CppWindowsRuntimeTypeNamePair*>(s_GlobalMetadata, s_GlobalMetadataHeader->windowsRuntimeTypeNamesOffset, 0);
@@ -375,7 +351,7 @@ void il2cpp::vm::MetadataCache::InitializeGuidToClassTable()
 }
 
 // this is called later in the intialization cycle with more systems setup like GC
-void MetadataCache::InitializeGCSafe()
+void il2cpp::vm::MetadataCache::InitializeGCSafe()
 {
     InitializeStringLiteralTable();
     InitializeGenericMethodTable();
@@ -383,7 +359,7 @@ void MetadataCache::InitializeGCSafe()
     InitializeGuidToClassTable();
 }
 
-void MetadataCache::InitializeUnresolvedSignatureTable()
+void il2cpp::vm::MetadataCache::InitializeUnresolvedSignatureTable()
 {
     s_pUnresolvedSignatureMap = new Il2CppUnresolvedSignatureMap();
 
@@ -395,7 +371,7 @@ void MetadataCache::InitializeUnresolvedSignatureTable()
         for (int j = 0; j < range->length; ++j)
         {
             TypeIndex typeIndex = *MetadataOffset<TypeIndex*>(s_GlobalMetadata, s_GlobalMetadataHeader->unresolvedVirtualCallParameterTypesOffset, range->start + j);
-            const Il2CppType* type = MetadataCache::GetIl2CppTypeFromIndex(typeIndex);
+            const Il2CppType* type = il2cpp::vm::MetadataCache::GetIl2CppTypeFromIndex(typeIndex);
             signature.push_back(type);
         }
 
@@ -403,14 +379,14 @@ void MetadataCache::InitializeUnresolvedSignatureTable()
     }
 }
 
-Il2CppClass* MetadataCache::GetGenericInstanceType(Il2CppClass* genericTypeDefinition, const Il2CppTypeVector& genericArgumentTypes)
+Il2CppClass* il2cpp::vm::MetadataCache::GetGenericInstanceType(Il2CppClass* genericTypeDefinition, const il2cpp::metadata::Il2CppTypeVector& genericArgumentTypes)
 {
-    const Il2CppGenericInst* inst = MetadataCache::GetGenericInst(genericArgumentTypes);
-    Il2CppGenericClass* genericClass = GenericMetadata::GetGenericClass(genericTypeDefinition, inst);
-    return GenericClass::GetClass(genericClass);
+    const Il2CppGenericInst* inst = il2cpp::vm::MetadataCache::GetGenericInst(genericArgumentTypes);
+    Il2CppGenericClass* genericClass = il2cpp::metadata::GenericMetadata::GetGenericClass(genericTypeDefinition, inst);
+    return il2cpp::vm::GenericClass::GetClass(genericClass);
 }
 
-const MethodInfo* MetadataCache::GetGenericInstanceMethod(const MethodInfo* genericMethodDefinition, const Il2CppGenericContext* context)
+const MethodInfo* il2cpp::vm::MetadataCache::GetGenericInstanceMethod(const MethodInfo* genericMethodDefinition, const Il2CppGenericContext* context)
 {
     const MethodInfo* method = genericMethodDefinition;
     const Il2CppGenericInst* classInst = context->class_inst;
@@ -423,17 +399,17 @@ const MethodInfo* MetadataCache::GetGenericInstanceMethod(const MethodInfo* gene
     }
 
     const Il2CppGenericMethod* gmethod = GetGenericMethod(method, classInst, methodInst);
-    return GenericMethod::GetMethod(gmethod);
+    return il2cpp::metadata::GenericMethod::GetMethod(gmethod);
 }
 
-const MethodInfo* MetadataCache::GetGenericInstanceMethod(const MethodInfo* genericMethodDefinition, const Il2CppTypeVector& genericArgumentTypes)
+const MethodInfo* il2cpp::vm::MetadataCache::GetGenericInstanceMethod(const MethodInfo* genericMethodDefinition, const il2cpp::metadata::Il2CppTypeVector& genericArgumentTypes)
 {
     Il2CppGenericContext context = { NULL, GetGenericInst(genericArgumentTypes) };
 
     return GetGenericInstanceMethod(genericMethodDefinition, &context);
 }
 
-const Il2CppGenericContext* MetadataCache::GetMethodGenericContext(const MethodInfo* method)
+const Il2CppGenericContext* il2cpp::vm::MetadataCache::GetMethodGenericContext(const MethodInfo* method)
 {
     if (!method->is_inflated)
     {
@@ -444,7 +420,7 @@ const Il2CppGenericContext* MetadataCache::GetMethodGenericContext(const MethodI
     return &method->genericMethod->context;
 }
 
-const MethodInfo* MetadataCache::GetGenericMethodDefinition(const MethodInfo* method)
+const MethodInfo* il2cpp::vm::MetadataCache::GetGenericMethodDefinition(const MethodInfo* method)
 {
     if (!method->is_inflated)
     {
@@ -455,14 +431,14 @@ const MethodInfo* MetadataCache::GetGenericMethodDefinition(const MethodInfo* me
     return method->genericMethod->methodDefinition;
 }
 
-const Il2CppGenericContainer* MetadataCache::GetMethodGenericContainer(const MethodInfo* method)
+const Il2CppGenericContainer* il2cpp::vm::MetadataCache::GetMethodGenericContainer(const MethodInfo* method)
 {
     return method->genericContainer;
 }
 
-Il2CppClass* MetadataCache::GetPointerType(Il2CppClass* type)
+Il2CppClass* il2cpp::vm::MetadataCache::GetPointerType(Il2CppClass* type)
 {
-    os::FastAutoLock lock(&s_MetadataCache.m_CacheMutex);
+    il2cpp::os::FastAutoLock lock(&s_MetadataCache.m_CacheMutex);
 
     PointerTypeMap::const_iterator i = s_MetadataCache.m_PointerTypes.find(type);
     if (i == s_MetadataCache.m_PointerTypes.end())
@@ -471,16 +447,16 @@ Il2CppClass* MetadataCache::GetPointerType(Il2CppClass* type)
     return i->second;
 }
 
-Il2CppClass* MetadataCache::GetWindowsRuntimeClass(const std::string& fullName)
+Il2CppClass* il2cpp::vm::MetadataCache::GetWindowsRuntimeClass(const char* fullName)
 {
-    WindowsRuntimeTypeNameToClassMap::iterator it = s_WindowsRuntimeTypeNameToClassMap.find(fullName.c_str());
+    WindowsRuntimeTypeNameToClassMap::iterator it = s_WindowsRuntimeTypeNameToClassMap.find(fullName);
     if (it != s_WindowsRuntimeTypeNameToClassMap.end())
         return it->second;
 
     return NULL;
 }
 
-const char* MetadataCache::GetWindowsRuntimeClassName(const Il2CppClass* klass)
+const char* il2cpp::vm::MetadataCache::GetWindowsRuntimeClassName(const Il2CppClass* klass)
 {
     ClassToWindowsRuntimeTypeNameMap::iterator it = s_ClassToWindowsRuntimeTypeNameMap.find(klass);
     if (it != s_ClassToWindowsRuntimeTypeNameMap.end())
@@ -489,7 +465,7 @@ const char* MetadataCache::GetWindowsRuntimeClassName(const Il2CppClass* klass)
     return NULL;
 }
 
-Il2CppMethodPointer MetadataCache::GetWindowsRuntimeFactoryCreationFunction(const char* fullName)
+Il2CppMethodPointer il2cpp::vm::MetadataCache::GetWindowsRuntimeFactoryCreationFunction(const char* fullName)
 {
     Il2CppClass* klass = GetWindowsRuntimeClass(fullName);
     if (klass == NULL)
@@ -502,7 +478,7 @@ Il2CppMethodPointer MetadataCache::GetWindowsRuntimeFactoryCreationFunction(cons
     return factoryEntry->createFactoryFunction;
 }
 
-Il2CppClass* MetadataCache::GetClassForGuid(const Il2CppGuid* guid)
+Il2CppClass* il2cpp::vm::MetadataCache::GetClassForGuid(const Il2CppGuid* guid)
 {
     IL2CPP_ASSERT(guid != NULL);
 
@@ -513,13 +489,13 @@ Il2CppClass* MetadataCache::GetClassForGuid(const Il2CppGuid* guid)
     return NULL;
 }
 
-void MetadataCache::AddPointerType(Il2CppClass* type, Il2CppClass* pointerType)
+void il2cpp::vm::MetadataCache::AddPointerType(Il2CppClass* type, Il2CppClass* pointerType)
 {
-    os::FastAutoLock lock(&s_MetadataCache.m_CacheMutex);
+    il2cpp::os::FastAutoLock lock(&s_MetadataCache.m_CacheMutex);
     s_MetadataCache.m_PointerTypes.insert(std::make_pair(type, pointerType));
 }
 
-const Il2CppGenericInst* MetadataCache::GetGenericInst(const Il2CppType* const* types, uint32_t typeCount)
+const Il2CppGenericInst* il2cpp::vm::MetadataCache::GetGenericInst(const Il2CppType* const* types, uint32_t typeCount)
 {
     // temporary inst to lookup a permanent one that may already exist
     Il2CppGenericInst inst;
@@ -531,7 +507,7 @@ const Il2CppGenericInst* MetadataCache::GetGenericInst(const Il2CppType* const* 
     for (const Il2CppType* const* iter = types; iter != typesEnd; ++iter, ++index)
         inst.type_argv[index] = *iter;
 
-    os::FastAutoLock lock(&s_MetadataCache.m_CacheMutex);
+    il2cpp::os::FastAutoLock lock(&s_MetadataCache.m_CacheMutex);
     Il2CppGenericInstSet::const_iterator iter = s_GenericInstSet.find(&inst);
     if (iter != s_GenericInstSet.end())
         return *iter;
@@ -551,20 +527,20 @@ const Il2CppGenericInst* MetadataCache::GetGenericInst(const Il2CppType* const* 
     return newInst;
 }
 
-const Il2CppGenericInst* MetadataCache::GetGenericInst(const Il2CppTypeVector& types)
+const Il2CppGenericInst* il2cpp::vm::MetadataCache::GetGenericInst(const il2cpp::metadata::Il2CppTypeVector& types)
 {
     return GetGenericInst(&types[0], static_cast<uint32_t>(types.size()));
 }
 
-static FastMutex s_GenericMethodMutex;
-const Il2CppGenericMethod* MetadataCache::GetGenericMethod(const MethodInfo* methodDefinition, const Il2CppGenericInst* classInst, const Il2CppGenericInst* methodInst)
+static il2cpp::os::FastMutex s_GenericMethodMutex;
+const Il2CppGenericMethod* il2cpp::vm::MetadataCache::GetGenericMethod(const MethodInfo* methodDefinition, const Il2CppGenericInst* classInst, const Il2CppGenericInst* methodInst)
 {
     Il2CppGenericMethod method = { 0 };
     method.methodDefinition = methodDefinition;
     method.context.class_inst = classInst;
     method.context.method_inst = methodInst;
 
-    FastAutoLock lock(&s_GenericMethodMutex);
+    il2cpp::os::FastAutoLock lock(&s_GenericMethodMutex);
     Il2CppGenericMethodSet::const_iterator iter = s_GenericMethodSet.find(&method);
     if (iter != s_GenericMethodSet.end())
         return *iter;
@@ -602,15 +578,14 @@ static const Il2CppGenericInst* GetSharedInst(const Il2CppGenericInst* inst)
     if (inst == NULL)
         return NULL;
 
-    Il2CppTypeVector types;
+    il2cpp::metadata::Il2CppTypeVector types;
     for (uint32_t i = 0; i < inst->type_argc; ++i)
     {
-        if (Type::IsReference(inst->type_argv[i]))
+        if (il2cpp::vm::Type::IsReference(inst->type_argv[i]))
             types.push_back(&il2cpp_defaults.object_class->byval_arg);
         else
         {
             const Il2CppType* type = inst->type_argv[i];
-#if NET_4_0
             if (s_Il2CppCodeGenOptions->enablePrimitiveValueTypeGenericSharing)
             {
                 if (IsShareableEnum(type))
@@ -648,25 +623,24 @@ static const Il2CppGenericInst* GetSharedInst(const Il2CppGenericInst* inst)
                     }
                 }
             }
-#endif
 
-            if (Type::IsGenericInstance(type))
+            if (il2cpp::vm::Type::IsGenericInstance(type))
             {
                 const Il2CppGenericInst* sharedInst = GetSharedInst(type->data.generic_class->context.class_inst);
-                Il2CppGenericClass* gklass = GenericMetadata::GetGenericClass(type->data.generic_class->typeDefinitionIndex, sharedInst);
-                Il2CppClass* klass = GenericClass::GetClass(gklass);
+                Il2CppGenericClass* gklass = il2cpp::metadata::GenericMetadata::GetGenericClass(type->data.generic_class->typeDefinitionIndex, sharedInst);
+                Il2CppClass* klass = il2cpp::vm::GenericClass::GetClass(gklass);
                 type = &klass->byval_arg;
             }
             types.push_back(type);
         }
     }
 
-    const Il2CppGenericInst* sharedInst = MetadataCache::GetGenericInst(types);
+    const Il2CppGenericInst* sharedInst = il2cpp::vm::MetadataCache::GetGenericInst(types);
 
     return sharedInst;
 }
 
-InvokerMethod MetadataCache::GetInvokerMethodPointer(const MethodInfo* methodDefinition, const Il2CppGenericContext* context)
+InvokerMethod il2cpp::vm::MetadataCache::GetInvokerMethodPointer(const MethodInfo* methodDefinition, const Il2CppGenericContext* context)
 {
     Il2CppGenericMethod method = { 0 };
     method.methodDefinition = const_cast<MethodInfo*>(methodDefinition);
@@ -697,7 +671,7 @@ InvokerMethod MetadataCache::GetInvokerMethodPointer(const MethodInfo* methodDef
     return NULL;
 }
 
-Il2CppMethodPointer MetadataCache::GetMethodPointer(const MethodInfo* methodDefinition, const Il2CppGenericContext* context)
+Il2CppMethodPointer il2cpp::vm::MetadataCache::GetMethodPointer(const MethodInfo* methodDefinition, const Il2CppGenericContext* context)
 {
     Il2CppGenericMethod method = { 0 };
     method.methodDefinition = const_cast<MethodInfo*>(methodDefinition);
@@ -708,6 +682,9 @@ Il2CppMethodPointer MetadataCache::GetMethodPointer(const MethodInfo* methodDefi
     if (iter != s_MethodTableMap.end())
     {
         IL2CPP_ASSERT(iter->second->invokerIndex >= 0);
+        if (iter->second->adjustorThunkIndex != -1)
+            return s_Il2CppCodeRegistration->genericAdjustorThunks[iter->second->adjustorThunkIndex];
+
         if (static_cast<uint32_t>(iter->second->methodIndex) < s_Il2CppCodeRegistration->genericMethodPointersCount)
             return s_Il2CppCodeRegistration->genericMethodPointers[iter->second->methodIndex];
         return NULL;
@@ -720,6 +697,9 @@ Il2CppMethodPointer MetadataCache::GetMethodPointer(const MethodInfo* methodDefi
     if (iter != s_MethodTableMap.end())
     {
         IL2CPP_ASSERT(iter->second->invokerIndex >= 0);
+        if (iter->second->adjustorThunkIndex != -1)
+            return s_Il2CppCodeRegistration->genericAdjustorThunks[iter->second->adjustorThunkIndex];
+
         if (static_cast<uint32_t>(iter->second->methodIndex) < s_Il2CppCodeRegistration->genericMethodPointersCount)
             return s_Il2CppCodeRegistration->genericMethodPointers[iter->second->methodIndex];
         return NULL;
@@ -728,7 +708,7 @@ Il2CppMethodPointer MetadataCache::GetMethodPointer(const MethodInfo* methodDefi
     return NULL;
 }
 
-Il2CppClass* MetadataCache::GetTypeInfoFromTypeIndex(TypeIndex index)
+Il2CppClass* il2cpp::vm::MetadataCache::GetTypeInfoFromTypeIndex(TypeIndex index, bool throwOnError)
 {
     if (index == kTypeIndexInvalid)
         return NULL;
@@ -739,14 +719,17 @@ Il2CppClass* MetadataCache::GetTypeInfoFromTypeIndex(TypeIndex index)
         return s_TypeInfoTable[index];
 
     const Il2CppType* type = s_Il2CppMetadataRegistration->types[index];
-    Il2CppClass *klass = il2cpp::vm::Class::FromIl2CppType(type);
-    Class::InitFromCodegen(klass);
-    s_TypeInfoTable[index] = klass;
+    Il2CppClass *klass = il2cpp::vm::Class::FromIl2CppType(type, throwOnError);
+    if (klass)
+    {
+        il2cpp::vm::ClassInlines::InitFromCodegen(klass);
+        s_TypeInfoTable[index] = klass;
+    }
 
     return s_TypeInfoTable[index];
 }
 
-const Il2CppType* MetadataCache::GetIl2CppTypeFromIndex(TypeIndex index)
+const Il2CppType* il2cpp::vm::MetadataCache::GetIl2CppTypeFromIndex(TypeIndex index)
 {
     if (index == kTypeIndexInvalid)
         return NULL;
@@ -756,7 +739,7 @@ const Il2CppType* MetadataCache::GetIl2CppTypeFromIndex(TypeIndex index)
     return s_Il2CppMetadataRegistration->types[index];
 }
 
-const MethodInfo* MetadataCache::GetMethodInfoFromIndex(EncodedMethodIndex methodIndex)
+const MethodInfo* il2cpp::vm::MetadataCache::GetMethodInfoFromIndex(EncodedMethodIndex methodIndex)
 {
     uint32_t index = GetDecodedMethodIndex(methodIndex);
 
@@ -764,12 +747,12 @@ const MethodInfo* MetadataCache::GetMethodInfoFromIndex(EncodedMethodIndex metho
         return NULL;
 
     if (GetEncodedIndexType(methodIndex) == kIl2CppMetadataUsageMethodRef)
-        return GenericMethod::GetMethod(GetGenericMethodFromIndex(index));
+        return il2cpp::metadata::GenericMethod::GetMethod(GetGenericMethodFromIndex(index));
     else
-        return MetadataCache::GetMethodInfoFromMethodDefinitionIndex(index);
+        return il2cpp::vm::MetadataCache::GetMethodInfoFromMethodDefinitionIndex(index);
 }
 
-const Il2CppGenericMethod* MetadataCache::GetGenericMethodFromIndex(GenericMethodIndex index)
+const Il2CppGenericMethod* il2cpp::vm::MetadataCache::GetGenericMethodFromIndex(GenericMethodIndex index)
 {
     IL2CPP_ASSERT(index < s_Il2CppMetadataRegistration->methodSpecsCount);
     if (s_GenericMethodTable[index])
@@ -794,17 +777,50 @@ const Il2CppGenericMethod* MetadataCache::GetGenericMethodFromIndex(GenericMetho
     return s_GenericMethodTable[index];
 }
 
-Il2CppMethodPointer MetadataCache::GetMethodPointerFromIndex(MethodIndex index)
+static int CompareIl2CppTokenAdjustorThunkPair(const void* pkey, const void* pelem)
 {
-    if (index == kMethodIndexInvalid)
-        return NULL;
-
-    IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) < s_Il2CppCodeRegistration->methodPointersCount);
-    return s_Il2CppCodeRegistration->methodPointers[index];
+    return (int)(((Il2CppTokenAdjustorThunkPair*)pkey)->token - ((Il2CppTokenAdjustorThunkPair*)pelem)->token);
 }
 
-InvokerMethod MetadataCache::GetMethodInvokerFromIndex(MethodIndex index)
+Il2CppMethodPointer il2cpp::vm::MetadataCache::GetAdjustorThunk(const Il2CppImage* image, uint32_t token)
 {
+    if (image->codeGenModule->adjustorThunkCount == 0)
+        return NULL;
+
+    Il2CppTokenAdjustorThunkPair key;
+    memset(&key, 0, sizeof(Il2CppTokenAdjustorThunkPair));
+    key.token = token;
+
+    const Il2CppTokenAdjustorThunkPair* result = (const Il2CppTokenAdjustorThunkPair*)bsearch(&key, image->codeGenModule->adjustorThunks,
+        image->codeGenModule->adjustorThunkCount, sizeof(Il2CppTokenAdjustorThunkPair), CompareIl2CppTokenAdjustorThunkPair);
+
+    if (result == NULL)
+        return NULL;
+
+    return result->adjustorThunk;
+}
+
+Il2CppMethodPointer il2cpp::vm::MetadataCache::GetMethodPointer(const Il2CppImage* image, uint32_t token)
+{
+    uint32_t rid = GetTokenRowId(token);
+    uint32_t table =  GetTokenType(token);
+    if (rid == 0)
+        return NULL;
+
+    IL2CPP_ASSERT(rid <= image->codeGenModule->methodPointerCount);
+
+    return image->codeGenModule->methodPointers[rid - 1];
+}
+
+InvokerMethod il2cpp::vm::MetadataCache::GetMethodInvoker(const Il2CppImage* image, uint32_t token)
+{
+    uint32_t rid = GetTokenRowId(token);
+    uint32_t table = GetTokenType(token);
+    if (rid == 0)
+        return NULL;
+
+    int32_t index = image->codeGenModule->invokerIndices[rid - 1];
+
     if (index == kMethodIndexInvalid)
         return NULL;
 
@@ -812,7 +828,7 @@ InvokerMethod MetadataCache::GetMethodInvokerFromIndex(MethodIndex index)
     return s_Il2CppCodeRegistration->invokerPointers[index];
 }
 
-const Il2CppInteropData* MetadataCache::GetInteropDataForType(const Il2CppType* type)
+const Il2CppInteropData* il2cpp::vm::MetadataCache::GetInteropDataForType(const Il2CppType* type)
 {
     IL2CPP_ASSERT(type != NULL);
     InteropDataMap::iterator interopData = s_InteropData.find_first(type);
@@ -822,9 +838,59 @@ const Il2CppInteropData* MetadataCache::GetInteropDataForType(const Il2CppType* 
     return interopData;
 }
 
-Il2CppMethodPointer MetadataCache::GetReversePInvokeWrapperFromIndex(MethodIndex index)
+static bool MatchTokens(Il2CppTokenIndexMethodTuple key, Il2CppTokenIndexMethodTuple element)
 {
-    if (index == kMethodIndexInvalid)
+    return key.token < element.token;
+}
+
+Il2CppMethodPointer il2cpp::vm::MetadataCache::GetReversePInvokeWrapper(const Il2CppImage* image, const MethodInfo* method)
+{
+    if (image->codeGenModule->reversePInvokeWrapperCount == 0)
+        return NULL;
+
+    // For each image (i.e. assembly), the reverse pinvoke wrapper indices are in an array sorted by
+    // metadata token. Each entry also might have the method metadata pointer, which is used to further
+    // find methods that have a matching metadata token.
+
+    Il2CppTokenIndexMethodTuple key;
+    memset(&key, 0, sizeof(Il2CppTokenIndexMethodTuple));
+    key.token = method->token;
+
+    // Binary search for a range which matches the metadata token.
+    auto begin = image->codeGenModule->reversePInvokeWrapperIndices;
+    auto end = image->codeGenModule->reversePInvokeWrapperIndices + image->codeGenModule->reversePInvokeWrapperCount;
+    auto matchingRange = std::equal_range(begin, end, key, &MatchTokens);
+
+    int32_t index = -1;
+    auto numberOfMatches = std::distance(matchingRange.first, matchingRange.second);
+    if (numberOfMatches == 1)
+    {
+        // Normal case - we found one non-generic method.
+        index = matchingRange.first->index;
+    }
+    else if (numberOfMatches > 1)
+    {
+        // Multiple generic instance methods share the same token, since it is from the generic method definition.
+        // To find the proper method, look for the one with a matching method metadata pointer.
+        const Il2CppTokenIndexMethodTuple* currentMatch = matchingRange.first;
+        const Il2CppTokenIndexMethodTuple* lastMatch = matchingRange.second;
+        while (currentMatch != lastMatch)
+        {
+            // First, check the method metadata, and use it if it has been initialized.
+            // If not, let's fall back to the generic method.
+            const MethodInfo* possibleMatch = (const MethodInfo*)*currentMatch->method;
+            if (possibleMatch == NULL)
+                possibleMatch = il2cpp::metadata::GenericMethod::GetMethod(GetGenericMethodFromIndex(currentMatch->genericMethodIndex));
+            if (possibleMatch == method)
+            {
+                index = currentMatch->index;
+                break;
+            }
+            currentMatch++;
+        }
+    }
+
+    if (index == -1)
         return NULL;
 
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) < s_Il2CppCodeRegistration->reversePInvokeWrapperCount);
@@ -836,8 +902,8 @@ static const Il2CppType* GetReducedType(const Il2CppType* type)
     if (type->byref)
         return &il2cpp_defaults.object_class->byval_arg;
 
-    if (Type::IsEnum(type))
-        type = Type::GetUnderlyingType(type);
+    if (il2cpp::vm::Type::IsEnum(type))
+        type = il2cpp::vm::Type::GetUnderlyingType(type);
 
     switch (type->type)
     {
@@ -853,7 +919,7 @@ static const Il2CppType* GetReducedType(const Il2CppType* type)
         case IL2CPP_TYPE_SZARRAY:
             return &il2cpp_defaults.object_class->byval_arg;
         case IL2CPP_TYPE_GENERICINST:
-            if (Type::GenericInstIsValuetype(type))
+            if (il2cpp::vm::Type::GenericInstIsValuetype(type))
                 return type;
             else
                 return &il2cpp_defaults.object_class->byval_arg;
@@ -862,7 +928,7 @@ static const Il2CppType* GetReducedType(const Il2CppType* type)
     }
 }
 
-Il2CppMethodPointer MetadataCache::GetUnresolvedVirtualCallStub(const MethodInfo* method)
+Il2CppMethodPointer il2cpp::vm::MetadataCache::GetUnresolvedVirtualCallStub(const MethodInfo* method)
 {
     il2cpp::utils::dynamic_array<const Il2CppType*> signature;
 
@@ -939,6 +1005,27 @@ static const int kBitHasStaticConstructor = 4;
 static const int kBitIsBlittable = 5;
 static const int kBitIsImportOrWindowsRuntime = 6;
 static const int kPackingSize = 7; // This uses 4 bits from bit 7 to bit 10
+static const int kPackingSizeIsDefault = 11;
+static const int kClassSizeIsDefault = 12;
+static const int kSpecifiedPackingSize = 13; // This uses 4 bits from bit 13 to bit 16
+
+int32_t il2cpp::vm::MetadataCache::StructLayoutPack(TypeDefinitionIndex index)
+{
+    const Il2CppTypeDefinition* typeDefinition = GetTypeDefinitionFromIndex(index);
+    return ConvertPackingSizeEnumToValue(static_cast<PackingSize>((typeDefinition->bitfield >> (kSpecifiedPackingSize - 1)) & 0xF));
+}
+
+bool il2cpp::vm::MetadataCache::StructLayoutPackIsDefault(TypeDefinitionIndex index)
+{
+    const Il2CppTypeDefinition* typeDefinition = GetTypeDefinitionFromIndex(index);
+    return (typeDefinition->bitfield >> (kPackingSizeIsDefault - 1)) & 0x1;
+}
+
+bool il2cpp::vm::MetadataCache::StructLayoutSizeIsDefault(TypeDefinitionIndex index)
+{
+    const Il2CppTypeDefinition* typeDefinition = GetTypeDefinitionFromIndex(index);
+    return (typeDefinition->bitfield >> (kClassSizeIsDefault - 1)) & 0x1;
+}
 
 static Il2CppClass* FromTypeDefinition(TypeDefinitionIndex index)
 {
@@ -949,10 +1036,10 @@ static Il2CppClass* FromTypeDefinition(TypeDefinitionIndex index)
     Il2CppClass* typeInfo = (Il2CppClass*)IL2CPP_CALLOC(1, sizeof(Il2CppClass) + (sizeof(VirtualInvokeData) * typeDefinition->vtable_count));
     typeInfo->klass = typeInfo;
     typeInfo->image = GetImageForTypeDefinitionIndex(index);
-    typeInfo->name = MetadataCache::GetStringFromIndex(typeDefinition->nameIndex);
-    typeInfo->namespaze = MetadataCache::GetStringFromIndex(typeDefinition->namespaceIndex);
-    typeInfo->byval_arg = *MetadataCache::GetIl2CppTypeFromIndex(typeDefinition->byvalTypeIndex);
-    typeInfo->this_arg = *MetadataCache::GetIl2CppTypeFromIndex(typeDefinition->byrefTypeIndex);
+    typeInfo->name = il2cpp::vm::MetadataCache::GetStringFromIndex(typeDefinition->nameIndex);
+    typeInfo->namespaze = il2cpp::vm::MetadataCache::GetStringFromIndex(typeDefinition->namespaceIndex);
+    typeInfo->byval_arg = *il2cpp::vm::MetadataCache::GetIl2CppTypeFromIndex(typeDefinition->byvalTypeIndex);
+    typeInfo->this_arg = *il2cpp::vm::MetadataCache::GetIl2CppTypeFromIndex(typeDefinition->byrefTypeIndex);
     typeInfo->typeDefinition = typeDefinition;
     typeInfo->genericContainerIndex = typeDefinition->genericContainerIndex;
     typeInfo->instance_size = typeDefinitionSizes->instance_size;
@@ -979,22 +1066,22 @@ static Il2CppClass* FromTypeDefinition(TypeDefinitionIndex index)
     typeInfo->interfaces_count = typeDefinition->interfaces_count;
     typeInfo->interface_offsets_count = typeDefinition->interface_offsets_count;
     typeInfo->token = typeDefinition->token;
-    typeInfo->interopData = MetadataCache::GetInteropDataForType(&typeInfo->byval_arg);
+    typeInfo->interopData = il2cpp::vm::MetadataCache::GetInteropDataForType(&typeInfo->byval_arg);
 
     if (typeDefinition->parentIndex != kTypeIndexInvalid)
-        typeInfo->parent = Class::FromIl2CppType(MetadataCache::GetIl2CppTypeFromIndex(typeDefinition->parentIndex));
+        typeInfo->parent = il2cpp::vm::Class::FromIl2CppType(il2cpp::vm::MetadataCache::GetIl2CppTypeFromIndex(typeDefinition->parentIndex));
 
     if (typeDefinition->declaringTypeIndex != kTypeIndexInvalid)
-        typeInfo->declaringType = Class::FromIl2CppType(MetadataCache::GetIl2CppTypeFromIndex(typeDefinition->declaringTypeIndex));
+        typeInfo->declaringType = il2cpp::vm::Class::FromIl2CppType(il2cpp::vm::MetadataCache::GetIl2CppTypeFromIndex(typeDefinition->declaringTypeIndex));
 
     typeInfo->castClass = typeInfo->element_class = typeInfo;
     if (typeInfo->enumtype)
-        typeInfo->castClass = typeInfo->element_class = Class::FromIl2CppType(MetadataCache::GetIl2CppTypeFromIndex(typeDefinition->elementTypeIndex));
+        typeInfo->castClass = typeInfo->element_class = il2cpp::vm::Class::FromIl2CppType(il2cpp::vm::MetadataCache::GetIl2CppTypeFromIndex(typeDefinition->elementTypeIndex));
 
     return typeInfo;
 }
 
-const Il2CppAssembly* MetadataCache::GetAssemblyFromIndex(AssemblyIndex index)
+const Il2CppAssembly* il2cpp::vm::MetadataCache::GetAssemblyFromIndex(AssemblyIndex index)
 {
     if (index == kGenericContainerIndexInvalid)
         return NULL;
@@ -1003,10 +1090,8 @@ const Il2CppAssembly* MetadataCache::GetAssemblyFromIndex(AssemblyIndex index)
     return s_AssembliesTable + index;
 }
 
-const Il2CppAssembly* MetadataCache::GetAssemblyByName(const std::string& name)
+const Il2CppAssembly* il2cpp::vm::MetadataCache::GetAssemblyByName(const char* nameToFind)
 {
-    const char* nameToFind = name.c_str();
-
     for (int i = 0; i < s_AssembliesCount; i++)
     {
         const Il2CppAssembly* assembly = s_AssembliesTable + i;
@@ -1020,7 +1105,7 @@ const Il2CppAssembly* MetadataCache::GetAssemblyByName(const std::string& name)
     return NULL;
 }
 
-Il2CppImage* MetadataCache::GetImageFromIndex(ImageIndex index)
+Il2CppImage* il2cpp::vm::MetadataCache::GetImageFromIndex(ImageIndex index)
 {
     if (index == kGenericContainerIndexInvalid)
         return NULL;
@@ -1029,7 +1114,7 @@ Il2CppImage* MetadataCache::GetImageFromIndex(ImageIndex index)
     return s_ImagesTable + index;
 }
 
-Il2CppClass* MetadataCache::GetTypeInfoFromTypeDefinitionIndex(TypeDefinitionIndex index)
+Il2CppClass* il2cpp::vm::MetadataCache::GetTypeInfoFromTypeDefinitionIndex(TypeDefinitionIndex index)
 {
     if (index == kTypeIndexInvalid)
         return NULL;
@@ -1039,7 +1124,7 @@ Il2CppClass* MetadataCache::GetTypeInfoFromTypeDefinitionIndex(TypeDefinitionInd
     if (!s_TypeInfoDefinitionTable[index])
     {
         // we need to use the metadata lock, since we may need to retrieve other Il2CppClass's when setting. Our parent may be a generic instance for example
-        FastAutoLock lock(&g_MetadataLock);
+        il2cpp::os::FastAutoLock lock(&g_MetadataLock);
         // double checked locking
         if (!s_TypeInfoDefinitionTable[index])
             s_TypeInfoDefinitionTable[index] = FromTypeDefinition(index);
@@ -1048,7 +1133,7 @@ Il2CppClass* MetadataCache::GetTypeInfoFromTypeDefinitionIndex(TypeDefinitionInd
     return s_TypeInfoDefinitionTable[index];
 }
 
-const Il2CppTypeDefinition* MetadataCache::GetTypeDefinitionFromIndex(TypeDefinitionIndex index)
+const Il2CppTypeDefinition* il2cpp::vm::MetadataCache::GetTypeDefinitionFromIndex(TypeDefinitionIndex index)
 {
     if (index == kTypeDefinitionIndexInvalid)
         return NULL;
@@ -1058,7 +1143,7 @@ const Il2CppTypeDefinition* MetadataCache::GetTypeDefinitionFromIndex(TypeDefini
     return typeDefinitions + index;
 }
 
-TypeDefinitionIndex MetadataCache::GetExportedTypeFromIndex(TypeDefinitionIndex index)
+TypeDefinitionIndex il2cpp::vm::MetadataCache::GetExportedTypeFromIndex(TypeDefinitionIndex index)
 {
     if (index == kTypeDefinitionIndexInvalid)
         return kTypeDefinitionIndexInvalid;
@@ -1068,7 +1153,7 @@ TypeDefinitionIndex MetadataCache::GetExportedTypeFromIndex(TypeDefinitionIndex 
     return *(exportedTypes + index);
 }
 
-const Il2CppGenericContainer* MetadataCache::GetGenericContainerFromIndex(GenericContainerIndex index)
+const Il2CppGenericContainer* il2cpp::vm::MetadataCache::GetGenericContainerFromIndex(GenericContainerIndex index)
 {
     if (index == kGenericContainerIndexInvalid)
         return NULL;
@@ -1078,7 +1163,7 @@ const Il2CppGenericContainer* MetadataCache::GetGenericContainerFromIndex(Generi
     return genericContainers + index;
 }
 
-const Il2CppGenericParameter* MetadataCache::GetGenericParameterFromIndex(GenericParameterIndex index)
+const Il2CppGenericParameter* il2cpp::vm::MetadataCache::GetGenericParameterFromIndex(GenericParameterIndex index)
 {
     if (index == kGenericParameterIndexInvalid)
         return NULL;
@@ -1088,7 +1173,7 @@ const Il2CppGenericParameter* MetadataCache::GetGenericParameterFromIndex(Generi
     return genericParameters + index;
 }
 
-const Il2CppType* MetadataCache::GetGenericParameterConstraintFromIndex(GenericParameterConstraintIndex index)
+const Il2CppType* il2cpp::vm::MetadataCache::GetGenericParameterConstraintFromIndex(GenericParameterConstraintIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->genericParameterConstraintsCount / sizeof(TypeIndex));
     const TypeIndex* constraintIndices = (const TypeIndex*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->genericParameterConstraintsOffset);
@@ -1096,7 +1181,7 @@ const Il2CppType* MetadataCache::GetGenericParameterConstraintFromIndex(GenericP
     return GetIl2CppTypeFromIndex(constraintIndices[index]);
 }
 
-Il2CppClass* MetadataCache::GetNestedTypeFromIndex(NestedTypeIndex index)
+Il2CppClass* il2cpp::vm::MetadataCache::GetNestedTypeFromIndex(NestedTypeIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->nestedTypesCount / sizeof(TypeDefinitionIndex));
     const TypeDefinitionIndex* nestedTypeIndices = (const TypeDefinitionIndex*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->nestedTypesOffset);
@@ -1104,7 +1189,7 @@ Il2CppClass* MetadataCache::GetNestedTypeFromIndex(NestedTypeIndex index)
     return GetTypeInfoFromTypeDefinitionIndex(nestedTypeIndices[index]);
 }
 
-const Il2CppType* MetadataCache::GetInterfaceFromIndex(InterfacesIndex index)
+const Il2CppType* il2cpp::vm::MetadataCache::GetInterfaceFromIndex(InterfacesIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->interfacesCount / sizeof(TypeIndex));
     const TypeIndex* interfaceIndices = (const TypeIndex*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->interfacesOffset);
@@ -1112,7 +1197,7 @@ const Il2CppType* MetadataCache::GetInterfaceFromIndex(InterfacesIndex index)
     return GetIl2CppTypeFromIndex(interfaceIndices[index]);
 }
 
-EncodedMethodIndex MetadataCache::GetVTableMethodFromIndex(VTableIndex index)
+EncodedMethodIndex il2cpp::vm::MetadataCache::GetVTableMethodFromIndex(VTableIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->vtableMethodsCount / sizeof(EncodedMethodIndex));
     const EncodedMethodIndex* methodReferences = (const EncodedMethodIndex*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->vtableMethodsOffset);
@@ -1120,7 +1205,7 @@ EncodedMethodIndex MetadataCache::GetVTableMethodFromIndex(VTableIndex index)
     return methodReferences[index];
 }
 
-Il2CppInterfaceOffsetPair MetadataCache::GetInterfaceOffsetIndex(InterfaceOffsetIndex index)
+Il2CppInterfaceOffsetPair il2cpp::vm::MetadataCache::GetInterfaceOffsetIndex(InterfaceOffsetIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->interfaceOffsetsCount / sizeof(Il2CppInterfaceOffsetPair));
     const Il2CppInterfaceOffsetPair* interfaceOffsets = (const Il2CppInterfaceOffsetPair*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->interfaceOffsetsOffset);
@@ -1128,48 +1213,66 @@ Il2CppInterfaceOffsetPair MetadataCache::GetInterfaceOffsetIndex(InterfaceOffset
     return interfaceOffsets[index];
 }
 
-const Il2CppRGCTXDefinition* MetadataCache::GetRGCTXDefinitionFromIndex(RGCTXIndex index)
+static int CompareIl2CppTokenRangePair(const void* pkey, const void* pelem)
 {
-    IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->rgctxEntriesCount / sizeof(Il2CppRGCTXDefinition));
-    const Il2CppRGCTXDefinition* rgctxEntries = (const Il2CppRGCTXDefinition*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->rgctxEntriesOffset);
-
-    return rgctxEntries  + index;
+    return (int)(((Il2CppTokenRangePair*)pkey)->token - ((Il2CppTokenRangePair*)pelem)->token);
 }
 
-const Il2CppEventDefinition* MetadataCache::GetEventDefinitionFromIndex(EventIndex index)
+il2cpp::vm::RGCTXCollection il2cpp::vm::MetadataCache::GetRGCTXs(const Il2CppImage* image, uint32_t token)
+{
+    il2cpp::vm::RGCTXCollection collection = { 0, NULL };
+    if (image->codeGenModule->rgctxRangesCount == 0)
+        return collection;
+
+    Il2CppTokenRangePair key;
+    memset(&key, 0, sizeof(Il2CppTokenRangePair));
+    key.token = token;
+
+    const Il2CppTokenRangePair* res = (const Il2CppTokenRangePair*)bsearch(&key, image->codeGenModule->rgctxRanges, image->codeGenModule->rgctxRangesCount, sizeof(Il2CppTokenRangePair), CompareIl2CppTokenRangePair);
+
+    if (res == NULL)
+        return collection;
+
+    collection.count = res->range.length;
+    collection.items = image->codeGenModule->rgctxs + res->range.start;
+
+    return collection;
+}
+
+const Il2CppEventDefinition* il2cpp::vm::MetadataCache::GetEventDefinitionFromIndex(EventIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->eventsCount / sizeof(Il2CppEventDefinition));
     const Il2CppEventDefinition* events = (const Il2CppEventDefinition*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->eventsOffset);
     return events + index;
 }
 
-const Il2CppFieldDefinition* MetadataCache::GetFieldDefinitionFromIndex(FieldIndex index)
+const Il2CppFieldDefinition* il2cpp::vm::MetadataCache::GetFieldDefinitionFromIndex(FieldIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->fieldsCount / sizeof(Il2CppFieldDefinition));
     const Il2CppFieldDefinition* fields = (const Il2CppFieldDefinition*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->fieldsOffset);
     return fields + index;
 }
 
-const Il2CppFieldDefaultValue* MetadataCache::GetFieldDefaultValueFromIndex(FieldIndex index)
+const Il2CppFieldDefaultValue* il2cpp::vm::MetadataCache::GetFieldDefaultValueFromIndex(FieldIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->fieldDefaultValuesCount / sizeof(Il2CppFieldDefaultValue));
     const Il2CppFieldDefaultValue* defaultValues = (const Il2CppFieldDefaultValue*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->fieldDefaultValuesOffset);
     return defaultValues + index;
 }
 
-const uint8_t* MetadataCache::GetFieldDefaultValueDataFromIndex(FieldIndex index)
+const uint8_t* il2cpp::vm::MetadataCache::GetFieldDefaultValueDataFromIndex(FieldIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->fieldAndParameterDefaultValueDataCount / sizeof(uint8_t));
     const uint8_t* defaultValuesData = (const uint8_t*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->fieldAndParameterDefaultValueDataOffset);
     return defaultValuesData + index;
 }
 
-const Il2CppFieldDefaultValue* MetadataCache::GetFieldDefaultValueForField(const FieldInfo* field)
+const Il2CppFieldDefaultValue* il2cpp::vm::MetadataCache::GetFieldDefaultValueForField(const FieldInfo* field)
 {
     Il2CppClass* parent = field->parent;
     size_t fieldIndex = (field - parent->fields);
-    if (Type::IsGenericInstance(&parent->byval_arg))
-        fieldIndex += GenericClass::GetTypeDefinition(parent->generic_class)->typeDefinition->fieldStart;
+    if (il2cpp::vm::Type::IsGenericInstance(&parent->byval_arg))
+        fieldIndex += il2cpp::vm::GenericClass::GetTypeDefinition(parent->generic_class)->typeDefinition->fieldStart;
     else
         fieldIndex += parent->typeDefinition->fieldStart;
     const Il2CppFieldDefaultValue *start = (const Il2CppFieldDefaultValue*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->fieldDefaultValuesOffset);
@@ -1209,14 +1312,14 @@ const Il2CppParameterDefaultValue * il2cpp::vm::MetadataCache::GetParameterDefau
     return NULL;
 }
 
-const uint8_t* MetadataCache::GetParameterDefaultValueDataFromIndex(ParameterIndex index)
+const uint8_t* il2cpp::vm::MetadataCache::GetParameterDefaultValueDataFromIndex(ParameterIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->fieldAndParameterDefaultValueDataCount / sizeof(uint8_t));
     const uint8_t* defaultValuesData = (const uint8_t*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->fieldAndParameterDefaultValueDataOffset);
     return defaultValuesData + index;
 }
 
-int MetadataCache::GetFieldMarshaledSizeForField(const FieldInfo* field)
+int il2cpp::vm::MetadataCache::GetFieldMarshaledSizeForField(const FieldInfo* field)
 {
     Il2CppClass* parent = field->parent;
     size_t fieldIndex = (field - parent->fields);
@@ -1233,14 +1336,14 @@ int MetadataCache::GetFieldMarshaledSizeForField(const FieldInfo* field)
     return -1;
 }
 
-const Il2CppMethodDefinition* MetadataCache::GetMethodDefinitionFromIndex(MethodIndex index)
+const Il2CppMethodDefinition* il2cpp::vm::MetadataCache::GetMethodDefinitionFromIndex(MethodIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->methodsCount / sizeof(Il2CppMethodDefinition));
     const Il2CppMethodDefinition* methods = (const Il2CppMethodDefinition*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->methodsOffset);
     return methods + index;
 }
 
-const MethodInfo* MetadataCache::GetMethodInfoFromMethodDefinitionIndex(MethodIndex index)
+const MethodInfo* il2cpp::vm::MetadataCache::GetMethodInfoFromMethodDefinitionIndex(MethodIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->methodsCount / sizeof(Il2CppMethodDefinition));
 
@@ -1248,28 +1351,28 @@ const MethodInfo* MetadataCache::GetMethodInfoFromMethodDefinitionIndex(MethodIn
     {
         const Il2CppMethodDefinition* methodDefinition = GetMethodDefinitionFromIndex(index);
         Il2CppClass* typeInfo = GetTypeInfoFromTypeDefinitionIndex(methodDefinition->declaringType);
-        Class::SetupMethods(typeInfo);
+        il2cpp::vm::Class::SetupMethods(typeInfo);
         s_MethodInfoDefinitionTable[index] = typeInfo->methods[index - typeInfo->typeDefinition->methodStart];
     }
 
     return s_MethodInfoDefinitionTable[index];
 }
 
-const Il2CppPropertyDefinition* MetadataCache::GetPropertyDefinitionFromIndex(PropertyIndex index)
+const Il2CppPropertyDefinition* il2cpp::vm::MetadataCache::GetPropertyDefinitionFromIndex(PropertyIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->propertiesCount / sizeof(Il2CppPropertyDefinition));
     const Il2CppPropertyDefinition* properties = (const Il2CppPropertyDefinition*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->propertiesOffset);
     return properties + index;
 }
 
-const Il2CppParameterDefinition* MetadataCache::GetParameterDefinitionFromIndex(ParameterIndex index)
+const Il2CppParameterDefinition* il2cpp::vm::MetadataCache::GetParameterDefinitionFromIndex(ParameterIndex index)
 {
     IL2CPP_ASSERT(index >= 0 && static_cast<uint32_t>(index) <= s_GlobalMetadataHeader->parametersCount / sizeof(Il2CppParameterDefinition));
     const Il2CppParameterDefinition* parameters = (const Il2CppParameterDefinition*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->parametersOffset);
     return parameters + index;
 }
 
-int32_t MetadataCache::GetFieldOffsetFromIndexLocked(TypeIndex typeIndex, int32_t fieldIndexInType, FieldInfo* field, const FastAutoLock& lock)
+int32_t il2cpp::vm::MetadataCache::GetFieldOffsetFromIndexLocked(TypeIndex typeIndex, int32_t fieldIndexInType, FieldInfo* field, const il2cpp::os::FastAutoLock& lock)
 {
     IL2CPP_ASSERT(typeIndex <= s_Il2CppMetadataRegistration->typeDefinitionsSizesCount);
     int32_t offset = s_Il2CppMetadataRegistration->fieldOffsets[typeIndex][fieldIndexInType];
@@ -1281,29 +1384,29 @@ int32_t MetadataCache::GetFieldOffsetFromIndexLocked(TypeIndex typeIndex, int32_
     return offset;
 }
 
-void MetadataCache::AddThreadLocalStaticOffsetForFieldLocked(FieldInfo* field, int32_t offset, const FastAutoLock& lock)
+void il2cpp::vm::MetadataCache::AddThreadLocalStaticOffsetForFieldLocked(FieldInfo* field, int32_t offset, const il2cpp::os::FastAutoLock& lock)
 {
     s_ThreadLocalStaticOffsetMap.add(field, offset);
 }
 
-int32_t MetadataCache::GetThreadLocalStaticOffsetForField(FieldInfo* field)
+int32_t il2cpp::vm::MetadataCache::GetThreadLocalStaticOffsetForField(FieldInfo* field)
 {
     IL2CPP_ASSERT(field->offset == THREAD_STATIC_FIELD_OFFSET);
 
-    FastAutoLock lock(&g_MetadataLock);
+    il2cpp::os::FastAutoLock lock(&g_MetadataLock);
     Il2CppThreadLocalStaticOffsetHashMapIter iter = s_ThreadLocalStaticOffsetMap.find(field);
     IL2CPP_ASSERT(iter != s_ThreadLocalStaticOffsetMap.end());
     return iter->second;
 }
 
-int32_t MetadataCache::GetReferenceAssemblyIndexIntoAssemblyTable(int32_t referencedAssemblyTableIndex)
+int32_t il2cpp::vm::MetadataCache::GetReferenceAssemblyIndexIntoAssemblyTable(int32_t referencedAssemblyTableIndex)
 {
     IL2CPP_ASSERT(referencedAssemblyTableIndex >= 0 && static_cast<uint32_t>(referencedAssemblyTableIndex) <= s_GlobalMetadataHeader->referencedAssembliesCount / sizeof(int32_t));
     const int32_t* referenceAssemblyIndicies = (const int32_t*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->referencedAssembliesOffset);
     return referenceAssemblyIndicies[referencedAssemblyTableIndex];
 }
 
-const TypeDefinitionIndex MetadataCache::GetIndexForTypeDefinition(const Il2CppClass* typeDefinition)
+const TypeDefinitionIndex il2cpp::vm::MetadataCache::GetIndexForTypeDefinition(const Il2CppClass* typeDefinition)
 {
     IL2CPP_ASSERT(typeDefinition->typeDefinition);
     const Il2CppTypeDefinition* typeDefinitions = (const Il2CppTypeDefinition*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->typeDefinitionsOffset);
@@ -1315,7 +1418,7 @@ const TypeDefinitionIndex MetadataCache::GetIndexForTypeDefinition(const Il2CppC
     return static_cast<TypeDefinitionIndex>(index);
 }
 
-const GenericParameterIndex MetadataCache::GetIndexForGenericParameter(const Il2CppGenericParameter* genericParameter)
+const GenericParameterIndex il2cpp::vm::MetadataCache::GetIndexForGenericParameter(const Il2CppGenericParameter* genericParameter)
 {
     const Il2CppGenericParameter* genericParameters = (const Il2CppGenericParameter*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->genericParametersOffset);
 
@@ -1326,7 +1429,7 @@ const GenericParameterIndex MetadataCache::GetIndexForGenericParameter(const Il2
     return static_cast<GenericParameterIndex>(index);
 }
 
-const MethodIndex MetadataCache::GetIndexForMethodDefinition(const MethodInfo* method)
+const MethodIndex il2cpp::vm::MetadataCache::GetIndexForMethodDefinition(const MethodInfo* method)
 {
     IL2CPP_ASSERT(!method->is_inflated);
     const Il2CppMethodDefinition* methodDefinitions = (const Il2CppMethodDefinition*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->methodsOffset);
@@ -1338,14 +1441,14 @@ const MethodIndex MetadataCache::GetIndexForMethodDefinition(const MethodInfo* m
     return static_cast<MethodIndex>(index);
 }
 
-static OnceFlag s_CustomAttributesOnceFlag;
+static il2cpp::utils::OnceFlag s_CustomAttributesOnceFlag;
 
 static void InitializeCustomAttributesCaches(void* arg)
 {
     s_CustomAttributesCaches = (CustomAttributesCache**)IL2CPP_CALLOC(s_Il2CppCodeRegistration->customAttributeCount, sizeof(CustomAttributesCache*));
 }
 
-CustomAttributesCache* MetadataCache::GenerateCustomAttributesCache(CustomAttributeIndex index)
+CustomAttributesCache* il2cpp::vm::MetadataCache::GenerateCustomAttributesCache(CustomAttributeIndex index)
 {
     if (index == kCustomAttributeIndexInvalid)
         return NULL;
@@ -1353,35 +1456,35 @@ CustomAttributesCache* MetadataCache::GenerateCustomAttributesCache(CustomAttrib
     IL2CPP_ASSERT(index >= 0 && index < s_Il2CppCodeRegistration->customAttributeCount);
     IL2CPP_ASSERT(index >= 0 && index < static_cast<int32_t>(s_GlobalMetadataHeader->attributesInfoCount / sizeof(Il2CppCustomAttributeTypeRange)));
 
-    CallOnce(s_CustomAttributesOnceFlag, &InitializeCustomAttributesCaches, NULL);
+    il2cpp::utils::CallOnce(s_CustomAttributesOnceFlag, &InitializeCustomAttributesCaches, NULL);
 
     // use atomics rather than a Mutex here to avoid deadlock. The attribute generators call arbitrary managed code
-    CustomAttributesCache* cache = Atomic::ReadPointer(&s_CustomAttributesCaches[index]);
+    CustomAttributesCache* cache = il2cpp::os::Atomic::ReadPointer(&s_CustomAttributesCaches[index]);
     if (cache == NULL)
     {
         const Il2CppCustomAttributeTypeRange* attributeTypeRange = MetadataOffset<const Il2CppCustomAttributeTypeRange*>(s_GlobalMetadata, s_GlobalMetadataHeader->attributesInfoOffset, index);
 
         cache = (CustomAttributesCache*)IL2CPP_CALLOC(1, sizeof(CustomAttributesCache));
         cache->count = attributeTypeRange->count;
-        cache->attributes = (Il2CppObject**)GarbageCollector::AllocateFixed(sizeof(Il2CppObject *) * cache->count, 0);
+        cache->attributes = (Il2CppObject**)il2cpp::gc::GarbageCollector::AllocateFixed(sizeof(Il2CppObject *) * cache->count, 0);
 
         for (int32_t i = 0; i < attributeTypeRange->count; i++)
         {
             IL2CPP_ASSERT(attributeTypeRange->start + i < s_GlobalMetadataHeader->attributeTypesCount);
             TypeIndex typeIndex = *MetadataOffset<TypeIndex*>(s_GlobalMetadata, s_GlobalMetadataHeader->attributeTypesOffset, attributeTypeRange->start + i);
             cache->attributes[i] = il2cpp::vm::Object::New(GetTypeInfoFromTypeIndex(typeIndex));
-            GarbageCollector::SetWriteBarrier((void**)cache->attributes + i);
+            il2cpp::gc::GarbageCollector::SetWriteBarrier((void**)cache->attributes + i);
         }
 
         // generated code calls the attribute constructor and sets any fields/properties
         s_Il2CppCodeRegistration->customAttributeGenerators[index](cache);
 
-        CustomAttributesCache* original = Atomic::CompareExchangePointer(&s_CustomAttributesCaches[index], cache, (CustomAttributesCache*)NULL);
+        CustomAttributesCache* original = il2cpp::os::Atomic::CompareExchangePointer(&s_CustomAttributesCaches[index], cache, (CustomAttributesCache*)NULL);
         if (original)
         {
             // A non-NULL return value indicates some other thread already generated this cache.
             // We need to cleanup the resources we allocated
-            GarbageCollector::FreeFixed(cache->attributes);
+            il2cpp::gc::GarbageCollector::FreeFixed(cache->attributes);
             IL2CPP_FREE(cache);
 
             cache = original;
@@ -1396,7 +1499,7 @@ static int CompareTokens(const void* pkey, const void* pelem)
     return (int)(((Il2CppCustomAttributeTypeRange*)pkey)->token - ((Il2CppCustomAttributeTypeRange*)pelem)->token);
 }
 
-CustomAttributeIndex MetadataCache::GetCustomAttributeIndex(const Il2CppImage* image, uint32_t token)
+CustomAttributeIndex il2cpp::vm::MetadataCache::GetCustomAttributeIndex(const Il2CppImage* image, uint32_t token)
 {
     const Il2CppCustomAttributeTypeRange* attributeTypeRange = MetadataOffset<const Il2CppCustomAttributeTypeRange*>(s_GlobalMetadata, s_GlobalMetadataHeader->attributesInfoOffset, 0);
 
@@ -1416,12 +1519,12 @@ CustomAttributeIndex MetadataCache::GetCustomAttributeIndex(const Il2CppImage* i
     return index;
 }
 
-CustomAttributesCache* MetadataCache::GenerateCustomAttributesCache(const Il2CppImage* image, uint32_t token)
+CustomAttributesCache* il2cpp::vm::MetadataCache::GenerateCustomAttributesCache(const Il2CppImage* image, uint32_t token)
 {
     return GenerateCustomAttributesCache(GetCustomAttributeIndex(image, token));
 }
 
-bool MetadataCache::HasAttribute(CustomAttributeIndex index, Il2CppClass* attribute)
+bool il2cpp::vm::MetadataCache::HasAttribute(CustomAttributeIndex index, Il2CppClass* attribute)
 {
     if (index == kCustomAttributeIndexInvalid)
         return false;
@@ -1436,19 +1539,19 @@ bool MetadataCache::HasAttribute(CustomAttributeIndex index, Il2CppClass* attrib
         TypeIndex typeIndex = *MetadataOffset<TypeIndex*>(s_GlobalMetadata, s_GlobalMetadataHeader->attributeTypesOffset, attributeTypeRange->start + i);
         Il2CppClass* klass = GetTypeInfoFromTypeIndex(typeIndex);
 
-        if (Class::HasParent(klass, attribute) || (Class::IsInterface(attribute) && Class::IsAssignableFrom(attribute, klass)))
+        if (il2cpp::vm::Class::HasParent(klass, attribute) || (il2cpp::vm::Class::IsInterface(attribute) && il2cpp::vm::Class::IsAssignableFrom(attribute, klass)))
             return true;
     }
 
     return false;
 }
 
-bool MetadataCache::HasAttribute(const Il2CppImage* image, uint32_t token, Il2CppClass* attribute)
+bool il2cpp::vm::MetadataCache::HasAttribute(const Il2CppImage* image, uint32_t token, Il2CppClass* attribute)
 {
     return HasAttribute(GetCustomAttributeIndex(image, token), attribute);
 }
 
-Il2CppString* MetadataCache::GetStringLiteralFromIndex(StringLiteralIndex index)
+Il2CppString* il2cpp::vm::MetadataCache::GetStringLiteralFromIndex(StringLiteralIndex index)
 {
     if (index == kStringLiteralIndexInvalid)
         return NULL;
@@ -1460,19 +1563,19 @@ Il2CppString* MetadataCache::GetStringLiteralFromIndex(StringLiteralIndex index)
 
     const Il2CppStringLiteral* stringLiteral = (const Il2CppStringLiteral*)((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->stringLiteralOffset) + index;
     s_StringLiteralTable[index] = String::NewLen((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->stringLiteralDataOffset + stringLiteral->dataIndex, stringLiteral->length);
-    GarbageCollector::SetWriteBarrier((void**)s_StringLiteralTable + index);
+    il2cpp::gc::GarbageCollector::SetWriteBarrier((void**)s_StringLiteralTable + index);
 
     return s_StringLiteralTable[index];
 }
 
-const char* MetadataCache::GetStringFromIndex(StringIndex index)
+const char* il2cpp::vm::MetadataCache::GetStringFromIndex(StringIndex index)
 {
     IL2CPP_ASSERT(index <= s_GlobalMetadataHeader->stringCount);
     const char* strings = ((const char*)s_GlobalMetadata + s_GlobalMetadataHeader->stringOffset) + index;
     return strings;
 }
 
-FieldInfo* MetadataCache::GetFieldInfoFromIndex(EncodedMethodIndex index)
+FieldInfo* il2cpp::vm::MetadataCache::GetFieldInfoFromIndex(EncodedMethodIndex index)
 {
     IL2CPP_ASSERT(s_GlobalMetadataHeader->fieldRefsCount >= 0 && index <= static_cast<uint32_t>(s_GlobalMetadataHeader->fieldRefsCount));
 
@@ -1481,7 +1584,7 @@ FieldInfo* MetadataCache::GetFieldInfoFromIndex(EncodedMethodIndex index)
     return typeInfo->fields + fieldRef->fieldIndex;
 }
 
-static bool IsMatchingUsage(Il2CppMetadataUsage usage, const utils::dynamic_array<Il2CppMetadataUsage>& expectedUsages)
+static bool IsMatchingUsage(Il2CppMetadataUsage usage, const il2cpp::utils::dynamic_array<Il2CppMetadataUsage>& expectedUsages)
 {
     if (expectedUsages.empty())
         return true;
@@ -1496,7 +1599,10 @@ static bool IsMatchingUsage(Il2CppMetadataUsage usage, const utils::dynamic_arra
     return false;
 }
 
-void MetadataCache::IntializeMethodMetadataRange(uint32_t start, uint32_t count, const utils::dynamic_array<Il2CppMetadataUsage>& expectedUsages)
+// This method can be called from multiple threads, so it does have a data race. However, each
+// thread is reading from the same read-only metadata, so each thread will set the same values.
+// Therefore, we can safely ignore thread sanitizer issues in this method.
+void il2cpp::vm::MetadataCache::IntializeMethodMetadataRange(uint32_t start, uint32_t count, const il2cpp::utils::dynamic_array<Il2CppMetadataUsage>& expectedUsages, bool throwOnError) IL2CPP_DISABLE_TSAN
 {
     for (uint32_t i = 0; i < count; i++)
     {
@@ -1513,7 +1619,7 @@ void MetadataCache::IntializeMethodMetadataRange(uint32_t start, uint32_t count,
             switch (usage)
             {
                 case kIl2CppMetadataUsageTypeInfo:
-                    *s_Il2CppMetadataRegistration->metadataUsages[destinationIndex] = GetTypeInfoFromTypeIndex(decodedIndex);
+                    *s_Il2CppMetadataRegistration->metadataUsages[destinationIndex] = GetTypeInfoFromTypeIndex(decodedIndex, throwOnError);
                     break;
                 case kIl2CppMetadataUsageIl2CppType:
                     *s_Il2CppMetadataRegistration->metadataUsages[destinationIndex] = const_cast<Il2CppType*>(GetIl2CppTypeFromIndex(decodedIndex));
@@ -1529,23 +1635,23 @@ void MetadataCache::IntializeMethodMetadataRange(uint32_t start, uint32_t count,
                     *s_Il2CppMetadataRegistration->metadataUsages[destinationIndex] = GetStringLiteralFromIndex(decodedIndex);
                     break;
                 default:
-                    IL2CPP_NOT_IMPLEMENTED(MetadataCache::InitializeMethodMetadata);
+                    IL2CPP_NOT_IMPLEMENTED(il2cpp::vm::MetadataCache::InitializeMethodMetadata);
                     break;
             }
         }
     }
 }
 
-void MetadataCache::InitializeAllMethodMetadata()
+void il2cpp::vm::MetadataCache::InitializeAllMethodMetadata()
 {
-    utils::dynamic_array<Il2CppMetadataUsage> onlyAcceptMethodUsages;
+    il2cpp::utils::dynamic_array<Il2CppMetadataUsage> onlyAcceptMethodUsages;
     onlyAcceptMethodUsages.push_back(kIl2CppMetadataUsageMethodDef);
     onlyAcceptMethodUsages.push_back(kIl2CppMetadataUsageMethodRef);
     onlyAcceptMethodUsages.push_back(kIl2CppMetadataUsageTypeInfo);
-    IntializeMethodMetadataRange(0, s_GlobalMetadataHeader->metadataUsagePairsCount / sizeof(Il2CppMetadataUsagePair), onlyAcceptMethodUsages);
+    IntializeMethodMetadataRange(0, s_GlobalMetadataHeader->metadataUsagePairsCount / sizeof(Il2CppMetadataUsagePair), onlyAcceptMethodUsages, false);
 }
 
-void MetadataCache::InitializeMethodMetadata(uint32_t index)
+void il2cpp::vm::MetadataCache::InitializeMethodMetadata(uint32_t index)
 {
     IL2CPP_ASSERT(s_GlobalMetadataHeader->metadataUsageListsCount >= 0 && index <= static_cast<uint32_t>(s_GlobalMetadataHeader->metadataUsageListsCount));
 
@@ -1554,13 +1660,13 @@ void MetadataCache::InitializeMethodMetadata(uint32_t index)
     uint32_t start = metadataUsageLists->start;
     uint32_t count = metadataUsageLists->count;
 
-    utils::dynamic_array<Il2CppMetadataUsage> acceptAllUsages;
-    IntializeMethodMetadataRange(start, count, acceptAllUsages);
+    il2cpp::utils::dynamic_array<Il2CppMetadataUsage> acceptAllUsages;
+    IntializeMethodMetadataRange(start, count, acceptAllUsages, true);
 }
 
-void MetadataCache::WalkPointerTypes(WalkTypesCallback callback, void* context)
+void il2cpp::vm::MetadataCache::WalkPointerTypes(WalkTypesCallback callback, void* context)
 {
-    os::FastAutoLock lock(&s_MetadataCache.m_CacheMutex);
+    il2cpp::os::FastAutoLock lock(&s_MetadataCache.m_CacheMutex);
     for (PointerTypeMap::iterator it = s_MetadataCache.m_PointerTypes.begin(); it != s_MetadataCache.m_PointerTypes.end(); it++)
     {
         callback(it->second, context);

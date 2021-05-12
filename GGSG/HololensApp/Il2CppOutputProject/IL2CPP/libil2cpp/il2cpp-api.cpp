@@ -1,6 +1,8 @@
 #include "il2cpp-api.h"
 #include "il2cpp-object-internals.h"
+#include "il2cpp-runtime-stats.h"
 
+#include "os/StackTrace.h"
 #include "vm/Array.h"
 #include "vm/Assembly.h"
 #include "vm/Class.h"
@@ -32,9 +34,11 @@
 #include "utils/Runtime.h"
 #include "utils/Environment.h"
 #include "vm-utils/Debugger.h"
+#include "vm-utils/NativeSymbol.h"
 
 #include "gc/GarbageCollector.h"
 #include "gc/GCHandle.h"
+#include "gc/WriteBarrierValidation.h"
 
 #include <locale.h>
 #include <fstream>
@@ -84,15 +88,15 @@ void* il2cpp_api_lookup_symbol(const char* name)
 
 #endif // IL2CPP_API_DYNAMIC_NO_DLSYM
 
-void il2cpp_init(const char* domain_name)
+int il2cpp_init(const char* domain_name)
 {
     // Use environment's default locale
     setlocale(LC_ALL, "");
 
-    Runtime::Init(domain_name);
+    return Runtime::Init(domain_name);
 }
 
-void il2cpp_init_utf16(const Il2CppChar* domain_name)
+int il2cpp_init_utf16(const Il2CppChar* domain_name)
 {
     return il2cpp_init(il2cpp::utils::StringUtils::Utf16ToUtf8(domain_name).c_str());
 }
@@ -422,6 +426,16 @@ int il2cpp_class_get_rank(const Il2CppClass *klass)
     return klass->rank;
 }
 
+uint32_t il2cpp_class_get_data_size(const Il2CppClass *klass)
+{
+    return klass->static_fields_size;
+}
+
+void* il2cpp_class_get_static_field_data(const Il2CppClass *klass)
+{
+    return klass->static_fields;
+}
+
 // testing only
 size_t il2cpp_class_get_bitmap_size(const Il2CppClass *klass)
 {
@@ -627,6 +641,11 @@ void il2cpp_field_static_set_value(FieldInfo *field, void *value)
     Field::StaticSetValue(field, value);
 }
 
+bool il2cpp_field_is_literal(FieldInfo *field)
+{
+    return (field->type->attrs & FIELD_ATTRIBUTE_LITERAL) != 0;
+}
+
 // gc
 void il2cpp_gc_collect(int maxGenerations)
 {
@@ -653,6 +672,21 @@ bool il2cpp_gc_is_disabled()
     return GarbageCollector::IsDisabled();
 }
 
+bool il2cpp_gc_is_incremental()
+{
+    return GarbageCollector::IsIncremental();
+}
+
+int64_t il2cpp_gc_get_max_time_slice_ns()
+{
+    return GarbageCollector::GetMaxTimeSliceNs();
+}
+
+void il2cpp_gc_set_max_time_slice_ns(int64_t maxTimeSlice)
+{
+    GarbageCollector::SetMaxTimeSliceNs(maxTimeSlice);
+}
+
 int64_t il2cpp_gc_get_used_size()
 {
     return GarbageCollector::GetUsedHeapSize();
@@ -661,6 +695,24 @@ int64_t il2cpp_gc_get_used_size()
 int64_t il2cpp_gc_get_heap_size()
 {
     return GarbageCollector::GetAllocatedHeapSize();
+}
+
+void il2cpp_gc_foreach_heap(void(*func)(void* data, void* context), void* userData)
+{
+    MemoryInformation::IterationContext ctx;
+    ctx.callback = func;
+    ctx.userData = userData;
+    il2cpp::gc::GarbageCollector::ForEachHeapSection(&ctx, MemoryInformation::ReportGcHeapSection);
+}
+
+void il2cpp_stop_gc_world()
+{
+    il2cpp::gc::GarbageCollector::StopWorld();
+}
+
+void il2cpp_start_gc_world()
+{
+    il2cpp::gc::GarbageCollector::StartWorld();
 }
 
 // gchandle
@@ -680,15 +732,72 @@ Il2CppObject* il2cpp_gchandle_get_target(uint32_t gchandle)
     return GCHandle::GetTarget(gchandle);
 }
 
+void il2cpp_gchandle_foreach_get_target(void(*func)(void*, void*), void* userData)
+{
+    MemoryInformation::IterationContext ctx;
+    ctx.callback = func;
+    ctx.userData = userData;
+    il2cpp::gc::GCHandle::WalkStrongGCHandleTargets(MemoryInformation::ReportGcHandleTarget, &ctx);
+}
+
 void il2cpp_gc_wbarrier_set_field(Il2CppObject *obj, void **targetAddress, void *object)
 {
     *targetAddress = object;
     GarbageCollector::SetWriteBarrier(targetAddress);
 }
 
+bool il2cpp_gc_has_strict_wbarriers()
+{
+#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
+    return true;
+#else
+    return false;
+#endif
+}
+
+void il2cpp_gc_set_external_allocation_tracker(void(*func)(void*, size_t, int))
+{
+#if IL2CPP_ENABLE_WRITE_BARRIER_VALIDATION
+    il2cpp::gc::WriteBarrierValidation::SetExternalAllocationTracker(func);
+#endif
+}
+
+void il2cpp_gc_set_external_wbarrier_tracker(void(*func)(void**))
+{
+#if IL2CPP_ENABLE_WRITE_BARRIER_VALIDATION
+    il2cpp::gc::WriteBarrierValidation::SetExternalWriteBarrierTracker(func);
+#endif
+}
+
 void il2cpp_gchandle_free(uint32_t gchandle)
 {
     GCHandle::Free(gchandle);
+}
+
+// vm runtime info
+uint32_t il2cpp_object_header_size()
+{
+    return static_cast<uint32_t>(sizeof(Il2CppObject));
+}
+
+uint32_t il2cpp_array_object_header_size()
+{
+    return static_cast<uint32_t>(kIl2CppSizeOfArray);
+}
+
+uint32_t il2cpp_offset_of_array_length_in_array_object_header()
+{
+    return kIl2CppOffsetOfArrayLength;
+}
+
+uint32_t il2cpp_offset_of_array_bounds_in_array_object_header()
+{
+    return kIl2CppOffsetOfArrayBounds;
+}
+
+uint32_t il2cpp_allocation_granularity()
+{
+    return static_cast<uint32_t>(2 * sizeof(void*));
 }
 
 // liveness
@@ -1101,6 +1210,16 @@ int32_t il2cpp_thread_get_stack_depth(Il2CppThread *thread)
     return StackTrace::GetThreadStackDepth(thread);
 }
 
+void il2cpp_set_default_thread_affinity(int64_t affinity_mask)
+{
+    Thread::SetDefaultAffinityMask(affinity_mask);
+}
+
+void il2cpp_override_stack_backtrace(Il2CppBacktraceFunc stackBacktraceFunc)
+{
+    il2cpp::os::StackTrace::OverrideStackBacktrace(stackBacktraceFunc);
+}
+
 // type
 
 Il2CppObject* il2cpp_type_get_object(const Il2CppType *type)
@@ -1149,6 +1268,16 @@ uint32_t il2cpp_type_get_attrs(const Il2CppType *type)
 bool il2cpp_type_equals(const Il2CppType* type, const Il2CppType *otherType)
 {
     return Type::IsEqualToType(type, otherType);
+}
+
+bool il2cpp_type_is_static(const Il2CppType *type)
+{
+    return (type->attrs & FIELD_ATTRIBUTE_STATIC) != 0;
+}
+
+bool il2cpp_type_is_pointer_type(const Il2CppType *type)
+{
+    return type->type == IL2CPP_TYPE_PTR;
 }
 
 // image
@@ -1218,6 +1347,22 @@ bool il2cpp_is_debugger_attached()
     return il2cpp::utils::Debugger::GetIsDebuggerAttached();
 }
 
+void il2cpp_register_debugger_agent_transport(Il2CppDebuggerTransport * debuggerTransport)
+{
+#if IL2CPP_MONO_DEBUGGER
+    il2cpp::utils::Debugger::RegisterTransport(debuggerTransport);
+#endif
+}
+
+bool il2cpp_debug_get_method_info(const MethodInfo* method, Il2CppMethodDebugInfo* methodDebugInfo)
+{
+#if IL2CPP_ENABLE_NATIVE_STACKTRACES
+    return il2cpp::utils::NativeSymbol::GetMethodDebugInfo(method, methodDebugInfo);
+#else
+    return false;
+#endif
+}
+
 void il2cpp_unity_install_unitytls_interface(const void* unitytlsInterfaceStruct)
 {
     il2cpp::vm::Runtime::SetUnityTlsInterface(unitytlsInterfaceStruct);
@@ -1252,4 +1397,24 @@ Il2CppArray*  il2cpp_custom_attrs_construct(Il2CppCustomAttrInfo *ainfo)
 void il2cpp_custom_attrs_free(Il2CppCustomAttrInfo *ainfo)
 {
     // nothing to free, we cache everything
+}
+
+void il2cpp_type_get_name_chunked(const Il2CppType * type, void(*chunkReportFunc)(void* data, void* userData), void* userData)
+{
+    Type::GetNameChunkedRecurse(type, IL2CPP_TYPE_NAME_FORMAT_IL, chunkReportFunc, userData);
+}
+
+void il2cpp_class_set_userdata(Il2CppClass* klass, void* userdata)
+{
+    klass->unity_user_data = userdata;
+}
+
+int il2cpp_class_get_userdata_offset()
+{
+    return offsetof(struct Il2CppClass, unity_user_data);
+}
+
+void il2cpp_class_for_each(void(*klassReportFunc)(Il2CppClass* klass, void* userData), void* userData)
+{
+    MemoryInformation::ReportIL2CppClasses(klassReportFunc, userData);
 }

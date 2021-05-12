@@ -34,7 +34,7 @@ namespace vm
         virtual il2cpp_hresult_t STDCALL DisconnectObject(uint32_t reserved) IL2CPP_OVERRIDE;
 
     protected:
-        FORCE_INLINE Il2CppIInspectable* GetIdentity()
+        IL2CPP_FORCE_INLINE Il2CppIInspectable* GetIdentity()
         {
             return this;
         }

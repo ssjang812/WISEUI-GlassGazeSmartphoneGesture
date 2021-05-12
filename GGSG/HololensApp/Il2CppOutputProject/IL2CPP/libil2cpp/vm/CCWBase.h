@@ -18,7 +18,7 @@ namespace vm
             IL2CPP_ASSERT(obj != NULL);
         }
 
-        FORCE_INLINE Il2CppObject* GetManagedObjectInline() const
+        IL2CPP_FORCE_INLINE Il2CppObject* GetManagedObjectInline() const
         {
             return m_ManagedObject;
         }

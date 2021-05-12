@@ -6,16 +6,13 @@
 #include "os/Mutex.h"
 #include "os/LibraryLoader.h"
 #include "os/Image.h"
-#include "vm/PlatformInvoke.h"
 #include "utils/StringUtils.h"
 
 #include "WindowsHelpers.h"
 #include "Evntprov.h"
 
-#if WINDOWS_SDK_BUILD_VERSION >= 16299
 #define WINNT // All functions in Evntrace.h are under this define.. Why? I have no idea!
 #include "Evntrace.h"
-#endif
 
 namespace il2cpp
 {
@@ -69,14 +66,19 @@ namespace os
         HARDCODED_DEPENDENCY_FUNCTION(GetDynamicTimeZoneInformation),
         HARDCODED_DEPENDENCY_FUNCTION(GetNativeSystemInfo),
         HARDCODED_DEPENDENCY_FUNCTION(GetTimeZoneInformation),
+        HARDCODED_DEPENDENCY_FUNCTION(GetFullPathName),
     };
-
+#if !IL2CPP_TARGET_WINDOWS_GAMES
     const HardcodedPInvokeDependencyFunction kiphlpapiFunctions[] =
     {
         HARDCODED_DEPENDENCY_FUNCTION(GetNetworkParams),
+#if !IL2CPP_TARGET_XBOXONE
+        HARDCODED_DEPENDENCY_FUNCTION(GetAdaptersAddresses),
+        HARDCODED_DEPENDENCY_FUNCTION(GetIfEntry),
+#endif
     };
-
-#if !IL2CPP_TARGET_WINDOWS_DESKTOP
+#endif
+#if !IL2CPP_TARGET_WINDOWS_DESKTOP && !IL2CPP_TARGET_WINDOWS_GAMES
     const HardcodedPInvokeDependencyFunction kTimezoneFunctions[] =
     {
 #if !IL2CPP_TARGET_XBOXONE
@@ -100,12 +102,14 @@ namespace os
 // All these come without ".dll" extension!
     const HardcodedPInvokeDependencyLibrary kHardcodedPInvokeDependencies[] =
     {
-#if !IL2CPP_TARGET_WINDOWS_DESKTOP // Some of these functions are win8+
+#if !IL2CPP_TARGET_WINDOWS_DESKTOP && !IL2CPP_TARGET_WINDOWS_GAMES // Some of these functions are win8+
         HARDCODED_DEPENDENCY_LIBRARY(L"advapi32", kAdvapiFunctions),
         HARDCODED_DEPENDENCY_LIBRARY(L"api-ms-win-core-timezone-l1-1-0", kTimezoneFunctions),
 #endif
         HARDCODED_DEPENDENCY_LIBRARY(L"kernel32", kKernel32Functions),
+#if !IL2CPP_TARGET_WINDOWS_GAMES
         HARDCODED_DEPENDENCY_LIBRARY(L"iphlpapi", kiphlpapiFunctions),
+#endif // !IL2CPP_TARGET_WINDOWS_GAMES
 #if IL2CPP_TARGET_WINRT // Win8+, plus needs to be looked up dynamically on Xbox One
         HARDCODED_DEPENDENCY_LIBRARY(L"wintypes", kWinTypesFunctions),
 #endif

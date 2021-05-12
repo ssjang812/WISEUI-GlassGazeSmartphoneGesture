@@ -4,6 +4,9 @@
 #include "il2cpp-mono-support.h"
 #include "mono-api.h"
 
+#include "vm/StackTrace.h"
+#include "vm/PlatformInvoke.h"
+
 struct ProfilerMethodSentry
 {
     ProfilerMethodSentry(const RuntimeMethod* method)
@@ -80,7 +83,7 @@ inline String_t* il2cpp_codegen_string_new_utf16(const il2cpp::utils::StringView
     return (String_t*)mono_string_new_utf16(g_MonoDomain, (const mono_unichar2*)str.Str(), (int32_t)str.Length());
 }
 
-inline NORETURN void il2cpp_codegen_raise_exception(Exception_t *ex, Il2CppSequencePoint *seqPoint = NULL, MethodInfo* lastManagedFrame = NULL)
+inline NORETURN void il2cpp_codegen_raise_exception(Exception_t *ex, MethodInfo* lastManagedFrame = NULL)
 {
     mono_raise_exception((RuntimeException*)ex);
     il2cpp_codegen_no_return();
@@ -291,41 +294,41 @@ inline RuntimeClass* il2cpp_codegen_method_get_declaring_type(RuntimeMethod* met
     return mono_method_get_class(method);
 }
 
-FORCE_INLINE const VirtualInvokeData il2cpp_codegen_get_virtual_invoke_data(RuntimeMethod* method, void* obj)
+IL2CPP_FORCE_INLINE const VirtualInvokeData il2cpp_codegen_get_virtual_invoke_data(RuntimeMethod* method, void* obj)
 {
     VirtualInvokeData invokeData;
     il2cpp_mono_get_virtual_invoke_data(method, obj, &invokeData);
     return invokeData;
 }
 
-FORCE_INLINE const VirtualInvokeData il2cpp_codegen_get_interface_invoke_data(RuntimeMethod* method, void* obj, RuntimeClass* declaringInterface)
+IL2CPP_FORCE_INLINE const VirtualInvokeData il2cpp_codegen_get_interface_invoke_data(RuntimeMethod* method, void* obj, RuntimeClass* declaringInterface)
 {
     VirtualInvokeData invokeData;
     il2cpp_mono_get_interface_invoke_data(method, obj, &invokeData);
     return invokeData;
 }
 
-FORCE_INLINE const RuntimeMethod* il2cpp_codegen_get_generic_virtual_method(const RuntimeMethod* method, const RuntimeObject* obj)
+IL2CPP_FORCE_INLINE const RuntimeMethod* il2cpp_codegen_get_generic_virtual_method(const RuntimeMethod* method, const RuntimeObject* obj)
 {
     return il2cpp_mono_get_virtual_target_method(const_cast<RuntimeMethod*>(method), const_cast<RuntimeObject*>(obj));
 }
 
-FORCE_INLINE void il2cpp_codegen_get_generic_virtual_invoke_data(const RuntimeMethod* method, void* obj, VirtualInvokeData* invokeData)
+IL2CPP_FORCE_INLINE void il2cpp_codegen_get_generic_virtual_invoke_data(const RuntimeMethod* method, void* obj, VirtualInvokeData* invokeData)
 {
     il2cpp_mono_get_invoke_data(const_cast<RuntimeMethod*>(method), obj, invokeData);
 }
 
-FORCE_INLINE const RuntimeMethod* il2cpp_codegen_get_generic_interface_method(const RuntimeMethod* method, const RuntimeObject* obj)
+IL2CPP_FORCE_INLINE const RuntimeMethod* il2cpp_codegen_get_generic_interface_method(const RuntimeMethod* method, const RuntimeObject* obj)
 {
     return il2cpp_mono_get_virtual_target_method(const_cast<RuntimeMethod*>(method), const_cast<RuntimeObject*>(obj));
 }
 
-FORCE_INLINE void il2cpp_codegen_get_generic_interface_invoke_data(RuntimeMethod* method, void* obj, VirtualInvokeData* invokeData)
+IL2CPP_FORCE_INLINE void il2cpp_codegen_get_generic_interface_invoke_data(RuntimeMethod* method, void* obj, VirtualInvokeData* invokeData)
 {
     il2cpp_mono_get_invoke_data(method, obj, invokeData);
 }
 
-FORCE_INLINE void il2cpp_codegen_get_generic_interface_invoke_data(const RuntimeMethod* method, void* obj, VirtualInvokeData* invokeData)
+IL2CPP_FORCE_INLINE void il2cpp_codegen_get_generic_interface_invoke_data(const RuntimeMethod* method, void* obj, VirtualInvokeData* invokeData)
 {
     il2cpp_codegen_get_generic_interface_invoke_data(const_cast<RuntimeMethod*>(method), obj, invokeData);
 }
@@ -488,9 +491,19 @@ inline void il2cpp_codegen_marshal_free_bstring(Il2CppChar* value)
     IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
 }
 
+inline char* il2cpp_codegen_marshal_empty_string_builder(StringBuilder_t* stringBuilder)
+{
+    return mono::vm::PlatformInvoke::MarshalEmptyStringBuilder((RuntimeStringBuilder*)stringBuilder);
+}
+
 inline char* il2cpp_codegen_marshal_string_builder(StringBuilder_t* stringBuilder)
 {
     return mono::vm::PlatformInvoke::MarshalStringBuilder((RuntimeStringBuilder*)stringBuilder);
+}
+
+inline Il2CppChar* il2cpp_codegen_marshal_empty_wstring_builder(StringBuilder_t* stringBuilder)
+{
+    return (Il2CppChar*)mono::vm::PlatformInvoke::MarshalEmptyWStringBuilder((RuntimeStringBuilder*)stringBuilder);
 }
 
 inline Il2CppChar* il2cpp_codegen_marshal_wstring_builder(StringBuilder_t* stringBuilder)
@@ -673,6 +686,11 @@ inline void il2cpp_codegen_initialize_method(uint32_t index)
     il2cpp_mono_initialize_method_metadata(index);
 }
 
+inline bool il2cpp_codegen_class_is_value_type(RuntimeClass* type)
+{
+    return mono_class_is_valuetype(type);
+}
+
 inline bool il2cpp_codegen_type_implements_virtual_method(RuntimeClass* type, RuntimeMethod *slot)
 {
     return mono_unity_method_get_class(slot) == type;
@@ -688,37 +706,37 @@ inline MethodBase_t* il2cpp_codegen_get_method_object(const RuntimeMethod* metho
 
 inline Type_t* il2cpp_codegen_get_type(Il2CppMethodPointer getTypeFunction, String_t* typeName, const char* assemblyName)
 {
-    typedef Type_t* (*getTypeFuncType)(String_t*, const RuntimeMethod*);
+    typedef Type_t* (*getTypeFuncType)(String_t*);
     MonoString* assemblyQualifiedTypeName = mono_unity_string_append_assembly_name_if_necessary((MonoString*)typeName, assemblyName);
 
     // Try to find the type using a hint about about calling assembly. If it is not found, fall back to calling GetType without the hint.
-    Type_t* type = ((getTypeFuncType)getTypeFunction)((String_t*)assemblyQualifiedTypeName, NULL);
+    Type_t* type = ((getTypeFuncType)getTypeFunction)((String_t*)assemblyQualifiedTypeName);
     if (type == NULL)
-        return ((getTypeFuncType)getTypeFunction)(typeName, NULL);
+        return ((getTypeFuncType)getTypeFunction)(typeName);
     return type;
 }
 
 inline Type_t* il2cpp_codegen_get_type(Il2CppMethodPointer getTypeFunction, String_t* typeName, bool throwOnError, const char* assemblyName)
 {
-    typedef Type_t* (*getTypeFuncType)(String_t*, bool, const RuntimeMethod*);
+    typedef Type_t* (*getTypeFuncType)(String_t*, bool);
     MonoString* assemblyQualifiedTypeName = mono_unity_string_append_assembly_name_if_necessary((MonoString*)typeName, assemblyName);
 
     // Try to find the type using a hint about about calling assembly. If it is not found, fall back to calling GetType without the hint.
-    Type_t* type = ((getTypeFuncType)getTypeFunction)((String_t*)assemblyQualifiedTypeName, throwOnError, NULL);
+    Type_t* type = ((getTypeFuncType)getTypeFunction)((String_t*)assemblyQualifiedTypeName, throwOnError);
     if (type == NULL)
-        return ((getTypeFuncType)getTypeFunction)(typeName, throwOnError, NULL);
+        return ((getTypeFuncType)getTypeFunction)(typeName, throwOnError);
     return type;
 }
 
 inline Type_t* il2cpp_codegen_get_type(Il2CppMethodPointer getTypeFunction, String_t* typeName, bool throwOnError, bool ignoreCase, const char* assemblyName)
 {
-    typedef Type_t* (*getTypeFuncType)(String_t*, bool, bool, const RuntimeMethod*);
+    typedef Type_t* (*getTypeFuncType)(String_t*, bool, bool);
     MonoString* assemblyQualifiedTypeName = mono_unity_string_append_assembly_name_if_necessary((MonoString*)typeName, assemblyName);
 
     // Try to find the type using a hint about about calling assembly. If it is not found, fall back to calling GetType without the hint.
-    Type_t* type = ((getTypeFuncType)getTypeFunction)((String_t*)assemblyQualifiedTypeName, throwOnError, ignoreCase, NULL);
+    Type_t* type = ((getTypeFuncType)getTypeFunction)((String_t*)assemblyQualifiedTypeName, throwOnError, ignoreCase);
     if (type == NULL)
-        return ((getTypeFuncType)getTypeFunction)(typeName, throwOnError, ignoreCase, NULL);
+        return ((getTypeFuncType)getTypeFunction)(typeName, throwOnError, ignoreCase);
     return type;
 }
 
@@ -990,11 +1008,6 @@ inline bool il2cpp_codegen_is_import_or_windows_runtime(const RuntimeObject *obj
 {
     assert(0 && "Not implemented yet.");
     return false;
-}
-
-inline std::string il2cpp_codegen_format_exception(const RuntimeException* ex)
-{
-    return il2cpp_mono_format_exception(ex);
 }
 
 inline intptr_t il2cpp_codegen_get_com_interface_for_object(RuntimeObject* object, Type_t* type)

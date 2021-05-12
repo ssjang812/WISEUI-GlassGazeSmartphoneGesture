@@ -11,12 +11,17 @@
     <WindowsTargetPlatformMinVersion>10.0.10240.0</WindowsTargetPlatformMinVersion>
     <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
     <PackageCertificateKeyFile>WSATestCertificate.pfx</PackageCertificateKeyFile>
+    <UseSubFolderForOutputDirDuringMultiPlatformBuild>false</UseSubFolderForOutputDirDuringMultiPlatformBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|ARM">
       <Configuration>Debug</Configuration>
       <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -30,6 +35,10 @@
       <Configuration>Master</Configuration>
       <Platform>ARM</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Master|ARM64">
+      <Configuration>Master</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Master|Win32">
       <Configuration>Master</Configuration>
       <Platform>Win32</Platform>
@@ -42,6 +51,10 @@
       <Configuration>MasterWithLTCG</Configuration>
       <Platform>ARM</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="MasterWithLTCG|ARM64">
+      <Configuration>MasterWithLTCG</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="MasterWithLTCG|Win32">
       <Configuration>MasterWithLTCG</Configuration>
       <Platform>Win32</Platform>
@@ -53,6 +66,10 @@
     <ProjectConfiguration Include="Release|ARM">
       <Configuration>Release</Configuration>
       <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
@@ -81,8 +98,7 @@
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings"></ImportGroup>
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -104,22 +120,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="App.cpp">
-    </ClCompile>
-    <ClInclude Include="App.h">
-    </ClInclude>
-    <ClCompile Include="Main.cpp">
-    </ClCompile>
+    <ClCompile Include="App.cpp"></ClCompile>
+    <ClInclude Include="App.h"></ClInclude>
+    <ClCompile Include="Main.cpp"></ClCompile>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClInclude Include="pch.h">
-    </ClInclude>
-    <None Include="WSATestCertificate.pfx">
-    </None>
+    <ClInclude Include="pch.h"></ClInclude>
+    <None Include="WSATestCertificate.pfx"></None>
     <None Include="Assets\SplashScreen.scale-200.png">
       <DeploymentContent>true</DeploymentContent>
     </None>
@@ -141,6 +152,7 @@
     <None Include="Assets\Wide310x150Logo.scale-200.png">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="WindowsMobile, Version=10.0.18362.0" />
@@ -148,5 +160,14 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="Unity Data.vcxitems" Label="Unity Data" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\Microsoft.Azure.SpatialAnchors.WinCPP.Redist.2.2.1\build\native\Microsoft.Azure.SpatialAnchors.WinCPP.Redist.targets" Condition="Exists('..\packages\Microsoft.Azure.SpatialAnchors.WinCPP.Redist.2.2.1\build\native\Microsoft.Azure.SpatialAnchors.WinCPP.Redist.targets')" />
+    <Import Project="..\packages\Microsoft.Azure.SpatialAnchors.WinCPP.2.2.1\build\native\Microsoft.Azure.SpatialAnchors.WinCPP.targets" Condition="Exists('..\packages\Microsoft.Azure.SpatialAnchors.WinCPP.2.2.1\build\native\Microsoft.Azure.SpatialAnchors.WinCPP.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Azure.SpatialAnchors.WinCPP.Redist.2.2.1\build\native\Microsoft.Azure.SpatialAnchors.WinCPP.Redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Azure.SpatialAnchors.WinCPP.Redist.2.2.1\build\native\Microsoft.Azure.SpatialAnchors.WinCPP.Redist.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Azure.SpatialAnchors.WinCPP.2.2.1\build\native\Microsoft.Azure.SpatialAnchors.WinCPP.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Azure.SpatialAnchors.WinCPP.2.2.1\build\native\Microsoft.Azure.SpatialAnchors.WinCPP.targets'))" />
+  </Target>
 </Project>

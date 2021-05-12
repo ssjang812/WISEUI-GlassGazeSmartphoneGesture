@@ -37,6 +37,7 @@ namespace utils
 
     std::string Runtime::GetDataDir()
     {
+#if !IL2CPP_TINY_WITHOUT_DEBUGGER
 #if defined(RUNTIME_MONO)
         // use explicit value if set
         char* dataDirCS = mono_unity_get_data_dir();
@@ -63,6 +64,9 @@ namespace utils
         }
 
         return s_DataDirFallback;
+#else
+        return std::string();
+#endif
     }
 } // utils
 } // il2cpp

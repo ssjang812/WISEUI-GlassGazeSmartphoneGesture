@@ -1,4 +1,5 @@
 #include "il2cpp-config.h"
+#include "il2cpp-runtime-stats.h"
 #include "os/Mutex.h"
 #include "vm/Class.h"
 #include "vm/GenericClass.h"
@@ -171,42 +172,36 @@ namespace metadata
         return newClass;
     }
 
-    const MethodInfo* GenericMetadata::Inflate(const MethodInfo* methodDefinition, Il2CppClass* declaringClass, const Il2CppGenericContext* context)
+    const MethodInfo* GenericMetadata::Inflate(const MethodInfo* methodDefinition, const Il2CppGenericContext* context)
     {
         const Il2CppGenericMethod* gmethod = MetadataCache::GetGenericMethod(methodDefinition, context->class_inst, context->method_inst);
         return GenericMethod::GetMethod(gmethod);
     }
 
-    static void RecursiveGenericDepthFor(const Il2CppGenericInst* inst, int& depth)
+    static int RecursiveGenericDepthFor(const Il2CppGenericInst* inst);
+
+    static int RecursiveGenericDepthFor(Il2CppGenericClass* genericClass)
     {
-        if (inst == NULL)
-            return;
-
-        int maximumDepth = depth;
-        for (size_t i = 0; i < inst->type_argc; i++)
-        {
-            if (inst->type_argv[i]->type == IL2CPP_TYPE_GENERICINST)
-            {
-                maximumDepth++;
-
-                int classInstDepth = 0;
-                RecursiveGenericDepthFor(inst->type_argv[i]->data.generic_class->context.class_inst, classInstDepth);
-
-                int methodInstDepth = 0;
-                RecursiveGenericDepthFor(inst->type_argv[i]->data.generic_class->context.method_inst, methodInstDepth);
-
-                maximumDepth += std::max(classInstDepth, methodInstDepth);
-            }
-        }
-
-        depth = maximumDepth;
+        int classInstDepth = RecursiveGenericDepthFor(genericClass->context.class_inst);
+        int methodInstDepth = RecursiveGenericDepthFor(genericClass->context.method_inst);
+        return std::max(classInstDepth, methodInstDepth);
     }
 
     static int RecursiveGenericDepthFor(const Il2CppGenericInst* inst)
     {
-        int depth = 0;
-        RecursiveGenericDepthFor(inst, depth);
-        return depth;
+        if (inst == NULL)
+            return 0;
+
+        int maximumDepth = 0;
+        for (size_t i = 0; i < inst->type_argc; i++)
+        {
+            if (inst->type_argv[i]->type == IL2CPP_TYPE_GENERICINST)
+            {
+                maximumDepth = std::max(maximumDepth, RecursiveGenericDepthFor(inst->type_argv[i]->data.generic_class));
+            }
+        }
+
+        return maximumDepth + 1;
     }
 
     const Il2CppGenericMethod* GenericMetadata::Inflate(const Il2CppGenericMethod* genericMethod, const Il2CppGenericContext* context)
@@ -232,21 +227,23 @@ namespace metadata
         // We have cases where we could infinitely recurse, inflating generics at runtime. This will lead to a stack overflow.
         // As we do for code generation, let's cut this off at an arbitrary level. If something tries to execute code at this
         // level, a crash will happen. We'll assume that this code won't actually be executed though.
-        if (RecursiveGenericDepthFor(classInst) > MaximumRuntimeGenericDepth || RecursiveGenericDepthFor(methodInst) > MaximumRuntimeGenericDepth)
+        int maximumRuntimeGenericDepth = GetMaximumRuntimeGenericDepth();
+        if (RecursiveGenericDepthFor(classInst) > maximumRuntimeGenericDepth || RecursiveGenericDepthFor(methodInst) > maximumRuntimeGenericDepth)
             return NULL;
 
         return MetadataCache::GetGenericMethod(genericMethod->methodDefinition, classInst, methodInst);
     }
 
-    Il2CppRGCTXData* GenericMetadata::InflateRGCTX(RGCTXIndex rgctxStartIndex, int16_t rgctxCount, const Il2CppGenericContext* context)
+    Il2CppRGCTXData* GenericMetadata::InflateRGCTX(const Il2CppImage* image, uint32_t token, const Il2CppGenericContext* context)
     {
-        if (rgctxStartIndex == kRGCTXIndexInvalid)
+        RGCTXCollection collection = MetadataCache::GetRGCTXs(image, token);
+        if (collection.count == 0)
             return NULL;
 
-        Il2CppRGCTXData* dataValues = (Il2CppRGCTXData*)MetadataCalloc(rgctxCount, sizeof(Il2CppRGCTXData));
-        for (RGCTXIndex rgctxIndex = 0; rgctxIndex < rgctxCount; rgctxIndex++)
+        Il2CppRGCTXData* dataValues = (Il2CppRGCTXData*)MetadataCalloc(collection.count, sizeof(Il2CppRGCTXData));
+        for (RGCTXIndex rgctxIndex = 0; rgctxIndex < collection.count; rgctxIndex++)
         {
-            const Il2CppRGCTXDefinition* definitionData = MetadataCache::GetRGCTXDefinitionFromIndex(rgctxStartIndex + rgctxIndex);
+            const Il2CppRGCTXDefinition* definitionData = collection.items + rgctxIndex;
             switch (definitionData->type)
             {
                 case IL2CPP_RGCTX_DATA_TYPE:
@@ -282,6 +279,18 @@ namespace metadata
             if ((*it).key->cached_class != NULL)
                 callback((*it).key->cached_class, context);
         }
+    }
+
+    static int s_MaximumRuntimeGenericDepth;
+
+    int GenericMetadata::GetMaximumRuntimeGenericDepth()
+    {
+        return s_MaximumRuntimeGenericDepth;
+    }
+
+    void GenericMetadata::SetMaximumRuntimeGenericDepth(int depth)
+    {
+        s_MaximumRuntimeGenericDepth = depth;
     }
 } /* namespace vm */
 } /* namespace il2cpp */

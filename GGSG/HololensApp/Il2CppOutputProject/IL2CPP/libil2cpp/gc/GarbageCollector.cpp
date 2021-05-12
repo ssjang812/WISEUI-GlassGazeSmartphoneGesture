@@ -8,6 +8,8 @@
 #include "os/Thread.h"
 #include "utils/Il2CppHashMap.h"
 #include "utils/HashUtils.h"
+
+#if !IL2CPP_TINY_WITHOUT_DEBUGGER
 #include "vm/CCW.h"
 #include "vm/Class.h"
 #include "vm/Domain.h"
@@ -15,6 +17,7 @@
 #include "vm/RCW.h"
 #include "vm/Runtime.h"
 #include "vm/Thread.h"
+#endif
 
 using namespace il2cpp::os;
 using namespace il2cpp::vm;
@@ -23,6 +26,7 @@ namespace il2cpp
 {
 namespace gc
 {
+#if !IL2CPP_TINY_WITHOUT_DEBUGGER
 // So COM Callable Wrapper can be created for any kind of managed object,
 // whether it has finalizer or not. If it doesn't then it's an easy case:
 // when creating the CCW, we just register our cleanup method to be the
@@ -219,15 +223,6 @@ namespace gc
 #endif
     }
 
-    int32_t GarbageCollector::GetGeneration(void* addr)
-    {
-        return 0;
-    }
-
-    void GarbageCollector::AddMemoryPressure(int64_t value)
-    {
-    }
-
     static void CleanupCCW(void* obj, void* data)
     {
         bool hasFinalizer;
@@ -319,6 +314,17 @@ namespace gc
         return result;
     }
 
+#endif // !IL2CPP_TINY_WITHOUT_DEBUGGER
+
+    int32_t GarbageCollector::GetGeneration(void* addr)
+    {
+        return 0;
+    }
+
+    void GarbageCollector::AddMemoryPressure(int64_t value)
+    {
+    }
+
 #if IL2CPP_ENABLE_WRITE_BARRIERS
     void il2cpp::gc::GarbageCollector::SetWriteBarrier(void **ptr, size_t size)
     {
@@ -332,11 +338,8 @@ namespace gc
 
 #endif
 
-#if NET_4_0
     void il2cpp::gc::GarbageCollector::SetSkipThread(bool skip)
     {
     }
-
-#endif
 } // namespace gc
 } // namespace il2cpp

@@ -1,7 +1,7 @@
 #include "il2cpp-config.h"
 #include "COMEntryPoints.h"
 
-#include "il2cpp-class-internals.h"
+#include "il2cpp-windowsruntime-types.h"
 #include "os/Mutex.h"
 #include "os/WindowsRuntime.h"
 #include "utils/StringUtils.h"
@@ -37,15 +37,7 @@ struct ActivationFactoryWrapper
         // Also, name is already pre-duplicated since we cannot deal with hresult failure in a constructor
     }
 
-    ActivationFactoryWrapper(const ActivationFactoryWrapper& other)
-    {
-        il2cpp_hresult_t hr = il2cpp::os::WindowsRuntime::DuplicateHString(other.m_Name, &m_Name);
-        IL2CPP_ASSERT(IL2CPP_HR_SUCCEEDED(hr));
-
-        m_Factory = other.m_Factory;
-        m_Factory->AddRef();
-    }
-
+    ActivationFactoryWrapper(const ActivationFactoryWrapper&); // = delete;
     ActivationFactoryWrapper& operator=(const ActivationFactoryWrapper&); // = delete;
 
     ~ActivationFactoryWrapper()
@@ -79,7 +71,7 @@ typedef Il2CppIActivationFactory* (*FactoryCreationFunction)();
 //    IL2CPP_REGDB_E_CLASSNOTREG - if class was not found
 extern "C" IL2CPP_EXPORT il2cpp_hresult_t STDCALL DllGetActivationFactory(Il2CppHString className, Il2CppIActivationFactory** factory)
 {
-    if (className == NULL || factory == NULL)
+    if (className == nullptr || factory == nullptr)
         return IL2CPP_E_INVALIDARG;
 
     il2cpp::os::FastAutoLock lock(&s_FactoryCacheMutex);

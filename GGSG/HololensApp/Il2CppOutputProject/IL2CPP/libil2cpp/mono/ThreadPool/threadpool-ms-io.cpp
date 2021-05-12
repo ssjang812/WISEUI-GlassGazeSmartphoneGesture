@@ -8,13 +8,12 @@
  * Licensed under the MIT license. See LICENSE file in the project root for full license information.
  */
 #include "il2cpp-config.h"
-
-#if NET_4_0
+#include "gc/WriteBarrier.h"
 
 #ifndef DISABLE_SOCKETS
 
 #ifndef IL2CPP_USE_PIPES_FOR_WAKEUP
-#define IL2CPP_USE_PIPES_FOR_WAKEUP !(IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE || IL2CPP_TARGET_PS4 || IL2CPP_TARGET_PSP2)
+#define IL2CPP_USE_PIPES_FOR_WAKEUP !(IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE || IL2CPP_TARGET_PS4 || IL2CPP_TARGET_PS5 || IL2CPP_TARGET_PSP2)
 #endif
 
 #ifndef IL2CPP_USE_EVENTFD_FOR_WAKEUP
@@ -390,6 +389,7 @@ static void selector_thread (void* data)
 
 				//exists = mono_g_hash_table_lookup_extended (states, int_TO_POINTER (fd), &k, (void**) &list);
 				list->push_back((Il2CppObject*)job);
+				il2cpp::gc::GarbageCollector::SetWriteBarrier((void**)&(*list)[list->size()-1]);
 				states->insert(ThreadPoolStateHash::value_type(fd, list));
 				//mono_g_hash_table_replace (states, int_TO_POINTER (fd), list);
 
@@ -581,7 +581,7 @@ static bool lazy_is_initialized()
 	return lazy_init_io_status.IsSet();
 }
 
-static void initialize(void* args)
+static void threadpool_ms_io_initialize(void* args)
 {
 	IL2CPP_ASSERT(!threadpool_io);
 	threadpool_io = new ThreadPoolIO();
@@ -613,12 +613,12 @@ static void initialize(void* args)
 		IL2CPP_ASSERT(0 && "initialize: vm::Thread::CreateInternal () failed ");
 }
 
-static void lazy_initialize()
+static void threadpool_ms_io_lazy_initialize()
 {
-	il2cpp::utils::CallOnce(lazy_init_io_status, initialize, NULL);
+	il2cpp::utils::CallOnce(lazy_init_io_status, threadpool_ms_io_initialize, NULL);
 }
 
-static void cleanup (void)
+static void cleanup_ms_io (void)
 {
 	/* we make the assumption along the code that we are
 	 * cleaning up only if the runtime is shutting down */
@@ -632,7 +632,7 @@ static void cleanup (void)
 void threadpool_ms_io_cleanup (void)
 {
 	if (lazy_init_io_status.IsSet())
-		cleanup();
+		cleanup_ms_io();
 }
 
 void ves_icall_System_IOSelector_Add (intptr_t handle, Il2CppIOSelectorJob *job)
@@ -649,7 +649,7 @@ void ves_icall_System_IOSelector_Add (intptr_t handle, Il2CppIOSelectorJob *job)
 	/*if (mono_domain_is_unloading (mono_object_domain (job)))
 		return;*/
 
-	lazy_initialize ();
+	threadpool_ms_io_lazy_initialize ();
 
 	threadpool_io->updates_lock.Lock();
 
@@ -659,7 +659,7 @@ void ves_icall_System_IOSelector_Add (intptr_t handle, Il2CppIOSelectorJob *job)
 
 	update->type = UPDATE_ADD;
 	update->data.add.fd = (int)socketHandle.GetSocket()->GetDescriptor();
-	update->data.add.job = job;
+	il2cpp::gc::WriteBarrier::GenericStore(&update->data.add.job, job);
 	il2cpp::os::Atomic::FullMemoryBarrier(); /* Ensure this is safely published before we wake up the selector */
 
 	selector_thread_wakeup ();
@@ -716,5 +716,4 @@ void threadpool_ms_io_remove_socket (int fd)
 	IL2CPP_ASSERT(0 && "Should not be called");
 }
 
-#endif
 #endif

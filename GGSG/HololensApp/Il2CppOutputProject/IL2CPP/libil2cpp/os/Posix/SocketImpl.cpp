@@ -1,6 +1,6 @@
 #include "il2cpp-config.h"
 
-#if !IL2CPP_USE_GENERIC_SOCKET_IMPL && IL2CPP_TARGET_POSIX
+#if !IL2CPP_USE_GENERIC_SOCKET_IMPL && IL2CPP_TARGET_POSIX && IL2CPP_SUPPORT_SOCKETS
 
 // enable support for AF_UNIX and socket paths
 #define SUPPORT_UNIXSOCKETS (1)
@@ -30,7 +30,7 @@
 #include <sys/poll.h>
 #include <sys/stat.h>
 
-#if IL2CPP_TARGET_LINUX || IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_NOVA
+#if IL2CPP_TARGET_LINUX || IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_LUMIN || IL2CPP_TARGET_JAVASCRIPT
 #include <sys/sendfile.h>
 #endif
 
@@ -43,7 +43,6 @@
 #include "os/Posix/ThreadImpl.h"
 #include "utils/Memory.h"
 #include "utils/StringUtils.h"
-#include "vm/Exception.h"
 
 #include "il2cpp-vm-support.h"
 
@@ -452,8 +451,8 @@ namespace os
             saddr.sin_len = sizeof(saddr);
 #endif
             if (getnameinfo((struct sockaddr*)&saddr, sizeof(saddr),
-                    hostname, sizeof(hostname), NULL, 0,
-                    flags) != 0)
+                hostname, sizeof(hostname), NULL, 0,
+                flags) != 0)
             {
                 return kWaitStatusFailure;
             }
@@ -464,8 +463,8 @@ namespace os
             saddr6.sin6_len = sizeof(saddr6);
 #endif
             if (getnameinfo((struct sockaddr*)&saddr6, sizeof(saddr6),
-                    hostname, sizeof(hostname), NULL, 0,
-                    flags) != 0)
+                hostname, sizeof(hostname), NULL, 0,
+                flags) != 0)
             {
                 return kWaitStatusFailure;
             }
@@ -517,8 +516,8 @@ namespace os
             return kWaitStatusFailure;
 
         return (add_local_ips
-                ? hostent_get_info_with_local_ips(he, name, aliases, addresses)
-                : hostent_get_info(he, name, aliases, addresses))
+            ? hostent_get_info_with_local_ips(he, name, aliases, addresses)
+            : hostent_get_info(he, name, aliases, addresses))
             ? kWaitStatusSuccess
             : kWaitStatusFailure;
 #endif
@@ -1744,43 +1743,62 @@ namespace os
     {
         IL2CPP_ASSERT(command != 0xC8000006 /* SIO_GET_EXTENSION_FUNCTION_POINTER */ && "SIO_GET_EXTENSION_FUNCTION_POINTER ioctl command not supported");
 
-        uint8_t *buffer = NULL;
-
-        if (in_len > 0)
+        if (command == 0x98000004 /* SIO_KEEPALIVE_VALS */)
         {
-            buffer = (uint8_t*)malloc(in_len);
-            memcpy(buffer, in_data, in_len);
+            if (in_len < 3 * sizeof(uint32_t))
+            {
+                StoreLastError();
+                return kWaitStatusFailure;
+            }
+
+            uint32_t onoff = *((uint32_t*)in_data);
+            int32_t ret = setsockopt(_fd, SOL_SOCKET, SO_KEEPALIVE, &onoff, sizeof(uint32_t));
+            if (ret < 0)
+            {
+                StoreLastError();
+                return kWaitStatusFailure;
+            }
         }
-
-        const int32_t ret = ioctl(_fd, command, buffer);
-        if (ret == -1)
+        else
         {
-            StoreLastError();
+            uint8_t *buffer = NULL;
+
+            if (in_len > 0)
+            {
+                buffer = (uint8_t*)malloc(in_len);
+                memcpy(buffer, in_data, in_len);
+            }
+
+            const int32_t ret = ioctl(_fd, command, buffer);
+            if (ret == -1)
+            {
+                StoreLastError();
+
+                free(buffer);
+
+                return kWaitStatusFailure;
+            }
+
+            if (buffer == NULL)
+            {
+                *written = 0;
+                return kWaitStatusSuccess;
+            }
+
+            // We just copy the buffer to the out_data. Some ioctls
+            // don't even out_data any data, but, well ...
+            //
+            // NB: windows returns WSAEFAULT if out_len is too small
+
+            const int32_t len = (in_len > out_len) ? out_len : in_len;
+
+            if (len > 0 && out_data != NULL)
+                memcpy(out_data, buffer, len);
 
             free(buffer);
 
-            return kWaitStatusFailure;
+            *written = len;
         }
-
-        if (buffer == NULL)
-        {
-            *written = 0;
-            return kWaitStatusSuccess;
-        }
-
-        // We just copy the buffer to the out_data. Some ioctls
-        // don't even out_data any data, but, well ...
-        //
-        // NB: windows returns WSAEFAULT if out_len is too small
-
-        const int32_t len = (in_len > out_len) ? out_len : in_len;
-
-        if (len > 0 && out_data != NULL)
-            memcpy(out_data, buffer, len);
-
-        free(buffer);
-
-        *written = len;
 
         return kWaitStatusSuccess;
     }
@@ -2413,7 +2431,7 @@ namespace os
         return SetSocketOptionInternal(system_level, system_name, &mreq, sizeof(mreq));
     }
 
-#if IL2CPP_TARGET_DARWIN
+#if IL2CPP_TARGET_DARWIN || IL2CPP_TARGET_LINUX
     #include <sys/types.h>
     #include <ifaddrs.h>
     #include <sys/socket.h>
@@ -2471,7 +2489,7 @@ namespace os
             in6addr.s6_addr[i] = ipv6.addr[i];
         mreq6.ipv6mr_multiaddr = in6addr;
 
-#if IL2CPP_TARGET_DARWIN
+#if IL2CPP_TARGET_DARWIN || IL2CPP_TARGET_LINUX
         if (interfaceOffset == 0)
             interfaceOffset = get_local_interface_id(AF_INET6);
 #endif
@@ -2524,6 +2542,29 @@ namespace os
 
         return kWaitStatusSuccess;
     }
+
+#if IL2CPP_SUPPORT_IPV6_SUPPORT_QUERY
+    bool SocketImpl::IsIPv6Supported()
+    {
+        ifaddrs* interfaces;
+        if (getifaddrs(&interfaces))
+            return false;
+
+        bool ipv6IsSupported = false;
+        for (ifaddrs* iface = interfaces; iface != NULL; iface = iface->ifa_next)
+        {
+            if (iface->ifa_addr && iface->ifa_addr->sa_family == AF_INET6)
+            {
+                ipv6IsSupported = true;
+                break;
+            }
+        }
+
+        freeifaddrs(interfaces);
+        return ipv6IsSupported;
+    }
+
+#endif
 
     WaitStatus SocketImpl::SendFile(const char *filename, TransmitFileBuffers *buffers, TransmitFileOptions options)
     {

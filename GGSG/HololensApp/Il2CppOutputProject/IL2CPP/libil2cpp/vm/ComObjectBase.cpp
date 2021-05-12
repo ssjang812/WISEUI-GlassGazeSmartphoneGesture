@@ -3,16 +3,14 @@
 #include "vm/COM.h"
 #include "vm/ComObjectBase.h"
 
-using namespace il2cpp::vm;
-
-il2cpp_hresult_t STDCALL ComObjectBase::GetIids(uint32_t* iidCount, Il2CppGuid** iids)
+il2cpp_hresult_t STDCALL il2cpp::vm::ComObjectBase::GetIids(uint32_t* iidCount, Il2CppGuid** iids)
 {
     *iidCount = 0;
     *iids = NULL;
     return IL2CPP_S_OK;
 }
 
-il2cpp_hresult_t STDCALL ComObjectBase::GetRuntimeClassName(Il2CppHString* className)
+il2cpp_hresult_t STDCALL il2cpp::vm::ComObjectBase::GetRuntimeClassName(Il2CppHString* className)
 {
     return GetRuntimeClassNameImpl(className);
 }
@@ -23,13 +21,13 @@ il2cpp_hresult_t il2cpp::vm::ComObjectBase::GetRuntimeClassNameImpl(Il2CppHStrin
     return IL2CPP_S_OK;
 }
 
-il2cpp_hresult_t STDCALL ComObjectBase::GetTrustLevel(int32_t* trustLevel)
+il2cpp_hresult_t STDCALL il2cpp::vm::ComObjectBase::GetTrustLevel(int32_t* trustLevel)
 {
     *trustLevel = 0;
     return IL2CPP_S_OK;
 }
 
-il2cpp_hresult_t STDCALL ComObjectBase::GetUnmarshalClass(const Il2CppGuid& iid, void* object, uint32_t context, void* reserved, uint32_t flags, Il2CppGuid* clsid)
+il2cpp_hresult_t STDCALL il2cpp::vm::ComObjectBase::GetUnmarshalClass(const Il2CppGuid& iid, void* object, uint32_t context, void* reserved, uint32_t flags, Il2CppGuid* clsid)
 {
     Il2CppIMarshal* freeThreadedMarshaler;
     il2cpp_hresult_t hr = GetFreeThreadedMarshalerNoAddRef(&freeThreadedMarshaler);
@@ -39,7 +37,7 @@ il2cpp_hresult_t STDCALL ComObjectBase::GetUnmarshalClass(const Il2CppGuid& iid,
     return freeThreadedMarshaler->GetUnmarshalClass(iid, object, context, reserved, flags, clsid);
 }
 
-il2cpp_hresult_t STDCALL ComObjectBase::GetMarshalSizeMax(const Il2CppGuid& iid, void* object, uint32_t context, void* reserved, uint32_t flags, uint32_t* size)
+il2cpp_hresult_t STDCALL il2cpp::vm::ComObjectBase::GetMarshalSizeMax(const Il2CppGuid& iid, void* object, uint32_t context, void* reserved, uint32_t flags, uint32_t* size)
 {
     Il2CppIMarshal* freeThreadedMarshaler;
     il2cpp_hresult_t hr = GetFreeThreadedMarshalerNoAddRef(&freeThreadedMarshaler);
@@ -49,7 +47,7 @@ il2cpp_hresult_t STDCALL ComObjectBase::GetMarshalSizeMax(const Il2CppGuid& iid,
     return freeThreadedMarshaler->GetMarshalSizeMax(iid, object, context, reserved, flags, size);
 }
 
-il2cpp_hresult_t STDCALL ComObjectBase::MarshalInterface(Il2CppIStream* stream, const Il2CppGuid& iid, void* object, uint32_t context, void* reserved, uint32_t flags)
+il2cpp_hresult_t STDCALL il2cpp::vm::ComObjectBase::MarshalInterface(Il2CppIStream* stream, const Il2CppGuid& iid, void* object, uint32_t context, void* reserved, uint32_t flags)
 {
     Il2CppIMarshal* freeThreadedMarshaler;
     il2cpp_hresult_t hr = GetFreeThreadedMarshalerNoAddRef(&freeThreadedMarshaler);
@@ -59,7 +57,7 @@ il2cpp_hresult_t STDCALL ComObjectBase::MarshalInterface(Il2CppIStream* stream, 
     return freeThreadedMarshaler->MarshalInterface(stream, iid, object, context, reserved, flags);
 }
 
-il2cpp_hresult_t STDCALL ComObjectBase::UnmarshalInterface(Il2CppIStream* stream, const Il2CppGuid& iid, void** object)
+il2cpp_hresult_t STDCALL il2cpp::vm::ComObjectBase::UnmarshalInterface(Il2CppIStream* stream, const Il2CppGuid& iid, void** object)
 {
     Il2CppIMarshal* freeThreadedMarshaler;
     il2cpp_hresult_t hr = GetFreeThreadedMarshalerNoAddRef(&freeThreadedMarshaler);
@@ -69,7 +67,7 @@ il2cpp_hresult_t STDCALL ComObjectBase::UnmarshalInterface(Il2CppIStream* stream
     return freeThreadedMarshaler->UnmarshalInterface(stream, iid, object);
 }
 
-il2cpp_hresult_t STDCALL ComObjectBase::ReleaseMarshalData(Il2CppIStream* stream)
+il2cpp_hresult_t STDCALL il2cpp::vm::ComObjectBase::ReleaseMarshalData(Il2CppIStream* stream)
 {
     Il2CppIMarshal* freeThreadedMarshaler;
     il2cpp_hresult_t hr = GetFreeThreadedMarshalerNoAddRef(&freeThreadedMarshaler);
@@ -79,7 +77,7 @@ il2cpp_hresult_t STDCALL ComObjectBase::ReleaseMarshalData(Il2CppIStream* stream
     return freeThreadedMarshaler->ReleaseMarshalData(stream);
 }
 
-il2cpp_hresult_t STDCALL ComObjectBase::DisconnectObject(uint32_t reserved)
+il2cpp_hresult_t STDCALL il2cpp::vm::ComObjectBase::DisconnectObject(uint32_t reserved)
 {
     Il2CppIMarshal* freeThreadedMarshaler;
     il2cpp_hresult_t hr = GetFreeThreadedMarshalerNoAddRef(&freeThreadedMarshaler);
@@ -89,7 +87,7 @@ il2cpp_hresult_t STDCALL ComObjectBase::DisconnectObject(uint32_t reserved)
     return freeThreadedMarshaler->DisconnectObject(reserved);
 }
 
-il2cpp_hresult_t ComObjectBase::GetFreeThreadedMarshalerNoAddRef(Il2CppIMarshal** destination)
+il2cpp_hresult_t il2cpp::vm::ComObjectBase::GetFreeThreadedMarshalerNoAddRef(Il2CppIMarshal** destination)
 {
     Il2CppIMarshal* freeThreadedMarshaler = m_FreeThreadedMarshaler;
     if (freeThreadedMarshaler == NULL)

@@ -3,6 +3,7 @@
 #include "utils/StringUtils.h"
 #include "vm/Array.h"
 #include "vm/Class.h"
+#include "vm/ClassInlines.h"
 #include "vm/Exception.h"
 #include "vm/MetadataCache.h"
 #include "vm/Object.h"
@@ -20,6 +21,7 @@
 #include "il2cpp-tabledefs.h"
 #include "vm/Method.h"
 #include "metadata/GenericMethod.h"
+#include "il2cpp-runtime-stats.h"
 
 #if IL2CPP_GC_BOEHM
 #define ALLOC_PTRFREE(obj, vt, size) do { (obj) = (Il2CppObject*)GC_MALLOC_ATOMIC ((size)); (obj)->klass = (vt); (obj)->monitor = NULL;} while (0)
@@ -201,7 +203,7 @@ namespace vm
         Il2CppClass* methodDeclaringType = method->klass;
         if (Class::IsInterface(methodDeclaringType))
         {
-            const MethodInfo* itfMethod = Class::GetInterfaceInvokeDataFromVTable(obj, methodDeclaringType, method->slot).method;
+            const MethodInfo* itfMethod = ClassInlines::GetInterfaceInvokeDataFromVTable(obj, methodDeclaringType, method->slot).method;
             if (Method::IsGenericInstance(method))
             {
                 if (itfMethod->methodPointer)

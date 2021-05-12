@@ -433,7 +433,7 @@ mono_threadpool_begin_invoke (MonoDomain *domain, MonoObject *target, MonoMethod
 	error_init (error);
 
 	MonoMethod* invoke = NULL;
-	if (method->klass->parent == mono_defaults.multicastdelegate_class)
+	if (mono_class_is_delegate(method->klass->parent))
 		invoke = mono_get_delegate_invoke (method->klass);
 
 	message = mono_method_call_message_new (method, params, invoke, (params != NULL) ? (&async_callback) : NULL, (params != NULL) ? (&state) : NULL, error);
