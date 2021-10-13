@@ -2390,6 +2390,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem__ctor_mC3C3C6
 		s_Il2CppMethodInitialized = true;
 	}
 	{
+		// private bool isTeleporting = false;
+		__this->set_isTeleporting_18((bool)0);
+		// private bool isProcessingTeleportRequest = false;
+		__this->set_isProcessingTeleportRequest_19((bool)0);
 		// private Vector3 targetPosition = Vector3.zero;
 		IL2CPP_RUNTIME_CLASS_INIT(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720_il2cpp_TypeInfo_var);
 		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_0 = Vector3_get_zero_m3CDDCAE94581DF3BB16C4B40A100E28E9C6649C2(/*hidden argument*/NULL);
@@ -2397,6 +2401,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem__ctor_mC3C3C6
 		// private Vector3 targetRotation = Vector3.zero;
 		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_1 = Vector3_get_zero_m3CDDCAE94581DF3BB16C4B40A100E28E9C6649C2(/*hidden argument*/NULL);
 		__this->set_targetRotation_21(L_1);
+		// private GameObject eventSystemReference = null;
+		__this->set_eventSystemReference_22((GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F *)NULL);
 		// public override string Name { get; protected set; } = "Mixed Reality Teleport System";
 		__this->set_U3CNameU3Ek__BackingField_23(_stringLiteralFE4C1AA9295D744656D3EBC80FD145E6DD76CA87);
 		// private float teleportDuration = 0.25f;
@@ -2421,6 +2427,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem__ctor_m651BDC
 		s_Il2CppMethodInitialized = true;
 	}
 	{
+		// private bool isTeleporting = false;
+		__this->set_isTeleporting_18((bool)0);
+		// private bool isProcessingTeleportRequest = false;
+		__this->set_isProcessingTeleportRequest_19((bool)0);
 		// private Vector3 targetPosition = Vector3.zero;
 		IL2CPP_RUNTIME_CLASS_INIT(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720_il2cpp_TypeInfo_var);
 		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_0 = Vector3_get_zero_m3CDDCAE94581DF3BB16C4B40A100E28E9C6649C2(/*hidden argument*/NULL);
@@ -2428,6 +2438,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem__ctor_m651BDC
 		// private Vector3 targetRotation = Vector3.zero;
 		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_1 = Vector3_get_zero_m3CDDCAE94581DF3BB16C4B40A100E28E9C6649C2(/*hidden argument*/NULL);
 		__this->set_targetRotation_21(L_1);
+		// private GameObject eventSystemReference = null;
+		__this->set_eventSystemReference_22((GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F *)NULL);
 		// public override string Name { get; protected set; } = "Mixed Reality Teleport System";
 		__this->set_U3CNameU3Ek__BackingField_23(_stringLiteralFE4C1AA9295D744656D3EBC80FD145E6DD76CA87);
 		// private float teleportDuration = 0.25f;
@@ -2498,6 +2510,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_Destroy_m050D
 		il2cpp_codegen_initialize_method (MixedRealityTeleportSystem_Destroy_m050D74E32D431BE08B4893ECDA174E52FC3FB6C9_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
+	bool V_1 = false;
 	{
 		// base.Destroy();
 		BaseEventSystem_Destroy_m7B3C5682C43FE55F078723094DB38FCEBF56674E(__this, /*hidden argument*/NULL);
@@ -2505,37 +2519,44 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_Destroy_m050D
 		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_0 = __this->get_eventSystemReference_22();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
 		bool L_1 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_0, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
-		if (!L_1)
+		V_0 = L_1;
+		bool L_2 = V_0;
+		if (!L_2)
 		{
-			goto IL_0032;
+			goto IL_0044;
 		}
 	}
 	{
 		// if (!Application.isPlaying)
-		bool L_2 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
-		if (L_2)
+		bool L_3 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
+		V_1 = (bool)((((int32_t)L_3) == ((int32_t)0))? 1 : 0);
+		bool L_4 = V_1;
+		if (!L_4)
 		{
-			goto IL_0027;
+			goto IL_0035;
 		}
 	}
 	{
 		// Object.DestroyImmediate(eventSystemReference);
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_3 = __this->get_eventSystemReference_22();
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_5 = __this->get_eventSystemReference_22();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
-		Object_DestroyImmediate_mF6F4415EF22249D6E650FAA40E403283F19B7446(L_3, /*hidden argument*/NULL);
-		// }
-		return;
+		Object_DestroyImmediate_mF6F4415EF22249D6E650FAA40E403283F19B7446(L_5, /*hidden argument*/NULL);
+		goto IL_0043;
 	}
 
-IL_0027:
+IL_0035:
 	{
 		// Object.Destroy(eventSystemReference);
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_4 = __this->get_eventSystemReference_22();
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_6 = __this->get_eventSystemReference_22();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
-		Object_Destroy_m23B4562495BA35A74266D4372D45368F8C05109A(L_4, /*hidden argument*/NULL);
+		Object_Destroy_m23B4562495BA35A74266D4372D45368F8C05109A(L_6, /*hidden argument*/NULL);
 	}
 
-IL_0032:
+IL_0043:
+	{
+	}
+
+IL_0044:
 	{
 		// }
 		return;
@@ -2595,12 +2616,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_set_TeleportD
 		il2cpp_codegen_initialize_method (MixedRealityTeleportSystem_set_TeleportDuration_m5F3D4B2F0B40472572866B59B053C55EC69B53DF_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
 	{
 		// if (isProcessingTeleportRequest)
 		bool L_0 = __this->get_isProcessingTeleportRequest_19();
-		if (!L_0)
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0013;
+			goto IL_0019;
 		}
 	}
 	{
@@ -2608,14 +2632,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_set_TeleportD
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m37338644DC81F640CCDFEAE35A223F0E965F0568(_stringLiteralEFE6B56A9DC4DB2A042FF69F417FF18EE1734789, /*hidden argument*/NULL);
 		// return;
-		return;
+		goto IL_0020;
 	}
 
-IL_0013:
+IL_0019:
 	{
 		// teleportDuration = value;
-		float L_1 = ___value0;
-		__this->set_teleportDuration_25(L_1);
+		float L_2 = ___value0;
+		__this->set_teleportDuration_25(L_2);
+	}
+
+IL_0020:
+	{
 		// }
 		return;
 	}
@@ -2649,7 +2677,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_RaiseTeleport
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		// teleportEventData.Initialize(pointer, hotSpot);
@@ -2663,27 +2691,26 @@ IL_000e:
 		IL2CPP_RUNTIME_CLASS_INIT(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var);
 		EventFunction_1_tF66ACCFCE58D4F9F1D29446D094EE6C2137325D0 * L_6 = ((MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_StaticFields*)il2cpp_codegen_static_fields_for(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var))->get_OnTeleportRequestHandler_26();
 		GenericVirtActionInvoker2< BaseEventData_t46C9D2AE3183A742EDE89944AF64A23DBF1B80A5 *, EventFunction_1_tF66ACCFCE58D4F9F1D29446D094EE6C2137325D0 * >::Invoke(BaseEventSystem_HandleEvent_TisIMixedRealityTeleportHandler_t6CD4611BFDBBE59ACB07EEDCA88064D18234EE19_mCEA933189CC005E56ECEB7CCBAC53A43F6B68D43_RuntimeMethod_var, __this, L_5, L_6);
-		// }
-		IL2CPP_LEAVE(0x3C, FINALLY_002e);
+		IL2CPP_LEAVE(0x42, FINALLY_0033);
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_002e;
+		goto FINALLY_0033;
 	}
 
-FINALLY_002e:
+FINALLY_0033:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(46)
+		IL2CPP_END_FINALLY(51)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(46)
+	IL2CPP_CLEANUP(51)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x3C, IL_003c)
+		IL2CPP_JUMP_TBL(0x42, IL_0042)
 	}
 
-IL_003c:
+IL_0042:
 	{
 		// }
 		return;
@@ -2698,10 +2725,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_RaiseTeleport
 		il2cpp_codegen_initialize_method (MixedRealityTeleportSystem_RaiseTeleportStarted_m945F292C6906458872514BE87A27A8919762E3DC_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
+	bool V_0 = false;
+	AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  V_1;
 	memset((&V_1), 0, sizeof(V_1));
+	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_2;
+	memset((&V_2), 0, sizeof(V_2));
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -2712,9 +2740,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_RaiseTeleport
 	{
 		// if (isTeleporting)
 		bool L_0 = __this->get_isTeleporting_18();
-		if (!L_0)
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0013;
+			goto IL_0019;
 		}
 	}
 	{
@@ -2722,59 +2752,58 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_RaiseTeleport
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
 		Debug_LogError_m3BCF9B78263152261565DCA9DB7D55F0C391ED29(_stringLiteral8AAF4DB2092074ABA4A5019AC2944FE5D941200F, /*hidden argument*/NULL);
 		// return;
-		return;
+		goto IL_006e;
 	}
 
-IL_0013:
+IL_0019:
 	{
 		// using (RaiseTeleportStartedPerfMarker.Auto())
 		IL2CPP_RUNTIME_CLASS_INIT(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var);
-		ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  L_1 = ((MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_StaticFields*)il2cpp_codegen_static_fields_for(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var))->get_RaiseTeleportStartedPerfMarker_29();
-		V_1 = L_1;
-		AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  L_2 = ProfilerMarker_Auto_m27C8BA4E46F26F3005760C48C4B92EBC284A5D02_inline((ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86 *)(&V_1), /*hidden argument*/NULL);
-		V_0 = L_2;
+		ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  L_2 = ((MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_StaticFields*)il2cpp_codegen_static_fields_for(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var))->get_RaiseTeleportStartedPerfMarker_29();
+		V_2 = L_2;
+		AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  L_3 = ProfilerMarker_Auto_m27C8BA4E46F26F3005760C48C4B92EBC284A5D02_inline((ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86 *)(&V_2), /*hidden argument*/NULL);
+		V_1 = L_3;
 	}
 
-IL_0021:
+IL_0027:
 	try
 	{ // begin try (depth: 1)
 		// isTeleporting = true;
 		__this->set_isTeleporting_18((bool)1);
 		// teleportEventData.Initialize(pointer, hotSpot);
-		TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_3 = __this->get_teleportEventData_17();
-		RuntimeObject* L_4 = ___pointer0;
-		RuntimeObject* L_5 = ___hotSpot1;
-		NullCheck(L_3);
-		TeleportEventData_Initialize_m1E0966B82C075C2CEB1FC535D2639469A1E4EC04(L_3, L_4, L_5, /*hidden argument*/NULL);
+		TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_4 = __this->get_teleportEventData_17();
+		RuntimeObject* L_5 = ___pointer0;
+		RuntimeObject* L_6 = ___hotSpot1;
+		NullCheck(L_4);
+		TeleportEventData_Initialize_m1E0966B82C075C2CEB1FC535D2639469A1E4EC04(L_4, L_5, L_6, /*hidden argument*/NULL);
 		// HandleEvent(teleportEventData, OnTeleportStartedHandler);
-		TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_6 = __this->get_teleportEventData_17();
+		TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_7 = __this->get_teleportEventData_17();
 		IL2CPP_RUNTIME_CLASS_INIT(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var);
-		EventFunction_1_tF66ACCFCE58D4F9F1D29446D094EE6C2137325D0 * L_7 = ((MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_StaticFields*)il2cpp_codegen_static_fields_for(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var))->get_OnTeleportStartedHandler_28();
-		GenericVirtActionInvoker2< BaseEventData_t46C9D2AE3183A742EDE89944AF64A23DBF1B80A5 *, EventFunction_1_tF66ACCFCE58D4F9F1D29446D094EE6C2137325D0 * >::Invoke(BaseEventSystem_HandleEvent_TisIMixedRealityTeleportHandler_t6CD4611BFDBBE59ACB07EEDCA88064D18234EE19_mCEA933189CC005E56ECEB7CCBAC53A43F6B68D43_RuntimeMethod_var, __this, L_6, L_7);
+		EventFunction_1_tF66ACCFCE58D4F9F1D29446D094EE6C2137325D0 * L_8 = ((MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_StaticFields*)il2cpp_codegen_static_fields_for(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var))->get_OnTeleportStartedHandler_28();
+		GenericVirtActionInvoker2< BaseEventData_t46C9D2AE3183A742EDE89944AF64A23DBF1B80A5 *, EventFunction_1_tF66ACCFCE58D4F9F1D29446D094EE6C2137325D0 * >::Invoke(BaseEventSystem_HandleEvent_TisIMixedRealityTeleportHandler_t6CD4611BFDBBE59ACB07EEDCA88064D18234EE19_mCEA933189CC005E56ECEB7CCBAC53A43F6B68D43_RuntimeMethod_var, __this, L_7, L_8);
 		// ProcessTeleportationRequest(teleportEventData);
-		TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_8 = __this->get_teleportEventData_17();
-		MixedRealityTeleportSystem_ProcessTeleportationRequest_m6F91E09144421314A7081BAFFAA54D22540007F1(__this, L_8, /*hidden argument*/NULL);
-		// }
-		IL2CPP_LEAVE(0x62, FINALLY_0054);
+		TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_9 = __this->get_teleportEventData_17();
+		MixedRealityTeleportSystem_ProcessTeleportationRequest_m6F91E09144421314A7081BAFFAA54D22540007F1(__this, L_9, /*hidden argument*/NULL);
+		IL2CPP_LEAVE(0x6E, FINALLY_005f);
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0054;
+		goto FINALLY_005f;
 	}
 
-FINALLY_0054:
+FINALLY_005f:
 	{ // begin finally (depth: 1)
-		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(84)
+		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_1), /*hidden argument*/NULL);
+		IL2CPP_END_FINALLY(95)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(84)
+	IL2CPP_CLEANUP(95)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x62, IL_0062)
+		IL2CPP_JUMP_TBL(0x6E, IL_006e)
 	}
 
-IL_0062:
+IL_006e:
 	{
 		// }
 		return;
@@ -2789,10 +2818,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_RaiseTeleport
 		il2cpp_codegen_initialize_method (MixedRealityTeleportSystem_RaiseTeleportComplete_m9FDDAD52D59C91B3AE32968E4A1CAD614FF7940A_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
+	bool V_0 = false;
+	AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  V_1;
 	memset((&V_1), 0, sizeof(V_1));
+	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_2;
+	memset((&V_2), 0, sizeof(V_2));
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -2803,9 +2833,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_RaiseTeleport
 	{
 		// if (!isTeleporting)
 		bool L_0 = __this->get_isTeleporting_18();
-		if (L_0)
+		V_0 = (bool)((((int32_t)L_0) == ((int32_t)0))? 1 : 0);
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0013;
+			goto IL_001c;
 		}
 	}
 	{
@@ -2813,56 +2845,55 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_RaiseTeleport
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
 		Debug_LogError_m3BCF9B78263152261565DCA9DB7D55F0C391ED29(_stringLiteral4D1D987217C94047D95253BDAA70342271726366, /*hidden argument*/NULL);
 		// return;
-		return;
+		goto IL_0064;
 	}
 
-IL_0013:
+IL_001c:
 	{
 		// using (RaiseTeleportCompletePerfMarker.Auto())
 		IL2CPP_RUNTIME_CLASS_INIT(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var);
-		ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  L_1 = ((MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_StaticFields*)il2cpp_codegen_static_fields_for(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var))->get_RaiseTeleportCompletePerfMarker_31();
-		V_1 = L_1;
-		AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  L_2 = ProfilerMarker_Auto_m27C8BA4E46F26F3005760C48C4B92EBC284A5D02_inline((ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86 *)(&V_1), /*hidden argument*/NULL);
-		V_0 = L_2;
+		ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  L_2 = ((MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_StaticFields*)il2cpp_codegen_static_fields_for(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var))->get_RaiseTeleportCompletePerfMarker_31();
+		V_2 = L_2;
+		AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  L_3 = ProfilerMarker_Auto_m27C8BA4E46F26F3005760C48C4B92EBC284A5D02_inline((ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86 *)(&V_2), /*hidden argument*/NULL);
+		V_1 = L_3;
 	}
 
-IL_0021:
+IL_002a:
 	try
 	{ // begin try (depth: 1)
 		// teleportEventData.Initialize(pointer, hotSpot);
-		TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_3 = __this->get_teleportEventData_17();
-		RuntimeObject* L_4 = ___pointer0;
-		RuntimeObject* L_5 = ___hotSpot1;
-		NullCheck(L_3);
-		TeleportEventData_Initialize_m1E0966B82C075C2CEB1FC535D2639469A1E4EC04(L_3, L_4, L_5, /*hidden argument*/NULL);
+		TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_4 = __this->get_teleportEventData_17();
+		RuntimeObject* L_5 = ___pointer0;
+		RuntimeObject* L_6 = ___hotSpot1;
+		NullCheck(L_4);
+		TeleportEventData_Initialize_m1E0966B82C075C2CEB1FC535D2639469A1E4EC04(L_4, L_5, L_6, /*hidden argument*/NULL);
 		// HandleEvent(teleportEventData, OnTeleportCompletedHandler);
-		TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_6 = __this->get_teleportEventData_17();
+		TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_7 = __this->get_teleportEventData_17();
 		IL2CPP_RUNTIME_CLASS_INIT(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var);
-		EventFunction_1_tF66ACCFCE58D4F9F1D29446D094EE6C2137325D0 * L_7 = ((MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_StaticFields*)il2cpp_codegen_static_fields_for(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var))->get_OnTeleportCompletedHandler_30();
-		GenericVirtActionInvoker2< BaseEventData_t46C9D2AE3183A742EDE89944AF64A23DBF1B80A5 *, EventFunction_1_tF66ACCFCE58D4F9F1D29446D094EE6C2137325D0 * >::Invoke(BaseEventSystem_HandleEvent_TisIMixedRealityTeleportHandler_t6CD4611BFDBBE59ACB07EEDCA88064D18234EE19_mCEA933189CC005E56ECEB7CCBAC53A43F6B68D43_RuntimeMethod_var, __this, L_6, L_7);
+		EventFunction_1_tF66ACCFCE58D4F9F1D29446D094EE6C2137325D0 * L_8 = ((MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_StaticFields*)il2cpp_codegen_static_fields_for(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var))->get_OnTeleportCompletedHandler_30();
+		GenericVirtActionInvoker2< BaseEventData_t46C9D2AE3183A742EDE89944AF64A23DBF1B80A5 *, EventFunction_1_tF66ACCFCE58D4F9F1D29446D094EE6C2137325D0 * >::Invoke(BaseEventSystem_HandleEvent_TisIMixedRealityTeleportHandler_t6CD4611BFDBBE59ACB07EEDCA88064D18234EE19_mCEA933189CC005E56ECEB7CCBAC53A43F6B68D43_RuntimeMethod_var, __this, L_7, L_8);
 		// isTeleporting = false;
 		__this->set_isTeleporting_18((bool)0);
-		// }
-		IL2CPP_LEAVE(0x56, FINALLY_0048);
+		IL2CPP_LEAVE(0x64, FINALLY_0055);
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0048;
+		goto FINALLY_0055;
 	}
 
-FINALLY_0048:
+FINALLY_0055:
 	{ // begin finally (depth: 1)
-		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(72)
+		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_1), /*hidden argument*/NULL);
+		IL2CPP_END_FINALLY(85)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(72)
+	IL2CPP_CLEANUP(85)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x56, IL_0056)
+		IL2CPP_JUMP_TBL(0x64, IL_0064)
 	}
 
-IL_0056:
+IL_0064:
 	{
 		// }
 		return;
@@ -2897,7 +2928,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_RaiseTeleport
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		// teleportEventData.Initialize(pointer, hotSpot);
@@ -2911,27 +2942,26 @@ IL_000e:
 		IL2CPP_RUNTIME_CLASS_INIT(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var);
 		EventFunction_1_tF66ACCFCE58D4F9F1D29446D094EE6C2137325D0 * L_6 = ((MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_StaticFields*)il2cpp_codegen_static_fields_for(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var))->get_OnTeleportCanceledHandler_32();
 		GenericVirtActionInvoker2< BaseEventData_t46C9D2AE3183A742EDE89944AF64A23DBF1B80A5 *, EventFunction_1_tF66ACCFCE58D4F9F1D29446D094EE6C2137325D0 * >::Invoke(BaseEventSystem_HandleEvent_TisIMixedRealityTeleportHandler_t6CD4611BFDBBE59ACB07EEDCA88064D18234EE19_mCEA933189CC005E56ECEB7CCBAC53A43F6B68D43_RuntimeMethod_var, __this, L_5, L_6);
-		// }
-		IL2CPP_LEAVE(0x3C, FINALLY_002e);
+		IL2CPP_LEAVE(0x42, FINALLY_0033);
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_002e;
+		goto FINALLY_0033;
 	}
 
-FINALLY_002e:
+FINALLY_0033:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(46)
+		IL2CPP_END_FINALLY(51)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(46)
+	IL2CPP_CLEANUP(51)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x3C, IL_003c)
+		IL2CPP_JUMP_TBL(0x42, IL_0042)
 	}
 
-IL_003c:
+IL_0042:
 	{
 		// }
 		return;
@@ -2952,8 +2982,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_ProcessTelepo
 	memset((&V_1), 0, sizeof(V_1));
 	RuntimeObject* V_2 = NULL;
 	float V_3 = 0.0f;
-	FocusDetails_t72F15A8C8216CDB44311656DCF9F4F51E65128E7  V_4;
-	memset((&V_4), 0, sizeof(V_4));
+	bool V_4 = false;
+	FocusDetails_t72F15A8C8216CDB44311656DCF9F4F51E65128E7  V_5;
+	memset((&V_5), 0, sizeof(V_5));
+	bool V_6 = false;
+	bool V_7 = false;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -2961,6 +2994,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_ProcessTelepo
 	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
+	int32_t G_B4_0 = 0;
 	{
 		// using (ProcessTeleportationRequestPerfMarker.Auto())
 		IL2CPP_RUNTIME_CLASS_INIT(MixedRealityTeleportSystem_t4B5DD01BE3A94BF1457C13EEF6FAA2486E95E53A_il2cpp_TypeInfo_var);
@@ -2970,7 +3004,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityTeleportSystem_ProcessTelepo
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
@@ -2988,163 +3022,183 @@ IL_000e:
 			V_2 = L_5;
 			if (!L_5)
 			{
-				goto IL_0048;
+				goto IL_003c;
 			}
 		}
 
-IL_002f:
+IL_0031:
 		{
 			RuntimeObject* L_6 = V_2;
 			bool L_7 = UnityObjectExtensions_IsNull_TisIMixedRealityTeleportPointer_t1B24406B81F2BE0BC30FD7C74450F45927B7DE5E_m30164A6A930745AC8700A69352F92E50DDEF5F5E(L_6, /*hidden argument*/UnityObjectExtensions_IsNull_TisIMixedRealityTeleportPointer_t1B24406B81F2BE0BC30FD7C74450F45927B7DE5E_m30164A6A930745AC8700A69352F92E50DDEF5F5E_RuntimeMethod_var);
-			if (L_7)
+			G_B4_0 = ((((int32_t)L_7) == ((int32_t)0))? 1 : 0);
+			goto IL_003d;
+		}
+
+IL_003c:
+		{
+			G_B4_0 = 0;
+		}
+
+IL_003d:
+		{
+			V_4 = (bool)G_B4_0;
+			bool L_8 = V_4;
+			if (!L_8)
 			{
-				goto IL_0048;
+				goto IL_0056;
 			}
 		}
 
-IL_0037:
+IL_0043:
 		{
 			// targetRotation.y = teleportPointer.PointerOrientation;
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * L_8 = __this->get_address_of_targetRotation_21();
-			RuntimeObject* L_9 = V_2;
-			NullCheck(L_9);
-			float L_10 = InterfaceFuncInvoker0< float >::Invoke(3 /* System.Single Microsoft.MixedReality.Toolkit.Input.IMixedRealityTeleportPointer::get_PointerOrientation() */, IMixedRealityTeleportPointer_t1B24406B81F2BE0BC30FD7C74450F45927B7DE5E_il2cpp_TypeInfo_var, L_9);
-			L_8->set_y_3(L_10);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * L_9 = __this->get_address_of_targetRotation_21();
+			RuntimeObject* L_10 = V_2;
+			NullCheck(L_10);
+			float L_11 = InterfaceFuncInvoker0< float >::Invoke(3 /* System.Single Microsoft.MixedReality.Toolkit.Input.IMixedRealityTeleportPointer::get_PointerOrientation() */, IMixedRealityTeleportPointer_t1B24406B81F2BE0BC30FD7C74450F45927B7DE5E_il2cpp_TypeInfo_var, L_10);
+			L_9->set_y_3(L_11);
 		}
 
-IL_0048:
+IL_0056:
 		{
 			// targetPosition = eventData.Pointer.Result.Details.Point;
-			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_11 = ___eventData0;
-			NullCheck(L_11);
-			RuntimeObject* L_12 = TeleportEventData_get_Pointer_mA167D0D4457B62B99125EFB1BA6380F9774397D8_inline(L_11, /*hidden argument*/NULL);
+			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_12 = ___eventData0;
 			NullCheck(L_12);
-			RuntimeObject* L_13 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(22 /* Microsoft.MixedReality.Toolkit.Input.IPointerResult Microsoft.MixedReality.Toolkit.Input.IMixedRealityPointer::get_Result() */, IMixedRealityPointer_tD7C4CF8940EB016597EF8CED76503F0D39A61C53_il2cpp_TypeInfo_var, L_12);
+			RuntimeObject* L_13 = TeleportEventData_get_Pointer_mA167D0D4457B62B99125EFB1BA6380F9774397D8_inline(L_12, /*hidden argument*/NULL);
 			NullCheck(L_13);
-			FocusDetails_t72F15A8C8216CDB44311656DCF9F4F51E65128E7  L_14 = InterfaceFuncInvoker0< FocusDetails_t72F15A8C8216CDB44311656DCF9F4F51E65128E7  >::Invoke(1 /* Microsoft.MixedReality.Toolkit.Physics.FocusDetails Microsoft.MixedReality.Toolkit.Input.IPointerResult::get_Details() */, IPointerResult_t4B4DC471C74944784622658607BD11DF181BB278_il2cpp_TypeInfo_var, L_13);
-			V_4 = L_14;
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_15 = FocusDetails_get_Point_m2959D1AF5F4A848A2483114341B17517737A24B2_inline((FocusDetails_t72F15A8C8216CDB44311656DCF9F4F51E65128E7 *)(&V_4), /*hidden argument*/NULL);
-			__this->set_targetPosition_20(L_15);
+			RuntimeObject* L_14 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(22 /* Microsoft.MixedReality.Toolkit.Input.IPointerResult Microsoft.MixedReality.Toolkit.Input.IMixedRealityPointer::get_Result() */, IMixedRealityPointer_tD7C4CF8940EB016597EF8CED76503F0D39A61C53_il2cpp_TypeInfo_var, L_13);
+			NullCheck(L_14);
+			FocusDetails_t72F15A8C8216CDB44311656DCF9F4F51E65128E7  L_15 = InterfaceFuncInvoker0< FocusDetails_t72F15A8C8216CDB44311656DCF9F4F51E65128E7  >::Invoke(1 /* Microsoft.MixedReality.Toolkit.Physics.FocusDetails Microsoft.MixedReality.Toolkit.Input.IPointerResult::get_Details() */, IPointerResult_t4B4DC471C74944784622658607BD11DF181BB278_il2cpp_TypeInfo_var, L_14);
+			V_5 = L_15;
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_16 = FocusDetails_get_Point_m2959D1AF5F4A848A2483114341B17517737A24B2_inline((FocusDetails_t72F15A8C8216CDB44311656DCF9F4F51E65128E7 *)(&V_5), /*hidden argument*/NULL);
+			__this->set_targetPosition_20(L_16);
 			// if (eventData.HotSpot != null)
-			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_16 = ___eventData0;
-			NullCheck(L_16);
-			RuntimeObject* L_17 = TeleportEventData_get_HotSpot_m4F26D3B99203C8890F89EB51B5A93E82FF3CE988_inline(L_16, /*hidden argument*/NULL);
-			if (!L_17)
+			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_17 = ___eventData0;
+			NullCheck(L_17);
+			RuntimeObject* L_18 = TeleportEventData_get_HotSpot_m4F26D3B99203C8890F89EB51B5A93E82FF3CE988_inline(L_17, /*hidden argument*/NULL);
+			V_6 = (bool)((!(((RuntimeObject*)(RuntimeObject*)L_18) <= ((RuntimeObject*)(RuntimeObject *)NULL)))? 1 : 0);
+			bool L_19 = V_6;
+			if (!L_19)
 			{
-				goto IL_00a3;
+				goto IL_00c0;
 			}
 		}
 
-IL_006f:
+IL_0084:
 		{
 			// targetPosition = eventData.HotSpot.Position;
-			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_18 = ___eventData0;
-			NullCheck(L_18);
-			RuntimeObject* L_19 = TeleportEventData_get_HotSpot_m4F26D3B99203C8890F89EB51B5A93E82FF3CE988_inline(L_18, /*hidden argument*/NULL);
-			NullCheck(L_19);
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_20 = InterfaceFuncInvoker0< Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  >::Invoke(0 /* UnityEngine.Vector3 Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHotSpot::get_Position() */, IMixedRealityTeleportHotSpot_t0B2192DA76C79CA499A38FD57505D22FB40FDAC6_il2cpp_TypeInfo_var, L_19);
-			__this->set_targetPosition_20(L_20);
-			// if (eventData.HotSpot.OverrideTargetOrientation)
-			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_21 = ___eventData0;
+			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_20 = ___eventData0;
+			NullCheck(L_20);
+			RuntimeObject* L_21 = TeleportEventData_get_HotSpot_m4F26D3B99203C8890F89EB51B5A93E82FF3CE988_inline(L_20, /*hidden argument*/NULL);
 			NullCheck(L_21);
-			RuntimeObject* L_22 = TeleportEventData_get_HotSpot_m4F26D3B99203C8890F89EB51B5A93E82FF3CE988_inline(L_21, /*hidden argument*/NULL);
-			NullCheck(L_22);
-			bool L_23 = InterfaceFuncInvoker0< bool >::Invoke(3 /* System.Boolean Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHotSpot::get_OverrideTargetOrientation() */, IMixedRealityTeleportHotSpot_t0B2192DA76C79CA499A38FD57505D22FB40FDAC6_il2cpp_TypeInfo_var, L_22);
-			if (!L_23)
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_22 = InterfaceFuncInvoker0< Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  >::Invoke(0 /* UnityEngine.Vector3 Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHotSpot::get_Position() */, IMixedRealityTeleportHotSpot_t0B2192DA76C79CA499A38FD57505D22FB40FDAC6_il2cpp_TypeInfo_var, L_21);
+			__this->set_targetPosition_20(L_22);
+			// if (eventData.HotSpot.OverrideTargetOrientation)
+			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_23 = ___eventData0;
+			NullCheck(L_23);
+			RuntimeObject* L_24 = TeleportEventData_get_HotSpot_m4F26D3B99203C8890F89EB51B5A93E82FF3CE988_inline(L_23, /*hidden argument*/NULL);
+			NullCheck(L_24);
+			bool L_25 = InterfaceFuncInvoker0< bool >::Invoke(3 /* System.Boolean Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHotSpot::get_OverrideTargetOrientation() */, IMixedRealityTeleportHotSpot_t0B2192DA76C79CA499A38FD57505D22FB40FDAC6_il2cpp_TypeInfo_var, L_24);
+			V_7 = L_25;
+			bool L_26 = V_7;
+			if (!L_26)
 			{
-				goto IL_00a3;
+				goto IL_00bf;
 			}
 		}
 
-IL_008d:
+IL_00a7:
 		{
 			// targetRotation.y = eventData.HotSpot.TargetOrientation;
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * L_24 = __this->get_address_of_targetRotation_21();
-			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_25 = ___eventData0;
-			NullCheck(L_25);
-			RuntimeObject* L_26 = TeleportEventData_get_HotSpot_m4F26D3B99203C8890F89EB51B5A93E82FF3CE988_inline(L_25, /*hidden argument*/NULL);
-			NullCheck(L_26);
-			float L_27 = InterfaceFuncInvoker0< float >::Invoke(4 /* System.Single Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHotSpot::get_TargetOrientation() */, IMixedRealityTeleportHotSpot_t0B2192DA76C79CA499A38FD57505D22FB40FDAC6_il2cpp_TypeInfo_var, L_26);
-			L_24->set_y_3(L_27);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * L_27 = __this->get_address_of_targetRotation_21();
+			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_28 = ___eventData0;
+			NullCheck(L_28);
+			RuntimeObject* L_29 = TeleportEventData_get_HotSpot_m4F26D3B99203C8890F89EB51B5A93E82FF3CE988_inline(L_28, /*hidden argument*/NULL);
+			NullCheck(L_29);
+			float L_30 = InterfaceFuncInvoker0< float >::Invoke(4 /* System.Single Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHotSpot::get_TargetOrientation() */, IMixedRealityTeleportHotSpot_t0B2192DA76C79CA499A38FD57505D22FB40FDAC6_il2cpp_TypeInfo_var, L_29);
+			L_27->set_y_3(L_30);
 		}
 
-IL_00a3:
+IL_00bf:
+		{
+		}
+
+IL_00c0:
 		{
 			// float height = targetPosition.y;
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * L_28 = __this->get_address_of_targetPosition_20();
-			float L_29 = L_28->get_y_3();
-			V_3 = L_29;
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * L_31 = __this->get_address_of_targetPosition_20();
+			float L_32 = L_31->get_y_3();
+			V_3 = L_32;
 			// targetPosition -= CameraCache.Main.transform.position - MixedRealityPlayspace.Position;
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_30 = __this->get_targetPosition_20();
-			Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * L_31 = CameraCache_get_Main_m23FB3162F6476988FEE59F829DEAF08702D81554(/*hidden argument*/NULL);
-			NullCheck(L_31);
-			Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_32 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(L_31, /*hidden argument*/NULL);
-			NullCheck(L_32);
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_33 = Transform_get_position_mF54C3A064F7C8E24F1C56EE128728B2E4485E294(L_32, /*hidden argument*/NULL);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_33 = __this->get_targetPosition_20();
+			Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * L_34 = CameraCache_get_Main_m23FB3162F6476988FEE59F829DEAF08702D81554(/*hidden argument*/NULL);
+			NullCheck(L_34);
+			Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_35 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(L_34, /*hidden argument*/NULL);
+			NullCheck(L_35);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_36 = Transform_get_position_mF54C3A064F7C8E24F1C56EE128728B2E4485E294(L_35, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(MixedRealityPlayspace_t26F34BB4D1D53C64B140AF101E96EB151A9770A4_il2cpp_TypeInfo_var);
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_34 = MixedRealityPlayspace_get_Position_m0771DB66BD9D4C56E3DCFC70AE5806A77965C5F3(/*hidden argument*/NULL);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_37 = MixedRealityPlayspace_get_Position_m0771DB66BD9D4C56E3DCFC70AE5806A77965C5F3(/*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720_il2cpp_TypeInfo_var);
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_35 = Vector3_op_Subtraction_mF9846B723A5034F8B9F5F5DCB78E3D67649143D3(L_33, L_34, /*hidden argument*/NULL);
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_36 = Vector3_op_Subtraction_mF9846B723A5034F8B9F5F5DCB78E3D67649143D3(L_30, L_35, /*hidden argument*/NULL);
-			__this->set_targetPosition_20(L_36);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_38 = Vector3_op_Subtraction_mF9846B723A5034F8B9F5F5DCB78E3D67649143D3(L_36, L_37, /*hidden argument*/NULL);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_39 = Vector3_op_Subtraction_mF9846B723A5034F8B9F5F5DCB78E3D67649143D3(L_33, L_38, /*hidden argument*/NULL);
+			__this->set_targetPosition_20(L_39);
 			// targetPosition.y = height;
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * L_37 = __this->get_address_of_targetPosition_20();
-			float L_38 = V_3;
-			L_37->set_y_3(L_38);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * L_40 = __this->get_address_of_targetPosition_20();
+			float L_41 = V_3;
+			L_40->set_y_3(L_41);
 			// MixedRealityPlayspace.Position = targetPosition;
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_39 = __this->get_targetPosition_20();
-			MixedRealityPlayspace_set_Position_m76BC03B7B81EFF09E7A4A1AF1BCF8E3E43D12C9C(L_39, /*hidden argument*/NULL);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_42 = __this->get_targetPosition_20();
+			MixedRealityPlayspace_set_Position_m76BC03B7B81EFF09E7A4A1AF1BCF8E3E43D12C9C(L_42, /*hidden argument*/NULL);
 			// MixedRealityPlayspace.RotateAround(
 			//             CameraCache.Main.transform.position,
 			//             Vector3.up,
 			//             targetRotation.y - CameraCache.Main.transform.eulerAngles.y);
-			Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * L_40 = CameraCache_get_Main_m23FB3162F6476988FEE59F829DEAF08702D81554(/*hidden argument*/NULL);
-			NullCheck(L_40);
-			Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_41 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(L_40, /*hidden argument*/NULL);
-			NullCheck(L_41);
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_42 = Transform_get_position_mF54C3A064F7C8E24F1C56EE128728B2E4485E294(L_41, /*hidden argument*/NULL);
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_43 = Vector3_get_up_m6309EBC4E42D6D0B3D28056BD23D0331275306F7(/*hidden argument*/NULL);
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * L_44 = __this->get_address_of_targetRotation_21();
-			float L_45 = L_44->get_y_3();
-			Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * L_46 = CameraCache_get_Main_m23FB3162F6476988FEE59F829DEAF08702D81554(/*hidden argument*/NULL);
-			NullCheck(L_46);
-			Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_47 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(L_46, /*hidden argument*/NULL);
-			NullCheck(L_47);
-			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_48 = Transform_get_eulerAngles_mF2D798FA8B18F7A1A0C4A2198329ADBAF07E37CA(L_47, /*hidden argument*/NULL);
-			float L_49 = L_48.get_y_3();
-			MixedRealityPlayspace_RotateAround_mF50761F7FBE7A41654010ED0D092CB3889EF8617(L_42, L_43, ((float)il2cpp_codegen_subtract((float)L_45, (float)L_49)), /*hidden argument*/NULL);
+			Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * L_43 = CameraCache_get_Main_m23FB3162F6476988FEE59F829DEAF08702D81554(/*hidden argument*/NULL);
+			NullCheck(L_43);
+			Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_44 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(L_43, /*hidden argument*/NULL);
+			NullCheck(L_44);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_45 = Transform_get_position_mF54C3A064F7C8E24F1C56EE128728B2E4485E294(L_44, /*hidden argument*/NULL);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_46 = Vector3_get_up_m6309EBC4E42D6D0B3D28056BD23D0331275306F7(/*hidden argument*/NULL);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * L_47 = __this->get_address_of_targetRotation_21();
+			float L_48 = L_47->get_y_3();
+			Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * L_49 = CameraCache_get_Main_m23FB3162F6476988FEE59F829DEAF08702D81554(/*hidden argument*/NULL);
+			NullCheck(L_49);
+			Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_50 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(L_49, /*hidden argument*/NULL);
+			NullCheck(L_50);
+			Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_51 = Transform_get_eulerAngles_mF2D798FA8B18F7A1A0C4A2198329ADBAF07E37CA(L_50, /*hidden argument*/NULL);
+			float L_52 = L_51.get_y_3();
+			MixedRealityPlayspace_RotateAround_mF50761F7FBE7A41654010ED0D092CB3889EF8617(L_45, L_46, ((float)il2cpp_codegen_subtract((float)L_48, (float)L_52)), /*hidden argument*/NULL);
 			// isProcessingTeleportRequest = false;
 			__this->set_isProcessingTeleportRequest_19((bool)0);
 			// RaiseTeleportComplete(eventData.Pointer, eventData.HotSpot);
-			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_50 = ___eventData0;
-			NullCheck(L_50);
-			RuntimeObject* L_51 = TeleportEventData_get_Pointer_mA167D0D4457B62B99125EFB1BA6380F9774397D8_inline(L_50, /*hidden argument*/NULL);
-			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_52 = ___eventData0;
-			NullCheck(L_52);
-			RuntimeObject* L_53 = TeleportEventData_get_HotSpot_m4F26D3B99203C8890F89EB51B5A93E82FF3CE988_inline(L_52, /*hidden argument*/NULL);
-			MixedRealityTeleportSystem_RaiseTeleportComplete_m9FDDAD52D59C91B3AE32968E4A1CAD614FF7940A(__this, L_51, L_53, /*hidden argument*/NULL);
-			// }
-			IL2CPP_LEAVE(0x152, FINALLY_0144);
+			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_53 = ___eventData0;
+			NullCheck(L_53);
+			RuntimeObject* L_54 = TeleportEventData_get_Pointer_mA167D0D4457B62B99125EFB1BA6380F9774397D8_inline(L_53, /*hidden argument*/NULL);
+			TeleportEventData_t4761192426BDFA98B67BAA60C7AFBBF0086CC999 * L_55 = ___eventData0;
+			NullCheck(L_55);
+			RuntimeObject* L_56 = TeleportEventData_get_HotSpot_m4F26D3B99203C8890F89EB51B5A93E82FF3CE988_inline(L_55, /*hidden argument*/NULL);
+			MixedRealityTeleportSystem_RaiseTeleportComplete_m9FDDAD52D59C91B3AE32968E4A1CAD614FF7940A(__this, L_54, L_56, /*hidden argument*/NULL);
+			IL2CPP_LEAVE(0x174, FINALLY_0165);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0144;
+		goto FINALLY_0165;
 	}
 
-FINALLY_0144:
+FINALLY_0165:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(324)
+		IL2CPP_END_FINALLY(357)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(324)
+	IL2CPP_CLEANUP(357)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x152, IL_0152)
+		IL2CPP_JUMP_TBL(0x174, IL_0174)
 	}
 
-IL_0152:
+IL_0174:
 	{
 		// }
 		return;

@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using Lean.Common;
+using FSA = UnityEngine.Serialization.FormerlySerializedAsAttribute;
 
 namespace Lean.Touch
 {
@@ -7,28 +9,23 @@ namespace Lean.Touch
 	[AddComponentMenu(LeanTouch.ComponentPathPrefix + "Pulse Scale")]
 	public class LeanPulseScale : MonoBehaviour
 	{
-		/// <summary>The current scale multiplier.</summary>
-		[Tooltip("The transform.localScale before pulsing.")]
-		public Vector3 BaseScale = Vector3.one;
+		/// <summary>The default scale.</summary>
+		public Vector3 BaseScale { set { baseScale = value; } get { return baseScale; } } [FSA("BaseScale")] [SerializeField] private Vector3 baseScale = Vector3.one;
 
 		/// <summary>The current scale multiplier.</summary>
-		[Tooltip("The current scale multiplier.")]
-		public float Size = 1.0f;
+		public float Size { set { size = value; } get { return size; } } [FSA("Size")] [SerializeField] private float size = 1.0f;
 
 		/// <summary>The interval between each pulse in seconds.</summary>
-		[Tooltip("The interval between each pulse in seconds.")]
-		public float PulseInterval = 1.0f;
+		public float PulseInterval { set { pulseInterval = value; } get { return pulseInterval; } } [FSA("PulseInterval")] [SerializeField] private float pulseInterval = 1.0f;
 
 		/// <summary>The amount Size will be incremented each pulse.</summary>
-		[Tooltip("The amount Size will be incremented each pulse.")]
-		public float PulseSize = 1.0f;
+		public float PulseSize { set { pulseSize = value; } get { return pulseSize; } } [FSA("PulseSize")] [SerializeField] private float pulseSize = 1.0f;
 
 		/// <summary>If you want this component to change smoothly over time, then this allows you to control how quick the changes reach their target value.
 		/// -1 = Instantly change.
 		/// 1 = Slowly change.
 		/// 10 = Quickly change.</summary>
-		[Tooltip("If you want this component to change smoothly over time, then this allows you to control how quick the changes reach their target value.\n\n-1 = Instantly change.\n\n1 = Slowly change.\n\n10 = Quickly change.")]
-		public float Dampening = 5.0f;
+		public float Damping { set { damping = value; } get { return damping; } } [FSA("Damping")] [FSA("Dampening")] [SerializeField] private float damping = 5.0f;
 
 		[System.NonSerialized]
 		private float counter;
@@ -37,18 +34,41 @@ namespace Lean.Touch
 		{
 			counter += Time.deltaTime;
 
-			if (counter >= PulseInterval)
+			if (counter >= pulseInterval)
 			{
-				counter %= PulseInterval;
+				counter %= pulseInterval;
 
-				Size += PulseSize;
+				size += pulseSize;
 			}
 
-			var factor = LeanTouch.GetDampenFactor(Dampening, Time.deltaTime);
+			var factor = LeanHelper.GetDampenFactor(damping, Time.deltaTime);
 
-			Size = Mathf.Lerp(Size, 1.0f, factor);
+			size = Mathf.Lerp(size, 1.0f, factor);
 
-			transform.localScale = Vector3.Lerp(transform.localScale, BaseScale * Size, factor);
+			transform.localScale = Vector3.Lerp(transform.localScale, baseScale * size, factor);
 		}
 	}
 }
+
+#if UNITY_EDITOR
+namespace Lean.Touch.Editor
+{
+	using TARGET = LeanPulseScale;
+
+	[UnityEditor.CanEditMultipleObjects]
+	[UnityEditor.CustomEditor(typeof(TARGET), true)]
+	public class LeanPulseScale_Editor : LeanEditor
+	{
+		protected override void OnInspector()
+		{
+			TARGET tgt; TARGET[] tgts; GetTargets(out tgt, out tgts);
+
+			Draw("baseScale", "The default scale.");
+			Draw("size", "The current scale multiplier.");
+			Draw("pulseInterval", "The interval between each pulse in seconds.");
+			Draw("pulseSize", "The amount Size will be incremented each pulse.");
+			Draw("damping", "If you want this component to change smoothly over time, then this allows you to control how quick the changes reach their target value.\n\n-1 = Instantly change.\n\n1 = Slowly change.\n\n10 = Quickly change.");
+		}
+	}
+}
+#endif

@@ -38,41 +38,30 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
-  - RPC_GazeStateAnnounce
-  - RPC_UISync
   - RPC_BtnSync
-  - RPC_DrpSync
-  - RPC_InpFldSync
-  - RPC_SldSync
-  - RPC_TogSync
-  - RPC_TMPdrpSync
+  - RPC_ChairButtonDown
+  - RPC_ChairButtonUp
   - RPC_GazeNull
   - RPC_GazeOnObj
-  - RPC_OneFingerTap
-  - RPC_Pinch
-  - RPC_SwipeDown
-  - RPC_PinchPhone
+  - RPC_InpFldSync
+  - RPC_NextButtonDeactivated
   - RPC_OneFingerTapPhone
-  - RPC_SwipeDownPhone
-  - RPC_PinchGlasses
+  - RPC_OneTrialStart
+  - RPC_PinchPhone
+  - RPC_PointerDown
+  - RPC_PointerUp
   - RPC_SetFormalTarget
   - RPC_SetFormalTask
   - RPC_SetTarget
   - RPC_SetTargetPoint
   - RPC_SetTask
   - RPC_SetTaskNum
-  - RPC_Trigger_EndExperiment
-  - RPC_Trigger_FindSameImage
-  - RPC_Trigger_FindSameObject
-  - RPC_Trigger_NextTask
-  - RPC_Trigger_PlaceWithEyeGaze
-  - RPC_Trigger_RetrieveInfo
-  - RPC_Trigger_StartExperiment
-  - RPC_onClickPhone
-  - RPC_touchGaze
-  - RPC_gazeTouch
-  - RPC_onClickButtonPhone
-  - RPC_onPointerUpPhone
+  - RPC_SldSync
+  - RPC_SwipeDownPhone
+  - RPC_SyncGyroDelta
+  - RPC_SyncSwipeDelta
+  - RPC_TMPdrpSync
+  - RPC_TogSync
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

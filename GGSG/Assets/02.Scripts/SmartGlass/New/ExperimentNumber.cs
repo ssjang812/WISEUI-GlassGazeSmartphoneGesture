@@ -9,7 +9,7 @@ public class ExperimentNumber : MonoBehaviour
     private TextMeshPro textMesh = null;
 
     [SerializeField]
-    private int experimentNumber = 1;
+    private int experimentNumber;
 
     private void Start()
     {

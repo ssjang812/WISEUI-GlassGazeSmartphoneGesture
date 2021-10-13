@@ -29,12 +29,13 @@ MonoBehaviour:
   boundaryVisualizationProfile: {fileID: 0}
   enableTeleportSystem: 0
   teleportSystemType:
-    reference: 
+    reference: Microsoft.MixedReality.Toolkit.Teleport.MixedRealityTeleportSystem,
+      Microsoft.MixedReality.Toolkit.Services.TeleportSystem
   enableSpatialAwarenessSystem: 1
   spatialAwarenessSystemType:
     reference: Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystem,
       Microsoft.MixedReality.Toolkit.Services.SpatialAwarenessSystem
-  spatialAwarenessSystemProfile: {fileID: 11400000, guid: 55ff938cc48003c45a4d6ded01f0db86,
+  spatialAwarenessSystemProfile: {fileID: 11400000, guid: 8b16eb3e735051a4aa2df8f019a53331,
     type: 2}
   diagnosticsSystemProfile: {fileID: 11400000, guid: 478436bd1083882479a52d067e98e537,
     type: 2}
@@ -42,7 +43,7 @@ MonoBehaviour:
   diagnosticsSystemType:
     reference: Microsoft.MixedReality.Toolkit.Diagnostics.MixedRealityDiagnosticsSystem,
       Microsoft.MixedReality.Toolkit.Services.DiagnosticsSystem
-  sceneSystemProfile: {fileID: 11400000, guid: 804bab7b8e8e6e545a0924260c4f5c3f, type: 2}
+  sceneSystemProfile: {fileID: 11400000, guid: 069efa41032a317409790a6a08435311, type: 2}
   enableSceneSystem: 0
   sceneSystemType:
     reference: Microsoft.MixedReality.Toolkit.SceneSystem.MixedRealitySceneSystem,
@@ -50,3 +51,4 @@ MonoBehaviour:
   registeredServiceProvidersProfile: {fileID: 0}
   useServiceInspectors: 0
   renderDepthBuffer: 0
+  enableVerboseLogging: 0

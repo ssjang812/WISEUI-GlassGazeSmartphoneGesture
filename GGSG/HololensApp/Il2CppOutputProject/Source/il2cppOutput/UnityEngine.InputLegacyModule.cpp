@@ -41,6 +41,8 @@ struct DisplaysUpdatedDelegate_t2FAF995B47D691BD7C5BBC17D533DD8B19BE9A90;
 struct DisplayU5BU5D_tB2AB0FDB3B2E9FD784D5100C18EB0ED489A2CCC9;
 // UnityEngine.GameObject
 struct GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F;
+// UnityEngine.Gyroscope
+struct Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1;
 // UnityEngine.Object
 struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0;
 // UnityEngine.RenderTexture
@@ -52,7 +54,9 @@ struct TouchU5BU5D_t0207B72FD95EF1F56E7A6C9F0A42896B03D2BD5D;
 
 IL2CPP_EXTERN_C RuntimeClass* CameraU5BU5D_t2A1957E88FB79357C12B87941970D776D30E90F9_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Display_t38AD3008E8C72693533E4FE9CFFF6E01B56E9D57_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* HitInfoU5BU5D_t1C4C1506E0E7D22806B4ED84887D7298C8EC44A1_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Input_tCCB96DE9636DD2C1993637958AA227434290E523_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Mathf_tFBDE6467D269BFE410605C7D806FD9991D4A89CB_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* SendMouseEvents_tC8FB7F3FCFF87BDF2E56E1E0D209B81943D8F666_il2cpp_TypeInfo_var;
@@ -67,6 +71,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralC2DD4A1CF2BEA8DC20037D0E70DA4065B69442E6
 IL2CPP_EXTERN_C String_t* _stringLiteralD0F250C5C723619F2F208B1992BA356D32807BE6;
 IL2CPP_EXTERN_C const uint32_t HitInfo_Compare_m5643F7A11E2F60B86286330548DF614BD9691582_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t HitInfo_op_Implicit_mBB6DB77D68B22445EC255E34E7EE7667FD584322_MetadataUsageId;
+IL2CPP_EXTERN_C const uint32_t Input_get_gyro_mE481C9495C12652B8744F8214A3F9ED20C317BD4_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Input_get_touches_mD31418E8B2487DBC9641A15677B41B459859011A_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t SendMouseEvents_DoSendMouseEvents_m045BF5CABD2F263140E5F1427F81702EE0D3C507_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t SendMouseEvents_SendEvents_m2E266CFBE23F89BA8563312C8488DF1E9A7C25F0_MetadataUsageId;
@@ -175,12 +180,47 @@ public:
 };
 
 
+// UnityEngine.Gyroscope
+struct Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1  : public RuntimeObject
+{
+public:
+	// System.Int32 UnityEngine.Gyroscope::m_GyroIndex
+	int32_t ___m_GyroIndex_0;
+
+public:
+	inline static int32_t get_offset_of_m_GyroIndex_0() { return static_cast<int32_t>(offsetof(Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1, ___m_GyroIndex_0)); }
+	inline int32_t get_m_GyroIndex_0() const { return ___m_GyroIndex_0; }
+	inline int32_t* get_address_of_m_GyroIndex_0() { return &___m_GyroIndex_0; }
+	inline void set_m_GyroIndex_0(int32_t value)
+	{
+		___m_GyroIndex_0 = value;
+	}
+};
+
+
 // UnityEngine.Input
 struct Input_tCCB96DE9636DD2C1993637958AA227434290E523  : public RuntimeObject
 {
 public:
 
 public:
+};
+
+struct Input_tCCB96DE9636DD2C1993637958AA227434290E523_StaticFields
+{
+public:
+	// UnityEngine.Gyroscope UnityEngine.Input::s_MainGyro
+	Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * ___s_MainGyro_0;
+
+public:
+	inline static int32_t get_offset_of_s_MainGyro_0() { return static_cast<int32_t>(offsetof(Input_tCCB96DE9636DD2C1993637958AA227434290E523_StaticFields, ___s_MainGyro_0)); }
+	inline Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * get_s_MainGyro_0() const { return ___s_MainGyro_0; }
+	inline Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 ** get_address_of_s_MainGyro_0() { return &___s_MainGyro_0; }
+	inline void set_s_MainGyro_0(Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * value)
+	{
+		___s_MainGyro_0 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___s_MainGyro_0), (void*)value);
+	}
 };
 
 
@@ -1459,6 +1499,16 @@ public:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * CameraRaycastHelper_RaycastTry_Injected_m2326FE94A96F40A5D51E4261E68C5E42B914D894 (Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * ___cam0, Ray_tE2163D4CB3E6B267E29F8ABE41684490E4A614B2 * ___ray1, float ___distance2, int32_t ___layerMask3, const RuntimeMethod* method);
 // UnityEngine.GameObject UnityEngine.CameraRaycastHelper::RaycastTry2D_Injected(UnityEngine.Camera,UnityEngine.Ray&,System.Single,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * CameraRaycastHelper_RaycastTry2D_Injected_m287E51B2B7D2F6D14B400A6EEA90FF6F83CF5F62 (Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * ___cam0, Ray_tE2163D4CB3E6B267E29F8ABE41684490E4A614B2 * ___ray1, float ___distance2, int32_t ___layerMask3, const RuntimeMethod* method);
+// System.Void System.Object::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0 (RuntimeObject * __this, const RuntimeMethod* method);
+// System.Void UnityEngine.Gyroscope::rotationRateUnbiased_Internal_Injected(System.Int32,UnityEngine.Vector3&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Gyroscope_rotationRateUnbiased_Internal_Injected_m82B74FCD5DF78624B653036D41FE675877751527 (int32_t ___idx0, Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * ___ret1, const RuntimeMethod* method);
+// UnityEngine.Vector3 UnityEngine.Gyroscope::rotationRateUnbiased_Internal(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  Gyroscope_rotationRateUnbiased_Internal_m686F1EAC9CEA0868B6997C4777BB33A24030F726 (int32_t ___idx0, const RuntimeMethod* method);
+// System.Void UnityEngine.Gyroscope::setEnabled_Internal(System.Int32,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Gyroscope_setEnabled_Internal_m2C557D9A4E00227D54F622BB4530732D19F951F9 (int32_t ___idx0, bool ___enabled1, const RuntimeMethod* method);
+// System.Void UnityEngine.Gyroscope::setUpdateInterval_Internal(System.Int32,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Gyroscope_setUpdateInterval_Internal_m5FE89E5AD656ECFF5CC2882EABBF13DE607B3AD5 (int32_t ___idx0, float ___interval1, const RuntimeMethod* method);
 // System.Void UnityEngine.Input::GetTouch_Injected(System.Int32,UnityEngine.Touch&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Input_GetTouch_Injected_mDD8AC74C22DC466C6CC45C46A2089FCF5F4F5CFB (int32_t ___index0, Touch_tAACD32535FF3FE5DD91125E0B6987B93C68D2DE8 * ___ret1, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Input::GetKeyInt(UnityEngine.KeyCode)
@@ -1477,6 +1527,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Input_get_mouseScrollDelta_Injected_mB4D
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Input_get_compositionCursorPos_Injected_m513709187290CBEF2788BA0B61B7D5A056731195 (Vector2_tA85D2DD88578276CA8A8796756458277E72D073D * ___ret0, const RuntimeMethod* method);
 // System.Void UnityEngine.Input::set_compositionCursorPos_Injected(UnityEngine.Vector2&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Input_set_compositionCursorPos_Injected_mFED26C8FCDE955B227669C9023108D41E65766E1 (Vector2_tA85D2DD88578276CA8A8796756458277E72D073D * ___value0, const RuntimeMethod* method);
+// System.Int32 UnityEngine.Input::GetGyroInternal()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Input_GetGyroInternal_m9CC753ED776D9FC45C9E5FC3936068A810E2C630 (const RuntimeMethod* method);
+// System.Void UnityEngine.Gyroscope::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Gyroscope__ctor_m3068817C6460AA41EF02D83B32D0EF0986755FE4 (Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * __this, int32_t ___index0, const RuntimeMethod* method);
 // System.Int32 UnityEngine.Input::get_touchCount()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Input_get_touchCount_m497E19AA4FA22DB659F631B20FAEF65572D1B44E (const RuntimeMethod* method);
 // UnityEngine.Touch UnityEngine.Input::GetTouch(System.Int32)
@@ -1617,6 +1671,101 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5C
 	_il2cpp_icall_func = (CameraRaycastHelper_RaycastTry2D_Injected_m287E51B2B7D2F6D14B400A6EEA90FF6F83CF5F62_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.CameraRaycastHelper::RaycastTry2D_Injected(UnityEngine.Camera,UnityEngine.Ray&,System.Single,System.Int32)");
 	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * retVal = _il2cpp_icall_func(___cam0, ___ray1, ___distance2, ___layerMask3);
 	return retVal;
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void UnityEngine.Gyroscope::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Gyroscope__ctor_m3068817C6460AA41EF02D83B32D0EF0986755FE4 (Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * __this, int32_t ___index0, const RuntimeMethod* method)
+{
+	{
+		Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0(__this, /*hidden argument*/NULL);
+		int32_t L_0 = ___index0;
+		__this->set_m_GyroIndex_0(L_0);
+		return;
+	}
+}
+// UnityEngine.Vector3 UnityEngine.Gyroscope::rotationRateUnbiased_Internal(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  Gyroscope_rotationRateUnbiased_Internal_m686F1EAC9CEA0868B6997C4777BB33A24030F726 (int32_t ___idx0, const RuntimeMethod* method)
+{
+	Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		int32_t L_0 = ___idx0;
+		Gyroscope_rotationRateUnbiased_Internal_Injected_m82B74FCD5DF78624B653036D41FE675877751527(L_0, (Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 *)(&V_0), /*hidden argument*/NULL);
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_1 = V_0;
+		return L_1;
+	}
+}
+// System.Void UnityEngine.Gyroscope::setEnabled_Internal(System.Int32,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Gyroscope_setEnabled_Internal_m2C557D9A4E00227D54F622BB4530732D19F951F9 (int32_t ___idx0, bool ___enabled1, const RuntimeMethod* method)
+{
+	typedef void (*Gyroscope_setEnabled_Internal_m2C557D9A4E00227D54F622BB4530732D19F951F9_ftn) (int32_t, bool);
+	static Gyroscope_setEnabled_Internal_m2C557D9A4E00227D54F622BB4530732D19F951F9_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Gyroscope_setEnabled_Internal_m2C557D9A4E00227D54F622BB4530732D19F951F9_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Gyroscope::setEnabled_Internal(System.Int32,System.Boolean)");
+	_il2cpp_icall_func(___idx0, ___enabled1);
+}
+// System.Void UnityEngine.Gyroscope::setUpdateInterval_Internal(System.Int32,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Gyroscope_setUpdateInterval_Internal_m5FE89E5AD656ECFF5CC2882EABBF13DE607B3AD5 (int32_t ___idx0, float ___interval1, const RuntimeMethod* method)
+{
+	typedef void (*Gyroscope_setUpdateInterval_Internal_m5FE89E5AD656ECFF5CC2882EABBF13DE607B3AD5_ftn) (int32_t, float);
+	static Gyroscope_setUpdateInterval_Internal_m5FE89E5AD656ECFF5CC2882EABBF13DE607B3AD5_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Gyroscope_setUpdateInterval_Internal_m5FE89E5AD656ECFF5CC2882EABBF13DE607B3AD5_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Gyroscope::setUpdateInterval_Internal(System.Int32,System.Single)");
+	_il2cpp_icall_func(___idx0, ___interval1);
+}
+// UnityEngine.Vector3 UnityEngine.Gyroscope::get_rotationRateUnbiased()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  Gyroscope_get_rotationRateUnbiased_mAAE4B06D3B4A168EB46E4E09FEA7BB73ED144CD1 (Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * __this, const RuntimeMethod* method)
+{
+	Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		int32_t L_0 = __this->get_m_GyroIndex_0();
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_1 = Gyroscope_rotationRateUnbiased_Internal_m686F1EAC9CEA0868B6997C4777BB33A24030F726(L_0, /*hidden argument*/NULL);
+		V_0 = L_1;
+		goto IL_000f;
+	}
+
+IL_000f:
+	{
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_2 = V_0;
+		return L_2;
+	}
+}
+// System.Void UnityEngine.Gyroscope::set_enabled(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Gyroscope_set_enabled_mEEAA3A44F6286C36F20C3A122E21E34F8FD131AA (Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * __this, bool ___value0, const RuntimeMethod* method)
+{
+	{
+		int32_t L_0 = __this->get_m_GyroIndex_0();
+		bool L_1 = ___value0;
+		Gyroscope_setEnabled_Internal_m2C557D9A4E00227D54F622BB4530732D19F951F9(L_0, L_1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void UnityEngine.Gyroscope::set_updateInterval(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Gyroscope_set_updateInterval_m923B6AC628CB547A6E26D1CE1B5787D24EF3F9FD (Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * __this, float ___value0, const RuntimeMethod* method)
+{
+	{
+		int32_t L_0 = __this->get_m_GyroIndex_0();
+		float L_1 = ___value0;
+		Gyroscope_setUpdateInterval_Internal_m5FE89E5AD656ECFF5CC2882EABBF13DE607B3AD5(L_0, L_1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void UnityEngine.Gyroscope::rotationRateUnbiased_Internal_Injected(System.Int32,UnityEngine.Vector3&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Gyroscope_rotationRateUnbiased_Internal_Injected_m82B74FCD5DF78624B653036D41FE675877751527 (int32_t ___idx0, Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * ___ret1, const RuntimeMethod* method)
+{
+	typedef void (*Gyroscope_rotationRateUnbiased_Internal_Injected_m82B74FCD5DF78624B653036D41FE675877751527_ftn) (int32_t, Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 *);
+	static Gyroscope_rotationRateUnbiased_Internal_Injected_m82B74FCD5DF78624B653036D41FE675877751527_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Gyroscope_rotationRateUnbiased_Internal_Injected_m82B74FCD5DF78624B653036D41FE675877751527_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Gyroscope::rotationRateUnbiased_Internal_Injected(System.Int32,UnityEngine.Vector3&)");
+	_il2cpp_icall_func(___idx0, ___ret1);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -1943,6 +2092,56 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Input_get_touchSupported_m59811A35362724
 	_il2cpp_icall_func = (Input_get_touchSupported_m59811A353627249C934E8FF7A6F3C4A7883978E9_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Input::get_touchSupported()");
 	bool retVal = _il2cpp_icall_func();
 	return retVal;
+}
+// System.Int32 UnityEngine.Input::GetGyroInternal()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Input_GetGyroInternal_m9CC753ED776D9FC45C9E5FC3936068A810E2C630 (const RuntimeMethod* method)
+{
+	typedef int32_t (*Input_GetGyroInternal_m9CC753ED776D9FC45C9E5FC3936068A810E2C630_ftn) ();
+	static Input_GetGyroInternal_m9CC753ED776D9FC45C9E5FC3936068A810E2C630_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Input_GetGyroInternal_m9CC753ED776D9FC45C9E5FC3936068A810E2C630_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Input::GetGyroInternal()");
+	int32_t retVal = _il2cpp_icall_func();
+	return retVal;
+}
+// UnityEngine.Gyroscope UnityEngine.Input::get_gyro()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * Input_get_gyro_mE481C9495C12652B8744F8214A3F9ED20C317BD4 (const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (Input_get_gyro_mE481C9495C12652B8744F8214A3F9ED20C317BD4_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	bool V_0 = false;
+	Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * V_1 = NULL;
+	{
+		Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * L_0 = ((Input_tCCB96DE9636DD2C1993637958AA227434290E523_StaticFields*)il2cpp_codegen_static_fields_for(Input_tCCB96DE9636DD2C1993637958AA227434290E523_il2cpp_TypeInfo_var))->get_s_MainGyro_0();
+		V_0 = (bool)((((RuntimeObject*)(Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 *)L_0) == ((RuntimeObject*)(RuntimeObject *)NULL))? 1 : 0);
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_001c;
+		}
+	}
+	{
+		int32_t L_2 = Input_GetGyroInternal_m9CC753ED776D9FC45C9E5FC3936068A810E2C630(/*hidden argument*/NULL);
+		Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * L_3 = (Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 *)il2cpp_codegen_object_new(Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1_il2cpp_TypeInfo_var);
+		Gyroscope__ctor_m3068817C6460AA41EF02D83B32D0EF0986755FE4(L_3, L_2, /*hidden argument*/NULL);
+		((Input_tCCB96DE9636DD2C1993637958AA227434290E523_StaticFields*)il2cpp_codegen_static_fields_for(Input_tCCB96DE9636DD2C1993637958AA227434290E523_il2cpp_TypeInfo_var))->set_s_MainGyro_0(L_3);
+	}
+
+IL_001c:
+	{
+		Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * L_4 = ((Input_tCCB96DE9636DD2C1993637958AA227434290E523_StaticFields*)il2cpp_codegen_static_fields_for(Input_tCCB96DE9636DD2C1993637958AA227434290E523_il2cpp_TypeInfo_var))->get_s_MainGyro_0();
+		V_1 = L_4;
+		goto IL_0024;
+	}
+
+IL_0024:
+	{
+		Gyroscope_t48D5E1FF13C0C404A0EE843254DF154C6FCE1DC1 * L_5 = V_1;
+		return L_5;
+	}
 }
 // UnityEngine.Touch[] UnityEngine.Input::get_touches()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TouchU5BU5D_t0207B72FD95EF1F56E7A6C9F0A42896B03D2BD5D* Input_get_touches_mD31418E8B2487DBC9641A15677B41B459859011A (const RuntimeMethod* method)

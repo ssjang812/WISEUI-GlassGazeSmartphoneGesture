@@ -2157,12 +2157,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarker_Internal_Begin_m79272E727
 // System.Boolean Microsoft.MixedReality.Toolkit.Extensions.Tracking.BasicLostTrackingVisual::get_Enabled()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool BasicLostTrackingVisual_get_Enabled_mC4EBC97B91230A28643F555CB6B74A69478396E6 (BasicLostTrackingVisual_t81EC69AF835602CB6CFC6E4A861AA7829167D6FB * __this, const RuntimeMethod* method)
 {
+	bool V_0 = false;
 	{
 		// get { return gameObject.activeSelf; }
 		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_0 = Component_get_gameObject_m0B0570BA8DDD3CD78A9DB568EA18D7317686603C(__this, /*hidden argument*/NULL);
 		NullCheck(L_0);
 		bool L_1 = GameObject_get_activeSelf_mFE1834886CAE59884AC2BE707A3B821A1DB61F44(L_0, /*hidden argument*/NULL);
-		return L_1;
+		V_0 = L_1;
+		goto IL_000f;
+	}
+
+IL_000f:
+	{
+		// get { return gameObject.activeSelf; }
+		bool L_2 = V_0;
+		return L_2;
 	}
 }
 // System.Void Microsoft.MixedReality.Toolkit.Extensions.Tracking.BasicLostTrackingVisual::set_Enabled(System.Boolean)
@@ -2187,6 +2196,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BasicLostTrackingVisual_ResetVisual_mEE1
 		il2cpp_codegen_initialize_method (BasicLostTrackingVisual_ResetVisual_mEE158035FEE15937CF84A242A3B0AC938EF61FD2_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
+	bool V_1 = false;
+	int32_t G_B3_0 = 0;
 	{
 		// if (audioSource != null && loopClip != null)
 		AudioSource_t5196F862B4E60F404613361C90D87FBDD041E93C * L_0 = __this->get_audioSource_6();
@@ -2194,57 +2206,72 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BasicLostTrackingVisual_ResetVisual_mEE1
 		bool L_1 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_0, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
 		if (!L_1)
 		{
-			goto IL_0044;
+			goto IL_001d;
 		}
 	}
 	{
 		AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_2 = __this->get_loopClip_5();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
 		bool L_3 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_2, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
-		if (!L_3)
+		G_B3_0 = ((int32_t)(L_3));
+		goto IL_001e;
+	}
+
+IL_001d:
+	{
+		G_B3_0 = 0;
+	}
+
+IL_001e:
+	{
+		V_0 = (bool)G_B3_0;
+		bool L_4 = V_0;
+		if (!L_4)
 		{
-			goto IL_0044;
+			goto IL_004f;
 		}
 	}
 	{
 		// audioSource.clip = loopClip;
-		AudioSource_t5196F862B4E60F404613361C90D87FBDD041E93C * L_4 = __this->get_audioSource_6();
-		AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_5 = __this->get_loopClip_5();
-		NullCheck(L_4);
-		AudioSource_set_clip_mF574231E0B749E0167CAF9E4FCBA06BAA0F9ED9B(L_4, L_5, /*hidden argument*/NULL);
+		AudioSource_t5196F862B4E60F404613361C90D87FBDD041E93C * L_5 = __this->get_audioSource_6();
+		AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_6 = __this->get_loopClip_5();
+		NullCheck(L_5);
+		AudioSource_set_clip_mF574231E0B749E0167CAF9E4FCBA06BAA0F9ED9B(L_5, L_6, /*hidden argument*/NULL);
 		// audioSource.loop = true;
-		AudioSource_t5196F862B4E60F404613361C90D87FBDD041E93C * L_6 = __this->get_audioSource_6();
-		NullCheck(L_6);
-		AudioSource_set_loop_m4DEE785C31213E964D7014B633F0FFC7E98B79F4(L_6, (bool)1, /*hidden argument*/NULL);
-		// audioSource.Play();
 		AudioSource_t5196F862B4E60F404613361C90D87FBDD041E93C * L_7 = __this->get_audioSource_6();
 		NullCheck(L_7);
-		AudioSource_Play_m0BA206481892AA4AF7DB2900A0B0805076516164(L_7, /*hidden argument*/NULL);
+		AudioSource_set_loop_m4DEE785C31213E964D7014B633F0FFC7E98B79F4(L_7, (bool)1, /*hidden argument*/NULL);
+		// audioSource.Play();
+		AudioSource_t5196F862B4E60F404613361C90D87FBDD041E93C * L_8 = __this->get_audioSource_6();
+		NullCheck(L_8);
+		AudioSource_Play_m0BA206481892AA4AF7DB2900A0B0805076516164(L_8, /*hidden argument*/NULL);
 	}
 
-IL_0044:
+IL_004f:
 	{
 		// pulseTimer = 0.0f;
 		__this->set_pulseTimer_7((0.0f));
 		// if (gridRenderer != null)
-		MeshRenderer_t9D67CA54E83315F743623BDE8EADCD5074659EED * L_8 = __this->get_gridRenderer_4();
+		MeshRenderer_t9D67CA54E83315F743623BDE8EADCD5074659EED * L_9 = __this->get_gridRenderer_4();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
-		bool L_9 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_8, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
-		if (!L_9)
+		bool L_10 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_9, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
+		V_1 = L_10;
+		bool L_11 = V_1;
+		if (!L_11)
 		{
-			goto IL_0077;
+			goto IL_0087;
 		}
 	}
 	{
 		// gridRenderer.material.SetFloat("_Pulse_", 0.0f);
-		MeshRenderer_t9D67CA54E83315F743623BDE8EADCD5074659EED * L_10 = __this->get_gridRenderer_4();
-		NullCheck(L_10);
-		Material_tF7DB3BF0C24DEC2FE0CB51E5DF5053D5223C8598 * L_11 = Renderer_get_material_m4434513446B652652CE9FD766B0E3D1D34C4A617(L_10, /*hidden argument*/NULL);
-		NullCheck(L_11);
-		Material_SetFloat_m4B7D3FAA00D20BCB3C487E72B7E4B2691D5ECAD2(L_11, _stringLiteral3BC620A0D51B570B2EC06A5FEDBB8892E99E869A, (0.0f), /*hidden argument*/NULL);
+		MeshRenderer_t9D67CA54E83315F743623BDE8EADCD5074659EED * L_12 = __this->get_gridRenderer_4();
+		NullCheck(L_12);
+		Material_tF7DB3BF0C24DEC2FE0CB51E5DF5053D5223C8598 * L_13 = Renderer_get_material_m4434513446B652652CE9FD766B0E3D1D34C4A617(L_12, /*hidden argument*/NULL);
+		NullCheck(L_13);
+		Material_SetFloat_m4B7D3FAA00D20BCB3C487E72B7E4B2691D5ECAD2(L_13, _stringLiteral3BC620A0D51B570B2EC06A5FEDBB8892E99E869A, (0.0f), /*hidden argument*/NULL);
 	}
 
-IL_0077:
+IL_0087:
 	{
 		// }
 		return;
@@ -2261,6 +2288,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BasicLostTrackingVisual_SetLayer_m0CBAB1
 	}
 	TransformU5BU5D_t4F5A1132877D8BA66ABC0A9A7FADA4E0237A7804* V_0 = NULL;
 	int32_t V_1 = 0;
+	Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * V_2 = NULL;
 	{
 		// foreach (Transform child in transform.GetComponentsInChildren<Transform>())
 		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_0 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(__this, /*hidden argument*/NULL);
@@ -2268,10 +2296,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BasicLostTrackingVisual_SetLayer_m0CBAB1
 		TransformU5BU5D_t4F5A1132877D8BA66ABC0A9A7FADA4E0237A7804* L_1 = Component_GetComponentsInChildren_TisTransform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA_m335E18CE04D2AD7313D89DBEA3A88EDB76255113(L_0, /*hidden argument*/Component_GetComponentsInChildren_TisTransform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA_m335E18CE04D2AD7313D89DBEA3A88EDB76255113_RuntimeMethod_var);
 		V_0 = L_1;
 		V_1 = 0;
-		goto IL_0022;
+		goto IL_0029;
 	}
 
-IL_0010:
+IL_0012:
 	{
 		// foreach (Transform child in transform.GetComponentsInChildren<Transform>())
 		TransformU5BU5D_t4F5A1132877D8BA66ABC0A9A7FADA4E0237A7804* L_2 = V_0;
@@ -2279,25 +2307,27 @@ IL_0010:
 		NullCheck(L_2);
 		int32_t L_4 = L_3;
 		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_5 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_4));
+		V_2 = L_5;
 		// child.gameObject.layer = layer;
-		NullCheck(L_5);
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_6 = Component_get_gameObject_m0B0570BA8DDD3CD78A9DB568EA18D7317686603C(L_5, /*hidden argument*/NULL);
-		int32_t L_7 = ___layer0;
+		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_6 = V_2;
 		NullCheck(L_6);
-		GameObject_set_layer_mDAC8037FCFD0CE62DB66004C4342EA20CF604907(L_6, L_7, /*hidden argument*/NULL);
-		int32_t L_8 = V_1;
-		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_8, (int32_t)1));
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_7 = Component_get_gameObject_m0B0570BA8DDD3CD78A9DB568EA18D7317686603C(L_6, /*hidden argument*/NULL);
+		int32_t L_8 = ___layer0;
+		NullCheck(L_7);
+		GameObject_set_layer_mDAC8037FCFD0CE62DB66004C4342EA20CF604907(L_7, L_8, /*hidden argument*/NULL);
+		int32_t L_9 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_9, (int32_t)1));
 	}
 
-IL_0022:
+IL_0029:
 	{
 		// foreach (Transform child in transform.GetComponentsInChildren<Transform>())
-		int32_t L_9 = V_1;
-		TransformU5BU5D_t4F5A1132877D8BA66ABC0A9A7FADA4E0237A7804* L_10 = V_0;
-		NullCheck(L_10);
-		if ((((int32_t)L_9) < ((int32_t)(((int32_t)((int32_t)(((RuntimeArray*)L_10)->max_length)))))))
+		int32_t L_10 = V_1;
+		TransformU5BU5D_t4F5A1132877D8BA66ABC0A9A7FADA4E0237A7804* L_11 = V_0;
+		NullCheck(L_11);
+		if ((((int32_t)L_10) < ((int32_t)(((int32_t)((int32_t)(((RuntimeArray*)L_11)->max_length)))))))
 		{
-			goto IL_0010;
+			goto IL_0012;
 		}
 	}
 	{
@@ -2315,6 +2345,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BasicLostTrackingVisual_Update_m047AD425
 		s_Il2CppMethodInitialized = true;
 	}
 	float V_0 = 0.0f;
+	bool V_1 = false;
+	bool V_2 = false;
 	{
 		// pulseTimer += Time.unscaledDeltaTime;
 		float L_0 = __this->get_pulseTimer_7();
@@ -2329,9 +2361,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BasicLostTrackingVisual_Update_m047AD425
 		// if (pulseTimer >= pulseDuration)
 		float L_5 = __this->get_pulseTimer_7();
 		float L_6 = __this->get_pulseDuration_8();
-		if ((!(((float)L_5) >= ((float)L_6))))
+		V_1 = (bool)((((int32_t)((!(((float)L_5) >= ((float)L_6)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
+		bool L_7 = V_1;
+		if (!L_7)
 		{
-			goto IL_003e;
+			goto IL_0048;
 		}
 	}
 	{
@@ -2339,41 +2373,43 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BasicLostTrackingVisual_Update_m047AD425
 		__this->set_pulseTimer_7((0.0f));
 	}
 
-IL_003e:
+IL_0048:
 	{
 		// if (gridRenderer != null)
-		MeshRenderer_t9D67CA54E83315F743623BDE8EADCD5074659EED * L_7 = __this->get_gridRenderer_4();
+		MeshRenderer_t9D67CA54E83315F743623BDE8EADCD5074659EED * L_8 = __this->get_gridRenderer_4();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
-		bool L_8 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_7, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
-		if (!L_8)
+		bool L_9 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_8, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
+		V_2 = L_9;
+		bool L_10 = V_2;
+		if (!L_10)
 		{
-			goto IL_008c;
+			goto IL_009c;
 		}
 	}
 	{
 		// gridRenderer.material.SetFloat("_Pulse_", normalizedPulseValue);
-		MeshRenderer_t9D67CA54E83315F743623BDE8EADCD5074659EED * L_9 = __this->get_gridRenderer_4();
-		NullCheck(L_9);
-		Material_tF7DB3BF0C24DEC2FE0CB51E5DF5053D5223C8598 * L_10 = Renderer_get_material_m4434513446B652652CE9FD766B0E3D1D34C4A617(L_9, /*hidden argument*/NULL);
-		float L_11 = V_0;
-		NullCheck(L_10);
-		Material_SetFloat_m4B7D3FAA00D20BCB3C487E72B7E4B2691D5ECAD2(L_10, _stringLiteral3BC620A0D51B570B2EC06A5FEDBB8892E99E869A, L_11, /*hidden argument*/NULL);
-		// gridRenderer.material.SetVector("_Pulse_Origin_", gridRenderer.transform.position);
-		MeshRenderer_t9D67CA54E83315F743623BDE8EADCD5074659EED * L_12 = __this->get_gridRenderer_4();
+		MeshRenderer_t9D67CA54E83315F743623BDE8EADCD5074659EED * L_11 = __this->get_gridRenderer_4();
+		NullCheck(L_11);
+		Material_tF7DB3BF0C24DEC2FE0CB51E5DF5053D5223C8598 * L_12 = Renderer_get_material_m4434513446B652652CE9FD766B0E3D1D34C4A617(L_11, /*hidden argument*/NULL);
+		float L_13 = V_0;
 		NullCheck(L_12);
-		Material_tF7DB3BF0C24DEC2FE0CB51E5DF5053D5223C8598 * L_13 = Renderer_get_material_m4434513446B652652CE9FD766B0E3D1D34C4A617(L_12, /*hidden argument*/NULL);
+		Material_SetFloat_m4B7D3FAA00D20BCB3C487E72B7E4B2691D5ECAD2(L_12, _stringLiteral3BC620A0D51B570B2EC06A5FEDBB8892E99E869A, L_13, /*hidden argument*/NULL);
+		// gridRenderer.material.SetVector("_Pulse_Origin_", gridRenderer.transform.position);
 		MeshRenderer_t9D67CA54E83315F743623BDE8EADCD5074659EED * L_14 = __this->get_gridRenderer_4();
 		NullCheck(L_14);
-		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_15 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(L_14, /*hidden argument*/NULL);
-		NullCheck(L_15);
-		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_16 = Transform_get_position_mF54C3A064F7C8E24F1C56EE128728B2E4485E294(L_15, /*hidden argument*/NULL);
+		Material_tF7DB3BF0C24DEC2FE0CB51E5DF5053D5223C8598 * L_15 = Renderer_get_material_m4434513446B652652CE9FD766B0E3D1D34C4A617(L_14, /*hidden argument*/NULL);
+		MeshRenderer_t9D67CA54E83315F743623BDE8EADCD5074659EED * L_16 = __this->get_gridRenderer_4();
+		NullCheck(L_16);
+		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_17 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(L_16, /*hidden argument*/NULL);
+		NullCheck(L_17);
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_18 = Transform_get_position_mF54C3A064F7C8E24F1C56EE128728B2E4485E294(L_17, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Vector4_tD148D6428C3F8FF6CD998F82090113C2B490B76E_il2cpp_TypeInfo_var);
-		Vector4_tD148D6428C3F8FF6CD998F82090113C2B490B76E  L_17 = Vector4_op_Implicit_m5BFA8D95F88CB2AEA6E02B200A61B718314A8495(L_16, /*hidden argument*/NULL);
-		NullCheck(L_13);
-		Material_SetVector_m6FC2CC4EBE6C45D48D8B9164148A0CB3124335EC(L_13, _stringLiteralA3D298A77CBCBBF423FF029039310D1DC19D8583, L_17, /*hidden argument*/NULL);
+		Vector4_tD148D6428C3F8FF6CD998F82090113C2B490B76E  L_19 = Vector4_op_Implicit_m5BFA8D95F88CB2AEA6E02B200A61B718314A8495(L_18, /*hidden argument*/NULL);
+		NullCheck(L_15);
+		Material_SetVector_m6FC2CC4EBE6C45D48D8B9164148A0CB3124335EC(L_15, _stringLiteralA3D298A77CBCBBF423FF029039310D1DC19D8583, L_19, /*hidden argument*/NULL);
 	}
 
-IL_008c:
+IL_009c:
 	{
 		// }
 		return;
@@ -2383,6 +2419,14 @@ IL_008c:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BasicLostTrackingVisual__ctor_m610E5787A4AD1A082B47B245C6C9C0DA35B19BCF (BasicLostTrackingVisual_t81EC69AF835602CB6CFC6E4A861AA7829167D6FB * __this, const RuntimeMethod* method)
 {
 	{
+		// private MeshRenderer gridRenderer = null;
+		__this->set_gridRenderer_4((MeshRenderer_t9D67CA54E83315F743623BDE8EADCD5074659EED *)NULL);
+		// private AudioClip loopClip = null;
+		__this->set_loopClip_5((AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 *)NULL);
+		// private AudioSource audioSource = null;
+		__this->set_audioSource_6((AudioSource_t5196F862B4E60F404613361C90D87FBDD041E93C *)NULL);
+		// private float pulseTimer = 0.0f;
+		__this->set_pulseTimer_7((0.0f));
 		// private float pulseDuration = 2.0f;
 		__this->set_pulseDuration_8((2.0f));
 		MonoBehaviour__ctor_mEAEC84B222C60319D593E456D769B3311DFCEF97(__this, /*hidden argument*/NULL);
@@ -2480,6 +2524,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService__ctor_mB461F26CCF55E
 		s_Il2CppMethodInitialized = true;
 	}
 	{
+		// public bool TrackingLost { get; private set; } = false;
+		__this->set_U3CTrackingLostU3Ek__BackingField_9((bool)0);
+		// private UnityEngine.XR.ARSubsystems.TrackingState lastTrackingState = UnityEngine.XR.ARSubsystems.TrackingState.None;
+		__this->set_lastTrackingState_16(0);
+		// private NotTrackingReason lastNotTrackingReason = NotTrackingReason.None;
+		__this->set_lastNotTrackingReason_17(0);
 		// BaseMixedRealityProfile profile) : base(name, priority, profile)
 		String_t* L_0 = ___name0;
 		uint32_t L_1 = ___priority1;
@@ -2526,6 +2576,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService_Update_m258C1F475876
 	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * V_2 = NULL;
+	bool V_3 = false;
+	bool V_4 = false;
+	bool V_5 = false;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -2533,6 +2586,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService_Update_m258C1F475876
 	void* __leave_targets_storage = alloca(sizeof(int32_t) * 3);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
+	int32_t G_B6_0 = 0;
+	int32_t G_B11_0 = 0;
 	{
 		// using (UpdatePerfMarker.Auto())
 		IL2CPP_RUNTIME_CLASS_INIT(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var);
@@ -2542,7 +2597,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService_Update_m258C1F475876
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
@@ -2552,122 +2607,148 @@ IL_000e:
 			V_2 = L_2;
 			// if (sessionSubsystem == null)
 			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_3 = V_2;
-			if (L_3)
+			V_3 = (bool)((((RuntimeObject*)(XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 *)L_3) == ((RuntimeObject*)(RuntimeObject *)NULL))? 1 : 0);
+			bool L_4 = V_3;
+			if (!L_4)
 			{
-				goto IL_0019;
+				goto IL_0024;
 			}
 		}
 
-IL_0017:
+IL_001e:
 		{
 			// return;
-			IL2CPP_LEAVE(0x86, FINALLY_0078);
+			IL2CPP_LEAVE(0xAD, FINALLY_009e);
 		}
 
-IL_0019:
+IL_0024:
 		{
 			// if (sessionSubsystem.trackingState == lastTrackingState && sessionSubsystem.notTrackingReason == lastNotTrackingReason)
-			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_4 = V_2;
-			NullCheck(L_4);
-			int32_t L_5 = XRSessionSubsystem_get_trackingState_m6CEDC16CB9B224A0302A83BC2C22FC4C0905EB30(L_4, /*hidden argument*/NULL);
-			int32_t L_6 = __this->get_lastTrackingState_16();
-			if ((!(((uint32_t)L_5) == ((uint32_t)L_6))))
+			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_5 = V_2;
+			NullCheck(L_5);
+			int32_t L_6 = XRSessionSubsystem_get_trackingState_m6CEDC16CB9B224A0302A83BC2C22FC4C0905EB30(L_5, /*hidden argument*/NULL);
+			int32_t L_7 = __this->get_lastTrackingState_16();
+			if ((!(((uint32_t)L_6) == ((uint32_t)L_7))))
 			{
-				goto IL_0037;
+				goto IL_0042;
 			}
 		}
 
-IL_0027:
+IL_0032:
 		{
-			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_7 = V_2;
-			NullCheck(L_7);
-			int32_t L_8 = XRSessionSubsystem_get_notTrackingReason_m2425113BCCDD44CEF92AA9A045C002CAF981B6D7(L_7, /*hidden argument*/NULL);
-			int32_t L_9 = __this->get_lastNotTrackingReason_17();
-			if ((!(((uint32_t)L_8) == ((uint32_t)L_9))))
+			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_8 = V_2;
+			NullCheck(L_8);
+			int32_t L_9 = XRSessionSubsystem_get_notTrackingReason_m2425113BCCDD44CEF92AA9A045C002CAF981B6D7(L_8, /*hidden argument*/NULL);
+			int32_t L_10 = __this->get_lastNotTrackingReason_17();
+			G_B6_0 = ((((int32_t)L_9) == ((int32_t)L_10))? 1 : 0);
+			goto IL_0043;
+		}
+
+IL_0042:
+		{
+			G_B6_0 = 0;
+		}
+
+IL_0043:
+		{
+			V_4 = (bool)G_B6_0;
+			bool L_11 = V_4;
+			if (!L_11)
 			{
-				goto IL_0037;
+				goto IL_004c;
 			}
 		}
 
-IL_0035:
+IL_0049:
 		{
 			// return;
-			IL2CPP_LEAVE(0x86, FINALLY_0078);
+			IL2CPP_LEAVE(0xAD, FINALLY_009e);
 		}
 
-IL_0037:
+IL_004c:
 		{
 			// base.Update();
 			BaseService_Update_mAE9EBAC35F456E318362A34CA0ED90722C6C6F42(__this, /*hidden argument*/NULL);
 			// if (sessionSubsystem.trackingState == UnityEngine.XR.ARSubsystems.TrackingState.None && sessionSubsystem.notTrackingReason == NotTrackingReason.Relocalizing)
-			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_10 = V_2;
-			NullCheck(L_10);
-			int32_t L_11 = XRSessionSubsystem_get_trackingState_m6CEDC16CB9B224A0302A83BC2C22FC4C0905EB30(L_10, /*hidden argument*/NULL);
-			if (L_11)
-			{
-				goto IL_0057;
-			}
-		}
-
-IL_0045:
-		{
 			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_12 = V_2;
 			NullCheck(L_12);
-			int32_t L_13 = XRSessionSubsystem_get_notTrackingReason_m2425113BCCDD44CEF92AA9A045C002CAF981B6D7(L_12, /*hidden argument*/NULL);
-			if ((!(((uint32_t)L_13) == ((uint32_t)2))))
+			int32_t L_13 = XRSessionSubsystem_get_trackingState_m6CEDC16CB9B224A0302A83BC2C22FC4C0905EB30(L_12, /*hidden argument*/NULL);
+			if (L_13)
 			{
-				goto IL_0057;
+				goto IL_0066;
 			}
 		}
 
-IL_004e:
+IL_005b:
+		{
+			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_14 = V_2;
+			NullCheck(L_14);
+			int32_t L_15 = XRSessionSubsystem_get_notTrackingReason_m2425113BCCDD44CEF92AA9A045C002CAF981B6D7(L_14, /*hidden argument*/NULL);
+			G_B11_0 = ((((int32_t)L_15) == ((int32_t)2))? 1 : 0);
+			goto IL_0067;
+		}
+
+IL_0066:
+		{
+			G_B11_0 = 0;
+		}
+
+IL_0067:
+		{
+			V_5 = (bool)G_B11_0;
+			bool L_16 = V_5;
+			if (!L_16)
+			{
+				goto IL_0079;
+			}
+		}
+
+IL_006d:
 		{
 			// SetTrackingLost(true);
 			LostTrackingService_SetTrackingLost_mDE6AE89F48C0B2A7D5FB654D70478401E28057E3(__this, (bool)1, /*hidden argument*/NULL);
-			// }
-			goto IL_005e;
+			goto IL_0083;
 		}
 
-IL_0057:
+IL_0079:
 		{
 			// SetTrackingLost(false);
 			LostTrackingService_SetTrackingLost_mDE6AE89F48C0B2A7D5FB654D70478401E28057E3(__this, (bool)0, /*hidden argument*/NULL);
 		}
 
-IL_005e:
+IL_0083:
 		{
 			// lastTrackingState = sessionSubsystem.trackingState;
-			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_14 = V_2;
-			NullCheck(L_14);
-			int32_t L_15 = XRSessionSubsystem_get_trackingState_m6CEDC16CB9B224A0302A83BC2C22FC4C0905EB30(L_14, /*hidden argument*/NULL);
-			__this->set_lastTrackingState_16(L_15);
+			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_17 = V_2;
+			NullCheck(L_17);
+			int32_t L_18 = XRSessionSubsystem_get_trackingState_m6CEDC16CB9B224A0302A83BC2C22FC4C0905EB30(L_17, /*hidden argument*/NULL);
+			__this->set_lastTrackingState_16(L_18);
 			// lastNotTrackingReason = sessionSubsystem.notTrackingReason;
-			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_16 = V_2;
-			NullCheck(L_16);
-			int32_t L_17 = XRSessionSubsystem_get_notTrackingReason_m2425113BCCDD44CEF92AA9A045C002CAF981B6D7(L_16, /*hidden argument*/NULL);
-			__this->set_lastNotTrackingReason_17(L_17);
-			// }
-			IL2CPP_LEAVE(0x86, FINALLY_0078);
+			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_19 = V_2;
+			NullCheck(L_19);
+			int32_t L_20 = XRSessionSubsystem_get_notTrackingReason_m2425113BCCDD44CEF92AA9A045C002CAF981B6D7(L_19, /*hidden argument*/NULL);
+			__this->set_lastNotTrackingReason_17(L_20);
+			IL2CPP_LEAVE(0xAD, FINALLY_009e);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0078;
+		goto FINALLY_009e;
 	}
 
-FINALLY_0078:
+FINALLY_009e:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(120)
+		IL2CPP_END_FINALLY(158)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(120)
+	IL2CPP_CLEANUP(158)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x86, IL_0086)
+		IL2CPP_JUMP_TBL(0xAD, IL_00ad)
 	}
 
-IL_0086:
+IL_00ad:
 	{
 		// }
 		return;
@@ -2686,6 +2767,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService_DisableTrackingLostV
 	memset((&V_0), 0, sizeof(V_0));
 	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
 	memset((&V_1), 0, sizeof(V_1));
+	bool V_2 = false;
+	bool V_3 = false;
+	bool V_4 = false;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -2693,6 +2777,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService_DisableTrackingLostV
 	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
+	int32_t G_B4_0 = 0;
 	{
 		// using (DisableTrackingLostVisualPerfMarker.Auto())
 		IL2CPP_RUNTIME_CLASS_INIT(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var);
@@ -2702,7 +2787,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService_DisableTrackingLostV
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
@@ -2710,95 +2795,111 @@ IL_000e:
 			RuntimeObject* L_2 = __this->get_visual_13();
 			if (!L_2)
 			{
-				goto IL_006a;
+				goto IL_0025;
 			}
 		}
 
-IL_0016:
+IL_0018:
 		{
 			RuntimeObject* L_3 = __this->get_visual_13();
 			NullCheck(L_3);
 			bool L_4 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::get_Enabled() */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_3);
-			if (!L_4)
+			G_B4_0 = ((int32_t)(L_4));
+			goto IL_0026;
+		}
+
+IL_0025:
+		{
+			G_B4_0 = 0;
+		}
+
+IL_0026:
+		{
+			V_2 = (bool)G_B4_0;
+			bool L_5 = V_2;
+			if (!L_5)
 			{
-				goto IL_006a;
+				goto IL_0081;
 			}
 		}
 
-IL_0023:
+IL_002a:
 		{
 			// CameraCache.Main.cullingMask = cullingMaskOnTrackingLost;
-			Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * L_5 = CameraCache_get_Main_m23FB3162F6476988FEE59F829DEAF08702D81554(/*hidden argument*/NULL);
-			int32_t L_6 = __this->get_cullingMaskOnTrackingLost_14();
-			NullCheck(L_5);
-			Camera_set_cullingMask_m215DB1C878CF1ADEEF6800AF449EEEA7680ECCCD(L_5, L_6, /*hidden argument*/NULL);
+			Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * L_6 = CameraCache_get_Main_m23FB3162F6476988FEE59F829DEAF08702D81554(/*hidden argument*/NULL);
+			int32_t L_7 = __this->get_cullingMaskOnTrackingLost_14();
+			NullCheck(L_6);
+			Camera_set_cullingMask_m215DB1C878CF1ADEEF6800AF449EEEA7680ECCCD(L_6, L_7, /*hidden argument*/NULL);
 			// if (profile.HaltTimeWhileTrackingLost)
-			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_7 = __this->get_profile_12();
-			NullCheck(L_7);
-			bool L_8 = LostTrackingServiceProfile_get_HaltTimeWhileTrackingLost_m3EA2533E431DCC361498F660B99C23458556E6A6_inline(L_7, /*hidden argument*/NULL);
-			if (!L_8)
+			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_8 = __this->get_profile_12();
+			NullCheck(L_8);
+			bool L_9 = LostTrackingServiceProfile_get_HaltTimeWhileTrackingLost_m3EA2533E431DCC361498F660B99C23458556E6A6_inline(L_8, /*hidden argument*/NULL);
+			V_3 = L_9;
+			bool L_10 = V_3;
+			if (!L_10)
 			{
-				goto IL_004b;
+				goto IL_0059;
 			}
-		}
-
-IL_0040:
-		{
-			// Time.timeScale = timeScaleOnTrackingLost;
-			float L_9 = __this->get_timeScaleOnTrackingLost_15();
-			Time_set_timeScale_mAB89C3BB5DEE81934159C23F103397A77AC3F4AF(L_9, /*hidden argument*/NULL);
 		}
 
 IL_004b:
 		{
+			// Time.timeScale = timeScaleOnTrackingLost;
+			float L_11 = __this->get_timeScaleOnTrackingLost_15();
+			Time_set_timeScale_mAB89C3BB5DEE81934159C23F103397A77AC3F4AF(L_11, /*hidden argument*/NULL);
+		}
+
+IL_0059:
+		{
 			// if (profile.HaltAudioOnTrackingLost)
-			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_10 = __this->get_profile_12();
-			NullCheck(L_10);
-			bool L_11 = LostTrackingServiceProfile_get_HaltAudioOnTrackingLost_m93E531F1AEAF9B7467C693BD1A2C36FDB9804199_inline(L_10, /*hidden argument*/NULL);
-			if (!L_11)
+			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_12 = __this->get_profile_12();
+			NullCheck(L_12);
+			bool L_13 = LostTrackingServiceProfile_get_HaltAudioOnTrackingLost_m93E531F1AEAF9B7467C693BD1A2C36FDB9804199_inline(L_12, /*hidden argument*/NULL);
+			V_4 = L_13;
+			bool L_14 = V_4;
+			if (!L_14)
 			{
-				goto IL_005e;
+				goto IL_0073;
 			}
 		}
 
-IL_0058:
+IL_006a:
 		{
 			// AudioListener.pause = false;
 			AudioListener_set_pause_mF016E18A018A7CC403D59F7120EB909ED7A687B0((bool)0, /*hidden argument*/NULL);
 		}
 
-IL_005e:
+IL_0073:
 		{
 			// visual.Enabled = false;
-			RuntimeObject* L_12 = __this->get_visual_13();
-			NullCheck(L_12);
-			InterfaceActionInvoker1< bool >::Invoke(1 /* System.Void Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::set_Enabled(System.Boolean) */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_12, (bool)0);
+			RuntimeObject* L_15 = __this->get_visual_13();
+			NullCheck(L_15);
+			InterfaceActionInvoker1< bool >::Invoke(1 /* System.Void Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::set_Enabled(System.Boolean) */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_15, (bool)0);
 		}
 
-IL_006a:
+IL_0081:
 		{
-			// }
-			IL2CPP_LEAVE(0x7A, FINALLY_006c);
+			IL2CPP_LEAVE(0x93, FINALLY_0084);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_006c;
+		goto FINALLY_0084;
 	}
 
-FINALLY_006c:
+FINALLY_0084:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(108)
+		IL2CPP_END_FINALLY(132)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(108)
+	IL2CPP_CLEANUP(132)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x7A, IL_007a)
+		IL2CPP_JUMP_TBL(0x93, IL_0093)
 	}
 
-IL_007a:
+IL_0093:
 	{
 		// }
 		return;
@@ -2817,7 +2918,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService_EnableTrackingLostVi
 	memset((&V_0), 0, sizeof(V_0));
 	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
 	memset((&V_1), 0, sizeof(V_1));
-	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * V_2 = NULL;
+	bool V_2 = false;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * V_3 = NULL;
+	bool V_4 = false;
+	bool V_5 = false;
+	bool V_6 = false;
+	bool V_7 = false;
+	bool V_8 = false;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -2834,179 +2941,190 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService_EnableTrackingLostVi
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
 			// if (visual == null)
 			RuntimeObject* L_2 = __this->get_visual_13();
-			if (L_2)
+			V_2 = (bool)((((RuntimeObject*)(RuntimeObject*)L_2) == ((RuntimeObject*)(RuntimeObject *)NULL))? 1 : 0);
+			bool L_3 = V_2;
+			if (!L_3)
 			{
-				goto IL_005f;
+				goto IL_0078;
 			}
 		}
 
-IL_0016:
+IL_001d:
 		{
 			// GameObject visualObject = UnityEngine.Object.Instantiate(profile.TrackingLostVisualPrefab);
-			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_3 = __this->get_profile_12();
-			NullCheck(L_3);
-			GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_4 = LostTrackingServiceProfile_get_TrackingLostVisualPrefab_m919C0360EB3F99742C10B4AFD75BE1FE79C26F74_inline(L_3, /*hidden argument*/NULL);
+			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_4 = __this->get_profile_12();
+			NullCheck(L_4);
+			GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_5 = LostTrackingServiceProfile_get_TrackingLostVisualPrefab_m919C0360EB3F99742C10B4AFD75BE1FE79C26F74_inline(L_4, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
-			GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_5 = Object_Instantiate_TisGameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F_mC4AB712D7F18E0991E1542CE53F11385E21E7B90(L_4, /*hidden argument*/Object_Instantiate_TisGameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F_mC4AB712D7F18E0991E1542CE53F11385E21E7B90_RuntimeMethod_var);
-			V_2 = L_5;
+			GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_6 = Object_Instantiate_TisGameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F_mC4AB712D7F18E0991E1542CE53F11385E21E7B90(L_5, /*hidden argument*/Object_Instantiate_TisGameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F_mC4AB712D7F18E0991E1542CE53F11385E21E7B90_RuntimeMethod_var);
+			V_3 = L_6;
 			// if (visualObject != null)
-			GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_6 = V_2;
-			bool L_7 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_6, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
-			if (!L_7)
+			GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_7 = V_3;
+			bool L_8 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_7, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
+			V_4 = L_8;
+			bool L_9 = V_4;
+			if (!L_9)
 			{
-				goto IL_003c;
+				goto IL_004a;
 			}
-		}
-
-IL_0030:
-		{
-			// visual = visualObject.GetComponentInChildren<ILostTrackingVisual>();
-			GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_8 = V_2;
-			NullCheck(L_8);
-			RuntimeObject* L_9 = GameObject_GetComponentInChildren_TisILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_m5C496B72DC6F1F3120CB4859977423C07237B89E(L_8, /*hidden argument*/GameObject_GetComponentInChildren_TisILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_m5C496B72DC6F1F3120CB4859977423C07237B89E_RuntimeMethod_var);
-			__this->set_visual_13(L_9);
 		}
 
 IL_003c:
 		{
+			// visual = visualObject.GetComponentInChildren<ILostTrackingVisual>();
+			GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_10 = V_3;
+			NullCheck(L_10);
+			RuntimeObject* L_11 = GameObject_GetComponentInChildren_TisILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_m5C496B72DC6F1F3120CB4859977423C07237B89E(L_10, /*hidden argument*/GameObject_GetComponentInChildren_TisILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_m5C496B72DC6F1F3120CB4859977423C07237B89E_RuntimeMethod_var);
+			__this->set_visual_13(L_11);
+		}
+
+IL_004a:
+		{
 			// if (visual == null)
-			RuntimeObject* L_10 = __this->get_visual_13();
-			if (L_10)
+			RuntimeObject* L_12 = __this->get_visual_13();
+			V_5 = (bool)((((RuntimeObject*)(RuntimeObject*)L_12) == ((RuntimeObject*)(RuntimeObject *)NULL))? 1 : 0);
+			bool L_13 = V_5;
+			if (!L_13)
 			{
-				goto IL_0053;
+				goto IL_006a;
 			}
 		}
 
-IL_0044:
+IL_0059:
 		{
 			// Debug.LogError("No ILostTrackingVisual found on prefab supplied by LostTrackingServiceProfile.");
 			IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
 			Debug_LogError_m3BCF9B78263152261565DCA9DB7D55F0C391ED29(_stringLiteralD098A68B379F7A373020990B860A646E1431CFE4, /*hidden argument*/NULL);
 			// return;
-			IL2CPP_LEAVE(0x10B, FINALLY_00fd);
+			IL2CPP_LEAVE(0x141, FINALLY_0132);
 		}
 
-IL_0053:
+IL_006a:
 		{
 			// visual.Enabled = false;
-			RuntimeObject* L_11 = __this->get_visual_13();
-			NullCheck(L_11);
-			InterfaceActionInvoker1< bool >::Invoke(1 /* System.Void Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::set_Enabled(System.Boolean) */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_11, (bool)0);
+			RuntimeObject* L_14 = __this->get_visual_13();
+			NullCheck(L_14);
+			InterfaceActionInvoker1< bool >::Invoke(1 /* System.Void Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::set_Enabled(System.Boolean) */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_14, (bool)0);
 		}
 
-IL_005f:
+IL_0078:
 		{
 			// if (!visual.Enabled)
-			RuntimeObject* L_12 = __this->get_visual_13();
-			NullCheck(L_12);
-			bool L_13 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::get_Enabled() */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_12);
-			if (L_13)
+			RuntimeObject* L_15 = __this->get_visual_13();
+			NullCheck(L_15);
+			bool L_16 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::get_Enabled() */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_15);
+			V_6 = (bool)((((int32_t)L_16) == ((int32_t)0))? 1 : 0);
+			bool L_17 = V_6;
+			if (!L_17)
 			{
-				goto IL_00fb;
+				goto IL_012f;
 			}
 		}
 
-IL_006f:
+IL_008f:
 		{
 			// cullingMaskOnTrackingLost = CameraCache.Main.cullingMask;
-			Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * L_14 = CameraCache_get_Main_m23FB3162F6476988FEE59F829DEAF08702D81554(/*hidden argument*/NULL);
-			NullCheck(L_14);
-			int32_t L_15 = Camera_get_cullingMask_m0992E96D87A4221E38746EBD882780CEFF7C2BCD(L_14, /*hidden argument*/NULL);
-			__this->set_cullingMaskOnTrackingLost_14(L_15);
-			// timeScaleOnTrackingLost = Time.timeScale;
-			float L_16 = Time_get_timeScale_m7E198A5814859A08FD0FFE6DD5F7ED5C907719F8(/*hidden argument*/NULL);
-			__this->set_timeScaleOnTrackingLost_15(L_16);
-			// CameraCache.Main.cullingMask = profile.TrackingLostCullingMask;
-			Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * L_17 = CameraCache_get_Main_m23FB3162F6476988FEE59F829DEAF08702D81554(/*hidden argument*/NULL);
-			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_18 = __this->get_profile_12();
+			Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * L_18 = CameraCache_get_Main_m23FB3162F6476988FEE59F829DEAF08702D81554(/*hidden argument*/NULL);
 			NullCheck(L_18);
-			LayerMask_tBB9173D8B6939D476E67E849280AC9F4EC4D93B0  L_19 = LostTrackingServiceProfile_get_TrackingLostCullingMask_m6A963DD30B5A9393982EE36D32E4BE0669FF1B3B_inline(L_18, /*hidden argument*/NULL);
-			int32_t L_20 = LayerMask_op_Implicit_m2AFFC7F931005437E8F356C953F439829AF4CFA5(L_19, /*hidden argument*/NULL);
-			NullCheck(L_17);
-			Camera_set_cullingMask_m215DB1C878CF1ADEEF6800AF449EEEA7680ECCCD(L_17, L_20, /*hidden argument*/NULL);
-			// if (profile.HaltTimeWhileTrackingLost)
-			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_21 = __this->get_profile_12();
+			int32_t L_19 = Camera_get_cullingMask_m0992E96D87A4221E38746EBD882780CEFF7C2BCD(L_18, /*hidden argument*/NULL);
+			__this->set_cullingMaskOnTrackingLost_14(L_19);
+			// timeScaleOnTrackingLost = Time.timeScale;
+			float L_20 = Time_get_timeScale_m7E198A5814859A08FD0FFE6DD5F7ED5C907719F8(/*hidden argument*/NULL);
+			__this->set_timeScaleOnTrackingLost_15(L_20);
+			// CameraCache.Main.cullingMask = profile.TrackingLostCullingMask;
+			Camera_t48B2B9ECB3CE6108A98BF949A1CECF0FE3421F34 * L_21 = CameraCache_get_Main_m23FB3162F6476988FEE59F829DEAF08702D81554(/*hidden argument*/NULL);
+			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_22 = __this->get_profile_12();
+			NullCheck(L_22);
+			LayerMask_tBB9173D8B6939D476E67E849280AC9F4EC4D93B0  L_23 = LostTrackingServiceProfile_get_TrackingLostCullingMask_m6A963DD30B5A9393982EE36D32E4BE0669FF1B3B_inline(L_22, /*hidden argument*/NULL);
+			int32_t L_24 = LayerMask_op_Implicit_m2AFFC7F931005437E8F356C953F439829AF4CFA5(L_23, /*hidden argument*/NULL);
 			NullCheck(L_21);
-			bool L_22 = LostTrackingServiceProfile_get_HaltTimeWhileTrackingLost_m3EA2533E431DCC361498F660B99C23458556E6A6_inline(L_21, /*hidden argument*/NULL);
-			if (!L_22)
+			Camera_set_cullingMask_m215DB1C878CF1ADEEF6800AF449EEEA7680ECCCD(L_21, L_24, /*hidden argument*/NULL);
+			// if (profile.HaltTimeWhileTrackingLost)
+			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_25 = __this->get_profile_12();
+			NullCheck(L_25);
+			bool L_26 = LostTrackingServiceProfile_get_HaltTimeWhileTrackingLost_m3EA2533E431DCC361498F660B99C23458556E6A6_inline(L_25, /*hidden argument*/NULL);
+			V_7 = L_26;
+			bool L_27 = V_7;
+			if (!L_27)
 			{
-				goto IL_00bb;
+				goto IL_00e4;
 			}
 		}
 
-IL_00b1:
+IL_00d7:
 		{
 			// Time.timeScale = 0.0f;
 			Time_set_timeScale_mAB89C3BB5DEE81934159C23F103397A77AC3F4AF((0.0f), /*hidden argument*/NULL);
 		}
 
-IL_00bb:
+IL_00e4:
 		{
 			// if (profile.HaltAudioOnTrackingLost)
-			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_23 = __this->get_profile_12();
-			NullCheck(L_23);
-			bool L_24 = LostTrackingServiceProfile_get_HaltAudioOnTrackingLost_m93E531F1AEAF9B7467C693BD1A2C36FDB9804199_inline(L_23, /*hidden argument*/NULL);
-			if (!L_24)
+			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_28 = __this->get_profile_12();
+			NullCheck(L_28);
+			bool L_29 = LostTrackingServiceProfile_get_HaltAudioOnTrackingLost_m93E531F1AEAF9B7467C693BD1A2C36FDB9804199_inline(L_28, /*hidden argument*/NULL);
+			V_8 = L_29;
+			bool L_30 = V_8;
+			if (!L_30)
 			{
-				goto IL_00ce;
+				goto IL_00fe;
 			}
 		}
 
-IL_00c8:
+IL_00f5:
 		{
 			// AudioListener.pause = true;
 			AudioListener_set_pause_mF016E18A018A7CC403D59F7120EB909ED7A687B0((bool)1, /*hidden argument*/NULL);
 		}
 
-IL_00ce:
+IL_00fe:
 		{
 			// visual.Enabled = true;
-			RuntimeObject* L_25 = __this->get_visual_13();
-			NullCheck(L_25);
-			InterfaceActionInvoker1< bool >::Invoke(1 /* System.Void Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::set_Enabled(System.Boolean) */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_25, (bool)1);
+			RuntimeObject* L_31 = __this->get_visual_13();
+			NullCheck(L_31);
+			InterfaceActionInvoker1< bool >::Invoke(1 /* System.Void Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::set_Enabled(System.Boolean) */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_31, (bool)1);
 			// visual.SetLayer(profile.TrackingLostVisualLayer);
-			RuntimeObject* L_26 = __this->get_visual_13();
-			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_27 = __this->get_profile_12();
-			NullCheck(L_27);
-			int32_t L_28 = LostTrackingServiceProfile_get_TrackingLostVisualLayer_m544356B4707306F1D9571C2467049972482AF9AF_inline(L_27, /*hidden argument*/NULL);
-			NullCheck(L_26);
-			InterfaceActionInvoker1< int32_t >::Invoke(2 /* System.Void Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::SetLayer(System.Int32) */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_26, L_28);
+			RuntimeObject* L_32 = __this->get_visual_13();
+			LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * L_33 = __this->get_profile_12();
+			NullCheck(L_33);
+			int32_t L_34 = LostTrackingServiceProfile_get_TrackingLostVisualLayer_m544356B4707306F1D9571C2467049972482AF9AF_inline(L_33, /*hidden argument*/NULL);
+			NullCheck(L_32);
+			InterfaceActionInvoker1< int32_t >::Invoke(2 /* System.Void Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::SetLayer(System.Int32) */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_32, L_34);
 			// visual.ResetVisual();
-			RuntimeObject* L_29 = __this->get_visual_13();
-			NullCheck(L_29);
-			InterfaceActionInvoker0::Invoke(3 /* System.Void Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::ResetVisual() */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_29);
+			RuntimeObject* L_35 = __this->get_visual_13();
+			NullCheck(L_35);
+			InterfaceActionInvoker0::Invoke(3 /* System.Void Microsoft.MixedReality.Toolkit.Extensions.Tracking.ILostTrackingVisual::ResetVisual() */, ILostTrackingVisual_tB8A336C60DE9D9844865070885BCEB41C881DB5F_il2cpp_TypeInfo_var, L_35);
 		}
 
-IL_00fb:
+IL_012f:
 		{
-			// }
-			IL2CPP_LEAVE(0x10B, FINALLY_00fd);
+			IL2CPP_LEAVE(0x141, FINALLY_0132);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_00fd;
+		goto FINALLY_0132;
 	}
 
-FINALLY_00fd:
+FINALLY_0132:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(253)
+		IL2CPP_END_FINALLY(306)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(253)
+	IL2CPP_CLEANUP(306)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x10B, IL_010b)
+		IL2CPP_JUMP_TBL(0x141, IL_0141)
 	}
 
-IL_010b:
+IL_0141:
 	{
 		// }
 		return;
@@ -3025,11 +3143,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService_SetTrackingLost_mDE6
 	memset((&V_0), 0, sizeof(V_0));
 	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
 	memset((&V_1), 0, sizeof(V_1));
+	bool V_2 = false;
+	bool V_3 = false;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	void* __leave_targets_storage = alloca(sizeof(int32_t) * 2);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
 	Action_t591D2A86165F896B4B800BB5C25CE18672A55579 * G_B5_0 = NULL;
@@ -3045,118 +3165,124 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService_SetTrackingLost_mDE6
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
 			// if (TrackingLost != trackingLost)
 			bool L_2 = LostTrackingService_get_TrackingLost_m1C22A9ED11F647ADE7C5A8C031C0B33E287A36E7_inline(__this, /*hidden argument*/NULL);
 			bool L_3 = ___trackingLost0;
-			if ((((int32_t)L_2) == ((int32_t)L_3)))
+			V_2 = (bool)((((int32_t)((((int32_t)L_2) == ((int32_t)L_3))? 1 : 0)) == ((int32_t)0))? 1 : 0);
+			bool L_4 = V_2;
+			if (!L_4)
 			{
-				goto IL_0056;
+				goto IL_006c;
 			}
 		}
 
-IL_0017:
+IL_0020:
 		{
 			// TrackingLost = trackingLost;
-			bool L_4 = ___trackingLost0;
-			LostTrackingService_set_TrackingLost_m5DD3A137446A1FCA35AFD7B5AFE219D856F1B0F6_inline(__this, L_4, /*hidden argument*/NULL);
+			bool L_5 = ___trackingLost0;
+			LostTrackingService_set_TrackingLost_m5DD3A137446A1FCA35AFD7B5AFE219D856F1B0F6_inline(__this, L_5, /*hidden argument*/NULL);
 			// if (TrackingLost)
-			bool L_5 = LostTrackingService_get_TrackingLost_m1C22A9ED11F647ADE7C5A8C031C0B33E287A36E7_inline(__this, /*hidden argument*/NULL);
-			if (!L_5)
+			bool L_6 = LostTrackingService_get_TrackingLost_m1C22A9ED11F647ADE7C5A8C031C0B33E287A36E7_inline(__this, /*hidden argument*/NULL);
+			V_3 = L_6;
+			bool L_7 = V_3;
+			if (!L_7)
 			{
-				goto IL_003f;
+				goto IL_0050;
 			}
 		}
 
-IL_0026:
+IL_0033:
 		{
 			// OnTrackingLost?.Invoke();
-			Action_t591D2A86165F896B4B800BB5C25CE18672A55579 * L_6 = LostTrackingService_get_OnTrackingLost_mAD2443215BEB72A25FA786105D184DC789F0622E_inline(__this, /*hidden argument*/NULL);
-			Action_t591D2A86165F896B4B800BB5C25CE18672A55579 * L_7 = L_6;
-			G_B4_0 = L_7;
-			if (L_7)
+			Action_t591D2A86165F896B4B800BB5C25CE18672A55579 * L_8 = LostTrackingService_get_OnTrackingLost_mAD2443215BEB72A25FA786105D184DC789F0622E_inline(__this, /*hidden argument*/NULL);
+			Action_t591D2A86165F896B4B800BB5C25CE18672A55579 * L_9 = L_8;
+			G_B4_0 = L_9;
+			if (L_9)
 			{
-				G_B5_0 = L_7;
-				goto IL_0032;
+				G_B5_0 = L_9;
+				goto IL_0040;
 			}
 		}
 
-IL_002f:
+IL_003d:
 		{
-			goto IL_0037;
+			goto IL_0046;
 		}
 
-IL_0032:
+IL_0040:
 		{
 			NullCheck(G_B5_0);
 			Action_Invoke_mC8D676E5DDF967EC5D23DD0E96FB52AA499817FD(G_B5_0, /*hidden argument*/NULL);
 		}
 
-IL_0037:
+IL_0046:
 		{
 			// EnableTrackingLostVisual();
 			LostTrackingService_EnableTrackingLostVisual_m24E39EF7B7157A4AFCFC400C91E8D193769C254E(__this, /*hidden argument*/NULL);
-			// }
-			IL2CPP_LEAVE(0x66, FINALLY_0058);
+			goto IL_006b;
 		}
 
-IL_003f:
+IL_0050:
 		{
 			// OnTrackingRestored?.Invoke();
-			Action_t591D2A86165F896B4B800BB5C25CE18672A55579 * L_8 = LostTrackingService_get_OnTrackingRestored_mA83BE9A3987C5C6C3B26F045E725F5B6C89F5698_inline(__this, /*hidden argument*/NULL);
-			Action_t591D2A86165F896B4B800BB5C25CE18672A55579 * L_9 = L_8;
-			G_B8_0 = L_9;
-			if (L_9)
+			Action_t591D2A86165F896B4B800BB5C25CE18672A55579 * L_10 = LostTrackingService_get_OnTrackingRestored_mA83BE9A3987C5C6C3B26F045E725F5B6C89F5698_inline(__this, /*hidden argument*/NULL);
+			Action_t591D2A86165F896B4B800BB5C25CE18672A55579 * L_11 = L_10;
+			G_B8_0 = L_11;
+			if (L_11)
 			{
-				G_B9_0 = L_9;
-				goto IL_004b;
+				G_B9_0 = L_11;
+				goto IL_005d;
 			}
 		}
 
-IL_0048:
+IL_005a:
 		{
-			goto IL_0050;
+			goto IL_0063;
 		}
 
-IL_004b:
+IL_005d:
 		{
 			NullCheck(G_B9_0);
 			Action_Invoke_mC8D676E5DDF967EC5D23DD0E96FB52AA499817FD(G_B9_0, /*hidden argument*/NULL);
 		}
 
-IL_0050:
+IL_0063:
 		{
 			// DisableTrackingLostVisual();
 			LostTrackingService_DisableTrackingLostVisual_m8371A5B710FEA3BBAE782F0B70B80895D0948BEB(__this, /*hidden argument*/NULL);
 		}
 
-IL_0056:
+IL_006b:
 		{
-			// }
-			IL2CPP_LEAVE(0x66, FINALLY_0058);
+		}
+
+IL_006c:
+		{
+			IL2CPP_LEAVE(0x7E, FINALLY_006f);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0058;
+		goto FINALLY_006f;
 	}
 
-FINALLY_0058:
+FINALLY_006f:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(88)
+		IL2CPP_END_FINALLY(111)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(88)
+	IL2CPP_CLEANUP(111)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x66, IL_0066)
+		IL2CPP_JUMP_TBL(0x7E, IL_007e)
 	}
 
-IL_0066:
+IL_007e:
 	{
 		// }
 		return;
@@ -3175,11 +3301,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService_OnPositionalLocatorS
 	memset((&V_0), 0, sizeof(V_0));
 	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
 	memset((&V_1), 0, sizeof(V_1));
+	int32_t V_2 = 0;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	void* __leave_targets_storage = alloca(sizeof(int32_t) * 2);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
 	{
@@ -3191,52 +3318,64 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingService_OnPositionalLocatorS
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
 			// switch (newState)
 			int32_t L_2 = ___newState1;
-			if ((!(((uint32_t)L_2) == ((uint32_t)4))))
+			V_2 = L_2;
+			int32_t L_3 = V_2;
+			if ((((int32_t)L_3) == ((int32_t)4)))
 			{
-				goto IL_001b;
+				goto IL_0018;
 			}
 		}
 
-IL_0012:
+IL_0016:
+		{
+			goto IL_0022;
+		}
+
+IL_0018:
 		{
 			// SetTrackingLost(true);
 			LostTrackingService_SetTrackingLost_mDE6AE89F48C0B2A7D5FB654D70478401E28057E3(__this, (bool)1, /*hidden argument*/NULL);
 			// break;
-			IL2CPP_LEAVE(0x32, FINALLY_0024);
+			goto IL_002c;
 		}
 
-IL_001b:
+IL_0022:
 		{
 			// SetTrackingLost(false);
 			LostTrackingService_SetTrackingLost_mDE6AE89F48C0B2A7D5FB654D70478401E28057E3(__this, (bool)0, /*hidden argument*/NULL);
 			// break;
-			IL2CPP_LEAVE(0x32, FINALLY_0024);
+			goto IL_002c;
+		}
+
+IL_002c:
+		{
+			IL2CPP_LEAVE(0x3E, FINALLY_002f);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0024;
+		goto FINALLY_002f;
 	}
 
-FINALLY_0024:
+FINALLY_002f:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(36)
+		IL2CPP_END_FINALLY(47)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(36)
+	IL2CPP_CLEANUP(47)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x32, IL_0032)
+		IL2CPP_JUMP_TBL(0x3E, IL_003e)
 	}
 
-IL_0032:
+IL_003e:
 	{
 		// }
 		return;
@@ -3251,23 +3390,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728
 		il2cpp_codegen_initialize_method (LostTrackingService_get_SessionSubsystem_m41F7E630A48F9F675DCAEDDD4D3AC792A6222D14_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	Enumerator_t808E86EAEA196F334D65AE546D8AC99BA4C48B00  V_0;
-	memset((&V_0), 0, sizeof(V_0));
-	XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * V_1 = NULL;
+	bool V_0 = false;
+	Enumerator_t808E86EAEA196F334D65AE546D8AC99BA4C48B00  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * V_2 = NULL;
+	bool V_3 = false;
+	XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * V_4 = NULL;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	void* __leave_targets_storage = alloca(sizeof(int32_t) * 2);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
+	int32_t G_B3_0 = 0;
 	{
 		// if (sessionSubsystem == null || !sessionSubsystem.running)
 		IL2CPP_RUNTIME_CLASS_INIT(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var);
 		XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_0 = ((LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_StaticFields*)il2cpp_codegen_static_fields_for(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var))->get_sessionSubsystem_23();
 		if (!L_0)
 		{
-			goto IL_0013;
+			goto IL_0017;
 		}
 	}
 	{
@@ -3275,98 +3418,127 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728
 		XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_1 = ((LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_StaticFields*)il2cpp_codegen_static_fields_for(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var))->get_sessionSubsystem_23();
 		NullCheck(L_1);
 		bool L_2 = VirtFuncInvoker0< bool >::Invoke(9 /* System.Boolean UnityEngine.Subsystem::get_running() */, L_1);
-		if (L_2)
-		{
-			goto IL_0061;
-		}
+		G_B3_0 = ((((int32_t)L_2) == ((int32_t)0))? 1 : 0);
+		goto IL_0018;
 	}
 
-IL_0013:
+IL_0017:
+	{
+		G_B3_0 = 1;
+	}
+
+IL_0018:
+	{
+		V_0 = (bool)G_B3_0;
+		bool L_3 = V_0;
+		if (!L_3)
+		{
+			goto IL_0074;
+		}
+	}
 	{
 		// sessionSubsystem = null;
 		IL2CPP_RUNTIME_CLASS_INIT(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var);
 		((LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_StaticFields*)il2cpp_codegen_static_fields_for(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var))->set_sessionSubsystem_23((XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 *)NULL);
 		// SubsystemManager.GetInstances(XRSessionSubsystems);
-		List_1_tEBCACF3020237BB50A4939671B915A00276FC85C * L_3 = ((LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_StaticFields*)il2cpp_codegen_static_fields_for(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var))->get_XRSessionSubsystems_24();
-		IL2CPP_RUNTIME_CLASS_INIT(SubsystemManager_tFEDEC70DC4119830C96B42915123C27FEDDB0F58_il2cpp_TypeInfo_var);
-		SubsystemManager_GetInstances_TisXRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0_m6DB32941A96AAA9B11646E2974D0FE270FE0350A(L_3, /*hidden argument*/SubsystemManager_GetInstances_TisXRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0_m6DB32941A96AAA9B11646E2974D0FE270FE0350A_RuntimeMethod_var);
-		// foreach (XRSessionSubsystem xrSessionSubsystem in XRSessionSubsystems)
 		List_1_tEBCACF3020237BB50A4939671B915A00276FC85C * L_4 = ((LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_StaticFields*)il2cpp_codegen_static_fields_for(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var))->get_XRSessionSubsystems_24();
-		NullCheck(L_4);
-		Enumerator_t808E86EAEA196F334D65AE546D8AC99BA4C48B00  L_5 = List_1_GetEnumerator_m3B0B830E669EDB21B3C5D1D49D0F040F213A8C60(L_4, /*hidden argument*/List_1_GetEnumerator_m3B0B830E669EDB21B3C5D1D49D0F040F213A8C60_RuntimeMethod_var);
-		V_0 = L_5;
+		IL2CPP_RUNTIME_CLASS_INIT(SubsystemManager_tFEDEC70DC4119830C96B42915123C27FEDDB0F58_il2cpp_TypeInfo_var);
+		SubsystemManager_GetInstances_TisXRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0_m6DB32941A96AAA9B11646E2974D0FE270FE0350A(L_4, /*hidden argument*/SubsystemManager_GetInstances_TisXRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0_m6DB32941A96AAA9B11646E2974D0FE270FE0350A_RuntimeMethod_var);
+		// foreach (XRSessionSubsystem xrSessionSubsystem in XRSessionSubsystems)
+		List_1_tEBCACF3020237BB50A4939671B915A00276FC85C * L_5 = ((LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_StaticFields*)il2cpp_codegen_static_fields_for(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var))->get_XRSessionSubsystems_24();
+		NullCheck(L_5);
+		Enumerator_t808E86EAEA196F334D65AE546D8AC99BA4C48B00  L_6 = List_1_GetEnumerator_m3B0B830E669EDB21B3C5D1D49D0F040F213A8C60(L_5, /*hidden argument*/List_1_GetEnumerator_m3B0B830E669EDB21B3C5D1D49D0F040F213A8C60_RuntimeMethod_var);
+		V_1 = L_6;
 	}
 
-IL_002e:
+IL_003a:
 	try
 	{ // begin try (depth: 1)
 		{
-			goto IL_0048;
+			goto IL_0059;
 		}
 
-IL_0030:
+IL_003c:
 		{
 			// foreach (XRSessionSubsystem xrSessionSubsystem in XRSessionSubsystems)
-			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_6 = Enumerator_get_Current_m4215B46D769BA7588ACDDF631FA2C3F139E06F65_inline((Enumerator_t808E86EAEA196F334D65AE546D8AC99BA4C48B00 *)(&V_0), /*hidden argument*/Enumerator_get_Current_m4215B46D769BA7588ACDDF631FA2C3F139E06F65_RuntimeMethod_var);
-			V_1 = L_6;
+			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_7 = Enumerator_get_Current_m4215B46D769BA7588ACDDF631FA2C3F139E06F65_inline((Enumerator_t808E86EAEA196F334D65AE546D8AC99BA4C48B00 *)(&V_1), /*hidden argument*/Enumerator_get_Current_m4215B46D769BA7588ACDDF631FA2C3F139E06F65_RuntimeMethod_var);
+			V_2 = L_7;
 			// if (xrSessionSubsystem.running)
-			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_7 = V_1;
-			NullCheck(L_7);
-			bool L_8 = VirtFuncInvoker0< bool >::Invoke(9 /* System.Boolean UnityEngine.Subsystem::get_running() */, L_7);
-			if (!L_8)
+			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_8 = V_2;
+			NullCheck(L_8);
+			bool L_9 = VirtFuncInvoker0< bool >::Invoke(9 /* System.Boolean UnityEngine.Subsystem::get_running() */, L_8);
+			V_3 = L_9;
+			bool L_10 = V_3;
+			if (!L_10)
 			{
-				goto IL_0048;
+				goto IL_0058;
 			}
 		}
 
-IL_0040:
+IL_004f:
 		{
 			// sessionSubsystem = xrSessionSubsystem;
-			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_9 = V_1;
+			XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_11 = V_2;
 			IL2CPP_RUNTIME_CLASS_INIT(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var);
-			((LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_StaticFields*)il2cpp_codegen_static_fields_for(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var))->set_sessionSubsystem_23(L_9);
+			((LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_StaticFields*)il2cpp_codegen_static_fields_for(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var))->set_sessionSubsystem_23(L_11);
 			// break;
-			IL2CPP_LEAVE(0x61, FINALLY_0053);
+			goto IL_0062;
 		}
 
-IL_0048:
+IL_0058:
+		{
+		}
+
+IL_0059:
 		{
 			// foreach (XRSessionSubsystem xrSessionSubsystem in XRSessionSubsystems)
-			bool L_10 = Enumerator_MoveNext_m1CDC28F61B2622EAAF1440E2004F51FB247F0811((Enumerator_t808E86EAEA196F334D65AE546D8AC99BA4C48B00 *)(&V_0), /*hidden argument*/Enumerator_MoveNext_m1CDC28F61B2622EAAF1440E2004F51FB247F0811_RuntimeMethod_var);
-			if (L_10)
+			bool L_12 = Enumerator_MoveNext_m1CDC28F61B2622EAAF1440E2004F51FB247F0811((Enumerator_t808E86EAEA196F334D65AE546D8AC99BA4C48B00 *)(&V_1), /*hidden argument*/Enumerator_MoveNext_m1CDC28F61B2622EAAF1440E2004F51FB247F0811_RuntimeMethod_var);
+			if (L_12)
 			{
-				goto IL_0030;
+				goto IL_003c;
 			}
 		}
 
-IL_0051:
+IL_0062:
 		{
-			IL2CPP_LEAVE(0x61, FINALLY_0053);
+			IL2CPP_LEAVE(0x73, FINALLY_0064);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0053;
+		goto FINALLY_0064;
 	}
 
-FINALLY_0053:
+FINALLY_0064:
 	{ // begin finally (depth: 1)
-		Enumerator_Dispose_mF4522BB5668AB7983ED680AE943C57D3C8D7C335((Enumerator_t808E86EAEA196F334D65AE546D8AC99BA4C48B00 *)(&V_0), /*hidden argument*/Enumerator_Dispose_mF4522BB5668AB7983ED680AE943C57D3C8D7C335_RuntimeMethod_var);
-		IL2CPP_END_FINALLY(83)
+		Enumerator_Dispose_mF4522BB5668AB7983ED680AE943C57D3C8D7C335((Enumerator_t808E86EAEA196F334D65AE546D8AC99BA4C48B00 *)(&V_1), /*hidden argument*/Enumerator_Dispose_mF4522BB5668AB7983ED680AE943C57D3C8D7C335_RuntimeMethod_var);
+		IL2CPP_END_FINALLY(100)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(83)
+	IL2CPP_CLEANUP(100)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x61, IL_0061)
+		IL2CPP_JUMP_TBL(0x73, IL_0073)
 	}
 
-IL_0061:
+IL_0073:
+	{
+	}
+
+IL_0074:
 	{
 		// return sessionSubsystem;
 		IL2CPP_RUNTIME_CLASS_INIT(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var);
-		XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_11 = ((LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_StaticFields*)il2cpp_codegen_static_fields_for(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var))->get_sessionSubsystem_23();
-		return L_11;
+		XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_13 = ((LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_StaticFields*)il2cpp_codegen_static_fields_for(LostTrackingService_t57018C94810BD260837E9FD9D87109A996240583_il2cpp_TypeInfo_var))->get_sessionSubsystem_23();
+		V_4 = L_13;
+		goto IL_007d;
+	}
+
+IL_007d:
+	{
+		// }
+		XRSessionSubsystem_t9B9C16B4BDB611559FB6FA728BE399001E47EFF0 * L_14 = V_4;
+		return L_14;
 	}
 }
 // System.Void Microsoft.MixedReality.Toolkit.Extensions.Tracking.LostTrackingService::.cctor()
@@ -3484,8 +3656,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingServiceProfile_OnValidate_m7
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LostTrackingServiceProfile__ctor_m1235B6D47CD9B598D50EA6DC7D7977C33734EBC4 (LostTrackingServiceProfile_t4937935866E385ED4DE1FD95AA686C18A267E075 * __this, const RuntimeMethod* method)
 {
 	{
+		// private GameObject trackingLostVisualPrefab = null;
+		__this->set_trackingLostVisualPrefab_5((GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F *)NULL);
 		// private int trackingLostVisualLayer = 31;
 		__this->set_trackingLostVisualLayer_6(((int32_t)31));
+		// private LayerMask trackingLostCullingMask = new LayerMask();
+		LayerMask_tBB9173D8B6939D476E67E849280AC9F4EC4D93B0 * L_0 = __this->get_address_of_trackingLostCullingMask_7();
+		il2cpp_codegen_initobj(L_0, sizeof(LayerMask_tBB9173D8B6939D476E67E849280AC9F4EC4D93B0 ));
 		// private bool haltTimeWhileTrackingLost = true;
 		__this->set_haltTimeWhileTrackingLost_8((bool)1);
 		// private bool haltAudioWhileTrackingLost = true;

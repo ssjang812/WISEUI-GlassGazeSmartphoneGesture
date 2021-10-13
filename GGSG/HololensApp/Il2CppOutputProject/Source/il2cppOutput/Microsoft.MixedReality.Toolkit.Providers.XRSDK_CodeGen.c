@@ -195,11 +195,11 @@ static Il2CppMethodPointer s_methodPointers[57] =
 };
 static const int32_t s_InvokerIndices[57] = 
 {
-	1357,
+	1331,
 	89,
 	23,
 	23,
-	1357,
+	1331,
 	23,
 	23,
 	37,
@@ -209,15 +209,15 @@ static const int32_t s_InvokerIndices[57] =
 	23,
 	23,
 	23,
-	2952,
+	3041,
 	32,
 	26,
 	23,
 	26,
-	2953,
+	3042,
 	23,
 	3,
-	2953,
+	3042,
 	144,
 	89,
 	14,
@@ -228,16 +228,16 @@ static const int32_t s_InvokerIndices[57] =
 	4,
 	4,
 	4,
-	2680,
-	2954,
-	2954,
-	2955,
-	2955,
-	2955,
-	2955,
+	2622,
+	3043,
+	3043,
+	3044,
+	3044,
+	3044,
+	3044,
 	3,
 	3,
-	1357,
+	1331,
 	30,
 	14,
 	26,
@@ -245,12 +245,12 @@ static const int32_t s_InvokerIndices[57] =
 	-1,
 	23,
 	23,
-	2956,
-	2954,
+	3045,
+	3043,
 	26,
 	34,
 	37,
-	2957,
+	3046,
 	3,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
@@ -259,7 +259,7 @@ static const Il2CppTokenRangePair s_rgctxIndices[1] =
 };
 static const Il2CppRGCTXDefinition s_rgctxValues[1] = 
 {
-	{ (Il2CppRGCTXDataType)2, 65620 },
+	{ (Il2CppRGCTXDataType)2, 59524 },
 };
 extern const Il2CppCodeGenModule g_Microsoft_MixedReality_Toolkit_Providers_XRSDKCodeGenModule;
 const Il2CppCodeGenModule g_Microsoft_MixedReality_Toolkit_Providers_XRSDKCodeGenModule = 

@@ -1564,55 +1564,82 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D
 		s_Il2CppMethodInitialized = true;
 	}
 	List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 * V_0 = NULL;
+	bool V_1 = false;
+	List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 * V_2 = NULL;
+	bool V_3 = false;
+	int32_t G_B5_0 = 0;
 	{
 		// if (XRDevice.GetTrackingSpaceType() != TrackingSpaceType.RoomScale)
 		IL2CPP_RUNTIME_CLASS_INIT(XRDevice_t392FCA3D1DCEB95FF500C8F374C88B034C31DF4A_il2cpp_TypeInfo_var);
 		int32_t L_0 = XRDevice_GetTrackingSpaceType_m075417BECBBFCE6554D24E91F0E2E0264F18826C(/*hidden argument*/NULL);
-		if ((((int32_t)L_0) == ((int32_t)1)))
+		V_1 = (bool)((((int32_t)((((int32_t)L_0) == ((int32_t)1))? 1 : 0)) == ((int32_t)0))? 1 : 0);
+		bool L_1 = V_1;
+		if (!L_1)
 		{
-			goto IL_000a;
+			goto IL_0015;
 		}
 	}
 	{
 		// return null;
-		return (List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 *)NULL;
+		V_2 = (List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 *)NULL;
+		goto IL_003e;
 	}
 
-IL_000a:
+IL_0015:
 	{
 		// var boundaryGeometry = new List<Vector3>(0);
-		List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 * L_1 = (List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 *)il2cpp_codegen_object_new(List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5_il2cpp_TypeInfo_var);
-		List_1__ctor_m9C166B12F3436C88C895D68CE856D15BD1BDF0A2(L_1, 0, /*hidden argument*/List_1__ctor_m9C166B12F3436C88C895D68CE856D15BD1BDF0A2_RuntimeMethod_var);
-		V_0 = L_1;
+		List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 * L_2 = (List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 *)il2cpp_codegen_object_new(List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5_il2cpp_TypeInfo_var);
+		List_1__ctor_m9C166B12F3436C88C895D68CE856D15BD1BDF0A2(L_2, 0, /*hidden argument*/List_1__ctor_m9C166B12F3436C88C895D68CE856D15BD1BDF0A2_RuntimeMethod_var);
+		V_0 = L_2;
 		// if (!UnityBoundary.TryGetGeometry(boundaryGeometry, UnityBoundary.Type.TrackedArea) || boundaryGeometry.Count == 0)
-		List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 * L_2 = V_0;
-		bool L_3 = Boundary_TryGetGeometry_mE516ABC521F94493B6D911938A953FBF44CC8B0F(L_2, 1, /*hidden argument*/NULL);
-		if (!L_3)
+		List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 * L_3 = V_0;
+		bool L_4 = Boundary_TryGetGeometry_mE516ABC521F94493B6D911938A953FBF44CC8B0F(L_3, 1, /*hidden argument*/NULL);
+		if (!L_4)
 		{
-			goto IL_0022;
+			goto IL_0030;
 		}
 	}
 	{
-		List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 * L_4 = V_0;
-		NullCheck(L_4);
-		int32_t L_5 = List_1_get_Count_m2E29D30C43F78ABB30F6C7881652C11852FD4D6F_inline(L_4, /*hidden argument*/List_1_get_Count_m2E29D30C43F78ABB30F6C7881652C11852FD4D6F_RuntimeMethod_var);
-		if (L_5)
-		{
-			goto IL_0024;
-		}
+		List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 * L_5 = V_0;
+		NullCheck(L_5);
+		int32_t L_6 = List_1_get_Count_m2E29D30C43F78ABB30F6C7881652C11852FD4D6F_inline(L_5, /*hidden argument*/List_1_get_Count_m2E29D30C43F78ABB30F6C7881652C11852FD4D6F_RuntimeMethod_var);
+		G_B5_0 = ((((int32_t)L_6) == ((int32_t)0))? 1 : 0);
+		goto IL_0031;
 	}
 
-IL_0022:
+IL_0030:
+	{
+		G_B5_0 = 1;
+	}
+
+IL_0031:
+	{
+		V_3 = (bool)G_B5_0;
+		bool L_7 = V_3;
+		if (!L_7)
+		{
+			goto IL_003a;
+		}
+	}
 	{
 		// return null;
-		return (List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 *)NULL;
+		V_2 = (List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 *)NULL;
+		goto IL_003e;
 	}
 
-IL_0024:
+IL_003a:
 	{
 		// return boundaryGeometry;
-		List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 * L_6 = V_0;
-		return L_6;
+		List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 * L_8 = V_0;
+		V_2 = L_8;
+		goto IL_003e;
+	}
+
+IL_003e:
+	{
+		// }
+		List_1_tFCCBEDAA56D8F7598520FB136A9F8D713033D6B5 * L_9 = V_2;
+		return L_9;
 	}
 }
 // System.Void Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundarySystem::SetTrackingSpace()
@@ -1624,100 +1651,112 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealityBoundarySystem_SetTrackingSp
 		il2cpp_codegen_initialize_method (MixedRealityBoundarySystem_SetTrackingSpace_m4551F729CE2F71394560186BB6643F155BAA4DA7_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	int32_t V_0 = 0;
+	bool V_0 = false;
 	int32_t V_1 = 0;
+	int32_t V_2 = 0;
+	bool V_3 = false;
 	{
 		// if (Application.isPlaying)
 		bool L_0 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
-		if (!L_0)
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0069;
+			goto IL_007a;
 		}
 	}
 	{
 		// switch (Scale)
-		int32_t L_1 = BaseBoundarySystem_get_Scale_m9071E7E6246B5CF0AD504EED579988211B49DE66_inline(__this, /*hidden argument*/NULL);
-		V_1 = L_1;
-		int32_t L_2 = V_1;
-		switch (L_2)
+		int32_t L_2 = BaseBoundarySystem_get_Scale_m9071E7E6246B5CF0AD504EED579988211B49DE66_inline(__this, /*hidden argument*/NULL);
+		V_2 = L_2;
+		int32_t L_3 = V_2;
+		switch (L_3)
 		{
 			case 0:
 			{
-				goto IL_002e;
+				goto IL_0032;
 			}
 			case 1:
 			{
-				goto IL_002e;
+				goto IL_0032;
 			}
 			case 2:
 			{
-				goto IL_002a;
+				goto IL_002e;
 			}
 			case 3:
 			{
-				goto IL_002a;
+				goto IL_002e;
 			}
 			case 4:
 			{
-				goto IL_002e;
+				goto IL_0032;
 			}
 		}
 	}
 	{
-		goto IL_0032;
-	}
-
-IL_002a:
-	{
-		// trackingSpace = TrackingSpaceType.RoomScale;
-		V_0 = 1;
-		// break;
-		goto IL_003e;
+		goto IL_0036;
 	}
 
 IL_002e:
 	{
-		// trackingSpace = TrackingSpaceType.Stationary;
-		V_0 = 0;
+		// trackingSpace = TrackingSpaceType.RoomScale;
+		V_1 = 1;
 		// break;
-		goto IL_003e;
+		goto IL_0045;
 	}
 
 IL_0032:
 	{
 		// trackingSpace = TrackingSpaceType.Stationary;
-		V_0 = 0;
+		V_1 = 0;
+		// break;
+		goto IL_0045;
+	}
+
+IL_0036:
+	{
+		// trackingSpace = TrackingSpaceType.Stationary;
+		V_1 = 0;
 		// Debug.LogWarning("Unknown / unsupported ExperienceScale. Defaulting to Stationary tracking space.");
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m37338644DC81F640CCDFEAE35A223F0E965F0568(_stringLiteral08F4C85E3C7B3015A1D6AE49E918EEF4724AA3A2, /*hidden argument*/NULL);
+		// break;
+		goto IL_0045;
 	}
 
-IL_003e:
+IL_0045:
 	{
 		// InputTracking.disablePositionalTracking = Scale == ExperienceScale.OrientationOnly;
-		int32_t L_3 = BaseBoundarySystem_get_Scale_m9071E7E6246B5CF0AD504EED579988211B49DE66_inline(__this, /*hidden argument*/NULL);
+		int32_t L_4 = BaseBoundarySystem_get_Scale_m9071E7E6246B5CF0AD504EED579988211B49DE66_inline(__this, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(InputTracking_t96AA6E2EC9B998FF199918D95164D23DA6F2DFE8_il2cpp_TypeInfo_var);
-		InputTracking_set_disablePositionalTracking_mFB9BD28EF8694BE577AABF1DD21EB420C1EDF937((bool)((((int32_t)L_3) == ((int32_t)0))? 1 : 0), /*hidden argument*/NULL);
+		InputTracking_set_disablePositionalTracking_mFB9BD28EF8694BE577AABF1DD21EB420C1EDF937((bool)((((int32_t)L_4) == ((int32_t)0))? 1 : 0), /*hidden argument*/NULL);
 		// if (!XRDevice.SetTrackingSpaceType(trackingSpace))
-		int32_t L_4 = V_0;
+		int32_t L_5 = V_1;
 		IL2CPP_RUNTIME_CLASS_INIT(XRDevice_t392FCA3D1DCEB95FF500C8F374C88B034C31DF4A_il2cpp_TypeInfo_var);
-		bool L_5 = XRDevice_SetTrackingSpaceType_m76C173A76AD74AF048561FCEC0704F6A2E476B88(L_4, /*hidden argument*/NULL);
-		if (L_5)
+		bool L_6 = XRDevice_SetTrackingSpaceType_m76C173A76AD74AF048561FCEC0704F6A2E476B88(L_5, /*hidden argument*/NULL);
+		V_3 = (bool)((((int32_t)L_6) == ((int32_t)0))? 1 : 0);
+		bool L_7 = V_3;
+		if (!L_7)
 		{
-			goto IL_0069;
+			goto IL_0079;
 		}
 	}
 	{
 		// Debug.LogWarning($"MRTK was unable to set Tracking Space to {trackingSpace}");
-		int32_t L_6 = V_0;
-		int32_t L_7 = L_6;
-		RuntimeObject * L_8 = Box(TrackingSpaceType_tDFAE75A41ADEB2EC330998CCC63202F4A4889C2B_il2cpp_TypeInfo_var, &L_7);
-		String_t* L_9 = String_Format_m0ACDD8B34764E4040AED0B3EEB753567E4576BFA(_stringLiteralE047B0EE8C5F57BF45DCFBC091155ECA44986539, L_8, /*hidden argument*/NULL);
+		int32_t L_8 = V_1;
+		int32_t L_9 = L_8;
+		RuntimeObject * L_10 = Box(TrackingSpaceType_tDFAE75A41ADEB2EC330998CCC63202F4A4889C2B_il2cpp_TypeInfo_var, &L_9);
+		String_t* L_11 = String_Format_m0ACDD8B34764E4040AED0B3EEB753567E4576BFA(_stringLiteralE047B0EE8C5F57BF45DCFBC091155ECA44986539, L_10, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
-		Debug_LogWarning_m37338644DC81F640CCDFEAE35A223F0E965F0568(L_9, /*hidden argument*/NULL);
+		Debug_LogWarning_m37338644DC81F640CCDFEAE35A223F0E965F0568(L_11, /*hidden argument*/NULL);
 	}
 
-IL_0069:
+IL_0079:
+	{
+	}
+
+IL_007a:
 	{
 		// }
 		return;

@@ -31,30 +31,18 @@ struct DelegateU5BU5D_tDFCDEE2A6322F96C0FE49AF47E9ADB8C4B294E86;
 struct IAsyncResult_t8E194308510B375B42432981AE5E7488C458D598;
 // System.Reflection.MethodInfo
 struct MethodInfo_t;
-// System.String
-struct String_t;
 // System.Void
 struct Void_t22962CB4C05B1D89B55A6E1139F0E87A90987017;
-// UnityEngine.AssetBundle
-struct AssetBundle_tCE287BAB693894C3991CDD308B92A8C9C4BD4C78;
-// UnityEngine.AssetBundleCreateRequest
-struct AssetBundleCreateRequest_t8D8FCFC0424680D7B5E04346D932442D5886CD2E;
-// UnityEngine.AssetBundleRequest
-struct AssetBundleRequest_tF8897443AF1FC6C3E04911FAA9EDAE89B0A0A962;
 // UnityEngine.AsyncOperation
 struct AsyncOperation_t304C51ABED8AE734CC8DDDFE13013D8D5A44641D;
-// UnityEngine.Object
-struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0;
 
 IL2CPP_EXTERN_C RuntimeClass* Action_1_tCBF754C290FAE894631BED8FD56E9E22C4C187F9_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C const uint32_t AssetBundleCreateRequest_t8D8FCFC0424680D7B5E04346D932442D5886CD2E_com_FromNativeMethodDefinition_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t AssetBundleCreateRequest_t8D8FCFC0424680D7B5E04346D932442D5886CD2E_pinvoke_FromNativeMethodDefinition_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t AssetBundleRecompressOperation_tD941F40367DFE0A376269FCBE02234C5C8E9BFB6_com_FromNativeMethodDefinition_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t AssetBundleRecompressOperation_tD941F40367DFE0A376269FCBE02234C5C8E9BFB6_pinvoke_FromNativeMethodDefinition_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t AssetBundleRequest_tF8897443AF1FC6C3E04911FAA9EDAE89B0A0A962_com_FromNativeMethodDefinition_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t AssetBundleRequest_tF8897443AF1FC6C3E04911FAA9EDAE89B0A0A962_pinvoke_FromNativeMethodDefinition_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t AssetBundle__ctor_mF8A0A863455A7DF958A966C86BE58E07535CD3A4_MetadataUsageId;
 struct Delegate_t_marshaled_com;
 struct Delegate_t_marshaled_pinvoke;
 
@@ -361,50 +349,6 @@ struct AsyncOperation_t304C51ABED8AE734CC8DDDFE13013D8D5A44641D_marshaled_com : 
 	Il2CppMethodPointer ___m_completeCallback_1;
 };
 
-// UnityEngine.Object
-struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0  : public RuntimeObject
-{
-public:
-	// System.IntPtr UnityEngine.Object::m_CachedPtr
-	intptr_t ___m_CachedPtr_0;
-
-public:
-	inline static int32_t get_offset_of_m_CachedPtr_0() { return static_cast<int32_t>(offsetof(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0, ___m_CachedPtr_0)); }
-	inline intptr_t get_m_CachedPtr_0() const { return ___m_CachedPtr_0; }
-	inline intptr_t* get_address_of_m_CachedPtr_0() { return &___m_CachedPtr_0; }
-	inline void set_m_CachedPtr_0(intptr_t value)
-	{
-		___m_CachedPtr_0 = value;
-	}
-};
-
-struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_StaticFields
-{
-public:
-	// System.Int32 UnityEngine.Object::OffsetOfInstanceIDInCPlusPlusObject
-	int32_t ___OffsetOfInstanceIDInCPlusPlusObject_1;
-
-public:
-	inline static int32_t get_offset_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return static_cast<int32_t>(offsetof(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_StaticFields, ___OffsetOfInstanceIDInCPlusPlusObject_1)); }
-	inline int32_t get_OffsetOfInstanceIDInCPlusPlusObject_1() const { return ___OffsetOfInstanceIDInCPlusPlusObject_1; }
-	inline int32_t* get_address_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return &___OffsetOfInstanceIDInCPlusPlusObject_1; }
-	inline void set_OffsetOfInstanceIDInCPlusPlusObject_1(int32_t value)
-	{
-		___OffsetOfInstanceIDInCPlusPlusObject_1 = value;
-	}
-};
-
-// Native definition for P/Invoke marshalling of UnityEngine.Object
-struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_marshaled_pinvoke
-{
-	intptr_t ___m_CachedPtr_0;
-};
-// Native definition for COM marshalling of UnityEngine.Object
-struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_marshaled_com
-{
-	intptr_t ___m_CachedPtr_0;
-};
-
 // System.MulticastDelegate
 struct MulticastDelegate_t  : public Delegate_t
 {
@@ -433,15 +377,6 @@ struct MulticastDelegate_t_marshaled_com : public Delegate_t_marshaled_com
 {
 	Delegate_t_marshaled_com** ___delegates_11;
 };
-
-// UnityEngine.AssetBundle
-struct AssetBundle_tCE287BAB693894C3991CDD308B92A8C9C4BD4C78  : public Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0
-{
-public:
-
-public:
-};
-
 
 // UnityEngine.AssetBundleCreateRequest
 struct AssetBundleCreateRequest_t8D8FCFC0424680D7B5E04346D932442D5886CD2E  : public AsyncOperation_t304C51ABED8AE734CC8DDDFE13013D8D5A44641D
@@ -508,36 +443,11 @@ public:
 
 
 
-// System.Void UnityEngine.Object::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_m091EBAEBC7919B0391ABDAFB7389ADC12206525B (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 * __this, const RuntimeMethod* method);
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void UnityEngine.AssetBundle::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetBundle__ctor_mF8A0A863455A7DF958A966C86BE58E07535CD3A4 (AssetBundle_tCE287BAB693894C3991CDD308B92A8C9C4BD4C78 * __this, const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (AssetBundle__ctor_mF8A0A863455A7DF958A966C86BE58E07535CD3A4_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
-		Object__ctor_m091EBAEBC7919B0391ABDAFB7389ADC12206525B(__this, /*hidden argument*/NULL);
-		return;
-	}
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -593,16 +503,6 @@ IL2CPP_EXTERN_C void AssetBundleCreateRequest_t8D8FCFC0424680D7B5E04346D932442D5
 // Conversion method for clean up from marshalling of: UnityEngine.AssetBundleCreateRequest
 IL2CPP_EXTERN_C void AssetBundleCreateRequest_t8D8FCFC0424680D7B5E04346D932442D5886CD2E_marshal_com_cleanup(AssetBundleCreateRequest_t8D8FCFC0424680D7B5E04346D932442D5886CD2E_marshaled_com& marshaled)
 {
-}
-// UnityEngine.AssetBundle UnityEngine.AssetBundleCreateRequest::get_assetBundle()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetBundle_tCE287BAB693894C3991CDD308B92A8C9C4BD4C78 * AssetBundleCreateRequest_get_assetBundle_mFBACEFA632A41C43D4394F6770059DDE0E35BA11 (AssetBundleCreateRequest_t8D8FCFC0424680D7B5E04346D932442D5886CD2E * __this, const RuntimeMethod* method)
-{
-	typedef AssetBundle_tCE287BAB693894C3991CDD308B92A8C9C4BD4C78 * (*AssetBundleCreateRequest_get_assetBundle_mFBACEFA632A41C43D4394F6770059DDE0E35BA11_ftn) (AssetBundleCreateRequest_t8D8FCFC0424680D7B5E04346D932442D5886CD2E *);
-	static AssetBundleCreateRequest_get_assetBundle_mFBACEFA632A41C43D4394F6770059DDE0E35BA11_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (AssetBundleCreateRequest_get_assetBundle_mFBACEFA632A41C43D4394F6770059DDE0E35BA11_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.AssetBundleCreateRequest::get_assetBundle()");
-	AssetBundle_tCE287BAB693894C3991CDD308B92A8C9C4BD4C78 * retVal = _il2cpp_icall_func(__this);
-	return retVal;
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -715,16 +615,6 @@ IL2CPP_EXTERN_C void AssetBundleRequest_tF8897443AF1FC6C3E04911FAA9EDAE89B0A0A96
 // Conversion method for clean up from marshalling of: UnityEngine.AssetBundleRequest
 IL2CPP_EXTERN_C void AssetBundleRequest_tF8897443AF1FC6C3E04911FAA9EDAE89B0A0A962_marshal_com_cleanup(AssetBundleRequest_tF8897443AF1FC6C3E04911FAA9EDAE89B0A0A962_marshaled_com& marshaled)
 {
-}
-// UnityEngine.Object UnityEngine.AssetBundleRequest::get_asset()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 * AssetBundleRequest_get_asset_mCB977DEC51A59B1333AEEFC2AA189D2E5BF4FCF1 (AssetBundleRequest_tF8897443AF1FC6C3E04911FAA9EDAE89B0A0A962 * __this, const RuntimeMethod* method)
-{
-	typedef Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 * (*AssetBundleRequest_get_asset_mCB977DEC51A59B1333AEEFC2AA189D2E5BF4FCF1_ftn) (AssetBundleRequest_tF8897443AF1FC6C3E04911FAA9EDAE89B0A0A962 *);
-	static AssetBundleRequest_get_asset_mCB977DEC51A59B1333AEEFC2AA189D2E5BF4FCF1_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (AssetBundleRequest_get_asset_mCB977DEC51A59B1333AEEFC2AA189D2E5BF4FCF1_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.AssetBundleRequest::get_asset()");
-	Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 * retVal = _il2cpp_icall_func(__this);
-	return retVal;
 }
 #ifdef __clang__
 #pragma clang diagnostic pop

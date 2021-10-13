@@ -1,4 +1,6 @@
 using UnityEngine;
+using Lean.Common;
+using FSA = UnityEngine.Serialization.FormerlySerializedAsAttribute;
 
 namespace Lean.Touch
 {
@@ -11,12 +13,15 @@ namespace Lean.Touch
 		public LeanFingerFilter Use = new LeanFingerFilter(true);
 
 		/// <summary>The axis of rotation.</summary>
-		[Tooltip("The axis of rotation.")]
-		public Vector3 Axis = Vector3.down;
+		public Vector3 Axis { set { axis = value; } get { return axis; } } [FSA("Axis")] [SerializeField] private Vector3 axis = Vector3.down;
 
 		/// <summary>Rotate locally or globally?</summary>
-		[Tooltip("Rotate locally or globally?")]
-		public Space Space = Space.Self;
+		public Space Space { set { space = value; } get { return space; } } [FSA("Sensitivity")] [SerializeField] private Space space = Space.Self;
+
+		/// <summary>The sensitivity of the rotation.
+		/// 1 = Default.
+		/// 2 = Double.</summary>
+		public float Sensitivity { set { sensitivity = value; } get { return sensitivity; } } [FSA("Sensitivity")] [SerializeField] private float sensitivity = 1.0f;
 
 		/// <summary>If you've set Use to ManuallyAddedFingers, then you can call this method to manually add a finger.</summary>
 		public void AddFinger(LeanFinger finger)
@@ -35,12 +40,14 @@ namespace Lean.Touch
 		{
 			Use.RemoveAllFingers();
 		}
+
 #if UNITY_EDITOR
 		protected virtual void Reset()
 		{
 			Use.UpdateRequiredSelectable(gameObject);
 		}
 #endif
+
 		protected virtual void Awake()
 		{
 			Use.UpdateRequiredSelectable(gameObject);
@@ -49,13 +56,35 @@ namespace Lean.Touch
 		protected virtual void Update()
 		{
 			// Get the fingers we want to use
-			var fingers = Use.GetFingers();
+			var fingers = Use.UpdateAndGetFingers();
 
 			// Calculate the rotation values based on these fingers
-			var twistDegrees = LeanGesture.GetTwistDegrees(fingers);
+			var twistDegrees = LeanGesture.GetTwistDegrees(fingers) * sensitivity;
 
 			// Perform rotation
-			transform.Rotate(Axis, twistDegrees, Space);
+			transform.Rotate(axis, twistDegrees, space);
 		}
 	}
 }
+
+#if UNITY_EDITOR
+namespace Lean.Touch.Editor
+{
+	using TARGET = LeanTwistRotateAxis;
+
+	[UnityEditor.CanEditMultipleObjects]
+	[UnityEditor.CustomEditor(typeof(TARGET), true)]
+	public class LeanTwistRotateAxis_Editor : LeanEditor
+	{
+		protected override void OnInspector()
+		{
+			TARGET tgt; TARGET[] tgts; GetTargets(out tgt, out tgts);
+
+			Draw("Use");
+			Draw("axis", "The axis of rotation.");
+			Draw("space", "Rotate locally or globally?");
+			Draw("sensitivity", "The sensitivity of the rotation.\n\n1 = Default.\n\n2 = Double.");
+		}
+	}
+}
+#endif

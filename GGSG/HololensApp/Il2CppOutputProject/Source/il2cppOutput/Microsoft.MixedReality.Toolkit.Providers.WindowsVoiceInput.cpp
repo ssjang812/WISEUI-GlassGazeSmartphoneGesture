@@ -144,6 +144,16 @@ struct SystemType_t9696BD865921F75894EBD4D6EF913158A8BF3432;
 struct WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6;
 // Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<>c
 struct U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE;
+// Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31
+struct U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED;
+// Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7
+struct U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA;
+// Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10
+struct U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809;
+// Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8
+struct U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860;
+// Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12
+struct U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A;
 // Microsoft.MixedReality.Toolkit.Windows.Input.WindowsSpeechInputProvider
 struct WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE;
 // System.Action
@@ -277,6 +287,11 @@ IL2CPP_EXTERN_C RuntimeClass* StringBuilder_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* String_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* TimeSpan_tA8069278ACE8A74D6DF7D514A9CD4432433F64C4_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var;
@@ -307,7 +322,6 @@ IL2CPP_EXTERN_C const RuntimeMethod* AsyncTaskMethodBuilder_1_AwaitOnCompleted_T
 IL2CPP_EXTERN_C const RuntimeMethod* AsyncTaskMethodBuilder_1_Create_mA48D98A1A0551E8B40C8CFE8DCA405F2583BA6C8_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AsyncTaskMethodBuilder_1_SetException_m3546DBB6B478B7DB18842DC0782B98EBC9D05EE1_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AsyncTaskMethodBuilder_1_SetResult_mD5596BF881B6EC3D7675495E22695C03E96D0101_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* AsyncTaskMethodBuilder_1_SetStateMachine_m6D0E84B2F66A998AE916997EB96A356441721D76_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AsyncTaskMethodBuilder_1_Start_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mD68245F828C7A8FCE90B024BC5F6034F63672944_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AsyncTaskMethodBuilder_1_get_Task_mA471503E5B53C6386B364975800C30B1CAC3F267_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AsyncTaskMethodBuilder_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_mE6A2E67A8B527A9D72EA7E583012FC9C95EEFB1E_RuntimeMethod_var;
@@ -320,7 +334,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* AsyncVoidMethodBuilder_Start_TisU3CStartRec
 IL2CPP_EXTERN_C const RuntimeMethod* AsyncVoidMethodBuilder_Start_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m7730C83A583EE3EFB6673FAFFC5E910F86CDA6B0_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* BaseDataProvider_1_set_Registrar_mDC9CD576EF5625AEDF0D99C96B7069097D2B9A05_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Func_1__ctor_m479BA9DCBE3F496111BD05CC90CB1044C5FFD552_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Func_1__ctor_mAECA381FC0AA61139100EF468EE819A98431DE5E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1_GetValueOrDefault_mE89BB8F302DF31EE202251F4746859285860B6B6_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1__ctor_m11F9C228CFDF836DDFCD7880C09CB4098AB9D7F2_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1_get_HasValue_mB664E2C41CADA8413EF8842E6601B8C696A7CE15_RuntimeMethod_var;
@@ -340,7 +354,6 @@ IL2CPP_EXTERN_C const uint32_t U3CDisableU3Ed__31_MoveNext_m8B1B323E81AFF3BDCD54
 IL2CPP_EXTERN_C const uint32_t U3CStartRecordingAsyncU3Ed__10_MoveNext_m7C424B86A51413349970485C720CF84FC4EE8637_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t U3CStartRecordingU3Ed__7_MoveNext_m3DB6F999A7553D72D369E4808FAA821A2D0B48E1_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t U3CStopRecordingAsyncU3Ed__12_MoveNext_m7C48D7ED48F1A3E7D5DC9BDBDEBC6354D24EE617_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t U3CStopRecordingAsyncU3Ed__12_SetStateMachine_mADE4018C50E0BE436B4D1D73FBAED7EB84359017_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t U3CStopRecordingU3Ed__8_MoveNext_m217F2C41080E548F7215675A50D652DEE2087BE5_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t U3CU3Ec_U3C_ctorU3Eb__1_2_m3D2D6EDC2EE56C0945B9C4ED3DB428407CAD34C2_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t U3CU3Ec_U3C_ctorU3Eb__1_3_m93A2ADFB8872AC59805F8A83F79585204303D58C_MetadataUsageId;
@@ -2559,7 +2572,7 @@ struct MixedRealityInputAction_tF3298AB582C6E52C2107F4AC4E6E4381EA0A5073_marshal
 };
 
 // Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31
-struct U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED 
+struct U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED  : public RuntimeObject
 {
 public:
 	// System.Int32 Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31::<>1__state
@@ -2619,25 +2632,25 @@ public:
 
 
 // Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7
-struct U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA 
+struct U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA  : public RuntimeObject
 {
 public:
 	// System.Int32 Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::<>1__state
 	int32_t ___U3CU3E1__state_0;
 	// System.Runtime.CompilerServices.AsyncVoidMethodBuilder Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::<>t__builder
 	AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  ___U3CU3Et__builder_1;
-	// Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::<>4__this
-	WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * ___U3CU3E4__this_2;
 	// UnityEngine.GameObject Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::listener
-	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___listener_3;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___listener_2;
 	// System.Single Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::initialSilenceTimeout
-	float ___initialSilenceTimeout_4;
+	float ___initialSilenceTimeout_3;
 	// System.Single Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::autoSilenceTimeout
-	float ___autoSilenceTimeout_5;
+	float ___autoSilenceTimeout_4;
 	// System.Int32 Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::recordingTime
-	int32_t ___recordingTime_6;
+	int32_t ___recordingTime_5;
 	// System.String Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::micDeviceName
-	String_t* ___micDeviceName_7;
+	String_t* ___micDeviceName_6;
+	// Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::<>4__this
+	WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * ___U3CU3E4__this_7;
 	// System.Runtime.CompilerServices.TaskAwaiter Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::<>u__1
 	TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F  ___U3CU3Eu__1_8;
 
@@ -2668,55 +2681,55 @@ public:
 		#endif
 	}
 
-	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___U3CU3E4__this_2)); }
-	inline WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
-	inline WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
-	inline void set_U3CU3E4__this_2(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * value)
+	inline static int32_t get_offset_of_listener_2() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___listener_2)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_listener_2() const { return ___listener_2; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_listener_2() { return &___listener_2; }
+	inline void set_listener_2(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
 	{
-		___U3CU3E4__this_2 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___U3CU3E4__this_2), (void*)value);
+		___listener_2 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___listener_2), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_listener_3() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___listener_3)); }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_listener_3() const { return ___listener_3; }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_listener_3() { return &___listener_3; }
-	inline void set_listener_3(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
+	inline static int32_t get_offset_of_initialSilenceTimeout_3() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___initialSilenceTimeout_3)); }
+	inline float get_initialSilenceTimeout_3() const { return ___initialSilenceTimeout_3; }
+	inline float* get_address_of_initialSilenceTimeout_3() { return &___initialSilenceTimeout_3; }
+	inline void set_initialSilenceTimeout_3(float value)
 	{
-		___listener_3 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___listener_3), (void*)value);
+		___initialSilenceTimeout_3 = value;
 	}
 
-	inline static int32_t get_offset_of_initialSilenceTimeout_4() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___initialSilenceTimeout_4)); }
-	inline float get_initialSilenceTimeout_4() const { return ___initialSilenceTimeout_4; }
-	inline float* get_address_of_initialSilenceTimeout_4() { return &___initialSilenceTimeout_4; }
-	inline void set_initialSilenceTimeout_4(float value)
+	inline static int32_t get_offset_of_autoSilenceTimeout_4() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___autoSilenceTimeout_4)); }
+	inline float get_autoSilenceTimeout_4() const { return ___autoSilenceTimeout_4; }
+	inline float* get_address_of_autoSilenceTimeout_4() { return &___autoSilenceTimeout_4; }
+	inline void set_autoSilenceTimeout_4(float value)
 	{
-		___initialSilenceTimeout_4 = value;
+		___autoSilenceTimeout_4 = value;
 	}
 
-	inline static int32_t get_offset_of_autoSilenceTimeout_5() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___autoSilenceTimeout_5)); }
-	inline float get_autoSilenceTimeout_5() const { return ___autoSilenceTimeout_5; }
-	inline float* get_address_of_autoSilenceTimeout_5() { return &___autoSilenceTimeout_5; }
-	inline void set_autoSilenceTimeout_5(float value)
+	inline static int32_t get_offset_of_recordingTime_5() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___recordingTime_5)); }
+	inline int32_t get_recordingTime_5() const { return ___recordingTime_5; }
+	inline int32_t* get_address_of_recordingTime_5() { return &___recordingTime_5; }
+	inline void set_recordingTime_5(int32_t value)
 	{
-		___autoSilenceTimeout_5 = value;
+		___recordingTime_5 = value;
 	}
 
-	inline static int32_t get_offset_of_recordingTime_6() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___recordingTime_6)); }
-	inline int32_t get_recordingTime_6() const { return ___recordingTime_6; }
-	inline int32_t* get_address_of_recordingTime_6() { return &___recordingTime_6; }
-	inline void set_recordingTime_6(int32_t value)
+	inline static int32_t get_offset_of_micDeviceName_6() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___micDeviceName_6)); }
+	inline String_t* get_micDeviceName_6() const { return ___micDeviceName_6; }
+	inline String_t** get_address_of_micDeviceName_6() { return &___micDeviceName_6; }
+	inline void set_micDeviceName_6(String_t* value)
 	{
-		___recordingTime_6 = value;
+		___micDeviceName_6 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___micDeviceName_6), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_micDeviceName_7() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___micDeviceName_7)); }
-	inline String_t* get_micDeviceName_7() const { return ___micDeviceName_7; }
-	inline String_t** get_address_of_micDeviceName_7() { return &___micDeviceName_7; }
-	inline void set_micDeviceName_7(String_t* value)
+	inline static int32_t get_offset_of_U3CU3E4__this_7() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___U3CU3E4__this_7)); }
+	inline WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * get_U3CU3E4__this_7() const { return ___U3CU3E4__this_7; }
+	inline WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 ** get_address_of_U3CU3E4__this_7() { return &___U3CU3E4__this_7; }
+	inline void set_U3CU3E4__this_7(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * value)
 	{
-		___micDeviceName_7 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___micDeviceName_7), (void*)value);
+		___U3CU3E4__this_7 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___U3CU3E4__this_7), (void*)value);
 	}
 
 	inline static int32_t get_offset_of_U3CU3Eu__1_8() { return static_cast<int32_t>(offsetof(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA, ___U3CU3Eu__1_8)); }
@@ -2731,7 +2744,7 @@ public:
 
 
 // Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8
-struct U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 
+struct U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860  : public RuntimeObject
 {
 public:
 	// System.Int32 Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8::<>1__state
@@ -2791,7 +2804,7 @@ public:
 
 
 // Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12
-struct U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A 
+struct U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A  : public RuntimeObject
 {
 public:
 	// System.Int32 Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12::<>1__state
@@ -2800,8 +2813,8 @@ public:
 	AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6  ___U3CU3Et__builder_1;
 	// Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12::<>4__this
 	WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * ___U3CU3E4__this_2;
-	// Unity.Profiling.ProfilerMarker/AutoScope Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12::<>7__wrap1
-	AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  ___U3CU3E7__wrap1_3;
+	// Unity.Profiling.ProfilerMarker/AutoScope Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12::<>s__1
+	AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  ___U3CU3Es__1_3;
 	// System.Object Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12::<>u__1
 	RuntimeObject * ___U3CU3Eu__1_4;
 
@@ -2838,12 +2851,12 @@ public:
 		Il2CppCodeGenWriteBarrier((void**)(&___U3CU3E4__this_2), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3E7__wrap1_3() { return static_cast<int32_t>(offsetof(U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A, ___U3CU3E7__wrap1_3)); }
-	inline AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  get_U3CU3E7__wrap1_3() const { return ___U3CU3E7__wrap1_3; }
-	inline AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F * get_address_of_U3CU3E7__wrap1_3() { return &___U3CU3E7__wrap1_3; }
-	inline void set_U3CU3E7__wrap1_3(AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  value)
+	inline static int32_t get_offset_of_U3CU3Es__1_3() { return static_cast<int32_t>(offsetof(U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A, ___U3CU3Es__1_3)); }
+	inline AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  get_U3CU3Es__1_3() const { return ___U3CU3Es__1_3; }
+	inline AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F * get_address_of_U3CU3Es__1_3() { return &___U3CU3Es__1_3; }
+	inline void set_U3CU3Es__1_3(AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  value)
 	{
-		___U3CU3E7__wrap1_3 = value;
+		___U3CU3Es__1_3 = value;
 	}
 
 	inline static int32_t get_offset_of_U3CU3Eu__1_4() { return static_cast<int32_t>(offsetof(U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A, ___U3CU3Eu__1_4)); }
@@ -3323,29 +3336,31 @@ struct SpeechCommands_tF37A6AFE4D69C10D0E30BC190E5C97A64354878B_marshaled_com
 };
 
 // Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10
-struct U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 
+struct U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809  : public RuntimeObject
 {
 public:
 	// System.Int32 Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::<>1__state
 	int32_t ___U3CU3E1__state_0;
 	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::<>t__builder
 	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  ___U3CU3Et__builder_1;
-	// Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::<>4__this
-	WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * ___U3CU3E4__this_2;
 	// UnityEngine.GameObject Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::listener
-	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___listener_3;
-	// System.String Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::micDeviceName
-	String_t* ___micDeviceName_4;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___listener_2;
 	// System.Single Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::initialSilenceTimeout
-	float ___initialSilenceTimeout_5;
+	float ___initialSilenceTimeout_3;
 	// System.Single Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::autoSilenceTimeout
-	float ___autoSilenceTimeout_6;
+	float ___autoSilenceTimeout_4;
 	// System.Int32 Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::recordingTime
-	int32_t ___recordingTime_7;
-	// Unity.Profiling.ProfilerMarker/AutoScope Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::<>7__wrap1
-	AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  ___U3CU3E7__wrap1_8;
+	int32_t ___recordingTime_5;
+	// System.String Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::micDeviceName
+	String_t* ___micDeviceName_6;
+	// Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::<>4__this
+	WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * ___U3CU3E4__this_7;
+	// Unity.Profiling.ProfilerMarker/AutoScope Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::<>s__1
+	AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  ___U3CU3Es__1_8;
+	// System.Int32 Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::<minSamplingRate>5__2
+	int32_t ___U3CminSamplingRateU3E5__2_9;
 	// System.Object Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::<>u__1
-	RuntimeObject * ___U3CU3Eu__1_9;
+	RuntimeObject * ___U3CU3Eu__1_10;
 
 public:
 	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___U3CU3E1__state_0)); }
@@ -3371,72 +3386,80 @@ public:
 		#endif
 	}
 
-	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___U3CU3E4__this_2)); }
-	inline WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
-	inline WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
-	inline void set_U3CU3E4__this_2(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * value)
+	inline static int32_t get_offset_of_listener_2() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___listener_2)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_listener_2() const { return ___listener_2; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_listener_2() { return &___listener_2; }
+	inline void set_listener_2(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
 	{
-		___U3CU3E4__this_2 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___U3CU3E4__this_2), (void*)value);
+		___listener_2 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___listener_2), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_listener_3() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___listener_3)); }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_listener_3() const { return ___listener_3; }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_listener_3() { return &___listener_3; }
-	inline void set_listener_3(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
+	inline static int32_t get_offset_of_initialSilenceTimeout_3() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___initialSilenceTimeout_3)); }
+	inline float get_initialSilenceTimeout_3() const { return ___initialSilenceTimeout_3; }
+	inline float* get_address_of_initialSilenceTimeout_3() { return &___initialSilenceTimeout_3; }
+	inline void set_initialSilenceTimeout_3(float value)
 	{
-		___listener_3 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___listener_3), (void*)value);
+		___initialSilenceTimeout_3 = value;
 	}
 
-	inline static int32_t get_offset_of_micDeviceName_4() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___micDeviceName_4)); }
-	inline String_t* get_micDeviceName_4() const { return ___micDeviceName_4; }
-	inline String_t** get_address_of_micDeviceName_4() { return &___micDeviceName_4; }
-	inline void set_micDeviceName_4(String_t* value)
+	inline static int32_t get_offset_of_autoSilenceTimeout_4() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___autoSilenceTimeout_4)); }
+	inline float get_autoSilenceTimeout_4() const { return ___autoSilenceTimeout_4; }
+	inline float* get_address_of_autoSilenceTimeout_4() { return &___autoSilenceTimeout_4; }
+	inline void set_autoSilenceTimeout_4(float value)
 	{
-		___micDeviceName_4 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___micDeviceName_4), (void*)value);
+		___autoSilenceTimeout_4 = value;
 	}
 
-	inline static int32_t get_offset_of_initialSilenceTimeout_5() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___initialSilenceTimeout_5)); }
-	inline float get_initialSilenceTimeout_5() const { return ___initialSilenceTimeout_5; }
-	inline float* get_address_of_initialSilenceTimeout_5() { return &___initialSilenceTimeout_5; }
-	inline void set_initialSilenceTimeout_5(float value)
+	inline static int32_t get_offset_of_recordingTime_5() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___recordingTime_5)); }
+	inline int32_t get_recordingTime_5() const { return ___recordingTime_5; }
+	inline int32_t* get_address_of_recordingTime_5() { return &___recordingTime_5; }
+	inline void set_recordingTime_5(int32_t value)
 	{
-		___initialSilenceTimeout_5 = value;
+		___recordingTime_5 = value;
 	}
 
-	inline static int32_t get_offset_of_autoSilenceTimeout_6() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___autoSilenceTimeout_6)); }
-	inline float get_autoSilenceTimeout_6() const { return ___autoSilenceTimeout_6; }
-	inline float* get_address_of_autoSilenceTimeout_6() { return &___autoSilenceTimeout_6; }
-	inline void set_autoSilenceTimeout_6(float value)
+	inline static int32_t get_offset_of_micDeviceName_6() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___micDeviceName_6)); }
+	inline String_t* get_micDeviceName_6() const { return ___micDeviceName_6; }
+	inline String_t** get_address_of_micDeviceName_6() { return &___micDeviceName_6; }
+	inline void set_micDeviceName_6(String_t* value)
 	{
-		___autoSilenceTimeout_6 = value;
+		___micDeviceName_6 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___micDeviceName_6), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_recordingTime_7() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___recordingTime_7)); }
-	inline int32_t get_recordingTime_7() const { return ___recordingTime_7; }
-	inline int32_t* get_address_of_recordingTime_7() { return &___recordingTime_7; }
-	inline void set_recordingTime_7(int32_t value)
+	inline static int32_t get_offset_of_U3CU3E4__this_7() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___U3CU3E4__this_7)); }
+	inline WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * get_U3CU3E4__this_7() const { return ___U3CU3E4__this_7; }
+	inline WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 ** get_address_of_U3CU3E4__this_7() { return &___U3CU3E4__this_7; }
+	inline void set_U3CU3E4__this_7(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * value)
 	{
-		___recordingTime_7 = value;
+		___U3CU3E4__this_7 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___U3CU3E4__this_7), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3E7__wrap1_8() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___U3CU3E7__wrap1_8)); }
-	inline AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  get_U3CU3E7__wrap1_8() const { return ___U3CU3E7__wrap1_8; }
-	inline AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F * get_address_of_U3CU3E7__wrap1_8() { return &___U3CU3E7__wrap1_8; }
-	inline void set_U3CU3E7__wrap1_8(AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  value)
+	inline static int32_t get_offset_of_U3CU3Es__1_8() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___U3CU3Es__1_8)); }
+	inline AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  get_U3CU3Es__1_8() const { return ___U3CU3Es__1_8; }
+	inline AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F * get_address_of_U3CU3Es__1_8() { return &___U3CU3Es__1_8; }
+	inline void set_U3CU3Es__1_8(AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  value)
 	{
-		___U3CU3E7__wrap1_8 = value;
+		___U3CU3Es__1_8 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3Eu__1_9() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___U3CU3Eu__1_9)); }
-	inline RuntimeObject * get_U3CU3Eu__1_9() const { return ___U3CU3Eu__1_9; }
-	inline RuntimeObject ** get_address_of_U3CU3Eu__1_9() { return &___U3CU3Eu__1_9; }
-	inline void set_U3CU3Eu__1_9(RuntimeObject * value)
+	inline static int32_t get_offset_of_U3CminSamplingRateU3E5__2_9() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___U3CminSamplingRateU3E5__2_9)); }
+	inline int32_t get_U3CminSamplingRateU3E5__2_9() const { return ___U3CminSamplingRateU3E5__2_9; }
+	inline int32_t* get_address_of_U3CminSamplingRateU3E5__2_9() { return &___U3CminSamplingRateU3E5__2_9; }
+	inline void set_U3CminSamplingRateU3E5__2_9(int32_t value)
 	{
-		___U3CU3Eu__1_9 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___U3CU3Eu__1_9), (void*)value);
+		___U3CminSamplingRateU3E5__2_9 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3Eu__1_10() { return static_cast<int32_t>(offsetof(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809, ___U3CU3Eu__1_10)); }
+	inline RuntimeObject * get_U3CU3Eu__1_10() const { return ___U3CU3Eu__1_10; }
+	inline RuntimeObject ** get_address_of_U3CU3Eu__1_10() { return &___U3CU3Eu__1_10; }
+	inline void set_U3CU3Eu__1_10(RuntimeObject * value)
+	{
+		___U3CU3Eu__1_10 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___U3CU3Eu__1_10), (void*)value);
 	}
 };
 
@@ -4150,45 +4173,37 @@ public:
 // System.Void Microsoft.MixedReality.Toolkit.BaseDataProvider`1<System.Object>::set_Registrar(Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar)
 IL2CPP_EXTERN_C inline IL2CPP_METHOD_ATTR void BaseDataProvider_1_set_Registrar_mF8F5077D3E3EC83D5E1E3DA46E824EA25F74B209_gshared_inline (BaseDataProvider_1_t50F72FDA386766E084CAF43074D4580D23686278 * __this, RuntimeObject* ___value0, const RuntimeMethod* method);
 // System.Void System.Func`1<System.Boolean>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_1__ctor_m479BA9DCBE3F496111BD05CC90CB1044C5FFD552_gshared (Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7>(!!0&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncVoidMethodBuilder_Start_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_mF8844BE20367D9845A602B08F4EBCA3A9C3A94D3_gshared (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * ___stateMachine0, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8>(!!0&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncVoidMethodBuilder_Start_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m7730C83A583EE3EFB6673FAFFC5E910F86CDA6B0_gshared (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * ___stateMachine0, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10>(!!0&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_Start_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_m613B72B47271309F6E4F6B783F3454E3F32FA7A3_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * ___stateMachine0, const RuntimeMethod* method);
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_1__ctor_mAECA381FC0AA61139100EF468EE819A98431DE5E_gshared (Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<System.Object>(!!0&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncVoidMethodBuilder_Start_TisRuntimeObject_m8590BDB280C38FD9D41163DF39805FFA6EA8F508_gshared (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, RuntimeObject ** ___stateMachine0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<System.Object>(!!0&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_Start_TisRuntimeObject_m696634597BF79F3070C7F1040ABAC2FF9A616C79_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, RuntimeObject ** ___stateMachine0, const RuntimeMethod* method);
 // System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::Create()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663  AsyncTaskMethodBuilder_1_Create_mC7806A5C115ED2239A5073313AA3564D8244156E_gshared (const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::Start<Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12>(!!0&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_1_Start_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_m098D125BC34E1915A3533707C3EF7348CE0F92AD_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * ___stateMachine0, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::Start<System.Object>(!!0&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_1_Start_TisRuntimeObject_m3BBDF211132C4A6EFB4836FC8E243102D598A1E7_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, RuntimeObject ** ___stateMachine0, const RuntimeMethod* method);
 // System.Threading.Tasks.Task`1<!0> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::get_Task()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_1_tA56001ED5270173CA1432EDFCD84EABB1024BC09 * AsyncTaskMethodBuilder_1_get_Task_m19C5664D70C4FC799BEFB8D0FC98E687F97059FA_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, const RuntimeMethod* method);
 // !0 Microsoft.MixedReality.Toolkit.BaseDataProvider`1<System.Object>::get_Service()
 IL2CPP_EXTERN_C inline IL2CPP_METHOD_ATTR RuntimeObject * BaseDataProvider_1_get_Service_m6FE3FC2A780FCF338E18510675CC1282F7907D2C_gshared_inline (BaseDataProvider_1_t50F72FDA386766E084CAF43074D4580D23686278 * __this, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31>(!!0&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncVoidMethodBuilder_Start_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_mF9EE6BD01A29819D8589BB76FF236306DEA6FE41_gshared (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * ___stateMachine0, const RuntimeMethod* method);
 // System.Runtime.CompilerServices.TaskAwaiter`1<!0> System.Threading.Tasks.Task`1<System.Object>::GetAwaiter()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977  Task_1_GetAwaiter_m9C50610C6F05C1DA9BFA67201CB570F1DE040817_gshared (Task_1_tA56001ED5270173CA1432EDFCD84EABB1024BC09 * __this, const RuntimeMethod* method);
 // System.Boolean System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>::get_IsCompleted()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TaskAwaiter_1_get_IsCompleted_mBF435C7EFD03FCF7810FC08EEDC5945F80FF88F9_gshared (TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * __this, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31>(!!0&,!!1&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_m9CA882523827CF5CF9680C6C1E4DBF55FF6F2B61_gshared (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * ___awaiter0, U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * ___stateMachine1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,System.Object>(!!0&,!!1&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisRuntimeObject_m9DC2C2CB1B91EC2329E1201B14390AA34F980C78_gshared (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * ___awaiter0, RuntimeObject ** ___stateMachine1, const RuntimeMethod* method);
 // !0 System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>::GetResult()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject * TaskAwaiter_1_GetResult_m9E148849CD4747E1BDD831E4FB2D7ECFA13C11C8_gshared (TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * __this, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter,Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7>(!!0&,!!1&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_m1AA4CE584D31E921CE358DFA3A280C680DB391F3_gshared (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F * ___awaiter0, U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * ___stateMachine1, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitOnCompleted<System.Object,Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10>(!!0&,!!1&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_AwaitOnCompleted_TisRuntimeObject_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_m6764870BB5F12E08F334435A85B66D0A346CED5C_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, RuntimeObject ** ___awaiter0, U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * ___stateMachine1, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8>(!!0&,!!1&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_mD113E2D5C40A8CB04E2E4BD1957CB2B79DB00B7A_gshared (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, TaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977 * ___awaiter0, U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * ___stateMachine1, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::AwaitOnCompleted<System.Object,Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12>(!!0&,!!1&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisRuntimeObject_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mECB185290ADD0B9ADAA2166CC321429D1E5D8239_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, RuntimeObject ** ___awaiter0, U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * ___stateMachine1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter,System.Object>(!!0&,!!1&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F_TisRuntimeObject_m97ECCB65C1BEF0E1858546511A21FE6583DEB2F8_gshared (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F * ___awaiter0, RuntimeObject ** ___stateMachine1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitOnCompleted<System.Object,System.Object>(!!0&,!!1&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_AwaitOnCompleted_TisRuntimeObject_TisRuntimeObject_m998E6DC2E193386FB9D8C483ADE66DBEE15EA6D7_gshared (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, RuntimeObject ** ___awaiter0, RuntimeObject ** ___stateMachine1, const RuntimeMethod* method);
+// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::AwaitOnCompleted<System.Object,System.Object>(!!0&,!!1&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisRuntimeObject_TisRuntimeObject_m8B47A7CBE8DE8644BC53F92C5D20BEFD39007933_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, RuntimeObject ** ___awaiter0, RuntimeObject ** ___stateMachine1, const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::SetException(System.Exception)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_1_SetException_m4C0B5462ECCB520FACA3C90B353DF596DAAF586D_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, Exception_t * ___exception0, const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::SetResult(!0)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_1_SetResult_mD7DA7A17DC0610B11A0AAA364C3CA51FEC1271DB_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, RuntimeObject * ___result0, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Object>::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_1_SetStateMachine_m5CC21A02320CF3D2DD7894A31123DFD82A428E4C_gshared (AsyncTaskMethodBuilder_1_t2A9513A084F4B19851B91EF1F22BB57776D35663 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
 // System.Void System.Nullable`1<System.Int32>::.ctor(!0)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Nullable_1__ctor_m11F9C228CFDF836DDFCD7880C09CB4098AB9D7F2_gshared (Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB * __this, int32_t ___value0, const RuntimeMethod* method);
 // !0 System.Nullable`1<System.Int32>::GetValueOrDefault()
@@ -4204,44 +4219,52 @@ inline void BaseDataProvider_1_set_Registrar_mDC9CD576EF5625AEDF0D99C96B7069097D
 	((  void (*) (BaseDataProvider_1_t3C6A855F93E52373AFB4857AC6D668A38D58B966 *, RuntimeObject*, const RuntimeMethod*))BaseDataProvider_1_set_Registrar_mF8F5077D3E3EC83D5E1E3DA46E824EA25F74B209_gshared_inline)(__this, ___value0, method);
 }
 // System.Void System.Func`1<System.Boolean>::.ctor(System.Object,System.IntPtr)
-inline void Func_1__ctor_m479BA9DCBE3F496111BD05CC90CB1044C5FFD552 (Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
+inline void Func_1__ctor_mAECA381FC0AA61139100EF468EE819A98431DE5E (Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 *, RuntimeObject *, intptr_t, const RuntimeMethod*))Func_1__ctor_m479BA9DCBE3F496111BD05CC90CB1044C5FFD552_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 *, RuntimeObject *, intptr_t, const RuntimeMethod*))Func_1__ctor_mAECA381FC0AA61139100EF468EE819A98431DE5E_gshared)(__this, ___object0, ___method1, method);
 }
 // System.Void UnityEngine.WaitUntil::.ctor(System.Func`1<System.Boolean>)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WaitUntil__ctor_mC1A43A512B185C55FBE858F741BEA6D4417105C1 (WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * __this, Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * ___predicate0, const RuntimeMethod* method);
 // System.Void Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager::.ctor(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem,System.String,System.UInt32,Microsoft.MixedReality.Toolkit.BaseMixedRealityProfile)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BaseInputDeviceManager__ctor_m1746D3A8EBE4F327683713A37AF88FF94969DD1B (BaseInputDeviceManager_tCD5F43919EB70924527B13AD5992798946BF83AC * __this, RuntimeObject* ___inputSystem0, String_t* ___name1, uint32_t ___priority2, BaseMixedRealityProfile_tB4DC16619B37D298D22571CE017070A78EF826E8 * ___profile3, const RuntimeMethod* method);
+// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingU3Ed__7__ctor_mB13178AB9D56264755C298D4732A900B08F6DD56 (U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * __this, const RuntimeMethod* method);
 // System.Runtime.CompilerServices.AsyncVoidMethodBuilder System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Create()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  AsyncVoidMethodBuilder_Create_m2EF884A75C3C230F0E6A63B1E23DC82F3B159130 (const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7>(!!0&)
-inline void AsyncVoidMethodBuilder_Start_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_mF8844BE20367D9845A602B08F4EBCA3A9C3A94D3 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * ___stateMachine0, const RuntimeMethod* method)
+inline void AsyncVoidMethodBuilder_Start_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_mF8844BE20367D9845A602B08F4EBCA3A9C3A94D3 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA ** ___stateMachine0, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *, U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA *, const RuntimeMethod*))AsyncVoidMethodBuilder_Start_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_mF8844BE20367D9845A602B08F4EBCA3A9C3A94D3_gshared)(__this, ___stateMachine0, method);
+	((  void (*) (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *, U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA **, const RuntimeMethod*))AsyncVoidMethodBuilder_Start_TisRuntimeObject_m8590BDB280C38FD9D41163DF39805FFA6EA8F508_gshared)(__this, ___stateMachine0, method);
 }
+// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingU3Ed__8__ctor_mACC922462A8624FB16A361EC880F61E5F1F06F43 (U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * __this, const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8>(!!0&)
-inline void AsyncVoidMethodBuilder_Start_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m7730C83A583EE3EFB6673FAFFC5E910F86CDA6B0 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * ___stateMachine0, const RuntimeMethod* method)
+inline void AsyncVoidMethodBuilder_Start_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m7730C83A583EE3EFB6673FAFFC5E910F86CDA6B0 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 ** ___stateMachine0, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *, U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 *, const RuntimeMethod*))AsyncVoidMethodBuilder_Start_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m7730C83A583EE3EFB6673FAFFC5E910F86CDA6B0_gshared)(__this, ___stateMachine0, method);
+	((  void (*) (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *, U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 **, const RuntimeMethod*))AsyncVoidMethodBuilder_Start_TisRuntimeObject_m8590BDB280C38FD9D41163DF39805FFA6EA8F508_gshared)(__this, ___stateMachine0, method);
 }
+// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingAsyncU3Ed__10__ctor_m298F3E71AA0ABD57353CA19292B11917F17D7EF9 (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * __this, const RuntimeMethod* method);
 // System.Runtime.CompilerServices.AsyncTaskMethodBuilder System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB (const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10>(!!0&)
-inline void AsyncTaskMethodBuilder_Start_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_m613B72B47271309F6E4F6B783F3454E3F32FA7A3 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * ___stateMachine0, const RuntimeMethod* method)
+inline void AsyncTaskMethodBuilder_Start_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_m613B72B47271309F6E4F6B783F3454E3F32FA7A3 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 ** ___stateMachine0, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 *, const RuntimeMethod*))AsyncTaskMethodBuilder_Start_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_m613B72B47271309F6E4F6B783F3454E3F32FA7A3_gshared)(__this, ___stateMachine0, method);
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 **, const RuntimeMethod*))AsyncTaskMethodBuilder_Start_TisRuntimeObject_m696634597BF79F3070C7F1040ABAC2FF9A616C79_gshared)(__this, ___stateMachine0, method);
 }
 // System.Threading.Tasks.Task System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, const RuntimeMethod* method);
+// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingAsyncU3Ed__12__ctor_m4CF3B203E9DCD3DFD1869105C441213C6469EAEF (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * __this, const RuntimeMethod* method);
 // System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<UnityEngine.AudioClip>::Create()
 inline AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6  AsyncTaskMethodBuilder_1_Create_mA48D98A1A0551E8B40C8CFE8DCA405F2583BA6C8 (const RuntimeMethod* method)
 {
 	return ((  AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6  (*) (const RuntimeMethod*))AsyncTaskMethodBuilder_1_Create_mC7806A5C115ED2239A5073313AA3564D8244156E_gshared)(method);
 }
 // System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<UnityEngine.AudioClip>::Start<Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12>(!!0&)
-inline void AsyncTaskMethodBuilder_1_Start_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mD68245F828C7A8FCE90B024BC5F6034F63672944 (AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * __this, U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * ___stateMachine0, const RuntimeMethod* method)
+inline void AsyncTaskMethodBuilder_1_Start_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mD68245F828C7A8FCE90B024BC5F6034F63672944 (AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * __this, U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A ** ___stateMachine0, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *, U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A *, const RuntimeMethod*))AsyncTaskMethodBuilder_1_Start_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_m098D125BC34E1915A3533707C3EF7348CE0F92AD_gshared)(__this, ___stateMachine0, method);
+	((  void (*) (AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *, U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A **, const RuntimeMethod*))AsyncTaskMethodBuilder_1_Start_TisRuntimeObject_m3BBDF211132C4A6EFB4836FC8E243102D598A1E7_gshared)(__this, ___stateMachine0, method);
 }
 // System.Threading.Tasks.Task`1<!0> System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<UnityEngine.AudioClip>::get_Task()
 inline Task_1_t1FD9AF71747895AEE56DD875875ED8409EFAD2CC * AsyncTaskMethodBuilder_1_get_Task_mA471503E5B53C6386B364975800C30B1CAC3F267 (AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * __this, const RuntimeMethod* method)
@@ -4262,7 +4285,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_LogError_m3BCF9B78263152261565DCA9
 // Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSystemProfile Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager::get_InputSystemProfile()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MixedRealityInputSystemProfile_tE6382BBDB73ACDFF6F3D0C3B4AD9B1B7F2D5BAC2 * BaseInputDeviceManager_get_InputSystemProfile_mE2FE4CB8744076CD1A05987279ECA9FED4623626 (BaseInputDeviceManager_tCD5F43919EB70924527B13AD5992798946BF83AC * __this, const RuntimeMethod* method);
 // Microsoft.MixedReality.Toolkit.Input.MixedRealitySpeechCommandsProfile Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSystemProfile::get_SpeechCommandsProfile()
-IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E_inline (MixedRealityInputSystemProfile_tE6382BBDB73ACDFF6F3D0C3B4AD9B1B7F2D5BAC2 * __this, const RuntimeMethod* method);
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E (MixedRealityInputSystemProfile_tE6382BBDB73ACDFF6F3D0C3B4AD9B1B7F2D5BAC2 * __this, const RuntimeMethod* method);
 // Microsoft.MixedReality.Toolkit.Utilities.AutoStartBehavior Microsoft.MixedReality.Toolkit.Input.MixedRealitySpeechCommandsProfile::get_SpeechRecognizerStartBehavior()
 IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR int32_t MixedRealitySpeechCommandsProfile_get_SpeechRecognizerStartBehavior_m8DB42B73900D75367BCCADE158634F41C237363A_inline (MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * __this, const RuntimeMethod* method);
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider::InitializeDictationRecognizer()
@@ -4307,10 +4330,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t DictationRecognizer_get_Status_mA6647
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_StopRecording_m2E54FAC6FE4C8E84C357F5BDF3912D37A9353B02 (WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * __this, const RuntimeMethod* method);
 // System.Void Unity.Profiling.ProfilerMarker/AutoScope::Dispose()
 IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR void AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline (AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F * __this, const RuntimeMethod* method);
+// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDisableU3Ed__31__ctor_mB57167BDAAB649E3D19EEB3935E1AE3CF8C32256 (U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * __this, const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31>(!!0&)
-inline void AsyncVoidMethodBuilder_Start_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_mF9EE6BD01A29819D8589BB76FF236306DEA6FE41 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * ___stateMachine0, const RuntimeMethod* method)
+inline void AsyncVoidMethodBuilder_Start_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_mF9EE6BD01A29819D8589BB76FF236306DEA6FE41 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED ** ___stateMachine0, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *, U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED *, const RuntimeMethod*))AsyncVoidMethodBuilder_Start_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_mF9EE6BD01A29819D8589BB76FF236306DEA6FE41_gshared)(__this, ___stateMachine0, method);
+	((  void (*) (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *, U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED **, const RuntimeMethod*))AsyncVoidMethodBuilder_Start_TisRuntimeObject_m8590BDB280C38FD9D41163DF39805FFA6EA8F508_gshared)(__this, ___stateMachine0, method);
 }
 // System.Void UnityEngine.Windows.Speech.DictationRecognizer::Dispose()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DictationRecognizer_Dispose_m8D8EB78BD3CD6B18CF2240AD8506CE943F1692E7 (DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * __this, const RuntimeMethod* method);
@@ -4345,9 +4370,9 @@ inline bool TaskAwaiter_1_get_IsCompleted_m6EA45C62085A881D247B95828C7579A87E030
 	return ((  bool (*) (TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *, const RuntimeMethod*))TaskAwaiter_1_get_IsCompleted_mBF435C7EFD03FCF7810FC08EEDC5945F80FF88F9_gshared)(__this, method);
 }
 // System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<UnityEngine.AudioClip>,Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31>(!!0&,!!1&)
-inline void AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_m70E993B3065E6A243226023C812737811DEF29EA (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 * ___awaiter0, U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * ___stateMachine1, const RuntimeMethod* method)
+inline void AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_m70E993B3065E6A243226023C812737811DEF29EA (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 * ___awaiter0, U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED ** ___stateMachine1, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *, TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *, U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED *, const RuntimeMethod*))AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_m9CA882523827CF5CF9680C6C1E4DBF55FF6F2B61_gshared)(__this, ___awaiter0, ___stateMachine1, method);
+	((  void (*) (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *, TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *, U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED **, const RuntimeMethod*))AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisRuntimeObject_m9DC2C2CB1B91EC2329E1201B14390AA34F980C78_gshared)(__this, ___awaiter0, ___stateMachine1, method);
 }
 // !0 System.Runtime.CompilerServices.TaskAwaiter`1<UnityEngine.AudioClip>::GetResult()
 inline AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * TaskAwaiter_1_GetResult_mF69D645FC74CDE2F31361F7CDCB81C5A19D10DDD (TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 * __this, const RuntimeMethod* method)
@@ -4368,12 +4393,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_U3CU3En__0
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncVoidMethodBuilder_SetException_mA7D834CA1ECA91D65074D7608AADA2E2A9533136 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, Exception_t * ___exception0, const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::SetResult()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncVoidMethodBuilder_SetResult_mFF6028CDDC809252656354DC1714B4EB5E40A625 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, const RuntimeMethod* method);
-// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31::MoveNext()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDisableU3Ed__31_MoveNext_m8B1B323E81AFF3BDCD5476B6FB6459667BF8D25A (U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * __this, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncVoidMethodBuilder_SetStateMachine_mF3AEE42ED8474F11A5521D94271E884CF99E65B3 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
-// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDisableU3Ed__31_SetStateMachine_m5B83506C4792AC2BEC6FDDA3135BC3CC5C4B59DD (U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
 // System.Threading.Tasks.Task Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider::StartRecordingAsync(UnityEngine.GameObject,System.Single,System.Single,System.Int32,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * WindowsDictationInputProvider_StartRecordingAsync_m589DD5872344989C877F28863898B6B9BE503CD6 (WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * __this, GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___listener0, float ___initialSilenceTimeout1, float ___autoSilenceTimeout2, int32_t ___recordingTime3, String_t* ___micDeviceName4, const RuntimeMethod* method);
 // System.Runtime.CompilerServices.TaskAwaiter System.Threading.Tasks.Task::GetAwaiter()
@@ -4381,16 +4400,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96
 // System.Boolean System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TaskAwaiter_get_IsCompleted_m5A2B6FEA0ED3B01B5E88DBF2D8BC4A45652ABD87 (TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F * __this, const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter,Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7>(!!0&,!!1&)
-inline void AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_m1AA4CE584D31E921CE358DFA3A280C680DB391F3 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F * ___awaiter0, U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * ___stateMachine1, const RuntimeMethod* method)
+inline void AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_m1AA4CE584D31E921CE358DFA3A280C680DB391F3 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F * ___awaiter0, U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA ** ___stateMachine1, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *, TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F *, U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA *, const RuntimeMethod*))AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_m1AA4CE584D31E921CE358DFA3A280C680DB391F3_gshared)(__this, ___awaiter0, ___stateMachine1, method);
+	((  void (*) (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *, TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F *, U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA **, const RuntimeMethod*))AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F_TisRuntimeObject_m97ECCB65C1BEF0E1858546511A21FE6583DEB2F8_gshared)(__this, ___awaiter0, ___stateMachine1, method);
 }
 // System.Void System.Runtime.CompilerServices.TaskAwaiter::GetResult()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TaskAwaiter_GetResult_m89868C01592AC2B06CE1FD42D9B9C187C6FD928A (TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F * __this, const RuntimeMethod* method);
-// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::MoveNext()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingU3Ed__7_MoveNext_m3DB6F999A7553D72D369E4808FAA821A2D0B48E1 (U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * __this, const RuntimeMethod* method);
-// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingU3Ed__7_SetStateMachine_m9DEF1AA5B5EB9C698522AA43557D9F3BE80CFEE8 (U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider::set_IsListening(System.Boolean)
 IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_set_IsListening_m5088D38E5362A1A5F1248E662454FE52455537A5_inline (WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * __this, bool ___value0, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
@@ -4402,12 +4417,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SimpleCoroutineAwaiter_t46769B8824866227E6B83
 // System.Boolean Microsoft.MixedReality.Toolkit.Utilities.AwaiterExtensions/SimpleCoroutineAwaiter::get_IsCompleted()
 IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR bool SimpleCoroutineAwaiter_get_IsCompleted_m564E77AF2AE091959C96845221E652899192A215_inline (SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * __this, const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitOnCompleted<Microsoft.MixedReality.Toolkit.Utilities.AwaiterExtensions/SimpleCoroutineAwaiter,Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10>(!!0&,!!1&)
-inline void AsyncTaskMethodBuilder_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_mE6A2E67A8B527A9D72EA7E583012FC9C95EEFB1E (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE ** ___awaiter0, U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * ___stateMachine1, const RuntimeMethod* method)
+inline void AsyncTaskMethodBuilder_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_mE6A2E67A8B527A9D72EA7E583012FC9C95EEFB1E (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE ** ___awaiter0, U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 ** ___stateMachine1, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE **, U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 *, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitOnCompleted_TisRuntimeObject_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_m6764870BB5F12E08F334435A85B66D0A346CED5C_gshared)(__this, ___awaiter0, ___stateMachine1, method);
+	((  void (*) (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE **, U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 **, const RuntimeMethod*))AsyncTaskMethodBuilder_AwaitOnCompleted_TisRuntimeObject_TisRuntimeObject_m998E6DC2E193386FB9D8C483ADE66DBEE15EA6D7_gshared)(__this, ___awaiter0, ___stateMachine1, method);
 }
 // System.Void Microsoft.MixedReality.Toolkit.Utilities.AwaiterExtensions/SimpleCoroutineAwaiter::GetResult()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SimpleCoroutineAwaiter_GetResult_mA2E1941136B95442358BA03075F6AF1B0F2C159B (SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * __this, const RuntimeMethod* method);
+// System.Void UnityEngine.Debug::Assert(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Assert_m0283DD85C5E5F5029793C17A335DB16BC307E62E (bool ___condition0, const RuntimeMethod* method);
 // System.Void UnityEngine.Microphone::GetDeviceCaps(System.String,System.Int32&,System.Int32&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Microphone_GetDeviceCaps_mF079FFC698AE94F132D4E0AD072498F6937BAF6B (String_t* ___deviceName0, int32_t* ___minFreq1, int32_t* ___maxFreq2, const RuntimeMethod* method);
 // System.Void UnityEngine.Windows.Speech.DictationRecognizer::set_InitialSilenceTimeoutSeconds(System.Single)
@@ -4424,27 +4441,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StringBuilder__ctor_mF928376F82E8C8FF3C1
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, Exception_t * ___exception0, const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, const RuntimeMethod* method);
-// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::MoveNext()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingAsyncU3Ed__10_MoveNext_m7C424B86A51413349970485C720CF84FC4EE8637 (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * __this, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncTaskMethodBuilder_SetStateMachine_mB5DD68F7C49EA6D452AEBA02B1B98AED898C3C25 (AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
-// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingAsyncU3Ed__10_SetStateMachine_mC84A1F9CCDD1C7AA3F8AC07995491E0C93989645 (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<UnityEngine.AudioClip>,Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8>(!!0&,!!1&)
-inline void AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m23C9593AFC03A56A8BCBEA4A89C785941068FC32 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 * ___awaiter0, U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * ___stateMachine1, const RuntimeMethod* method)
+inline void AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m23C9593AFC03A56A8BCBEA4A89C785941068FC32 (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * __this, TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 * ___awaiter0, U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 ** ___stateMachine1, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *, TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *, U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 *, const RuntimeMethod*))AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_mD113E2D5C40A8CB04E2E4BD1957CB2B79DB00B7A_gshared)(__this, ___awaiter0, ___stateMachine1, method);
+	((  void (*) (AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *, TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *, U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 **, const RuntimeMethod*))AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t8CDB78D2A4D48E80C35A8FF6FC04A82B9FC35977_TisRuntimeObject_m9DC2C2CB1B91EC2329E1201B14390AA34F980C78_gshared)(__this, ___awaiter0, ___stateMachine1, method);
 }
-// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8::MoveNext()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingU3Ed__8_MoveNext_m217F2C41080E548F7215675A50D652DEE2087BE5 (U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * __this, const RuntimeMethod* method);
-// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingU3Ed__8_SetStateMachine_m0C55E90B08B9381A88AA97FC129B29118D62F36A (U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
 // System.Void UnityEngine.Windows.Speech.DictationRecognizer::Stop()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DictationRecognizer_Stop_m42D22C5D03B17B6DDF94B13E9DC678AB4C11970E (DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * __this, const RuntimeMethod* method);
 // System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<UnityEngine.AudioClip>::AwaitOnCompleted<Microsoft.MixedReality.Toolkit.Utilities.AwaiterExtensions/SimpleCoroutineAwaiter,Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12>(!!0&,!!1&)
-inline void AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mEF858E2FFF0750D94EDC944DCEC54CC657EA1558 (AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * __this, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE ** ___awaiter0, U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * ___stateMachine1, const RuntimeMethod* method)
+inline void AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mEF858E2FFF0750D94EDC944DCEC54CC657EA1558 (AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * __this, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE ** ___awaiter0, U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A ** ___stateMachine1, const RuntimeMethod* method)
 {
-	((  void (*) (AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE **, U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A *, const RuntimeMethod*))AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisRuntimeObject_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mECB185290ADD0B9ADAA2166CC321429D1E5D8239_gshared)(__this, ___awaiter0, ___stateMachine1, method);
+	((  void (*) (AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE **, U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A **, const RuntimeMethod*))AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisRuntimeObject_TisRuntimeObject_m8B47A7CBE8DE8644BC53F92C5D20BEFD39007933_gshared)(__this, ___awaiter0, ___stateMachine1, method);
 }
 // System.Void UnityEngine.Windows.Speech.PhraseRecognitionSystem::Restart()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhraseRecognitionSystem_Restart_m8FE23747DD233E3E42BDDC5A6F3C3B79A1F20A3F (const RuntimeMethod* method);
@@ -4458,15 +4465,6 @@ inline void AsyncTaskMethodBuilder_1_SetResult_mD5596BF881B6EC3D7675495E22695C03
 {
 	((  void (*) (AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *, AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 *, const RuntimeMethod*))AsyncTaskMethodBuilder_1_SetResult_mD7DA7A17DC0610B11A0AAA364C3CA51FEC1271DB_gshared)(__this, ___result0, method);
 }
-// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12::MoveNext()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingAsyncU3Ed__12_MoveNext_m7C48D7ED48F1A3E7D5DC9BDBDEBC6354D24EE617 (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * __this, const RuntimeMethod* method);
-// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<UnityEngine.AudioClip>::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-inline void AsyncTaskMethodBuilder_1_SetStateMachine_m6D0E84B2F66A998AE916997EB96A356441721D76 (AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
-{
-	((  void (*) (AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *, RuntimeObject*, const RuntimeMethod*))AsyncTaskMethodBuilder_1_SetStateMachine_m5CC21A02320CF3D2DD7894A31123DFD82A428E4C_gshared)(__this, ___stateMachine0, method);
-}
-// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingAsyncU3Ed__12_SetStateMachine_mADE4018C50E0BE436B4D1D73FBAED7EB84359017 (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method);
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsSpeechInputProvider::.ctor(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem,System.String,System.UInt32,Microsoft.MixedReality.Toolkit.BaseMixedRealityProfile)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider__ctor_mC617FEC3E51D7F169F3919543F8C45A8F8617B69 (WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE * __this, RuntimeObject* ___inputSystem0, String_t* ___name1, uint32_t ___priority2, BaseMixedRealityProfile_tB4DC16619B37D298D22571CE017070A78EF826E8 * ___profile3, const RuntimeMethod* method);
 // Microsoft.MixedReality.Toolkit.Input.SpeechCommands[] Microsoft.MixedReality.Toolkit.Input.MixedRealitySpeechCommandsProfile::get_SpeechCommands()
@@ -4600,6 +4598,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider__ctor_m222
 	Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * G_B7_0 = NULL;
 	WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * G_B7_1 = NULL;
 	{
+		// public bool IsListening { get; private set; } = false;
+		__this->set_U3CIsListeningU3Ek__BackingField_17((bool)0);
+		// private IMixedRealityInputSource inputSource = null;
+		__this->set_inputSource_23((RuntimeObject*)NULL);
 		// private string deviceName = string.Empty;
 		String_t* L_0 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->get_Empty_5();
 		__this->set_deviceName_25(L_0);
@@ -4613,21 +4615,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider__ctor_m222
 		{
 			G_B2_0 = L_2;
 			G_B2_1 = __this;
-			goto IL_002b;
+			goto IL_0039;
 		}
 	}
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var);
 		U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE * L_3 = ((U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var))->get_U3CU3E9_0();
 		Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * L_4 = (Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 *)il2cpp_codegen_object_new(Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1_il2cpp_TypeInfo_var);
-		Func_1__ctor_m479BA9DCBE3F496111BD05CC90CB1044C5FFD552(L_4, L_3, (intptr_t)((intptr_t)U3CU3Ec_U3C_ctorU3Eb__1_0_m486977CFB9FB92261F0057974456FFA09DD93BA3_RuntimeMethod_var), /*hidden argument*/Func_1__ctor_m479BA9DCBE3F496111BD05CC90CB1044C5FFD552_RuntimeMethod_var);
+		Func_1__ctor_mAECA381FC0AA61139100EF468EE819A98431DE5E(L_4, L_3, (intptr_t)((intptr_t)U3CU3Ec_U3C_ctorU3Eb__1_0_m486977CFB9FB92261F0057974456FFA09DD93BA3_RuntimeMethod_var), /*hidden argument*/Func_1__ctor_mAECA381FC0AA61139100EF468EE819A98431DE5E_RuntimeMethod_var);
 		Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * L_5 = L_4;
 		((U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var))->set_U3CU3E9__1_0_1(L_5);
 		G_B2_0 = L_5;
 		G_B2_1 = G_B1_1;
 	}
 
-IL_002b:
+IL_0039:
 	{
 		WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * L_6 = (WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F *)il2cpp_codegen_object_new(WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F_il2cpp_TypeInfo_var);
 		WaitUntil__ctor_mC1A43A512B185C55FBE858F741BEA6D4417105C1(L_6, G_B2_0, /*hidden argument*/NULL);
@@ -4643,21 +4645,21 @@ IL_002b:
 		{
 			G_B4_0 = L_8;
 			G_B4_1 = __this;
-			goto IL_0055;
+			goto IL_0063;
 		}
 	}
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var);
 		U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE * L_9 = ((U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var))->get_U3CU3E9_0();
 		Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * L_10 = (Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 *)il2cpp_codegen_object_new(Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1_il2cpp_TypeInfo_var);
-		Func_1__ctor_m479BA9DCBE3F496111BD05CC90CB1044C5FFD552(L_10, L_9, (intptr_t)((intptr_t)U3CU3Ec_U3C_ctorU3Eb__1_1_m05B0CDAE31DE8229491D41657D6649936987D18E_RuntimeMethod_var), /*hidden argument*/Func_1__ctor_m479BA9DCBE3F496111BD05CC90CB1044C5FFD552_RuntimeMethod_var);
+		Func_1__ctor_mAECA381FC0AA61139100EF468EE819A98431DE5E(L_10, L_9, (intptr_t)((intptr_t)U3CU3Ec_U3C_ctorU3Eb__1_1_m05B0CDAE31DE8229491D41657D6649936987D18E_RuntimeMethod_var), /*hidden argument*/Func_1__ctor_mAECA381FC0AA61139100EF468EE819A98431DE5E_RuntimeMethod_var);
 		Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * L_11 = L_10;
 		((U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var))->set_U3CU3E9__1_1_2(L_11);
 		G_B4_0 = L_11;
 		G_B4_1 = G_B3_1;
 	}
 
-IL_0055:
+IL_0063:
 	{
 		WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * L_12 = (WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F *)il2cpp_codegen_object_new(WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F_il2cpp_TypeInfo_var);
 		WaitUntil__ctor_mC1A43A512B185C55FBE858F741BEA6D4417105C1(L_12, G_B4_0, /*hidden argument*/NULL);
@@ -4673,21 +4675,21 @@ IL_0055:
 		{
 			G_B6_0 = L_14;
 			G_B6_1 = __this;
-			goto IL_007f;
+			goto IL_008d;
 		}
 	}
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var);
 		U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE * L_15 = ((U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var))->get_U3CU3E9_0();
 		Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * L_16 = (Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 *)il2cpp_codegen_object_new(Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1_il2cpp_TypeInfo_var);
-		Func_1__ctor_m479BA9DCBE3F496111BD05CC90CB1044C5FFD552(L_16, L_15, (intptr_t)((intptr_t)U3CU3Ec_U3C_ctorU3Eb__1_2_m3D2D6EDC2EE56C0945B9C4ED3DB428407CAD34C2_RuntimeMethod_var), /*hidden argument*/Func_1__ctor_m479BA9DCBE3F496111BD05CC90CB1044C5FFD552_RuntimeMethod_var);
+		Func_1__ctor_mAECA381FC0AA61139100EF468EE819A98431DE5E(L_16, L_15, (intptr_t)((intptr_t)U3CU3Ec_U3C_ctorU3Eb__1_2_m3D2D6EDC2EE56C0945B9C4ED3DB428407CAD34C2_RuntimeMethod_var), /*hidden argument*/Func_1__ctor_mAECA381FC0AA61139100EF468EE819A98431DE5E_RuntimeMethod_var);
 		Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * L_17 = L_16;
 		((U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var))->set_U3CU3E9__1_2_3(L_17);
 		G_B6_0 = L_17;
 		G_B6_1 = G_B5_1;
 	}
 
-IL_007f:
+IL_008d:
 	{
 		WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * L_18 = (WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F *)il2cpp_codegen_object_new(WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F_il2cpp_TypeInfo_var);
 		WaitUntil__ctor_mC1A43A512B185C55FBE858F741BEA6D4417105C1(L_18, G_B6_0, /*hidden argument*/NULL);
@@ -4703,21 +4705,21 @@ IL_007f:
 		{
 			G_B8_0 = L_20;
 			G_B8_1 = __this;
-			goto IL_00a9;
+			goto IL_00b7;
 		}
 	}
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var);
 		U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE * L_21 = ((U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var))->get_U3CU3E9_0();
 		Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * L_22 = (Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 *)il2cpp_codegen_object_new(Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1_il2cpp_TypeInfo_var);
-		Func_1__ctor_m479BA9DCBE3F496111BD05CC90CB1044C5FFD552(L_22, L_21, (intptr_t)((intptr_t)U3CU3Ec_U3C_ctorU3Eb__1_3_m93A2ADFB8872AC59805F8A83F79585204303D58C_RuntimeMethod_var), /*hidden argument*/Func_1__ctor_m479BA9DCBE3F496111BD05CC90CB1044C5FFD552_RuntimeMethod_var);
+		Func_1__ctor_mAECA381FC0AA61139100EF468EE819A98431DE5E(L_22, L_21, (intptr_t)((intptr_t)U3CU3Ec_U3C_ctorU3Eb__1_3_m93A2ADFB8872AC59805F8A83F79585204303D58C_RuntimeMethod_var), /*hidden argument*/Func_1__ctor_mAECA381FC0AA61139100EF468EE819A98431DE5E_RuntimeMethod_var);
 		Func_1_t4ABD6DAD480574F152452DD6B9C9A55F4F6655F1 * L_23 = L_22;
 		((U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_t50C182B37EDC5ED5FFF4C1936C0F4BFE8DA0ADEE_il2cpp_TypeInfo_var))->set_U3CU3E9__1_3_4(L_23);
 		G_B8_0 = L_23;
 		G_B8_1 = G_B7_1;
 	}
 
-IL_00a9:
+IL_00b7:
 	{
 		WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * L_24 = (WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F *)il2cpp_codegen_object_new(WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F_il2cpp_TypeInfo_var);
 		WaitUntil__ctor_mC1A43A512B185C55FBE858F741BEA6D4417105C1(L_24, G_B8_0, /*hidden argument*/NULL);
@@ -4756,10 +4758,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_set_IsList
 // System.Boolean Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider::CheckCapability(Microsoft.MixedReality.Toolkit.MixedRealityCapability)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WindowsDictationInputProvider_CheckCapability_mA759B1C4690FC8D140F17B022148068D87905155 (WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * __this, int32_t ___capability0, const RuntimeMethod* method)
 {
+	bool V_0 = false;
 	{
 		// return (capability == MixedRealityCapability.VoiceDictation);
 		int32_t L_0 = ___capability0;
-		return (bool)((((int32_t)L_0) == ((int32_t)5))? 1 : 0);
+		V_0 = (bool)((((int32_t)L_0) == ((int32_t)5))? 1 : 0);
+		goto IL_0008;
+	}
+
+IL_0008:
+	{
+		// }
+		bool L_1 = V_0;
+		return L_1;
 	}
 }
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider::StartRecording(UnityEngine.GameObject,System.Single,System.Single,System.Int32,System.String)
@@ -4771,29 +4782,48 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_StartRecor
 		il2cpp_codegen_initialize_method (WindowsDictationInputProvider_StartRecording_mDE646B84BAE9D0F13822DB874D0DEE3810DE88B4_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA  V_0;
-	memset((&V_0), 0, sizeof(V_0));
+	U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * V_0 = NULL;
 	AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	{
-		(&V_0)->set_U3CU3E4__this_2(__this);
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_0 = ___listener0;
-		(&V_0)->set_listener_3(L_0);
-		float L_1 = ___initialSilenceTimeout1;
-		(&V_0)->set_initialSilenceTimeout_4(L_1);
-		float L_2 = ___autoSilenceTimeout2;
-		(&V_0)->set_autoSilenceTimeout_5(L_2);
-		int32_t L_3 = ___recordingTime3;
-		(&V_0)->set_recordingTime_6(L_3);
-		String_t* L_4 = ___micDeviceName4;
-		(&V_0)->set_micDeviceName_7(L_4);
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  L_5 = AsyncVoidMethodBuilder_Create_m2EF884A75C3C230F0E6A63B1E23DC82F3B159130(/*hidden argument*/NULL);
-		(&V_0)->set_U3CU3Et__builder_1(L_5);
-		(&V_0)->set_U3CU3E1__state_0((-1));
-		U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA  L_6 = V_0;
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  L_7 = L_6.get_U3CU3Et__builder_1();
-		V_1 = L_7;
-		AsyncVoidMethodBuilder_Start_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_mF8844BE20367D9845A602B08F4EBCA3A9C3A94D3((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)(&V_1), (U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA *)(&V_0), /*hidden argument*/AsyncVoidMethodBuilder_Start_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_mF8844BE20367D9845A602B08F4EBCA3A9C3A94D3_RuntimeMethod_var);
+		U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * L_0 = (U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA *)il2cpp_codegen_object_new(U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_il2cpp_TypeInfo_var);
+		U3CStartRecordingU3Ed__7__ctor_mB13178AB9D56264755C298D4732A900B08F6DD56(L_0, /*hidden argument*/NULL);
+		V_0 = L_0;
+		U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * L_1 = V_0;
+		NullCheck(L_1);
+		L_1->set_U3CU3E4__this_7(__this);
+		U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * L_2 = V_0;
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_3 = ___listener0;
+		NullCheck(L_2);
+		L_2->set_listener_2(L_3);
+		U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * L_4 = V_0;
+		float L_5 = ___initialSilenceTimeout1;
+		NullCheck(L_4);
+		L_4->set_initialSilenceTimeout_3(L_5);
+		U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * L_6 = V_0;
+		float L_7 = ___autoSilenceTimeout2;
+		NullCheck(L_6);
+		L_6->set_autoSilenceTimeout_4(L_7);
+		U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * L_8 = V_0;
+		int32_t L_9 = ___recordingTime3;
+		NullCheck(L_8);
+		L_8->set_recordingTime_5(L_9);
+		U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * L_10 = V_0;
+		String_t* L_11 = ___micDeviceName4;
+		NullCheck(L_10);
+		L_10->set_micDeviceName_6(L_11);
+		U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * L_12 = V_0;
+		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  L_13 = AsyncVoidMethodBuilder_Create_m2EF884A75C3C230F0E6A63B1E23DC82F3B159130(/*hidden argument*/NULL);
+		NullCheck(L_12);
+		L_12->set_U3CU3Et__builder_1(L_13);
+		U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * L_14 = V_0;
+		NullCheck(L_14);
+		L_14->set_U3CU3E1__state_0((-1));
+		U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * L_15 = V_0;
+		NullCheck(L_15);
+		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  L_16 = L_15->get_U3CU3Et__builder_1();
+		V_1 = L_16;
+		AsyncVoidMethodBuilder_Start_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_mF8844BE20367D9845A602B08F4EBCA3A9C3A94D3((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)(&V_1), (U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA **)(&V_0), /*hidden argument*/AsyncVoidMethodBuilder_Start_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_mF8844BE20367D9845A602B08F4EBCA3A9C3A94D3_RuntimeMethod_var);
 		return;
 	}
 }
@@ -4806,19 +4836,28 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_StopRecord
 		il2cpp_codegen_initialize_method (WindowsDictationInputProvider_StopRecording_m2E54FAC6FE4C8E84C357F5BDF3912D37A9353B02_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860  V_0;
-	memset((&V_0), 0, sizeof(V_0));
+	U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * V_0 = NULL;
 	AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	{
-		(&V_0)->set_U3CU3E4__this_2(__this);
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  L_0 = AsyncVoidMethodBuilder_Create_m2EF884A75C3C230F0E6A63B1E23DC82F3B159130(/*hidden argument*/NULL);
-		(&V_0)->set_U3CU3Et__builder_1(L_0);
-		(&V_0)->set_U3CU3E1__state_0((-1));
-		U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860  L_1 = V_0;
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  L_2 = L_1.get_U3CU3Et__builder_1();
-		V_1 = L_2;
-		AsyncVoidMethodBuilder_Start_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m7730C83A583EE3EFB6673FAFFC5E910F86CDA6B0((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)(&V_1), (U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 *)(&V_0), /*hidden argument*/AsyncVoidMethodBuilder_Start_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m7730C83A583EE3EFB6673FAFFC5E910F86CDA6B0_RuntimeMethod_var);
+		U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * L_0 = (U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 *)il2cpp_codegen_object_new(U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_il2cpp_TypeInfo_var);
+		U3CStopRecordingU3Ed__8__ctor_mACC922462A8624FB16A361EC880F61E5F1F06F43(L_0, /*hidden argument*/NULL);
+		V_0 = L_0;
+		U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * L_1 = V_0;
+		NullCheck(L_1);
+		L_1->set_U3CU3E4__this_2(__this);
+		U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * L_2 = V_0;
+		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  L_3 = AsyncVoidMethodBuilder_Create_m2EF884A75C3C230F0E6A63B1E23DC82F3B159130(/*hidden argument*/NULL);
+		NullCheck(L_2);
+		L_2->set_U3CU3Et__builder_1(L_3);
+		U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * L_4 = V_0;
+		NullCheck(L_4);
+		L_4->set_U3CU3E1__state_0((-1));
+		U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * L_5 = V_0;
+		NullCheck(L_5);
+		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  L_6 = L_5->get_U3CU3Et__builder_1();
+		V_1 = L_6;
+		AsyncVoidMethodBuilder_Start_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m7730C83A583EE3EFB6673FAFFC5E910F86CDA6B0((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)(&V_1), (U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 **)(&V_0), /*hidden argument*/AsyncVoidMethodBuilder_Start_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m7730C83A583EE3EFB6673FAFFC5E910F86CDA6B0_RuntimeMethod_var);
 		return;
 	}
 }
@@ -4831,33 +4870,54 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB
 		il2cpp_codegen_initialize_method (WindowsDictationInputProvider_StartRecordingAsync_m589DD5872344989C877F28863898B6B9BE503CD6_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809  V_0;
-	memset((&V_0), 0, sizeof(V_0));
+	U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * V_0 = NULL;
 	AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	{
-		(&V_0)->set_U3CU3E4__this_2(__this);
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_0 = ___listener0;
-		(&V_0)->set_listener_3(L_0);
-		float L_1 = ___initialSilenceTimeout1;
-		(&V_0)->set_initialSilenceTimeout_5(L_1);
-		float L_2 = ___autoSilenceTimeout2;
-		(&V_0)->set_autoSilenceTimeout_6(L_2);
-		int32_t L_3 = ___recordingTime3;
-		(&V_0)->set_recordingTime_7(L_3);
-		String_t* L_4 = ___micDeviceName4;
-		(&V_0)->set_micDeviceName_4(L_4);
+		U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * L_0 = (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 *)il2cpp_codegen_object_new(U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_il2cpp_TypeInfo_var);
+		U3CStartRecordingAsyncU3Ed__10__ctor_m298F3E71AA0ABD57353CA19292B11917F17D7EF9(L_0, /*hidden argument*/NULL);
+		V_0 = L_0;
+		U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * L_1 = V_0;
+		NullCheck(L_1);
+		L_1->set_U3CU3E4__this_7(__this);
+		U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * L_2 = V_0;
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_3 = ___listener0;
+		NullCheck(L_2);
+		L_2->set_listener_2(L_3);
+		U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * L_4 = V_0;
+		float L_5 = ___initialSilenceTimeout1;
+		NullCheck(L_4);
+		L_4->set_initialSilenceTimeout_3(L_5);
+		U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * L_6 = V_0;
+		float L_7 = ___autoSilenceTimeout2;
+		NullCheck(L_6);
+		L_6->set_autoSilenceTimeout_4(L_7);
+		U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * L_8 = V_0;
+		int32_t L_9 = ___recordingTime3;
+		NullCheck(L_8);
+		L_8->set_recordingTime_5(L_9);
+		U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * L_10 = V_0;
+		String_t* L_11 = ___micDeviceName4;
+		NullCheck(L_10);
+		L_10->set_micDeviceName_6(L_11);
+		U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * L_12 = V_0;
 		IL2CPP_RUNTIME_CLASS_INIT(AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487_il2cpp_TypeInfo_var);
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_5 = AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB(/*hidden argument*/NULL);
-		(&V_0)->set_U3CU3Et__builder_1(L_5);
-		(&V_0)->set_U3CU3E1__state_0((-1));
-		U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809  L_6 = V_0;
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_7 = L_6.get_U3CU3Et__builder_1();
-		V_1 = L_7;
-		AsyncTaskMethodBuilder_Start_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_m613B72B47271309F6E4F6B783F3454E3F32FA7A3((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)(&V_1), (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_Start_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_m613B72B47271309F6E4F6B783F3454E3F32FA7A3_RuntimeMethod_var);
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_8 = (&V_0)->get_address_of_U3CU3Et__builder_1();
-		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_9 = AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_8, /*hidden argument*/NULL);
-		return L_9;
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_13 = AsyncTaskMethodBuilder_Create_m081DF9A202E7C2F3CF3D41E1E63E63DA18F19FDB(/*hidden argument*/NULL);
+		NullCheck(L_12);
+		L_12->set_U3CU3Et__builder_1(L_13);
+		U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * L_14 = V_0;
+		NullCheck(L_14);
+		L_14->set_U3CU3E1__state_0((-1));
+		U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * L_15 = V_0;
+		NullCheck(L_15);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487  L_16 = L_15->get_U3CU3Et__builder_1();
+		V_1 = L_16;
+		AsyncTaskMethodBuilder_Start_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_m613B72B47271309F6E4F6B783F3454E3F32FA7A3((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)(&V_1), (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 **)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_Start_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_m613B72B47271309F6E4F6B783F3454E3F32FA7A3_RuntimeMethod_var);
+		U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * L_17 = V_0;
+		NullCheck(L_17);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_18 = L_17->get_address_of_U3CU3Et__builder_1();
+		Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_19 = AsyncTaskMethodBuilder_get_Task_m3E45BC00F7D224FEA04AB9BF26DB52E131D33022((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_18, /*hidden argument*/NULL);
+		return L_19;
 	}
 }
 // System.Threading.Tasks.Task`1<UnityEngine.AudioClip> Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider::StopRecordingAsync()
@@ -4869,23 +4929,34 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_1_t1FD9AF71747895AEE56DD875875ED8409EFAD
 		il2cpp_codegen_initialize_method (WindowsDictationInputProvider_StopRecordingAsync_m970B34085B1E29671D89FDC39AED49B356598D8C_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A  V_0;
-	memset((&V_0), 0, sizeof(V_0));
+	U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * V_0 = NULL;
 	AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6  V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	{
-		(&V_0)->set_U3CU3E4__this_2(__this);
+		U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * L_0 = (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A *)il2cpp_codegen_object_new(U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_il2cpp_TypeInfo_var);
+		U3CStopRecordingAsyncU3Ed__12__ctor_m4CF3B203E9DCD3DFD1869105C441213C6469EAEF(L_0, /*hidden argument*/NULL);
+		V_0 = L_0;
+		U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * L_1 = V_0;
+		NullCheck(L_1);
+		L_1->set_U3CU3E4__this_2(__this);
+		U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * L_2 = V_0;
 		IL2CPP_RUNTIME_CLASS_INIT(AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6_il2cpp_TypeInfo_var);
-		AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6  L_0 = AsyncTaskMethodBuilder_1_Create_mA48D98A1A0551E8B40C8CFE8DCA405F2583BA6C8(/*hidden argument*/AsyncTaskMethodBuilder_1_Create_mA48D98A1A0551E8B40C8CFE8DCA405F2583BA6C8_RuntimeMethod_var);
-		(&V_0)->set_U3CU3Et__builder_1(L_0);
-		(&V_0)->set_U3CU3E1__state_0((-1));
-		U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A  L_1 = V_0;
-		AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6  L_2 = L_1.get_U3CU3Et__builder_1();
-		V_1 = L_2;
-		AsyncTaskMethodBuilder_1_Start_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mD68245F828C7A8FCE90B024BC5F6034F63672944((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)(&V_1), (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A *)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_1_Start_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mD68245F828C7A8FCE90B024BC5F6034F63672944_RuntimeMethod_var);
-		AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * L_3 = (&V_0)->get_address_of_U3CU3Et__builder_1();
-		Task_1_t1FD9AF71747895AEE56DD875875ED8409EFAD2CC * L_4 = AsyncTaskMethodBuilder_1_get_Task_mA471503E5B53C6386B364975800C30B1CAC3F267((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)L_3, /*hidden argument*/AsyncTaskMethodBuilder_1_get_Task_mA471503E5B53C6386B364975800C30B1CAC3F267_RuntimeMethod_var);
-		return L_4;
+		AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6  L_3 = AsyncTaskMethodBuilder_1_Create_mA48D98A1A0551E8B40C8CFE8DCA405F2583BA6C8(/*hidden argument*/AsyncTaskMethodBuilder_1_Create_mA48D98A1A0551E8B40C8CFE8DCA405F2583BA6C8_RuntimeMethod_var);
+		NullCheck(L_2);
+		L_2->set_U3CU3Et__builder_1(L_3);
+		U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * L_4 = V_0;
+		NullCheck(L_4);
+		L_4->set_U3CU3E1__state_0((-1));
+		U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * L_5 = V_0;
+		NullCheck(L_5);
+		AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6  L_6 = L_5->get_U3CU3Et__builder_1();
+		V_1 = L_6;
+		AsyncTaskMethodBuilder_1_Start_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mD68245F828C7A8FCE90B024BC5F6034F63672944((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)(&V_1), (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A **)(&V_0), /*hidden argument*/AsyncTaskMethodBuilder_1_Start_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mD68245F828C7A8FCE90B024BC5F6034F63672944_RuntimeMethod_var);
+		U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * L_7 = V_0;
+		NullCheck(L_7);
+		AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * L_8 = L_7->get_address_of_U3CU3Et__builder_1();
+		Task_1_t1FD9AF71747895AEE56DD875875ED8409EFAD2CC * L_9 = AsyncTaskMethodBuilder_1_get_Task_mA471503E5B53C6386B364975800C30B1CAC3F267((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)L_8, /*hidden argument*/AsyncTaskMethodBuilder_1_get_Task_mA471503E5B53C6386B364975800C30B1CAC3F267_RuntimeMethod_var);
+		return L_9;
 	}
 }
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider::Enable()
@@ -4897,66 +4968,87 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_Enable_mC8
 		il2cpp_codegen_initialize_method (WindowsDictationInputProvider_Enable_mC85C435F781B24E856FA2D5589F0D5342A12DC12_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
+	bool V_1 = false;
+	bool V_2 = false;
+	int32_t G_B7_0 = 0;
 	{
 		// if (!Application.isPlaying) { return; }
 		bool L_0 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
-		if (L_0)
+		V_0 = (bool)((((int32_t)L_0) == ((int32_t)0))? 1 : 0);
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0008;
+			goto IL_0013;
 		}
 	}
 	{
 		// if (!Application.isPlaying) { return; }
-		return;
+		goto IL_0093;
 	}
 
-IL_0008:
+IL_0013:
 	{
 		// if (Service == null)
-		RuntimeObject* L_1 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
-		if (L_1)
+		RuntimeObject* L_2 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
+		V_1 = (bool)((((RuntimeObject*)(RuntimeObject*)L_2) == ((RuntimeObject*)(RuntimeObject *)NULL))? 1 : 0);
+		bool L_3 = V_1;
+		if (!L_3)
 		{
-			goto IL_002b;
+			goto IL_003e;
 		}
 	}
 	{
 		// Debug.LogError($"Unable to start {Name}. An Input System is required for this feature.");
-		String_t* L_2 = VirtFuncInvoker0< String_t* >::Invoke(18 /* System.String Microsoft.MixedReality.Toolkit.BaseService::get_Name() */, __this);
-		String_t* L_3 = String_Concat_mF4626905368D6558695A823466A1AF65EADB9923(_stringLiteralFF448159DC2D8E7C27FB42F3D195D5863191E18B, L_2, _stringLiteral3DA53827DA45EEF8CE51E69F81BFF90A6864DA69, /*hidden argument*/NULL);
+		String_t* L_4 = VirtFuncInvoker0< String_t* >::Invoke(18 /* System.String Microsoft.MixedReality.Toolkit.BaseService::get_Name() */, __this);
+		String_t* L_5 = String_Concat_mF4626905368D6558695A823466A1AF65EADB9923(_stringLiteralFF448159DC2D8E7C27FB42F3D195D5863191E18B, L_4, _stringLiteral3DA53827DA45EEF8CE51E69F81BFF90A6864DA69, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
-		Debug_LogError_m3BCF9B78263152261565DCA9DB7D55F0C391ED29(L_3, /*hidden argument*/NULL);
+		Debug_LogError_m3BCF9B78263152261565DCA9DB7D55F0C391ED29(L_5, /*hidden argument*/NULL);
 		// return;
-		return;
+		goto IL_0093;
 	}
 
-IL_002b:
+IL_003e:
 	{
 		// inputSource = Service.RequestNewGenericInputSource(Name, sourceType: InputSourceType.Voice);
-		RuntimeObject* L_4 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
-		String_t* L_5 = VirtFuncInvoker0< String_t* >::Invoke(18 /* System.String Microsoft.MixedReality.Toolkit.BaseService::get_Name() */, __this);
-		NullCheck(L_4);
-		RuntimeObject* L_6 = InterfaceFuncInvoker3< RuntimeObject*, String_t*, IMixedRealityPointerU5BU5D_t39DD1136CDE343C8864073AF61557AFC03AB3778*, int32_t >::Invoke(22 /* Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RequestNewGenericInputSource(System.String,Microsoft.MixedReality.Toolkit.Input.IMixedRealityPointer[],Microsoft.MixedReality.Toolkit.Input.InputSourceType) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, L_4, L_5, (IMixedRealityPointerU5BU5D_t39DD1136CDE343C8864073AF61557AFC03AB3778*)(IMixedRealityPointerU5BU5D_t39DD1136CDE343C8864073AF61557AFC03AB3778*)NULL, 3);
-		__this->set_inputSource_23(L_6);
+		RuntimeObject* L_6 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
+		String_t* L_7 = VirtFuncInvoker0< String_t* >::Invoke(18 /* System.String Microsoft.MixedReality.Toolkit.BaseService::get_Name() */, __this);
+		NullCheck(L_6);
+		RuntimeObject* L_8 = InterfaceFuncInvoker3< RuntimeObject*, String_t*, IMixedRealityPointerU5BU5D_t39DD1136CDE343C8864073AF61557AFC03AB3778*, int32_t >::Invoke(22 /* Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RequestNewGenericInputSource(System.String,Microsoft.MixedReality.Toolkit.Input.IMixedRealityPointer[],Microsoft.MixedReality.Toolkit.Input.InputSourceType) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, L_6, L_7, (IMixedRealityPointerU5BU5D_t39DD1136CDE343C8864073AF61557AFC03AB3778*)(IMixedRealityPointerU5BU5D_t39DD1136CDE343C8864073AF61557AFC03AB3778*)NULL, 3);
+		__this->set_inputSource_23(L_8);
 		// dictationResult = string.Empty;
-		String_t* L_7 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->get_Empty_5();
-		__this->set_dictationResult_27(L_7);
+		String_t* L_9 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->get_Empty_5();
+		__this->set_dictationResult_27(L_9);
 		// if (dictationRecognizer == null && InputSystemProfile.SpeechCommandsProfile.SpeechRecognizerStartBehavior == AutoStartBehavior.AutoStart)
 		IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-		DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_8 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-		if (L_8)
+		DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_10 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+		if (L_10)
 		{
-			goto IL_006e;
+			goto IL_007e;
 		}
 	}
 	{
-		MixedRealityInputSystemProfile_tE6382BBDB73ACDFF6F3D0C3B4AD9B1B7F2D5BAC2 * L_9 = BaseInputDeviceManager_get_InputSystemProfile_mE2FE4CB8744076CD1A05987279ECA9FED4623626(__this, /*hidden argument*/NULL);
-		NullCheck(L_9);
-		MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_10 = MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E_inline(L_9, /*hidden argument*/NULL);
-		NullCheck(L_10);
-		int32_t L_11 = MixedRealitySpeechCommandsProfile_get_SpeechRecognizerStartBehavior_m8DB42B73900D75367BCCADE158634F41C237363A_inline(L_10, /*hidden argument*/NULL);
-		if (L_11)
+		MixedRealityInputSystemProfile_tE6382BBDB73ACDFF6F3D0C3B4AD9B1B7F2D5BAC2 * L_11 = BaseInputDeviceManager_get_InputSystemProfile_mE2FE4CB8744076CD1A05987279ECA9FED4623626(__this, /*hidden argument*/NULL);
+		NullCheck(L_11);
+		MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_12 = MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E(L_11, /*hidden argument*/NULL);
+		NullCheck(L_12);
+		int32_t L_13 = MixedRealitySpeechCommandsProfile_get_SpeechRecognizerStartBehavior_m8DB42B73900D75367BCCADE158634F41C237363A_inline(L_12, /*hidden argument*/NULL);
+		G_B7_0 = ((((int32_t)L_13) == ((int32_t)0))? 1 : 0);
+		goto IL_007f;
+	}
+
+IL_007e:
+	{
+		G_B7_0 = 0;
+	}
+
+IL_007f:
+	{
+		V_2 = (bool)G_B7_0;
+		bool L_14 = V_2;
+		if (!L_14)
 		{
-			goto IL_006e;
+			goto IL_008c;
 		}
 	}
 	{
@@ -4964,10 +5056,14 @@ IL_002b:
 		WindowsDictationInputProvider_InitializeDictationRecognizer_mE63CBFC1837B6160E92C9FC9522EC522A7A98956(__this, /*hidden argument*/NULL);
 	}
 
-IL_006e:
+IL_008c:
 	{
 		// base.Enable();
 		BaseService_Enable_m04CE0EA9BE41F36575F1B7FBDAE7CB7514EFEB49(__this, /*hidden argument*/NULL);
+	}
+
+IL_0093:
+	{
 		// }
 		return;
 	}
@@ -4981,7 +5077,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_Initialize
 		il2cpp_codegen_initialize_method (WindowsDictationInputProvider_InitializeDictationRecognizer_mE63CBFC1837B6160E92C9FC9522EC522A7A98956_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	Exception_t * V_0 = NULL;
+	bool V_0 = false;
+	Exception_t * V_1 = NULL;
+	bool V_2 = false;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -4989,102 +5087,106 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_Initialize
 	void* __leave_targets_storage = alloca(sizeof(int32_t) * 2);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
+	{
+	}
 
-IL_0000:
+IL_0001:
 	try
 	{ // begin try (depth: 1)
 		{
 			// if (dictationRecognizer == null)
 			IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
 			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_0 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			if (L_0)
+			V_0 = (bool)((((RuntimeObject*)(DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 *)L_0) == ((RuntimeObject*)(RuntimeObject *)NULL))? 1 : 0);
+			bool L_1 = V_0;
+			if (!L_1)
 			{
-				goto IL_0069;
+				goto IL_0076;
 			}
 		}
 
-IL_0007:
+IL_000e:
 		{
 			// dictationRecognizer = new DictationRecognizer();
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_1 = (DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 *)il2cpp_codegen_object_new(DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355_il2cpp_TypeInfo_var);
-			DictationRecognizer__ctor_mF4F9C45412131377C1FF6B7A25CBAD0D02C0D6ED(L_1, /*hidden argument*/NULL);
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_2 = (DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 *)il2cpp_codegen_object_new(DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355_il2cpp_TypeInfo_var);
+			DictationRecognizer__ctor_mF4F9C45412131377C1FF6B7A25CBAD0D02C0D6ED(L_2, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-			((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->set_dictationRecognizer_29(L_1);
+			((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->set_dictationRecognizer_29(L_2);
 			// dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_2 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			DictationHypothesisDelegate_tC4A57853B520FE11F0C48C80E2C8009B7A1691FF * L_3 = (DictationHypothesisDelegate_tC4A57853B520FE11F0C48C80E2C8009B7A1691FF *)il2cpp_codegen_object_new(DictationHypothesisDelegate_tC4A57853B520FE11F0C48C80E2C8009B7A1691FF_il2cpp_TypeInfo_var);
-			DictationHypothesisDelegate__ctor_mFB606F04C9375D67CD8701F116EA58381924D3A1(L_3, __this, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationHypothesis_mAAAA8DDD2F3A94F3C06C5457AE27BACB8FEDF238_RuntimeMethod_var), /*hidden argument*/NULL);
-			NullCheck(L_2);
-			DictationRecognizer_add_DictationHypothesis_m18C5A5B49B3503D141FD3BF25E8CAE78DA2D2196(L_2, L_3, /*hidden argument*/NULL);
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_3 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			DictationHypothesisDelegate_tC4A57853B520FE11F0C48C80E2C8009B7A1691FF * L_4 = (DictationHypothesisDelegate_tC4A57853B520FE11F0C48C80E2C8009B7A1691FF *)il2cpp_codegen_object_new(DictationHypothesisDelegate_tC4A57853B520FE11F0C48C80E2C8009B7A1691FF_il2cpp_TypeInfo_var);
+			DictationHypothesisDelegate__ctor_mFB606F04C9375D67CD8701F116EA58381924D3A1(L_4, __this, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationHypothesis_mAAAA8DDD2F3A94F3C06C5457AE27BACB8FEDF238_RuntimeMethod_var), /*hidden argument*/NULL);
+			NullCheck(L_3);
+			DictationRecognizer_add_DictationHypothesis_m18C5A5B49B3503D141FD3BF25E8CAE78DA2D2196(L_3, L_4, /*hidden argument*/NULL);
 			// dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_4 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			DictationResultDelegate_t7827401C3739DC46ED8973A260871DC62D84DB87 * L_5 = (DictationResultDelegate_t7827401C3739DC46ED8973A260871DC62D84DB87 *)il2cpp_codegen_object_new(DictationResultDelegate_t7827401C3739DC46ED8973A260871DC62D84DB87_il2cpp_TypeInfo_var);
-			DictationResultDelegate__ctor_mDECF2707DE7D125C6DE6BE8EC8E1BCD1539CF40C(L_5, __this, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationResult_m5EBBA30C99CA9F33A09DBD107141DA17794D3CA9_RuntimeMethod_var), /*hidden argument*/NULL);
-			NullCheck(L_4);
-			DictationRecognizer_add_DictationResult_m72E518611183A8F055394759C76AF2C04C2C049E(L_4, L_5, /*hidden argument*/NULL);
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_5 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			DictationResultDelegate_t7827401C3739DC46ED8973A260871DC62D84DB87 * L_6 = (DictationResultDelegate_t7827401C3739DC46ED8973A260871DC62D84DB87 *)il2cpp_codegen_object_new(DictationResultDelegate_t7827401C3739DC46ED8973A260871DC62D84DB87_il2cpp_TypeInfo_var);
+			DictationResultDelegate__ctor_mDECF2707DE7D125C6DE6BE8EC8E1BCD1539CF40C(L_6, __this, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationResult_m5EBBA30C99CA9F33A09DBD107141DA17794D3CA9_RuntimeMethod_var), /*hidden argument*/NULL);
+			NullCheck(L_5);
+			DictationRecognizer_add_DictationResult_m72E518611183A8F055394759C76AF2C04C2C049E(L_5, L_6, /*hidden argument*/NULL);
 			// dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_6 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			DictationCompletedDelegate_tA2164679CEDD4101C6D628AFE6F38988D4D1D0DC * L_7 = (DictationCompletedDelegate_tA2164679CEDD4101C6D628AFE6F38988D4D1D0DC *)il2cpp_codegen_object_new(DictationCompletedDelegate_tA2164679CEDD4101C6D628AFE6F38988D4D1D0DC_il2cpp_TypeInfo_var);
-			DictationCompletedDelegate__ctor_m5B703B2796175B619EDBD28F7B6EB86294678369(L_7, __this, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationComplete_mB73F8B7863759593D8C29CED21711FC64CE1D283_RuntimeMethod_var), /*hidden argument*/NULL);
-			NullCheck(L_6);
-			DictationRecognizer_add_DictationComplete_m7F58F5353A6197EDF83790B3A11B07A7C4775F10(L_6, L_7, /*hidden argument*/NULL);
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_7 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			DictationCompletedDelegate_tA2164679CEDD4101C6D628AFE6F38988D4D1D0DC * L_8 = (DictationCompletedDelegate_tA2164679CEDD4101C6D628AFE6F38988D4D1D0DC *)il2cpp_codegen_object_new(DictationCompletedDelegate_tA2164679CEDD4101C6D628AFE6F38988D4D1D0DC_il2cpp_TypeInfo_var);
+			DictationCompletedDelegate__ctor_m5B703B2796175B619EDBD28F7B6EB86294678369(L_8, __this, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationComplete_mB73F8B7863759593D8C29CED21711FC64CE1D283_RuntimeMethod_var), /*hidden argument*/NULL);
+			NullCheck(L_7);
+			DictationRecognizer_add_DictationComplete_m7F58F5353A6197EDF83790B3A11B07A7C4775F10(L_7, L_8, /*hidden argument*/NULL);
 			// dictationRecognizer.DictationError += DictationRecognizer_DictationError;
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_8 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			DictationErrorHandler_t2FD4C7DAA73E5B75D13591C4D45523577C66FF13 * L_9 = (DictationErrorHandler_t2FD4C7DAA73E5B75D13591C4D45523577C66FF13 *)il2cpp_codegen_object_new(DictationErrorHandler_t2FD4C7DAA73E5B75D13591C4D45523577C66FF13_il2cpp_TypeInfo_var);
-			DictationErrorHandler__ctor_m13B3D1B66DB5DB3FA513E70E2DBEEBA1FDC6D0D6(L_9, __this, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationError_m8B37F8CAE58CEDCFA7AC40D3BDC3C47CA0C13456_RuntimeMethod_var), /*hidden argument*/NULL);
-			NullCheck(L_8);
-			DictationRecognizer_add_DictationError_m4A09F1227E7C3F954FACA66DD6F0F1720AF50C56(L_8, L_9, /*hidden argument*/NULL);
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_9 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			DictationErrorHandler_t2FD4C7DAA73E5B75D13591C4D45523577C66FF13 * L_10 = (DictationErrorHandler_t2FD4C7DAA73E5B75D13591C4D45523577C66FF13 *)il2cpp_codegen_object_new(DictationErrorHandler_t2FD4C7DAA73E5B75D13591C4D45523577C66FF13_il2cpp_TypeInfo_var);
+			DictationErrorHandler__ctor_m13B3D1B66DB5DB3FA513E70E2DBEEBA1FDC6D0D6(L_10, __this, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationError_m8B37F8CAE58CEDCFA7AC40D3BDC3C47CA0C13456_RuntimeMethod_var), /*hidden argument*/NULL);
+			NullCheck(L_9);
+			DictationRecognizer_add_DictationError_m4A09F1227E7C3F954FACA66DD6F0F1720AF50C56(L_9, L_10, /*hidden argument*/NULL);
 		}
 
-IL_0069:
+IL_0076:
 		{
-			// }
-			goto IL_0091;
+			goto IL_00aa;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_006b;
+			goto CATCH_0079;
 		throw e;
 	}
 
-CATCH_006b:
+CATCH_0079:
 	{ // begin catch(System.Exception)
 		{
 			// catch (System.Exception ex)
-			V_0 = ((Exception_t *)__exception_local);
+			V_1 = ((Exception_t *)__exception_local);
 			// if (!Application.isBatchMode)
-			bool L_10 = Application_get_isBatchMode_m79DCFBCC7DEC6F98BA09697D73FDEEAF655E633C(/*hidden argument*/NULL);
-			if (L_10)
+			bool L_11 = Application_get_isBatchMode_m79DCFBCC7DEC6F98BA09697D73FDEEAF655E633C(/*hidden argument*/NULL);
+			V_2 = (bool)((((int32_t)L_11) == ((int32_t)0))? 1 : 0);
+			bool L_12 = V_2;
+			if (!L_12)
 			{
-				goto IL_0083;
+				goto IL_009a;
 			}
 		}
 
-IL_0073:
+IL_0087:
 		{
 			// Debug.LogWarning($"Failed to start dictation recognizer. Are microphone permissions granted? Exception: {ex}");
-			Exception_t * L_11 = V_0;
-			String_t* L_12 = String_Format_m0ACDD8B34764E4040AED0B3EEB753567E4576BFA(_stringLiteralE8FC5A5EAF7157371226B78F77C919CAD83E741A, L_11, /*hidden argument*/NULL);
+			Exception_t * L_13 = V_1;
+			String_t* L_14 = String_Format_m0ACDD8B34764E4040AED0B3EEB753567E4576BFA(_stringLiteralE8FC5A5EAF7157371226B78F77C919CAD83E741A, L_13, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
-			Debug_LogWarning_m37338644DC81F640CCDFEAE35A223F0E965F0568(L_12, /*hidden argument*/NULL);
+			Debug_LogWarning_m37338644DC81F640CCDFEAE35A223F0E965F0568(L_14, /*hidden argument*/NULL);
 		}
 
-IL_0083:
+IL_009a:
 		{
 			// Disable();
 			VirtActionInvoker0::Invoke(29 /* System.Void Microsoft.MixedReality.Toolkit.BaseService::Disable() */, __this);
 			// dictationRecognizer = null;
 			IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
 			((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->set_dictationRecognizer_29((DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 *)NULL);
-			// }
-			goto IL_0091;
+			goto IL_00aa;
 		}
 	} // end catch (depth: 1)
 
-IL_0091:
+IL_00aa:
 	{
 		// }
 		return;
@@ -5103,6 +5205,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_Update_m08
 	memset((&V_0), 0, sizeof(V_0));
 	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
 	memset((&V_1), 0, sizeof(V_1));
+	bool V_2 = false;
+	bool V_3 = false;
+	bool V_4 = false;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -5110,6 +5215,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_Update_m08
 	void* __leave_targets_storage = alloca(sizeof(int32_t) * 2);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
+	int32_t G_B5_0 = 0;
+	int32_t G_B12_0 = 0;
+	int32_t G_B17_0 = 0;
 	{
 		// using (UpdatePerfMarker.Auto())
 		IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
@@ -5119,7 +5227,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_Update_m08
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
@@ -5127,141 +5235,179 @@ IL_000e:
 			bool L_2 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
 			if (!L_2)
 			{
-				goto IL_0024;
+				goto IL_0029;
 			}
 		}
 
-IL_0015:
+IL_0017:
 		{
 			RuntimeObject* L_3 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
 			if (!L_3)
 			{
-				goto IL_0024;
+				goto IL_0029;
 			}
 		}
 
-IL_001d:
+IL_001f:
 		{
 			IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
 			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_4 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			if (L_4)
+			G_B5_0 = ((((RuntimeObject*)(DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 *)L_4) == ((RuntimeObject*)(RuntimeObject *)NULL))? 1 : 0);
+			goto IL_002a;
+		}
+
+IL_0029:
+		{
+			G_B5_0 = 1;
+		}
+
+IL_002a:
+		{
+			V_2 = (bool)G_B5_0;
+			bool L_5 = V_2;
+			if (!L_5)
 			{
-				goto IL_0026;
+				goto IL_0034;
 			}
 		}
 
-IL_0024:
+IL_002e:
 		{
 			// if (!Application.isPlaying || Service == null || dictationRecognizer == null) { return; }
-			IL2CPP_LEAVE(0x9F, FINALLY_0091);
-		}
-
-IL_0026:
-		{
-			// base.Update();
-			BaseService_Update_mAE9EBAC35F456E318362A34CA0ED90722C6C6F42(__this, /*hidden argument*/NULL);
-			// if (!isTransitioning && IsListening && !Microphone.IsRecording(deviceName) && dictationRecognizer.Status == SpeechSystemStatus.Running)
-			bool L_5 = __this->get_isTransitioning_22();
-			if (L_5)
-			{
-				goto IL_005c;
-			}
+			IL2CPP_LEAVE(0xC6, FINALLY_00b7);
 		}
 
 IL_0034:
 		{
-			bool L_6 = WindowsDictationInputProvider_get_IsListening_mD0BB7681BF29793C36321C901A43882CD4F51F55_inline(__this, /*hidden argument*/NULL);
-			if (!L_6)
+			// base.Update();
+			BaseService_Update_mAE9EBAC35F456E318362A34CA0ED90722C6C6F42(__this, /*hidden argument*/NULL);
+			// if (!isTransitioning && IsListening && !Microphone.IsRecording(deviceName) && dictationRecognizer.Status == SpeechSystemStatus.Running)
+			bool L_6 = __this->get_isTransitioning_22();
+			if (L_6)
 			{
-				goto IL_005c;
+				goto IL_0067;
 			}
 		}
 
-IL_003c:
+IL_0043:
 		{
-			String_t* L_7 = __this->get_deviceName_25();
-			bool L_8 = Microphone_IsRecording_m2E3373AD36865B7261BBA5E9140271A08E0FA004(L_7, /*hidden argument*/NULL);
-			if (L_8)
+			bool L_7 = WindowsDictationInputProvider_get_IsListening_mD0BB7681BF29793C36321C901A43882CD4F51F55_inline(__this, /*hidden argument*/NULL);
+			if (!L_7)
 			{
-				goto IL_005c;
+				goto IL_0067;
 			}
 		}
 
-IL_0049:
+IL_004b:
+		{
+			String_t* L_8 = __this->get_deviceName_25();
+			bool L_9 = Microphone_IsRecording_m2E3373AD36865B7261BBA5E9140271A08E0FA004(L_8, /*hidden argument*/NULL);
+			if (L_9)
+			{
+				goto IL_0067;
+			}
+		}
+
+IL_0058:
 		{
 			IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_9 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			NullCheck(L_9);
-			int32_t L_10 = DictationRecognizer_get_Status_mA6647775F5A7639B6BA816FD7E8911C72E61B6BF(L_9, /*hidden argument*/NULL);
-			if ((!(((uint32_t)L_10) == ((uint32_t)1))))
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_10 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			NullCheck(L_10);
+			int32_t L_11 = DictationRecognizer_get_Status_mA6647775F5A7639B6BA816FD7E8911C72E61B6BF(L_10, /*hidden argument*/NULL);
+			G_B12_0 = ((((int32_t)L_11) == ((int32_t)1))? 1 : 0);
+			goto IL_0068;
+		}
+
+IL_0067:
+		{
+			G_B12_0 = 0;
+		}
+
+IL_0068:
+		{
+			V_3 = (bool)G_B12_0;
+			bool L_12 = V_3;
+			if (!L_12)
 			{
-				goto IL_005c;
+				goto IL_0075;
 			}
 		}
 
-IL_0056:
+IL_006c:
 		{
 			// StopRecording();
 			WindowsDictationInputProvider_StopRecording_m2E54FAC6FE4C8E84C357F5BDF3912D37A9353B02(__this, /*hidden argument*/NULL);
 		}
 
-IL_005c:
+IL_0075:
 		{
 			// if (!hasFailed && dictationRecognizer.Status == SpeechSystemStatus.Failed)
-			bool L_11 = __this->get_hasFailed_20();
-			if (L_11)
+			bool L_13 = __this->get_hasFailed_20();
+			if (L_13)
 			{
-				goto IL_008f;
+				goto IL_008c;
 			}
 		}
 
-IL_0064:
+IL_007d:
 		{
 			IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_12 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			NullCheck(L_12);
-			int32_t L_13 = DictationRecognizer_get_Status_mA6647775F5A7639B6BA816FD7E8911C72E61B6BF(L_12, /*hidden argument*/NULL);
-			if ((!(((uint32_t)L_13) == ((uint32_t)2))))
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_14 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			NullCheck(L_14);
+			int32_t L_15 = DictationRecognizer_get_Status_mA6647775F5A7639B6BA816FD7E8911C72E61B6BF(L_14, /*hidden argument*/NULL);
+			G_B17_0 = ((((int32_t)L_15) == ((int32_t)2))? 1 : 0);
+			goto IL_008d;
+		}
+
+IL_008c:
+		{
+			G_B17_0 = 0;
+		}
+
+IL_008d:
+		{
+			V_4 = (bool)G_B17_0;
+			bool L_16 = V_4;
+			if (!L_16)
 			{
-				goto IL_008f;
+				goto IL_00b4;
 			}
 		}
 
-IL_0071:
+IL_0093:
 		{
 			// hasFailed = true;
 			__this->set_hasFailed_20((bool)1);
 			// Service.RaiseDictationError(inputSource, "Dictation recognizer has failed!");
-			RuntimeObject* L_14 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
-			RuntimeObject* L_15 = __this->get_inputSource_23();
-			NullCheck(L_14);
-			InterfaceActionInvoker3< RuntimeObject*, String_t*, AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * >::Invoke(61 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RaiseDictationError(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource,System.String,UnityEngine.AudioClip) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, L_14, L_15, _stringLiteral043544CCA4B2803EA7424D747276922CA441C1F9, (AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 *)NULL);
+			RuntimeObject* L_17 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
+			RuntimeObject* L_18 = __this->get_inputSource_23();
+			NullCheck(L_17);
+			InterfaceActionInvoker3< RuntimeObject*, String_t*, AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * >::Invoke(61 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RaiseDictationError(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource,System.String,UnityEngine.AudioClip) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, L_17, L_18, _stringLiteral043544CCA4B2803EA7424D747276922CA441C1F9, (AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 *)NULL);
 		}
 
-IL_008f:
+IL_00b4:
 		{
-			// }
-			IL2CPP_LEAVE(0x9F, FINALLY_0091);
+			IL2CPP_LEAVE(0xC6, FINALLY_00b7);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0091;
+		goto FINALLY_00b7;
 	}
 
-FINALLY_0091:
+FINALLY_00b7:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(145)
+		IL2CPP_END_FINALLY(183)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(145)
+	IL2CPP_CLEANUP(183)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x9F, IL_009f)
+		IL2CPP_JUMP_TBL(0xC6, IL_00c6)
 	}
 
-IL_009f:
+IL_00c6:
 	{
 		// }
 		return;
@@ -5276,19 +5422,28 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_Disable_m3
 		il2cpp_codegen_initialize_method (WindowsDictationInputProvider_Disable_m3C36CE9BE7EEAFC5F69BE88D5868E8479C351CB9_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED  V_0;
-	memset((&V_0), 0, sizeof(V_0));
+	U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * V_0 = NULL;
 	AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	{
-		(&V_0)->set_U3CU3E4__this_2(__this);
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  L_0 = AsyncVoidMethodBuilder_Create_m2EF884A75C3C230F0E6A63B1E23DC82F3B159130(/*hidden argument*/NULL);
-		(&V_0)->set_U3CU3Et__builder_1(L_0);
-		(&V_0)->set_U3CU3E1__state_0((-1));
-		U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED  L_1 = V_0;
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  L_2 = L_1.get_U3CU3Et__builder_1();
-		V_1 = L_2;
-		AsyncVoidMethodBuilder_Start_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_mF9EE6BD01A29819D8589BB76FF236306DEA6FE41((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)(&V_1), (U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED *)(&V_0), /*hidden argument*/AsyncVoidMethodBuilder_Start_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_mF9EE6BD01A29819D8589BB76FF236306DEA6FE41_RuntimeMethod_var);
+		U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * L_0 = (U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED *)il2cpp_codegen_object_new(U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_il2cpp_TypeInfo_var);
+		U3CDisableU3Ed__31__ctor_mB57167BDAAB649E3D19EEB3935E1AE3CF8C32256(L_0, /*hidden argument*/NULL);
+		V_0 = L_0;
+		U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * L_1 = V_0;
+		NullCheck(L_1);
+		L_1->set_U3CU3E4__this_2(__this);
+		U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * L_2 = V_0;
+		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  L_3 = AsyncVoidMethodBuilder_Create_m2EF884A75C3C230F0E6A63B1E23DC82F3B159130(/*hidden argument*/NULL);
+		NullCheck(L_2);
+		L_2->set_U3CU3Et__builder_1(L_3);
+		U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * L_4 = V_0;
+		NullCheck(L_4);
+		L_4->set_U3CU3E1__state_0((-1));
+		U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * L_5 = V_0;
+		NullCheck(L_5);
+		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF  L_6 = L_5->get_U3CU3Et__builder_1();
+		V_1 = L_6;
+		AsyncVoidMethodBuilder_Start_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_mF9EE6BD01A29819D8589BB76FF236306DEA6FE41((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)(&V_1), (U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED **)(&V_0), /*hidden argument*/AsyncVoidMethodBuilder_Start_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_mF9EE6BD01A29819D8589BB76FF236306DEA6FE41_RuntimeMethod_var);
 		return;
 	}
 }
@@ -5301,39 +5456,46 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_Dispose_mB
 		il2cpp_codegen_initialize_method (WindowsDictationInputProvider_Dispose_mBCC52458F9473C5EE879CEBCF8DAD67EA10E8A63_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
 	DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * G_B3_0 = NULL;
 	DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * G_B2_0 = NULL;
 	{
 		// if (disposing)
 		bool L_0 = ___disposing0;
-		if (!L_0)
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0012;
+			goto IL_0019;
 		}
 	}
 	{
 		// dictationRecognizer?.Dispose();
 		IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-		DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_1 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-		DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_2 = L_1;
-		G_B2_0 = L_2;
-		if (L_2)
+		DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_2 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+		DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_3 = L_2;
+		G_B2_0 = L_3;
+		if (L_3)
 		{
-			G_B3_0 = L_2;
-			goto IL_000d;
+			G_B3_0 = L_3;
+			goto IL_0012;
 		}
 	}
 	{
-		return;
+		goto IL_0018;
 	}
 
-IL_000d:
+IL_0012:
 	{
 		NullCheck(G_B3_0);
 		DictationRecognizer_Dispose_m8D8EB78BD3CD6B18CF2240AD8506CE943F1692E7(G_B3_0, /*hidden argument*/NULL);
 	}
 
-IL_0012:
+IL_0018:
+	{
+	}
+
+IL_0019:
 	{
 		// }
 		return;
@@ -5356,7 +5518,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_DictationR
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	void* __leave_targets_storage = alloca(sizeof(int32_t) * 2);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
 	RuntimeObject* G_B3_0 = NULL;
@@ -5370,7 +5532,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_DictationR
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
@@ -5386,43 +5548,46 @@ IL_000e:
 			if (L_6)
 			{
 				G_B3_0 = L_6;
-				goto IL_0031;
+				goto IL_0033;
 			}
 		}
 
-IL_002e:
+IL_0030:
 		{
-			IL2CPP_LEAVE(0x53, FINALLY_0045);
+			goto IL_0046;
 		}
 
-IL_0031:
+IL_0033:
 		{
 			RuntimeObject* L_7 = __this->get_inputSource_23();
 			String_t* L_8 = __this->get_dictationResult_27();
 			NullCheck(G_B3_0);
 			InterfaceActionInvoker3< RuntimeObject*, String_t*, AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * >::Invoke(58 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RaiseDictationHypothesis(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource,System.String,UnityEngine.AudioClip) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, G_B3_0, L_7, L_8, (AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 *)NULL);
-			// }
-			IL2CPP_LEAVE(0x53, FINALLY_0045);
+		}
+
+IL_0046:
+		{
+			IL2CPP_LEAVE(0x58, FINALLY_0049);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0045;
+		goto FINALLY_0049;
 	}
 
-FINALLY_0045:
+FINALLY_0049:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(69)
+		IL2CPP_END_FINALLY(73)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(69)
+	IL2CPP_CLEANUP(73)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x53, IL_0053)
+		IL2CPP_JUMP_TBL(0x58, IL_0058)
 	}
 
-IL_0053:
+IL_0058:
 	{
 		// }
 		return;
@@ -5445,7 +5610,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_DictationR
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	void* __leave_targets_storage = alloca(sizeof(int32_t) * 2);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
 	RuntimeObject* G_B3_0 = NULL;
@@ -5459,7 +5624,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_DictationR
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
@@ -5481,43 +5646,46 @@ IL_000e:
 			if (L_8)
 			{
 				G_B3_0 = L_8;
-				goto IL_0042;
+				goto IL_0044;
 			}
 		}
 
-IL_003f:
+IL_0041:
 		{
-			IL2CPP_LEAVE(0x64, FINALLY_0056);
+			goto IL_0057;
 		}
 
-IL_0042:
+IL_0044:
 		{
 			RuntimeObject* L_9 = __this->get_inputSource_23();
 			String_t* L_10 = __this->get_dictationResult_27();
 			NullCheck(G_B3_0);
 			InterfaceActionInvoker3< RuntimeObject*, String_t*, AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * >::Invoke(59 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RaiseDictationResult(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource,System.String,UnityEngine.AudioClip) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, G_B3_0, L_9, L_10, (AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 *)NULL);
-			// }
-			IL2CPP_LEAVE(0x64, FINALLY_0056);
+		}
+
+IL_0057:
+		{
+			IL2CPP_LEAVE(0x69, FINALLY_005a);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0056;
+		goto FINALLY_005a;
 	}
 
-FINALLY_0056:
+FINALLY_005a:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(86)
+		IL2CPP_END_FINALLY(90)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(86)
+	IL2CPP_CLEANUP(90)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x64, IL_0064)
+		IL2CPP_JUMP_TBL(0x69, IL_0069)
 	}
 
-IL_0064:
+IL_0069:
 	{
 		// }
 		return;
@@ -5536,6 +5704,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_DictationR
 	memset((&V_0), 0, sizeof(V_0));
 	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
 	memset((&V_1), 0, sizeof(V_1));
+	bool V_2 = false;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -5554,83 +5723,84 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_DictationR
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
 			// if (cause == DictationCompletionCause.TimeoutExceeded)
 			int32_t L_2 = ___cause0;
-			if ((!(((uint32_t)L_2) == ((uint32_t)3))))
+			V_2 = (bool)((((int32_t)L_2) == ((int32_t)3))? 1 : 0);
+			bool L_3 = V_2;
+			if (!L_3)
 			{
-				goto IL_0028;
+				goto IL_0031;
 			}
 		}
 
-IL_0012:
+IL_0018:
 		{
 			// Microphone.End(deviceName);
-			String_t* L_3 = __this->get_deviceName_25();
-			Microphone_End_m2E3D0E4890AE014AF687987F6160CA3D5ACDC29F(L_3, /*hidden argument*/NULL);
+			String_t* L_4 = __this->get_deviceName_25();
+			Microphone_End_m2E3D0E4890AE014AF687987F6160CA3D5ACDC29F(L_4, /*hidden argument*/NULL);
 			// dictationResult = "Dictation has timed out. Please try again.";
 			__this->set_dictationResult_27(_stringLiteralD42A426DCC3C853B65741017F69E8B4FF3533311);
 		}
 
-IL_0028:
+IL_0031:
 		{
 			// Service?.RaiseDictationComplete(inputSource, dictationResult, dictationAudioClip);
-			RuntimeObject* L_4 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
-			RuntimeObject* L_5 = L_4;
-			G_B4_0 = L_5;
-			if (L_5)
+			RuntimeObject* L_5 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
+			RuntimeObject* L_6 = L_5;
+			G_B4_0 = L_6;
+			if (L_6)
 			{
-				G_B5_0 = L_5;
-				goto IL_0034;
+				G_B5_0 = L_6;
+				goto IL_003d;
 			}
 		}
 
-IL_0031:
+IL_003a:
 		{
-			goto IL_004b;
+			goto IL_0055;
 		}
 
-IL_0034:
+IL_003d:
 		{
-			RuntimeObject* L_6 = __this->get_inputSource_23();
-			String_t* L_7 = __this->get_dictationResult_27();
-			AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_8 = __this->get_dictationAudioClip_28();
+			RuntimeObject* L_7 = __this->get_inputSource_23();
+			String_t* L_8 = __this->get_dictationResult_27();
+			AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_9 = __this->get_dictationAudioClip_28();
 			NullCheck(G_B5_0);
-			InterfaceActionInvoker3< RuntimeObject*, String_t*, AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * >::Invoke(60 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RaiseDictationComplete(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource,System.String,UnityEngine.AudioClip) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, G_B5_0, L_6, L_7, L_8);
+			InterfaceActionInvoker3< RuntimeObject*, String_t*, AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * >::Invoke(60 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RaiseDictationComplete(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource,System.String,UnityEngine.AudioClip) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, G_B5_0, L_7, L_8, L_9);
 		}
 
-IL_004b:
+IL_0055:
 		{
 			// textSoFar = null;
 			__this->set_textSoFar_24((StringBuilder_t *)NULL);
 			// dictationResult = string.Empty;
-			String_t* L_9 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->get_Empty_5();
-			__this->set_dictationResult_27(L_9);
-			// }
-			IL2CPP_LEAVE(0x6D, FINALLY_005f);
+			String_t* L_10 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->get_Empty_5();
+			__this->set_dictationResult_27(L_10);
+			IL2CPP_LEAVE(0x79, FINALLY_006a);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_005f;
+		goto FINALLY_006a;
 	}
 
-FINALLY_005f:
+FINALLY_006a:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(95)
+		IL2CPP_END_FINALLY(106)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(95)
+	IL2CPP_CLEANUP(106)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x6D, IL_006d)
+		IL2CPP_JUMP_TBL(0x79, IL_0079)
 	}
 
-IL_006d:
+IL_0079:
 	{
 		// }
 		return;
@@ -5667,7 +5837,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsDictationInputProvider_DictationR
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
@@ -5685,16 +5855,16 @@ IL_000e:
 			if (L_8)
 			{
 				G_B3_0 = L_8;
-				goto IL_0031;
+				goto IL_0033;
 			}
 		}
 
-IL_002e:
+IL_0030:
 		{
-			goto IL_0043;
+			goto IL_0046;
 		}
 
-IL_0031:
+IL_0033:
 		{
 			RuntimeObject* L_9 = __this->get_inputSource_23();
 			String_t* L_10 = __this->get_dictationResult_27();
@@ -5702,35 +5872,34 @@ IL_0031:
 			InterfaceActionInvoker3< RuntimeObject*, String_t*, AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * >::Invoke(61 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RaiseDictationError(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource,System.String,UnityEngine.AudioClip) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, G_B3_0, L_9, L_10, (AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 *)NULL);
 		}
 
-IL_0043:
+IL_0046:
 		{
 			// textSoFar = null;
 			__this->set_textSoFar_24((StringBuilder_t *)NULL);
 			// dictationResult = string.Empty;
 			String_t* L_11 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->get_Empty_5();
 			__this->set_dictationResult_27(L_11);
-			// }
-			IL2CPP_LEAVE(0x65, FINALLY_0057);
+			IL2CPP_LEAVE(0x6A, FINALLY_005b);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0057;
+		goto FINALLY_005b;
 	}
 
-FINALLY_0057:
+FINALLY_005b:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(87)
+		IL2CPP_END_FINALLY(91)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(87)
+	IL2CPP_CLEANUP(91)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x65, IL_0065)
+		IL2CPP_JUMP_TBL(0x6A, IL_006a)
 	}
 
-IL_0065:
+IL_006a:
 	{
 		// }
 		return;
@@ -5739,10 +5908,19 @@ IL_0065:
 // UnityEngine.AudioClip Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider::get_AudioClip()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * WindowsDictationInputProvider_get_AudioClip_m649A69B6D90E61FDF6F2185927F6C16592234C56 (WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * __this, const RuntimeMethod* method)
 {
+	AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * V_0 = NULL;
 	{
 		// return dictationAudioClip;
 		AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_0 = __this->get_dictationAudioClip_28();
-		return L_0;
+		V_0 = L_0;
+		goto IL_000a;
+	}
+
+IL_000a:
+	{
+		// }
+		AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_1 = V_0;
+		return L_1;
 	}
 }
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider::.cctor()
@@ -5895,6 +6073,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3C_ctorU3Eb__1_3_m93A2ADFB8872A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDisableU3Ed__31__ctor_mB57167BDAAB649E3D19EEB3935E1AE3CF8C32256 (U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * __this, const RuntimeMethod* method)
+{
+	{
+		Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31::MoveNext()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDisableU3Ed__31_MoveNext_m8B1B323E81AFF3BDCD5476B6FB6459667BF8D25A (U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * __this, const RuntimeMethod* method)
 {
@@ -5905,10 +6091,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDisableU3Ed__31_MoveNext_m8B1B323E81A
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
-	WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * V_1 = NULL;
-	TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  V_2;
-	memset((&V_2), 0, sizeof(V_2));
-	Exception_t * V_3 = NULL;
+	bool V_1 = false;
+	bool V_2 = false;
+	TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  V_3;
+	memset((&V_3), 0, sizeof(V_3));
+	U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * V_4 = NULL;
+	Exception_t * V_5 = NULL;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -5916,209 +6104,231 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDisableU3Ed__31_MoveNext_m8B1B323E81A
 	void* __leave_targets_storage = alloca(sizeof(int32_t) * 3);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
+	int32_t G_B7_0 = 0;
+	int32_t G_B11_0 = 0;
 	{
 		int32_t L_0 = __this->get_U3CU3E1__state_0();
 		V_0 = L_0;
-		WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_1 = __this->get_U3CU3E4__this_2();
-		V_1 = L_1;
 	}
 
-IL_000e:
+IL_0007:
 	try
 	{ // begin try (depth: 1)
 		{
-			int32_t L_2 = V_0;
-			if (!L_2)
+			int32_t L_1 = V_0;
+			if (!L_1)
 			{
-				goto IL_006d;
+				goto IL_000c;
 			}
 		}
 
-IL_0011:
+IL_000a:
+		{
+			goto IL_000e;
+		}
+
+IL_000c:
+		{
+			goto IL_008b;
+		}
+
+IL_000e:
 		{
 			// if (Application.isPlaying && dictationRecognizer != null)
-			bool L_3 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
-			if (!L_3)
+			bool L_2 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
+			if (!L_2)
 			{
-				goto IL_00f3;
+				goto IL_0020;
 			}
 		}
 
-IL_001b:
+IL_0016:
 		{
 			IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_4 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_3 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			G_B7_0 = ((!(((RuntimeObject*)(DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 *)L_3) <= ((RuntimeObject*)(RuntimeObject *)NULL)))? 1 : 0);
+			goto IL_0021;
+		}
+
+IL_0020:
+		{
+			G_B7_0 = 0;
+		}
+
+IL_0021:
+		{
+			V_1 = (bool)G_B7_0;
+			bool L_4 = V_1;
 			if (!L_4)
 			{
-				goto IL_00f3;
+				goto IL_012c;
 			}
 		}
 
-IL_0025:
+IL_0028:
 		{
 			// if (!isTransitioning && IsListening) { await StopRecordingAsync(); }
-			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_5 = V_1;
+			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_5 = __this->get_U3CU3E4__this_2();
 			NullCheck(L_5);
 			bool L_6 = L_5->get_isTransitioning_22();
 			if (L_6)
 			{
-				goto IL_0091;
+				goto IL_0043;
 			}
 		}
 
-IL_002d:
+IL_0036:
 		{
-			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_7 = V_1;
+			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_7 = __this->get_U3CU3E4__this_2();
 			NullCheck(L_7);
 			bool L_8 = WindowsDictationInputProvider_get_IsListening_mD0BB7681BF29793C36321C901A43882CD4F51F55_inline(L_7, /*hidden argument*/NULL);
-			if (!L_8)
+			G_B11_0 = ((int32_t)(L_8));
+			goto IL_0044;
+		}
+
+IL_0043:
+		{
+			G_B11_0 = 0;
+		}
+
+IL_0044:
+		{
+			V_2 = (bool)G_B11_0;
+			bool L_9 = V_2;
+			if (!L_9)
 			{
-				goto IL_0091;
+				goto IL_00b0;
 			}
 		}
 
-IL_0035:
+IL_0048:
 		{
 			// if (!isTransitioning && IsListening) { await StopRecordingAsync(); }
-			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_9 = V_1;
-			NullCheck(L_9);
-			Task_1_t1FD9AF71747895AEE56DD875875ED8409EFAD2CC * L_10 = WindowsDictationInputProvider_StopRecordingAsync_m970B34085B1E29671D89FDC39AED49B356598D8C(L_9, /*hidden argument*/NULL);
+			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_10 = __this->get_U3CU3E4__this_2();
 			NullCheck(L_10);
-			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  L_11 = Task_1_GetAwaiter_mC7B1136330A9B7066A116285C7388989F8133986(L_10, /*hidden argument*/Task_1_GetAwaiter_mC7B1136330A9B7066A116285C7388989F8133986_RuntimeMethod_var);
-			V_2 = L_11;
-			bool L_12 = TaskAwaiter_1_get_IsCompleted_m6EA45C62085A881D247B95828C7579A87E030444((TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *)(&V_2), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m6EA45C62085A881D247B95828C7579A87E030444_RuntimeMethod_var);
-			if (L_12)
+			Task_1_t1FD9AF71747895AEE56DD875875ED8409EFAD2CC * L_11 = WindowsDictationInputProvider_StopRecordingAsync_m970B34085B1E29671D89FDC39AED49B356598D8C(L_10, /*hidden argument*/NULL);
+			NullCheck(L_11);
+			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  L_12 = Task_1_GetAwaiter_mC7B1136330A9B7066A116285C7388989F8133986(L_11, /*hidden argument*/Task_1_GetAwaiter_mC7B1136330A9B7066A116285C7388989F8133986_RuntimeMethod_var);
+			V_3 = L_12;
+			bool L_13 = TaskAwaiter_1_get_IsCompleted_m6EA45C62085A881D247B95828C7579A87E030444((TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *)(&V_3), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m6EA45C62085A881D247B95828C7579A87E030444_RuntimeMethod_var);
+			if (L_13)
 			{
-				goto IL_0089;
+				goto IL_00a7;
 			}
 		}
 
-IL_004a:
+IL_0063:
 		{
-			int32_t L_13 = 0;
-			V_0 = L_13;
-			__this->set_U3CU3E1__state_0(L_13);
-			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  L_14 = V_2;
-			__this->set_U3CU3Eu__1_3(L_14);
-			AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_15 = __this->get_address_of_U3CU3Et__builder_1();
-			AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_m70E993B3065E6A243226023C812737811DEF29EA((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_15, (TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *)(&V_2), (U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED *)__this, /*hidden argument*/AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_m70E993B3065E6A243226023C812737811DEF29EA_RuntimeMethod_var);
-			goto IL_0125;
+			int32_t L_14 = 0;
+			V_0 = L_14;
+			__this->set_U3CU3E1__state_0(L_14);
+			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  L_15 = V_3;
+			__this->set_U3CU3Eu__1_3(L_15);
+			V_4 = __this;
+			AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_16 = __this->get_address_of_U3CU3Et__builder_1();
+			AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_m70E993B3065E6A243226023C812737811DEF29EA((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_16, (TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *)(&V_3), (U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED **)(&V_4), /*hidden argument*/AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99_TisU3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED_m70E993B3065E6A243226023C812737811DEF29EA_RuntimeMethod_var);
+			goto IL_0168;
 		}
 
-IL_006d:
+IL_008b:
 		{
-			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  L_16 = __this->get_U3CU3Eu__1_3();
-			V_2 = L_16;
-			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 * L_17 = __this->get_address_of_U3CU3Eu__1_3();
-			il2cpp_codegen_initobj(L_17, sizeof(TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 ));
-			int32_t L_18 = (-1);
-			V_0 = L_18;
-			__this->set_U3CU3E1__state_0(L_18);
+			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  L_17 = __this->get_U3CU3Eu__1_3();
+			V_3 = L_17;
+			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 * L_18 = __this->get_address_of_U3CU3Eu__1_3();
+			il2cpp_codegen_initobj(L_18, sizeof(TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 ));
+			int32_t L_19 = (-1);
+			V_0 = L_19;
+			__this->set_U3CU3E1__state_0(L_19);
 		}
 
-IL_0089:
+IL_00a7:
 		{
-			TaskAwaiter_1_GetResult_mF69D645FC74CDE2F31361F7CDCB81C5A19D10DDD((TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *)(&V_2), /*hidden argument*/TaskAwaiter_1_GetResult_mF69D645FC74CDE2F31361F7CDCB81C5A19D10DDD_RuntimeMethod_var);
+			TaskAwaiter_1_GetResult_mF69D645FC74CDE2F31361F7CDCB81C5A19D10DDD((TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *)(&V_3), /*hidden argument*/TaskAwaiter_1_GetResult_mF69D645FC74CDE2F31361F7CDCB81C5A19D10DDD_RuntimeMethod_var);
 		}
 
-IL_0091:
+IL_00b0:
 		{
 			// dictationRecognizer.DictationHypothesis -= DictationRecognizer_DictationHypothesis;
 			IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_19 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_20 = V_1;
-			DictationHypothesisDelegate_tC4A57853B520FE11F0C48C80E2C8009B7A1691FF * L_21 = (DictationHypothesisDelegate_tC4A57853B520FE11F0C48C80E2C8009B7A1691FF *)il2cpp_codegen_object_new(DictationHypothesisDelegate_tC4A57853B520FE11F0C48C80E2C8009B7A1691FF_il2cpp_TypeInfo_var);
-			DictationHypothesisDelegate__ctor_mFB606F04C9375D67CD8701F116EA58381924D3A1(L_21, L_20, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationHypothesis_mAAAA8DDD2F3A94F3C06C5457AE27BACB8FEDF238_RuntimeMethod_var), /*hidden argument*/NULL);
-			NullCheck(L_19);
-			DictationRecognizer_remove_DictationHypothesis_m33D106BA3BD2C231CF9B3AB7CFC9D5D28DD63816(L_19, L_21, /*hidden argument*/NULL);
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_20 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_21 = __this->get_U3CU3E4__this_2();
+			DictationHypothesisDelegate_tC4A57853B520FE11F0C48C80E2C8009B7A1691FF * L_22 = (DictationHypothesisDelegate_tC4A57853B520FE11F0C48C80E2C8009B7A1691FF *)il2cpp_codegen_object_new(DictationHypothesisDelegate_tC4A57853B520FE11F0C48C80E2C8009B7A1691FF_il2cpp_TypeInfo_var);
+			DictationHypothesisDelegate__ctor_mFB606F04C9375D67CD8701F116EA58381924D3A1(L_22, L_21, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationHypothesis_mAAAA8DDD2F3A94F3C06C5457AE27BACB8FEDF238_RuntimeMethod_var), /*hidden argument*/NULL);
+			NullCheck(L_20);
+			DictationRecognizer_remove_DictationHypothesis_m33D106BA3BD2C231CF9B3AB7CFC9D5D28DD63816(L_20, L_22, /*hidden argument*/NULL);
 			// dictationRecognizer.DictationResult -= DictationRecognizer_DictationResult;
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_22 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_23 = V_1;
-			DictationResultDelegate_t7827401C3739DC46ED8973A260871DC62D84DB87 * L_24 = (DictationResultDelegate_t7827401C3739DC46ED8973A260871DC62D84DB87 *)il2cpp_codegen_object_new(DictationResultDelegate_t7827401C3739DC46ED8973A260871DC62D84DB87_il2cpp_TypeInfo_var);
-			DictationResultDelegate__ctor_mDECF2707DE7D125C6DE6BE8EC8E1BCD1539CF40C(L_24, L_23, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationResult_m5EBBA30C99CA9F33A09DBD107141DA17794D3CA9_RuntimeMethod_var), /*hidden argument*/NULL);
-			NullCheck(L_22);
-			DictationRecognizer_remove_DictationResult_mD2832F82043B0E918D07AB2F3D8C6F83AD7A4AE6(L_22, L_24, /*hidden argument*/NULL);
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_23 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_24 = __this->get_U3CU3E4__this_2();
+			DictationResultDelegate_t7827401C3739DC46ED8973A260871DC62D84DB87 * L_25 = (DictationResultDelegate_t7827401C3739DC46ED8973A260871DC62D84DB87 *)il2cpp_codegen_object_new(DictationResultDelegate_t7827401C3739DC46ED8973A260871DC62D84DB87_il2cpp_TypeInfo_var);
+			DictationResultDelegate__ctor_mDECF2707DE7D125C6DE6BE8EC8E1BCD1539CF40C(L_25, L_24, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationResult_m5EBBA30C99CA9F33A09DBD107141DA17794D3CA9_RuntimeMethod_var), /*hidden argument*/NULL);
+			NullCheck(L_23);
+			DictationRecognizer_remove_DictationResult_mD2832F82043B0E918D07AB2F3D8C6F83AD7A4AE6(L_23, L_25, /*hidden argument*/NULL);
 			// dictationRecognizer.DictationComplete -= DictationRecognizer_DictationComplete;
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_25 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_26 = V_1;
-			DictationCompletedDelegate_tA2164679CEDD4101C6D628AFE6F38988D4D1D0DC * L_27 = (DictationCompletedDelegate_tA2164679CEDD4101C6D628AFE6F38988D4D1D0DC *)il2cpp_codegen_object_new(DictationCompletedDelegate_tA2164679CEDD4101C6D628AFE6F38988D4D1D0DC_il2cpp_TypeInfo_var);
-			DictationCompletedDelegate__ctor_m5B703B2796175B619EDBD28F7B6EB86294678369(L_27, L_26, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationComplete_mB73F8B7863759593D8C29CED21711FC64CE1D283_RuntimeMethod_var), /*hidden argument*/NULL);
-			NullCheck(L_25);
-			DictationRecognizer_remove_DictationComplete_m1C2487A5E937F84D15B73A2853AD4C65A537FB6F(L_25, L_27, /*hidden argument*/NULL);
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_26 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_27 = __this->get_U3CU3E4__this_2();
+			DictationCompletedDelegate_tA2164679CEDD4101C6D628AFE6F38988D4D1D0DC * L_28 = (DictationCompletedDelegate_tA2164679CEDD4101C6D628AFE6F38988D4D1D0DC *)il2cpp_codegen_object_new(DictationCompletedDelegate_tA2164679CEDD4101C6D628AFE6F38988D4D1D0DC_il2cpp_TypeInfo_var);
+			DictationCompletedDelegate__ctor_m5B703B2796175B619EDBD28F7B6EB86294678369(L_28, L_27, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationComplete_mB73F8B7863759593D8C29CED21711FC64CE1D283_RuntimeMethod_var), /*hidden argument*/NULL);
+			NullCheck(L_26);
+			DictationRecognizer_remove_DictationComplete_m1C2487A5E937F84D15B73A2853AD4C65A537FB6F(L_26, L_28, /*hidden argument*/NULL);
 			// dictationRecognizer.DictationError -= DictationRecognizer_DictationError;
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_28 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_29 = V_1;
-			DictationErrorHandler_t2FD4C7DAA73E5B75D13591C4D45523577C66FF13 * L_30 = (DictationErrorHandler_t2FD4C7DAA73E5B75D13591C4D45523577C66FF13 *)il2cpp_codegen_object_new(DictationErrorHandler_t2FD4C7DAA73E5B75D13591C4D45523577C66FF13_il2cpp_TypeInfo_var);
-			DictationErrorHandler__ctor_m13B3D1B66DB5DB3FA513E70E2DBEEBA1FDC6D0D6(L_30, L_29, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationError_m8B37F8CAE58CEDCFA7AC40D3BDC3C47CA0C13456_RuntimeMethod_var), /*hidden argument*/NULL);
-			NullCheck(L_28);
-			DictationRecognizer_remove_DictationError_mA5CF0BEDD8CBC96098B623B48E70C5BD913C00B3(L_28, L_30, /*hidden argument*/NULL);
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_29 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_30 = __this->get_U3CU3E4__this_2();
+			DictationErrorHandler_t2FD4C7DAA73E5B75D13591C4D45523577C66FF13 * L_31 = (DictationErrorHandler_t2FD4C7DAA73E5B75D13591C4D45523577C66FF13 *)il2cpp_codegen_object_new(DictationErrorHandler_t2FD4C7DAA73E5B75D13591C4D45523577C66FF13_il2cpp_TypeInfo_var);
+			DictationErrorHandler__ctor_m13B3D1B66DB5DB3FA513E70E2DBEEBA1FDC6D0D6(L_31, L_30, (intptr_t)((intptr_t)WindowsDictationInputProvider_DictationRecognizer_DictationError_m8B37F8CAE58CEDCFA7AC40D3BDC3C47CA0C13456_RuntimeMethod_var), /*hidden argument*/NULL);
+			NullCheck(L_29);
+			DictationRecognizer_remove_DictationError_mA5CF0BEDD8CBC96098B623B48E70C5BD913C00B3(L_29, L_31, /*hidden argument*/NULL);
 			// dictationRecognizer.Dispose();
-			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_31 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-			NullCheck(L_31);
-			DictationRecognizer_Dispose_m8D8EB78BD3CD6B18CF2240AD8506CE943F1692E7(L_31, /*hidden argument*/NULL);
+			DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_32 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+			NullCheck(L_32);
+			DictationRecognizer_Dispose_m8D8EB78BD3CD6B18CF2240AD8506CE943F1692E7(L_32, /*hidden argument*/NULL);
 		}
 
-IL_00f3:
+IL_012c:
 		{
 			// base.Disable();
-			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_32 = V_1;
-			NullCheck(L_32);
-			WindowsDictationInputProvider_U3CU3En__0_mB2DB7C083D83EE3598F4E67729F442A2188ABAAC(L_32, /*hidden argument*/NULL);
-			goto IL_0112;
+			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_33 = __this->get_U3CU3E4__this_2();
+			NullCheck(L_33);
+			WindowsDictationInputProvider_U3CU3En__0_mB2DB7C083D83EE3598F4E67729F442A2188ABAAC(L_33, /*hidden argument*/NULL);
+			goto IL_0154;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_00fb;
+			goto CATCH_013a;
 		throw e;
 	}
 
-CATCH_00fb:
+CATCH_013a:
 	{ // begin catch(System.Exception)
-		V_3 = ((Exception_t *)__exception_local);
+		V_5 = ((Exception_t *)__exception_local);
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_33 = __this->get_address_of_U3CU3Et__builder_1();
-		Exception_t * L_34 = V_3;
-		AsyncVoidMethodBuilder_SetException_mA7D834CA1ECA91D65074D7608AADA2E2A9533136((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_33, L_34, /*hidden argument*/NULL);
-		goto IL_0125;
+		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_34 = __this->get_address_of_U3CU3Et__builder_1();
+		Exception_t * L_35 = V_5;
+		AsyncVoidMethodBuilder_SetException_mA7D834CA1ECA91D65074D7608AADA2E2A9533136((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_34, L_35, /*hidden argument*/NULL);
+		goto IL_0168;
 	} // end catch (depth: 1)
 
-IL_0112:
+IL_0154:
 	{
 		// }
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_35 = __this->get_address_of_U3CU3Et__builder_1();
-		AsyncVoidMethodBuilder_SetResult_mFF6028CDDC809252656354DC1714B4EB5E40A625((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_35, /*hidden argument*/NULL);
+		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_36 = __this->get_address_of_U3CU3Et__builder_1();
+		AsyncVoidMethodBuilder_SetResult_mFF6028CDDC809252656354DC1714B4EB5E40A625((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_36, /*hidden argument*/NULL);
 	}
 
-IL_0125:
+IL_0168:
 	{
 		return;
 	}
-}
-IL2CPP_EXTERN_C  void U3CDisableU3Ed__31_MoveNext_m8B1B323E81AFF3BDCD5476B6FB6459667BF8D25A_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * _thisAdjusted = reinterpret_cast<U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED *>(__this + _offset);
-	U3CDisableU3Ed__31_MoveNext_m8B1B323E81AFF3BDCD5476B6FB6459667BF8D25A(_thisAdjusted, method);
 }
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<Disable>d__31::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDisableU3Ed__31_SetStateMachine_m5B83506C4792AC2BEC6FDDA3135BC3CC5C4B59DD (U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
 	{
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_0 = __this->get_address_of_U3CU3Et__builder_1();
-		RuntimeObject* L_1 = ___stateMachine0;
-		AsyncVoidMethodBuilder_SetStateMachine_mF3AEE42ED8474F11A5521D94271E884CF99E65B3((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_0, L_1, /*hidden argument*/NULL);
 		return;
 	}
-}
-IL2CPP_EXTERN_C  void U3CDisableU3Ed__31_SetStateMachine_m5B83506C4792AC2BEC6FDDA3135BC3CC5C4B59DD_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED * _thisAdjusted = reinterpret_cast<U3CDisableU3Ed__31_tC3A3435F88B70CD5D791E07DC6FDF9761B9EB2ED *>(__this + _offset);
-	U3CDisableU3Ed__31_SetStateMachine_m5B83506C4792AC2BEC6FDDA3135BC3CC5C4B59DD(_thisAdjusted, ___stateMachine0, method);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -6128,6 +6338,14 @@ IL2CPP_EXTERN_C  void U3CDisableU3Ed__31_SetStateMachine_m5B83506C4792AC2BEC6FDD
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingU3Ed__7__ctor_mB13178AB9D56264755C298D4732A900B08F6DD56 (U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * __this, const RuntimeMethod* method)
+{
+	{
+		Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::MoveNext()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingU3Ed__7_MoveNext_m3DB6F999A7553D72D369E4808FAA821A2D0B48E1 (U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * __this, const RuntimeMethod* method)
 {
@@ -6138,9 +6356,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingU3Ed__7_MoveNext_m3DB6F
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
-	WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * V_1 = NULL;
-	TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F  V_2;
-	memset((&V_2), 0, sizeof(V_2));
+	TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * V_2 = NULL;
 	Exception_t * V_3 = NULL;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
@@ -6152,123 +6370,117 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingU3Ed__7_MoveNext_m3DB6F
 	{
 		int32_t L_0 = __this->get_U3CU3E1__state_0();
 		V_0 = L_0;
-		WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_1 = __this->get_U3CU3E4__this_2();
-		V_1 = L_1;
 	}
 
-IL_000e:
+IL_0007:
 	try
 	{ // begin try (depth: 1)
 		{
-			int32_t L_2 = V_0;
-			if (!L_2)
+			int32_t L_1 = V_0;
+			if (!L_1)
 			{
-				goto IL_0064;
+				goto IL_000c;
 			}
 		}
 
-IL_0011:
+IL_000a:
+		{
+			goto IL_000e;
+		}
+
+IL_000c:
+		{
+			goto IL_006b;
+		}
+
+IL_000e:
 		{
 			// await StartRecordingAsync(listener, initialSilenceTimeout, autoSilenceTimeout, recordingTime, micDeviceName);
-			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_3 = V_1;
-			GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_4 = __this->get_listener_3();
-			float L_5 = __this->get_initialSilenceTimeout_4();
-			float L_6 = __this->get_autoSilenceTimeout_5();
-			int32_t L_7 = __this->get_recordingTime_6();
-			String_t* L_8 = __this->get_micDeviceName_7();
-			NullCheck(L_3);
-			Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_9 = WindowsDictationInputProvider_StartRecordingAsync_m589DD5872344989C877F28863898B6B9BE503CD6(L_3, L_4, L_5, L_6, L_7, L_8, /*hidden argument*/NULL);
-			NullCheck(L_9);
-			TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F  L_10 = Task_GetAwaiter_m73027D5E4C16E961C658B83526BED8E32FD2AC6C(L_9, /*hidden argument*/NULL);
-			V_2 = L_10;
-			bool L_11 = TaskAwaiter_get_IsCompleted_m5A2B6FEA0ED3B01B5E88DBF2D8BC4A45652ABD87((TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F *)(&V_2), /*hidden argument*/NULL);
-			if (L_11)
+			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_2 = __this->get_U3CU3E4__this_7();
+			GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_3 = __this->get_listener_2();
+			float L_4 = __this->get_initialSilenceTimeout_3();
+			float L_5 = __this->get_autoSilenceTimeout_4();
+			int32_t L_6 = __this->get_recordingTime_5();
+			String_t* L_7 = __this->get_micDeviceName_6();
+			NullCheck(L_2);
+			Task_t1F48C203E163126EBC69ACCA679D1A462DEE9EB2 * L_8 = WindowsDictationInputProvider_StartRecordingAsync_m589DD5872344989C877F28863898B6B9BE503CD6(L_2, L_3, L_4, L_5, L_6, L_7, /*hidden argument*/NULL);
+			NullCheck(L_8);
+			TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F  L_9 = Task_GetAwaiter_m73027D5E4C16E961C658B83526BED8E32FD2AC6C(L_8, /*hidden argument*/NULL);
+			V_1 = L_9;
+			bool L_10 = TaskAwaiter_get_IsCompleted_m5A2B6FEA0ED3B01B5E88DBF2D8BC4A45652ABD87((TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F *)(&V_1), /*hidden argument*/NULL);
+			if (L_10)
 			{
-				goto IL_0080;
+				goto IL_0087;
 			}
 		}
 
-IL_0044:
+IL_0047:
 		{
-			int32_t L_12 = 0;
-			V_0 = L_12;
-			__this->set_U3CU3E1__state_0(L_12);
-			TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F  L_13 = V_2;
-			__this->set_U3CU3Eu__1_8(L_13);
-			AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_14 = __this->get_address_of_U3CU3Et__builder_1();
-			AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_m1AA4CE584D31E921CE358DFA3A280C680DB391F3((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_14, (TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F *)(&V_2), (U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA *)__this, /*hidden argument*/AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_m1AA4CE584D31E921CE358DFA3A280C680DB391F3_RuntimeMethod_var);
-			goto IL_00b3;
+			int32_t L_11 = 0;
+			V_0 = L_11;
+			__this->set_U3CU3E1__state_0(L_11);
+			TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F  L_12 = V_1;
+			__this->set_U3CU3Eu__1_8(L_12);
+			V_2 = __this;
+			AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_13 = __this->get_address_of_U3CU3Et__builder_1();
+			AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_m1AA4CE584D31E921CE358DFA3A280C680DB391F3((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_13, (TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F *)(&V_1), (U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA **)(&V_2), /*hidden argument*/AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F_TisU3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA_m1AA4CE584D31E921CE358DFA3A280C680DB391F3_RuntimeMethod_var);
+			goto IL_00bd;
 		}
 
-IL_0064:
+IL_006b:
 		{
-			TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F  L_15 = __this->get_U3CU3Eu__1_8();
-			V_2 = L_15;
-			TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F * L_16 = __this->get_address_of_U3CU3Eu__1_8();
-			il2cpp_codegen_initobj(L_16, sizeof(TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F ));
-			int32_t L_17 = (-1);
-			V_0 = L_17;
-			__this->set_U3CU3E1__state_0(L_17);
+			TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F  L_14 = __this->get_U3CU3Eu__1_8();
+			V_1 = L_14;
+			TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F * L_15 = __this->get_address_of_U3CU3Eu__1_8();
+			il2cpp_codegen_initobj(L_15, sizeof(TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F ));
+			int32_t L_16 = (-1);
+			V_0 = L_16;
+			__this->set_U3CU3E1__state_0(L_16);
 		}
 
-IL_0080:
+IL_0087:
 		{
-			TaskAwaiter_GetResult_m89868C01592AC2B06CE1FD42D9B9C187C6FD928A((TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F *)(&V_2), /*hidden argument*/NULL);
-			goto IL_00a0;
+			TaskAwaiter_GetResult_m89868C01592AC2B06CE1FD42D9B9C187C6FD928A((TaskAwaiter_t0CDE8DBB564F0A0EA55FA6B3D43EEF96BC26252F *)(&V_1), /*hidden argument*/NULL);
+			goto IL_00a9;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_0089;
+			goto CATCH_0091;
 		throw e;
 	}
 
-CATCH_0089:
+CATCH_0091:
 	{ // begin catch(System.Exception)
 		V_3 = ((Exception_t *)__exception_local);
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_18 = __this->get_address_of_U3CU3Et__builder_1();
-		Exception_t * L_19 = V_3;
-		AsyncVoidMethodBuilder_SetException_mA7D834CA1ECA91D65074D7608AADA2E2A9533136((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_18, L_19, /*hidden argument*/NULL);
-		goto IL_00b3;
+		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_17 = __this->get_address_of_U3CU3Et__builder_1();
+		Exception_t * L_18 = V_3;
+		AsyncVoidMethodBuilder_SetException_mA7D834CA1ECA91D65074D7608AADA2E2A9533136((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_17, L_18, /*hidden argument*/NULL);
+		goto IL_00bd;
 	} // end catch (depth: 1)
 
-IL_00a0:
+IL_00a9:
 	{
 		// }
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_20 = __this->get_address_of_U3CU3Et__builder_1();
-		AsyncVoidMethodBuilder_SetResult_mFF6028CDDC809252656354DC1714B4EB5E40A625((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_20, /*hidden argument*/NULL);
+		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_19 = __this->get_address_of_U3CU3Et__builder_1();
+		AsyncVoidMethodBuilder_SetResult_mFF6028CDDC809252656354DC1714B4EB5E40A625((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_19, /*hidden argument*/NULL);
 	}
 
-IL_00b3:
+IL_00bd:
 	{
 		return;
 	}
-}
-IL2CPP_EXTERN_C  void U3CStartRecordingU3Ed__7_MoveNext_m3DB6F999A7553D72D369E4808FAA821A2D0B48E1_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * _thisAdjusted = reinterpret_cast<U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA *>(__this + _offset);
-	U3CStartRecordingU3Ed__7_MoveNext_m3DB6F999A7553D72D369E4808FAA821A2D0B48E1(_thisAdjusted, method);
 }
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecording>d__7::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingU3Ed__7_SetStateMachine_m9DEF1AA5B5EB9C698522AA43557D9F3BE80CFEE8 (U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
 	{
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_0 = __this->get_address_of_U3CU3Et__builder_1();
-		RuntimeObject* L_1 = ___stateMachine0;
-		AsyncVoidMethodBuilder_SetStateMachine_mF3AEE42ED8474F11A5521D94271E884CF99E65B3((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_0, L_1, /*hidden argument*/NULL);
 		return;
 	}
-}
-IL2CPP_EXTERN_C  void U3CStartRecordingU3Ed__7_SetStateMachine_m9DEF1AA5B5EB9C698522AA43557D9F3BE80CFEE8_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA * _thisAdjusted = reinterpret_cast<U3CStartRecordingU3Ed__7_tECB1643DECCB853962F8F0BF171C0279C7F6BCBA *>(__this + _offset);
-	U3CStartRecordingU3Ed__7_SetStateMachine_m9DEF1AA5B5EB9C698522AA43557D9F3BE80CFEE8(_thisAdjusted, ___stateMachine0, method);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -6278,6 +6490,14 @@ IL2CPP_EXTERN_C  void U3CStartRecordingU3Ed__7_SetStateMachine_m9DEF1AA5B5EB9C69
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingAsyncU3Ed__10__ctor_m298F3E71AA0ABD57353CA19292B11917F17D7EF9 (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * __this, const RuntimeMethod* method)
+{
+	{
+		Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::MoveNext()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingAsyncU3Ed__10_MoveNext_m7C424B86A51413349970485C720CF84FC4EE8637 (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * __this, const RuntimeMethod* method)
 {
@@ -6288,12 +6508,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingAsyncU3Ed__10_MoveNext_
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
-	WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * V_1 = NULL;
-	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_2;
-	memset((&V_2), 0, sizeof(V_2));
-	int32_t V_3 = 0;
-	SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * V_4 = NULL;
-	Exception_t * V_5 = NULL;
+	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	bool V_2 = false;
+	bool V_3 = false;
+	bool V_4 = false;
+	bool V_5 = false;
+	SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * V_6 = NULL;
+	U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * V_7 = NULL;
+	SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * V_8 = NULL;
+	bool V_9 = false;
+	Exception_t * V_10 = NULL;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -6301,461 +6526,520 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingAsyncU3Ed__10_MoveNext_
 	void* __leave_targets_storage = alloca(sizeof(int32_t) * 7);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
+	int32_t G_B17_0 = 0;
+	int32_t G_B22_0 = 0;
 	{
 		int32_t L_0 = __this->get_U3CU3E1__state_0();
 		V_0 = L_0;
-		WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_1 = __this->get_U3CU3E4__this_2();
-		V_1 = L_1;
 	}
 
-IL_000e:
+IL_0007:
 	try
 	{ // begin try (depth: 1)
 		{
-			int32_t L_2 = V_0;
-			if ((!(((uint32_t)L_2) > ((uint32_t)1))))
+			int32_t L_1 = V_0;
+			if ((!(((uint32_t)L_1) > ((uint32_t)1))))
 			{
-				goto IL_0025;
+				goto IL_000d;
 			}
 		}
 
-IL_0012:
+IL_000b:
+		{
+			goto IL_000f;
+		}
+
+IL_000d:
+		{
+			goto IL_0023;
+		}
+
+IL_000f:
 		{
 			// using (StartRecordingAsyncPerfMarker.Auto())
 			IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-			ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  L_3 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_StartRecordingAsyncPerfMarker_18();
-			V_2 = L_3;
-			AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  L_4 = ProfilerMarker_Auto_m27C8BA4E46F26F3005760C48C4B92EBC284A5D02_inline((ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86 *)(&V_2), /*hidden argument*/NULL);
-			__this->set_U3CU3E7__wrap1_8(L_4);
+			ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  L_2 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_StartRecordingAsyncPerfMarker_18();
+			V_1 = L_2;
+			AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  L_3 = ProfilerMarker_Auto_m27C8BA4E46F26F3005760C48C4B92EBC284A5D02_inline((ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86 *)(&V_1), /*hidden argument*/NULL);
+			__this->set_U3CU3Es__1_8(L_3);
 		}
 
-IL_0025:
+IL_0023:
 		{
 		}
 
-IL_0026:
+IL_0024:
 		try
 		{ // begin try (depth: 2)
 			{
-				int32_t L_5 = V_0;
-				if (!L_5)
+				int32_t L_4 = V_0;
+				if (!L_4)
 				{
-					goto IL_0103;
+					goto IL_002f;
 				}
 			}
 
-IL_002c:
+IL_0027:
 			{
-				int32_t L_6 = V_0;
-				if ((((int32_t)L_6) == ((int32_t)1)))
+				goto IL_0029;
+			}
+
+IL_0029:
+			{
+				int32_t L_5 = V_0;
+				if ((((int32_t)L_5) == ((int32_t)1)))
 				{
-					goto IL_01aa;
+					goto IL_0034;
 				}
 			}
 
-IL_0033:
+IL_002d:
+			{
+				goto IL_0039;
+			}
+
+IL_002f:
+			{
+				goto IL_016b;
+			}
+
+IL_0034:
+			{
+				goto IL_0242;
+			}
+
+IL_0039:
 			{
 				// if (IsListening || isTransitioning || Service == null || !Application.isPlaying)
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_7 = V_1;
-				NullCheck(L_7);
-				bool L_8 = WindowsDictationInputProvider_get_IsListening_mD0BB7681BF29793C36321C901A43882CD4F51F55_inline(L_7, /*hidden argument*/NULL);
-				if (L_8)
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_6 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_6);
+				bool L_7 = WindowsDictationInputProvider_get_IsListening_mD0BB7681BF29793C36321C901A43882CD4F51F55_inline(L_6, /*hidden argument*/NULL);
+				if (L_7)
 				{
-					goto IL_0052;
+					goto IL_006b;
 				}
 			}
 
-IL_003b:
+IL_0047:
 			{
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_9 = V_1;
-				NullCheck(L_9);
-				bool L_10 = L_9->get_isTransitioning_22();
-				if (L_10)
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_8 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_8);
+				bool L_9 = L_8->get_isTransitioning_22();
+				if (L_9)
 				{
-					goto IL_0052;
+					goto IL_006b;
 				}
 			}
 
-IL_0043:
+IL_0054:
 			{
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_11 = V_1;
-				NullCheck(L_11);
-				RuntimeObject* L_12 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(L_11, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
-				if (!L_12)
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_10 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_10);
+				RuntimeObject* L_11 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(L_10, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
+				if (!L_11)
 				{
-					goto IL_0052;
+					goto IL_006b;
 				}
 			}
 
-IL_004b:
+IL_0061:
 			{
-				bool L_13 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
-				if (L_13)
+				bool L_12 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
+				G_B17_0 = ((((int32_t)L_12) == ((int32_t)0))? 1 : 0);
+				goto IL_006c;
+			}
+
+IL_006b:
+			{
+				G_B17_0 = 1;
+			}
+
+IL_006c:
+			{
+				V_2 = (bool)G_B17_0;
+				bool L_13 = V_2;
+				if (!L_13)
 				{
-					goto IL_0061;
+					goto IL_0081;
 				}
 			}
 
-IL_0052:
+IL_0070:
 			{
 				// Debug.LogWarning("Unable to start recording");
 				IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
 				Debug_LogWarning_m37338644DC81F640CCDFEAE35A223F0E965F0568(_stringLiteralEF4630D5403BE67FC48ED06A577179A2198B317E, /*hidden argument*/NULL);
 				// return;
-				IL2CPP_LEAVE(0x263, FINALLY_0226);
+				IL2CPP_LEAVE(0x340, FINALLY_0301);
 			}
 
-IL_0061:
+IL_0081:
 			{
 				// if (dictationRecognizer == null && InputSystemProfile.SpeechCommandsProfile.SpeechRecognizerStartBehavior == AutoStartBehavior.ManualStart)
 				IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
 				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_14 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
 				if (L_14)
 				{
-					goto IL_0081;
+					goto IL_00a2;
 				}
 			}
 
-IL_0068:
+IL_0088:
 			{
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_15 = V_1;
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_15 = __this->get_U3CU3E4__this_7();
 				NullCheck(L_15);
 				MixedRealityInputSystemProfile_tE6382BBDB73ACDFF6F3D0C3B4AD9B1B7F2D5BAC2 * L_16 = BaseInputDeviceManager_get_InputSystemProfile_mE2FE4CB8744076CD1A05987279ECA9FED4623626(L_15, /*hidden argument*/NULL);
 				NullCheck(L_16);
-				MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_17 = MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E_inline(L_16, /*hidden argument*/NULL);
+				MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_17 = MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E(L_16, /*hidden argument*/NULL);
 				NullCheck(L_17);
 				int32_t L_18 = MixedRealitySpeechCommandsProfile_get_SpeechRecognizerStartBehavior_m8DB42B73900D75367BCCADE158634F41C237363A_inline(L_17, /*hidden argument*/NULL);
-				if ((!(((uint32_t)L_18) == ((uint32_t)1))))
+				G_B22_0 = ((((int32_t)L_18) == ((int32_t)1))? 1 : 0);
+				goto IL_00a3;
+			}
+
+IL_00a2:
+			{
+				G_B22_0 = 0;
+			}
+
+IL_00a3:
+			{
+				V_3 = (bool)G_B22_0;
+				bool L_19 = V_3;
+				if (!L_19)
 				{
-					goto IL_0081;
+					goto IL_00b5;
 				}
 			}
 
-IL_007b:
+IL_00a7:
 			{
 				// InitializeDictationRecognizer();
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_19 = V_1;
-				NullCheck(L_19);
-				WindowsDictationInputProvider_InitializeDictationRecognizer_mE63CBFC1837B6160E92C9FC9522EC522A7A98956(L_19, /*hidden argument*/NULL);
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_20 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_20);
+				WindowsDictationInputProvider_InitializeDictationRecognizer_mE63CBFC1837B6160E92C9FC9522EC522A7A98956(L_20, /*hidden argument*/NULL);
 			}
 
-IL_0081:
+IL_00b5:
 			{
 				// hasFailed = false;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_20 = V_1;
-				NullCheck(L_20);
-				L_20->set_hasFailed_20((bool)0);
-				// IsListening = true;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_21 = V_1;
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_21 = __this->get_U3CU3E4__this_7();
 				NullCheck(L_21);
-				WindowsDictationInputProvider_set_IsListening_m5088D38E5362A1A5F1248E662454FE52455537A5_inline(L_21, (bool)1, /*hidden argument*/NULL);
-				// isTransitioning = true;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_22 = V_1;
+				L_21->set_hasFailed_20((bool)0);
+				// IsListening = true;
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_22 = __this->get_U3CU3E4__this_7();
 				NullCheck(L_22);
-				L_22->set_isTransitioning_22((bool)1);
+				WindowsDictationInputProvider_set_IsListening_m5088D38E5362A1A5F1248E662454FE52455537A5_inline(L_22, (bool)1, /*hidden argument*/NULL);
+				// isTransitioning = true;
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_23 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_23);
+				L_23->set_isTransitioning_22((bool)1);
 				// if (listener != null)
-				GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_23 = __this->get_listener_3();
+				GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_24 = __this->get_listener_2();
 				IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
-				bool L_24 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_23, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
-				if (!L_24)
+				bool L_25 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_24, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
+				V_4 = L_25;
+				bool L_26 = V_4;
+				if (!L_26)
 				{
-					goto IL_00bc;
+					goto IL_0111;
 				}
 			}
 
-IL_00a4:
+IL_00ec:
 			{
 				// hasListener = true;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_25 = V_1;
-				NullCheck(L_25);
-				L_25->set_hasListener_21((bool)1);
-				// Service.PushModalInputHandler(listener);
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_26 = V_1;
-				NullCheck(L_26);
-				RuntimeObject* L_27 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(L_26, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
-				GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_28 = __this->get_listener_3();
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_27 = __this->get_U3CU3E4__this_7();
 				NullCheck(L_27);
-				InterfaceActionInvoker1< GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * >::Invoke(15 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::PushModalInputHandler(UnityEngine.GameObject) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, L_27, L_28);
+				L_27->set_hasListener_21((bool)1);
+				// Service.PushModalInputHandler(listener);
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_28 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_28);
+				RuntimeObject* L_29 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(L_28, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
+				GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_30 = __this->get_listener_2();
+				NullCheck(L_29);
+				InterfaceActionInvoker1< GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * >::Invoke(15 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::PushModalInputHandler(UnityEngine.GameObject) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, L_29, L_30);
 			}
 
-IL_00bc:
+IL_0111:
 			{
 				// if (PhraseRecognitionSystem.Status == SpeechSystemStatus.Running)
-				int32_t L_29 = PhraseRecognitionSystem_get_Status_m8AEDCE0E644824367B5672B39BAA2838E08277AC(/*hidden argument*/NULL);
-				if ((!(((uint32_t)L_29) == ((uint32_t)1))))
+				int32_t L_31 = PhraseRecognitionSystem_get_Status_m8AEDCE0E644824367B5672B39BAA2838E08277AC(/*hidden argument*/NULL);
+				V_5 = (bool)((((int32_t)L_31) == ((int32_t)1))? 1 : 0);
+				bool L_32 = V_5;
+				if (!L_32)
 				{
-					goto IL_00c9;
+					goto IL_0127;
 				}
 			}
 
-IL_00c4:
+IL_011f:
 			{
 				// PhraseRecognitionSystem.Shutdown();
 				PhraseRecognitionSystem_Shutdown_m902D4966E62C9D32367FE101DE80B09D93B5B2BC(/*hidden argument*/NULL);
 			}
 
-IL_00c9:
+IL_0127:
 			{
 				// await waitUntilPhraseRecognitionSystemHasStopped;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_30 = V_1;
-				NullCheck(L_30);
-				WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * L_31 = L_30->get_waitUntilPhraseRecognitionSystemHasStopped_31();
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_32 = AwaiterExtensions_GetAwaiter_m36C76CD6A2384AD246743C58D6D6CB31CD2F1E4F(L_31, /*hidden argument*/NULL);
-				V_4 = L_32;
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_33 = V_4;
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_33 = __this->get_U3CU3E4__this_7();
 				NullCheck(L_33);
-				bool L_34 = SimpleCoroutineAwaiter_get_IsCompleted_m564E77AF2AE091959C96845221E652899192A215_inline(L_33, /*hidden argument*/NULL);
-				if (L_34)
+				WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * L_34 = L_33->get_waitUntilPhraseRecognitionSystemHasStopped_31();
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_35 = AwaiterExtensions_GetAwaiter_m36C76CD6A2384AD246743C58D6D6CB31CD2F1E4F(L_34, /*hidden argument*/NULL);
+				V_6 = L_35;
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_36 = V_6;
+				NullCheck(L_36);
+				bool L_37 = SimpleCoroutineAwaiter_get_IsCompleted_m564E77AF2AE091959C96845221E652899192A215_inline(L_36, /*hidden argument*/NULL);
+				if (L_37)
 				{
-					goto IL_0120;
+					goto IL_0188;
 				}
 			}
 
-IL_00df:
+IL_0142:
 			{
-				int32_t L_35 = 0;
-				V_0 = L_35;
-				__this->set_U3CU3E1__state_0(L_35);
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_36 = V_4;
-				__this->set_U3CU3Eu__1_9(L_36);
-				AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_37 = __this->get_address_of_U3CU3Et__builder_1();
-				AsyncTaskMethodBuilder_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_mE6A2E67A8B527A9D72EA7E583012FC9C95EEFB1E((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_37, (SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE **)(&V_4), (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_mE6A2E67A8B527A9D72EA7E583012FC9C95EEFB1E_RuntimeMethod_var);
-				IL2CPP_LEAVE(0x276, FINALLY_0226);
+				int32_t L_38 = 0;
+				V_0 = L_38;
+				__this->set_U3CU3E1__state_0(L_38);
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_39 = V_6;
+				__this->set_U3CU3Eu__1_10(L_39);
+				V_7 = __this;
+				AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_40 = __this->get_address_of_U3CU3Et__builder_1();
+				AsyncTaskMethodBuilder_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_mE6A2E67A8B527A9D72EA7E583012FC9C95EEFB1E((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_40, (SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE **)(&V_6), (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 **)(&V_7), /*hidden argument*/AsyncTaskMethodBuilder_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_mE6A2E67A8B527A9D72EA7E583012FC9C95EEFB1E_RuntimeMethod_var);
+				IL2CPP_LEAVE(0x354, FINALLY_0301);
 			}
 
-IL_0103:
+IL_016b:
 			{
-				RuntimeObject * L_38 = __this->get_U3CU3Eu__1_9();
-				V_4 = ((SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE *)CastclassClass((RuntimeObject*)L_38, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_il2cpp_TypeInfo_var));
-				__this->set_U3CU3Eu__1_9(NULL);
-				int32_t L_39 = (-1);
-				V_0 = L_39;
-				__this->set_U3CU3E1__state_0(L_39);
+				RuntimeObject * L_41 = __this->get_U3CU3Eu__1_10();
+				V_6 = ((SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE *)CastclassClass((RuntimeObject*)L_41, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_il2cpp_TypeInfo_var));
+				__this->set_U3CU3Eu__1_10(NULL);
+				int32_t L_42 = (-1);
+				V_0 = L_42;
+				__this->set_U3CU3E1__state_0(L_42);
 			}
 
-IL_0120:
+IL_0188:
 			{
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_40 = V_4;
-				NullCheck(L_40);
-				SimpleCoroutineAwaiter_GetResult_mA2E1941136B95442358BA03075F6AF1B0F2C159B(L_40, /*hidden argument*/NULL);
-				// deviceName = micDeviceName;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_41 = V_1;
-				String_t* L_42 = __this->get_micDeviceName_4();
-				NullCheck(L_41);
-				L_41->set_deviceName_25(L_42);
-				// Microphone.GetDeviceCaps(deviceName, out minSamplingRate, out samplingRate);
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_43 = V_1;
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_43 = V_6;
 				NullCheck(L_43);
-				String_t* L_44 = L_43->get_deviceName_25();
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_45 = V_1;
+				SimpleCoroutineAwaiter_GetResult_mA2E1941136B95442358BA03075F6AF1B0F2C159B(L_43, /*hidden argument*/NULL);
+				// Debug.Assert(PhraseRecognitionSystem.Status == SpeechSystemStatus.Stopped);
+				int32_t L_44 = PhraseRecognitionSystem_get_Status_m8AEDCE0E644824367B5672B39BAA2838E08277AC(/*hidden argument*/NULL);
+				IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
+				Debug_Assert_m0283DD85C5E5F5029793C17A335DB16BC307E62E((bool)((((int32_t)L_44) == ((int32_t)0))? 1 : 0), /*hidden argument*/NULL);
+				// deviceName = micDeviceName;
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_45 = __this->get_U3CU3E4__this_7();
+				String_t* L_46 = __this->get_micDeviceName_6();
 				NullCheck(L_45);
-				int32_t* L_46 = L_45->get_address_of_samplingRate_26();
-				Microphone_GetDeviceCaps_mF079FFC698AE94F132D4E0AD072498F6937BAF6B(L_44, (int32_t*)(&V_3), (int32_t*)L_46, /*hidden argument*/NULL);
+				L_45->set_deviceName_25(L_46);
+				// Microphone.GetDeviceCaps(deviceName, out minSamplingRate, out samplingRate);
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_47 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_47);
+				String_t* L_48 = L_47->get_deviceName_25();
+				int32_t* L_49 = __this->get_address_of_U3CminSamplingRateU3E5__2_9();
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_50 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_50);
+				int32_t* L_51 = L_50->get_address_of_samplingRate_26();
+				Microphone_GetDeviceCaps_mF079FFC698AE94F132D4E0AD072498F6937BAF6B(L_48, (int32_t*)L_49, (int32_t*)L_51, /*hidden argument*/NULL);
 				// dictationRecognizer.InitialSilenceTimeoutSeconds = initialSilenceTimeout;
 				IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_47 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-				float L_48 = __this->get_initialSilenceTimeout_5();
-				NullCheck(L_47);
-				DictationRecognizer_set_InitialSilenceTimeoutSeconds_mD355A47F132B4E26C60C1E200C9C0B99FDCABC06(L_47, L_48, /*hidden argument*/NULL);
-				// dictationRecognizer.AutoSilenceTimeoutSeconds = autoSilenceTimeout;
-				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_49 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-				float L_50 = __this->get_autoSilenceTimeout_6();
-				NullCheck(L_49);
-				DictationRecognizer_set_AutoSilenceTimeoutSeconds_m96E3450BE28A238970C5548AD8896BE3F02DB8F9(L_49, L_50, /*hidden argument*/NULL);
-				// dictationRecognizer.Start();
-				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_51 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-				NullCheck(L_51);
-				DictationRecognizer_Start_mA9B2AB4490205206F640DFE552B0944396D30536(L_51, /*hidden argument*/NULL);
-				// await waitUntilDictationRecognizerHasStarted;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_52 = V_1;
+				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_52 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+				float L_53 = __this->get_initialSilenceTimeout_3();
 				NullCheck(L_52);
-				WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * L_53 = L_52->get_waitUntilDictationRecognizerHasStarted_32();
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_54 = AwaiterExtensions_GetAwaiter_m36C76CD6A2384AD246743C58D6D6CB31CD2F1E4F(L_53, /*hidden argument*/NULL);
-				V_4 = L_54;
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_55 = V_4;
-				NullCheck(L_55);
-				bool L_56 = SimpleCoroutineAwaiter_get_IsCompleted_m564E77AF2AE091959C96845221E652899192A215_inline(L_55, /*hidden argument*/NULL);
-				if (L_56)
+				DictationRecognizer_set_InitialSilenceTimeoutSeconds_mD355A47F132B4E26C60C1E200C9C0B99FDCABC06(L_52, L_53, /*hidden argument*/NULL);
+				// dictationRecognizer.AutoSilenceTimeoutSeconds = autoSilenceTimeout;
+				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_54 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+				float L_55 = __this->get_autoSilenceTimeout_4();
+				NullCheck(L_54);
+				DictationRecognizer_set_AutoSilenceTimeoutSeconds_m96E3450BE28A238970C5548AD8896BE3F02DB8F9(L_54, L_55, /*hidden argument*/NULL);
+				// dictationRecognizer.Start();
+				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_56 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+				NullCheck(L_56);
+				DictationRecognizer_Start_mA9B2AB4490205206F640DFE552B0944396D30536(L_56, /*hidden argument*/NULL);
+				// await waitUntilDictationRecognizerHasStarted;
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_57 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_57);
+				WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * L_58 = L_57->get_waitUntilDictationRecognizerHasStarted_32();
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_59 = AwaiterExtensions_GetAwaiter_m36C76CD6A2384AD246743C58D6D6CB31CD2F1E4F(L_58, /*hidden argument*/NULL);
+				V_8 = L_59;
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_60 = V_8;
+				NullCheck(L_60);
+				bool L_61 = SimpleCoroutineAwaiter_get_IsCompleted_m564E77AF2AE091959C96845221E652899192A215_inline(L_60, /*hidden argument*/NULL);
+				if (L_61)
 				{
-					goto IL_01c7;
+					goto IL_025f;
 				}
 			}
 
-IL_0186:
+IL_0219:
 			{
-				int32_t L_57 = 1;
-				V_0 = L_57;
-				__this->set_U3CU3E1__state_0(L_57);
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_58 = V_4;
-				__this->set_U3CU3Eu__1_9(L_58);
-				AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_59 = __this->get_address_of_U3CU3Et__builder_1();
-				AsyncTaskMethodBuilder_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_mE6A2E67A8B527A9D72EA7E583012FC9C95EEFB1E((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_59, (SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE **)(&V_4), (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 *)__this, /*hidden argument*/AsyncTaskMethodBuilder_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_mE6A2E67A8B527A9D72EA7E583012FC9C95EEFB1E_RuntimeMethod_var);
-				IL2CPP_LEAVE(0x276, FINALLY_0226);
+				int32_t L_62 = 1;
+				V_0 = L_62;
+				__this->set_U3CU3E1__state_0(L_62);
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_63 = V_8;
+				__this->set_U3CU3Eu__1_10(L_63);
+				V_7 = __this;
+				AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_64 = __this->get_address_of_U3CU3Et__builder_1();
+				AsyncTaskMethodBuilder_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_mE6A2E67A8B527A9D72EA7E583012FC9C95EEFB1E((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_64, (SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE **)(&V_8), (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 **)(&V_7), /*hidden argument*/AsyncTaskMethodBuilder_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809_mE6A2E67A8B527A9D72EA7E583012FC9C95EEFB1E_RuntimeMethod_var);
+				IL2CPP_LEAVE(0x354, FINALLY_0301);
 			}
 
-IL_01aa:
+IL_0242:
 			{
-				RuntimeObject * L_60 = __this->get_U3CU3Eu__1_9();
-				V_4 = ((SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE *)CastclassClass((RuntimeObject*)L_60, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_il2cpp_TypeInfo_var));
-				__this->set_U3CU3Eu__1_9(NULL);
-				int32_t L_61 = (-1);
-				V_0 = L_61;
-				__this->set_U3CU3E1__state_0(L_61);
+				RuntimeObject * L_65 = __this->get_U3CU3Eu__1_10();
+				V_8 = ((SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE *)CastclassClass((RuntimeObject*)L_65, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_il2cpp_TypeInfo_var));
+				__this->set_U3CU3Eu__1_10(NULL);
+				int32_t L_66 = (-1);
+				V_0 = L_66;
+				__this->set_U3CU3E1__state_0(L_66);
 			}
 
-IL_01c7:
+IL_025f:
 			{
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_62 = V_4;
-				NullCheck(L_62);
-				SimpleCoroutineAwaiter_GetResult_mA2E1941136B95442358BA03075F6AF1B0F2C159B(L_62, /*hidden argument*/NULL);
-				// if (dictationRecognizer.Status == SpeechSystemStatus.Failed)
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_67 = V_8;
+				NullCheck(L_67);
+				SimpleCoroutineAwaiter_GetResult_mA2E1941136B95442358BA03075F6AF1B0F2C159B(L_67, /*hidden argument*/NULL);
+				// Debug.Assert(dictationRecognizer.Status == SpeechSystemStatus.Running);
 				IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_63 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-				NullCheck(L_63);
-				int32_t L_64 = DictationRecognizer_get_Status_mA6647775F5A7639B6BA816FD7E8911C72E61B6BF(L_63, /*hidden argument*/NULL);
-				if ((!(((uint32_t)L_64) == ((uint32_t)2))))
+				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_68 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+				NullCheck(L_68);
+				int32_t L_69 = DictationRecognizer_get_Status_mA6647775F5A7639B6BA816FD7E8911C72E61B6BF(L_68, /*hidden argument*/NULL);
+				IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
+				Debug_Assert_m0283DD85C5E5F5029793C17A335DB16BC307E62E((bool)((((int32_t)L_69) == ((int32_t)1))? 1 : 0), /*hidden argument*/NULL);
+				// if (dictationRecognizer.Status == SpeechSystemStatus.Failed)
+				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_70 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+				NullCheck(L_70);
+				int32_t L_71 = DictationRecognizer_get_Status_mA6647775F5A7639B6BA816FD7E8911C72E61B6BF(L_70, /*hidden argument*/NULL);
+				V_9 = (bool)((((int32_t)L_71) == ((int32_t)2))? 1 : 0);
+				bool L_72 = V_9;
+				if (!L_72)
 				{
-					goto IL_01f4;
+					goto IL_02b5;
 				}
 			}
 
-IL_01db:
+IL_028d:
 			{
 				// Service.RaiseDictationError(inputSource, "Dictation recognizer failed to start!");
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_65 = V_1;
-				NullCheck(L_65);
-				RuntimeObject* L_66 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(L_65, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_67 = V_1;
-				NullCheck(L_67);
-				RuntimeObject* L_68 = L_67->get_inputSource_23();
-				NullCheck(L_66);
-				InterfaceActionInvoker3< RuntimeObject*, String_t*, AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * >::Invoke(61 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RaiseDictationError(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource,System.String,UnityEngine.AudioClip) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, L_66, L_68, _stringLiteral8448B71DECE19EE2AD3DEAAC5CE97CA3501F67B6, (AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 *)NULL);
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_73 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_73);
+				RuntimeObject* L_74 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(L_73, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_75 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_75);
+				RuntimeObject* L_76 = L_75->get_inputSource_23();
+				NullCheck(L_74);
+				InterfaceActionInvoker3< RuntimeObject*, String_t*, AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * >::Invoke(61 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RaiseDictationError(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource,System.String,UnityEngine.AudioClip) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, L_74, L_76, _stringLiteral8448B71DECE19EE2AD3DEAAC5CE97CA3501F67B6, (AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 *)NULL);
 				// return;
-				IL2CPP_LEAVE(0x263, FINALLY_0226);
+				IL2CPP_LEAVE(0x340, FINALLY_0301);
 			}
 
-IL_01f4:
+IL_02b5:
 			{
 				// dictationAudioClip = Microphone.Start(deviceName, false, recordingTime, samplingRate);
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_69 = V_1;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_70 = V_1;
-				NullCheck(L_70);
-				String_t* L_71 = L_70->get_deviceName_25();
-				int32_t L_72 = __this->get_recordingTime_7();
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_73 = V_1;
-				NullCheck(L_73);
-				int32_t L_74 = L_73->get_samplingRate_26();
-				AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_75 = Microphone_Start_mF756A7EBA3E62EF0D138A220482B725D16E96047(L_71, (bool)0, L_72, L_74, /*hidden argument*/NULL);
-				NullCheck(L_69);
-				L_69->set_dictationAudioClip_28(L_75);
-				// textSoFar = new StringBuilder();
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_76 = V_1;
-				StringBuilder_t * L_77 = (StringBuilder_t *)il2cpp_codegen_object_new(StringBuilder_t_il2cpp_TypeInfo_var);
-				StringBuilder__ctor_mF928376F82E8C8FF3C11842C562DB8CF28B2735E(L_77, /*hidden argument*/NULL);
-				NullCheck(L_76);
-				L_76->set_textSoFar_24(L_77);
-				// isTransitioning = false;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_78 = V_1;
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_77 = __this->get_U3CU3E4__this_7();
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_78 = __this->get_U3CU3E4__this_7();
 				NullCheck(L_78);
-				L_78->set_isTransitioning_22((bool)0);
-				// }
-				IL2CPP_LEAVE(0x23C, FINALLY_0226);
+				String_t* L_79 = L_78->get_deviceName_25();
+				int32_t L_80 = __this->get_recordingTime_5();
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_81 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_81);
+				int32_t L_82 = L_81->get_samplingRate_26();
+				AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_83 = Microphone_Start_mF756A7EBA3E62EF0D138A220482B725D16E96047(L_79, (bool)0, L_80, L_82, /*hidden argument*/NULL);
+				NullCheck(L_77);
+				L_77->set_dictationAudioClip_28(L_83);
+				// textSoFar = new StringBuilder();
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_84 = __this->get_U3CU3E4__this_7();
+				StringBuilder_t * L_85 = (StringBuilder_t *)il2cpp_codegen_object_new(StringBuilder_t_il2cpp_TypeInfo_var);
+				StringBuilder__ctor_mF928376F82E8C8FF3C11842C562DB8CF28B2735E(L_85, /*hidden argument*/NULL);
+				NullCheck(L_84);
+				L_84->set_textSoFar_24(L_85);
+				// isTransitioning = false;
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_86 = __this->get_U3CU3E4__this_7();
+				NullCheck(L_86);
+				L_86->set_isTransitioning_22((bool)0);
+				IL2CPP_LEAVE(0x318, FINALLY_0301);
 			}
 		} // end try (depth: 2)
 		catch(Il2CppExceptionWrapper& e)
 		{
 			__last_unhandled_exception = (Exception_t *)e.ex;
-			goto FINALLY_0226;
+			goto FINALLY_0301;
 		}
 
-FINALLY_0226:
+FINALLY_0301:
 		{ // begin finally (depth: 2)
 			{
-				int32_t L_79 = V_0;
-				if ((((int32_t)L_79) >= ((int32_t)0)))
+				int32_t L_87 = V_0;
+				if ((((int32_t)L_87) >= ((int32_t)0)))
 				{
-					goto IL_023b;
+					goto IL_0317;
 				}
 			}
 
-IL_022a:
+IL_0305:
 			{
-				AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F * L_80 = __this->get_address_of_U3CU3E7__wrap1_8();
-				AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)L_80, /*hidden argument*/NULL);
+				AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F * L_88 = __this->get_address_of_U3CU3Es__1_8();
+				AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)L_88, /*hidden argument*/NULL);
 			}
 
-IL_023b:
+IL_0317:
 			{
-				IL2CPP_END_FINALLY(550)
+				IL2CPP_END_FINALLY(769)
 			}
 		} // end finally (depth: 2)
-		IL2CPP_CLEANUP(550)
+		IL2CPP_CLEANUP(769)
 		{
 			IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-			IL2CPP_JUMP_TBL(0x263, IL_0263)
-			IL2CPP_JUMP_TBL(0x276, IL_0276)
-			IL2CPP_JUMP_TBL(0x23C, IL_023c)
+			IL2CPP_JUMP_TBL(0x340, IL_0340)
+			IL2CPP_JUMP_TBL(0x354, IL_0354)
+			IL2CPP_JUMP_TBL(0x318, IL_0318)
 		}
 
-IL_023c:
+IL_0318:
 		{
-			AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F * L_81 = __this->get_address_of_U3CU3E7__wrap1_8();
-			il2cpp_codegen_initobj(L_81, sizeof(AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F ));
-			goto IL_0263;
+			AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F * L_89 = __this->get_address_of_U3CU3Es__1_8();
+			il2cpp_codegen_initobj(L_89, sizeof(AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F ));
+			goto IL_0340;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_024a;
+			goto CATCH_0326;
 		throw e;
 	}
 
-CATCH_024a:
+CATCH_0326:
 	{ // begin catch(System.Exception)
-		V_5 = ((Exception_t *)__exception_local);
+		V_10 = ((Exception_t *)__exception_local);
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_82 = __this->get_address_of_U3CU3Et__builder_1();
-		Exception_t * L_83 = V_5;
-		AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_82, L_83, /*hidden argument*/NULL);
-		goto IL_0276;
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_90 = __this->get_address_of_U3CU3Et__builder_1();
+		Exception_t * L_91 = V_10;
+		AsyncTaskMethodBuilder_SetException_m370C484922A63A6EF96E241D1370B8814F1F2D6B((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_90, L_91, /*hidden argument*/NULL);
+		goto IL_0354;
 	} // end catch (depth: 1)
 
-IL_0263:
+IL_0340:
 	{
 		// }
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_84 = __this->get_address_of_U3CU3Et__builder_1();
-		AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_84, /*hidden argument*/NULL);
+		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_92 = __this->get_address_of_U3CU3Et__builder_1();
+		AsyncTaskMethodBuilder_SetResult_m151016FB698F3BB34A73BAE693A97513A7E4C838((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_92, /*hidden argument*/NULL);
 	}
 
-IL_0276:
+IL_0354:
 	{
 		return;
 	}
-}
-IL2CPP_EXTERN_C  void U3CStartRecordingAsyncU3Ed__10_MoveNext_m7C424B86A51413349970485C720CF84FC4EE8637_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * _thisAdjusted = reinterpret_cast<U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 *>(__this + _offset);
-	U3CStartRecordingAsyncU3Ed__10_MoveNext_m7C424B86A51413349970485C720CF84FC4EE8637(_thisAdjusted, method);
 }
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StartRecordingAsync>d__10::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartRecordingAsyncU3Ed__10_SetStateMachine_mC84A1F9CCDD1C7AA3F8AC07995491E0C93989645 (U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
 	{
-		AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 * L_0 = __this->get_address_of_U3CU3Et__builder_1();
-		RuntimeObject* L_1 = ___stateMachine0;
-		AsyncTaskMethodBuilder_SetStateMachine_mB5DD68F7C49EA6D452AEBA02B1B98AED898C3C25((AsyncTaskMethodBuilder_t0CD1893D670405BED201BE8CA6F2E811F2C0F487 *)L_0, L_1, /*hidden argument*/NULL);
 		return;
 	}
-}
-IL2CPP_EXTERN_C  void U3CStartRecordingAsyncU3Ed__10_SetStateMachine_mC84A1F9CCDD1C7AA3F8AC07995491E0C93989645_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 * _thisAdjusted = reinterpret_cast<U3CStartRecordingAsyncU3Ed__10_t0B5EFC8FFCAEC4BE710C7B1159C2E9B8FFEF8809 *>(__this + _offset);
-	U3CStartRecordingAsyncU3Ed__10_SetStateMachine_mC84A1F9CCDD1C7AA3F8AC07995491E0C93989645(_thisAdjusted, ___stateMachine0, method);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -6765,6 +7049,14 @@ IL2CPP_EXTERN_C  void U3CStartRecordingAsyncU3Ed__10_SetStateMachine_mC84A1F9CCD
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingU3Ed__8__ctor_mACC922462A8624FB16A361EC880F61E5F1F06F43 (U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * __this, const RuntimeMethod* method)
+{
+	{
+		Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8::MoveNext()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingU3Ed__8_MoveNext_m217F2C41080E548F7215675A50D652DEE2087BE5 (U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * __this, const RuntimeMethod* method)
 {
@@ -6775,9 +7067,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingU3Ed__8_MoveNext_m217F2C
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
-	WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * V_1 = NULL;
-	TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  V_2;
-	memset((&V_2), 0, sizeof(V_2));
+	TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * V_2 = NULL;
 	Exception_t * V_3 = NULL;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
@@ -6789,118 +7081,112 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingU3Ed__8_MoveNext_m217F2C
 	{
 		int32_t L_0 = __this->get_U3CU3E1__state_0();
 		V_0 = L_0;
-		WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_1 = __this->get_U3CU3E4__this_2();
-		V_1 = L_1;
 	}
 
-IL_000e:
+IL_0007:
 	try
 	{ // begin try (depth: 1)
 		{
-			int32_t L_2 = V_0;
-			if (!L_2)
+			int32_t L_1 = V_0;
+			if (!L_1)
 			{
-				goto IL_0046;
+				goto IL_000c;
 			}
 		}
 
-IL_0011:
+IL_000a:
+		{
+			goto IL_000e;
+		}
+
+IL_000c:
+		{
+			goto IL_004d;
+		}
+
+IL_000e:
 		{
 			// await StopRecordingAsync();
-			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_3 = V_1;
+			WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_2 = __this->get_U3CU3E4__this_2();
+			NullCheck(L_2);
+			Task_1_t1FD9AF71747895AEE56DD875875ED8409EFAD2CC * L_3 = WindowsDictationInputProvider_StopRecordingAsync_m970B34085B1E29671D89FDC39AED49B356598D8C(L_2, /*hidden argument*/NULL);
 			NullCheck(L_3);
-			Task_1_t1FD9AF71747895AEE56DD875875ED8409EFAD2CC * L_4 = WindowsDictationInputProvider_StopRecordingAsync_m970B34085B1E29671D89FDC39AED49B356598D8C(L_3, /*hidden argument*/NULL);
-			NullCheck(L_4);
-			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  L_5 = Task_1_GetAwaiter_mC7B1136330A9B7066A116285C7388989F8133986(L_4, /*hidden argument*/Task_1_GetAwaiter_mC7B1136330A9B7066A116285C7388989F8133986_RuntimeMethod_var);
-			V_2 = L_5;
-			bool L_6 = TaskAwaiter_1_get_IsCompleted_m6EA45C62085A881D247B95828C7579A87E030444((TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *)(&V_2), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m6EA45C62085A881D247B95828C7579A87E030444_RuntimeMethod_var);
-			if (L_6)
+			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  L_4 = Task_1_GetAwaiter_mC7B1136330A9B7066A116285C7388989F8133986(L_3, /*hidden argument*/Task_1_GetAwaiter_mC7B1136330A9B7066A116285C7388989F8133986_RuntimeMethod_var);
+			V_1 = L_4;
+			bool L_5 = TaskAwaiter_1_get_IsCompleted_m6EA45C62085A881D247B95828C7579A87E030444((TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *)(&V_1), /*hidden argument*/TaskAwaiter_1_get_IsCompleted_m6EA45C62085A881D247B95828C7579A87E030444_RuntimeMethod_var);
+			if (L_5)
 			{
-				goto IL_0062;
+				goto IL_0069;
 			}
 		}
 
-IL_0026:
+IL_0029:
 		{
-			int32_t L_7 = 0;
-			V_0 = L_7;
-			__this->set_U3CU3E1__state_0(L_7);
-			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  L_8 = V_2;
-			__this->set_U3CU3Eu__1_3(L_8);
-			AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_9 = __this->get_address_of_U3CU3Et__builder_1();
-			AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m23C9593AFC03A56A8BCBEA4A89C785941068FC32((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_9, (TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *)(&V_2), (U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 *)__this, /*hidden argument*/AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m23C9593AFC03A56A8BCBEA4A89C785941068FC32_RuntimeMethod_var);
-			goto IL_0096;
+			int32_t L_6 = 0;
+			V_0 = L_6;
+			__this->set_U3CU3E1__state_0(L_6);
+			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  L_7 = V_1;
+			__this->set_U3CU3Eu__1_3(L_7);
+			V_2 = __this;
+			AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_8 = __this->get_address_of_U3CU3Et__builder_1();
+			AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m23C9593AFC03A56A8BCBEA4A89C785941068FC32((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_8, (TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *)(&V_1), (U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 **)(&V_2), /*hidden argument*/AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_TisTaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99_TisU3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860_m23C9593AFC03A56A8BCBEA4A89C785941068FC32_RuntimeMethod_var);
+			goto IL_009f;
 		}
 
-IL_0046:
+IL_004d:
 		{
-			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  L_10 = __this->get_U3CU3Eu__1_3();
-			V_2 = L_10;
-			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 * L_11 = __this->get_address_of_U3CU3Eu__1_3();
-			il2cpp_codegen_initobj(L_11, sizeof(TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 ));
-			int32_t L_12 = (-1);
-			V_0 = L_12;
-			__this->set_U3CU3E1__state_0(L_12);
+			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99  L_9 = __this->get_U3CU3Eu__1_3();
+			V_1 = L_9;
+			TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 * L_10 = __this->get_address_of_U3CU3Eu__1_3();
+			il2cpp_codegen_initobj(L_10, sizeof(TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 ));
+			int32_t L_11 = (-1);
+			V_0 = L_11;
+			__this->set_U3CU3E1__state_0(L_11);
 		}
 
-IL_0062:
+IL_0069:
 		{
-			TaskAwaiter_1_GetResult_mF69D645FC74CDE2F31361F7CDCB81C5A19D10DDD((TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *)(&V_2), /*hidden argument*/TaskAwaiter_1_GetResult_mF69D645FC74CDE2F31361F7CDCB81C5A19D10DDD_RuntimeMethod_var);
-			goto IL_0083;
+			TaskAwaiter_1_GetResult_mF69D645FC74CDE2F31361F7CDCB81C5A19D10DDD((TaskAwaiter_1_t1CBDF733362C45EC91B0E9317C766E5A2FA02B99 *)(&V_1), /*hidden argument*/TaskAwaiter_1_GetResult_mF69D645FC74CDE2F31361F7CDCB81C5A19D10DDD_RuntimeMethod_var);
+			goto IL_008b;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_006c;
+			goto CATCH_0073;
 		throw e;
 	}
 
-CATCH_006c:
+CATCH_0073:
 	{ // begin catch(System.Exception)
 		V_3 = ((Exception_t *)__exception_local);
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_13 = __this->get_address_of_U3CU3Et__builder_1();
-		Exception_t * L_14 = V_3;
-		AsyncVoidMethodBuilder_SetException_mA7D834CA1ECA91D65074D7608AADA2E2A9533136((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_13, L_14, /*hidden argument*/NULL);
-		goto IL_0096;
+		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_12 = __this->get_address_of_U3CU3Et__builder_1();
+		Exception_t * L_13 = V_3;
+		AsyncVoidMethodBuilder_SetException_mA7D834CA1ECA91D65074D7608AADA2E2A9533136((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_12, L_13, /*hidden argument*/NULL);
+		goto IL_009f;
 	} // end catch (depth: 1)
 
-IL_0083:
+IL_008b:
 	{
 		// }
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_15 = __this->get_address_of_U3CU3Et__builder_1();
-		AsyncVoidMethodBuilder_SetResult_mFF6028CDDC809252656354DC1714B4EB5E40A625((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_15, /*hidden argument*/NULL);
+		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_14 = __this->get_address_of_U3CU3Et__builder_1();
+		AsyncVoidMethodBuilder_SetResult_mFF6028CDDC809252656354DC1714B4EB5E40A625((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_14, /*hidden argument*/NULL);
 	}
 
-IL_0096:
+IL_009f:
 	{
 		return;
 	}
-}
-IL2CPP_EXTERN_C  void U3CStopRecordingU3Ed__8_MoveNext_m217F2C41080E548F7215675A50D652DEE2087BE5_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * _thisAdjusted = reinterpret_cast<U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 *>(__this + _offset);
-	U3CStopRecordingU3Ed__8_MoveNext_m217F2C41080E548F7215675A50D652DEE2087BE5(_thisAdjusted, method);
 }
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecording>d__8::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingU3Ed__8_SetStateMachine_m0C55E90B08B9381A88AA97FC129B29118D62F36A (U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
 	{
-		AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF * L_0 = __this->get_address_of_U3CU3Et__builder_1();
-		RuntimeObject* L_1 = ___stateMachine0;
-		AsyncVoidMethodBuilder_SetStateMachine_mF3AEE42ED8474F11A5521D94271E884CF99E65B3((AsyncVoidMethodBuilder_t44E3C9B52B019BB5BDCC0E1BB83188B536161CFF *)L_0, L_1, /*hidden argument*/NULL);
 		return;
 	}
-}
-IL2CPP_EXTERN_C  void U3CStopRecordingU3Ed__8_SetStateMachine_m0C55E90B08B9381A88AA97FC129B29118D62F36A_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 * _thisAdjusted = reinterpret_cast<U3CStopRecordingU3Ed__8_tC4085B8C246F6EB75BF3071D5ABECFF59519A860 *>(__this + _offset);
-	U3CStopRecordingU3Ed__8_SetStateMachine_m0C55E90B08B9381A88AA97FC129B29118D62F36A(_thisAdjusted, ___stateMachine0, method);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -6910,6 +7196,14 @@ IL2CPP_EXTERN_C  void U3CStopRecordingU3Ed__8_SetStateMachine_m0C55E90B08B9381A8
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingAsyncU3Ed__12__ctor_m4CF3B203E9DCD3DFD1869105C441213C6469EAEF (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * __this, const RuntimeMethod* method)
+{
+	{
+		Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12::MoveNext()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingAsyncU3Ed__12_MoveNext_m7C48D7ED48F1A3E7D5DC9BDBDEBC6354D24EE617 (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * __this, const RuntimeMethod* method)
 {
@@ -6920,12 +7214,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingAsyncU3Ed__12_MoveNext_m
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
-	WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * V_1 = NULL;
-	AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * V_2 = NULL;
-	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_3;
-	memset((&V_3), 0, sizeof(V_3));
-	SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * V_4 = NULL;
-	Exception_t * V_5 = NULL;
+	AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * V_1 = NULL;
+	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_2;
+	memset((&V_2), 0, sizeof(V_2));
+	bool V_3 = false;
+	bool V_4 = false;
+	bool V_5 = false;
+	SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * V_6 = NULL;
+	U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * V_7 = NULL;
+	SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * V_8 = NULL;
+	Exception_t * V_9 = NULL;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -6933,376 +7231,414 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingAsyncU3Ed__12_MoveNext_m
 	void* __leave_targets_storage = alloca(sizeof(int32_t) * 5);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
-	RuntimeObject* G_B13_0 = NULL;
-	RuntimeObject* G_B12_0 = NULL;
+	int32_t G_B16_0 = 0;
+	RuntimeObject* G_B21_0 = NULL;
+	RuntimeObject* G_B20_0 = NULL;
 	{
 		int32_t L_0 = __this->get_U3CU3E1__state_0();
 		V_0 = L_0;
-		WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_1 = __this->get_U3CU3E4__this_2();
-		V_1 = L_1;
 	}
 
-IL_000e:
+IL_0007:
 	try
 	{ // begin try (depth: 1)
 		{
-			int32_t L_2 = V_0;
-			if ((!(((uint32_t)L_2) > ((uint32_t)1))))
+			int32_t L_1 = V_0;
+			if ((!(((uint32_t)L_1) > ((uint32_t)1))))
 			{
-				goto IL_0025;
+				goto IL_000d;
 			}
 		}
 
-IL_0012:
+IL_000b:
+		{
+			goto IL_000f;
+		}
+
+IL_000d:
+		{
+			goto IL_0023;
+		}
+
+IL_000f:
 		{
 			// using (StopRecordingAsyncPerfMarker.Auto())
 			IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-			ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  L_3 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_StopRecordingAsyncPerfMarker_19();
-			V_3 = L_3;
-			AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  L_4 = ProfilerMarker_Auto_m27C8BA4E46F26F3005760C48C4B92EBC284A5D02_inline((ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86 *)(&V_3), /*hidden argument*/NULL);
-			__this->set_U3CU3E7__wrap1_3(L_4);
+			ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  L_2 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_StopRecordingAsyncPerfMarker_19();
+			V_2 = L_2;
+			AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F  L_3 = ProfilerMarker_Auto_m27C8BA4E46F26F3005760C48C4B92EBC284A5D02_inline((ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86 *)(&V_2), /*hidden argument*/NULL);
+			__this->set_U3CU3Es__1_3(L_3);
 		}
 
-IL_0025:
+IL_0023:
 		{
 		}
 
-IL_0026:
+IL_0024:
 		try
 		{ // begin try (depth: 2)
 			{
-				int32_t L_5 = V_0;
-				if (!L_5)
+				int32_t L_4 = V_0;
+				if (!L_4)
 				{
-					goto IL_00e5;
+					goto IL_002f;
 				}
 			}
 
-IL_002c:
+IL_0027:
 			{
-				int32_t L_6 = V_0;
-				if ((((int32_t)L_6) == ((int32_t)1)))
+				goto IL_0029;
+			}
+
+IL_0029:
+			{
+				int32_t L_5 = V_0;
+				if ((((int32_t)L_5) == ((int32_t)1)))
 				{
-					goto IL_0145;
+					goto IL_0034;
 				}
 			}
 
-IL_0033:
+IL_002d:
+			{
+				goto IL_0039;
+			}
+
+IL_002f:
+			{
+				goto IL_013a;
+			}
+
+IL_0034:
+			{
+				goto IL_01bc;
+			}
+
+IL_0039:
 			{
 				// if (!IsListening || isTransitioning || !Application.isPlaying)
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_7 = V_1;
-				NullCheck(L_7);
-				bool L_8 = WindowsDictationInputProvider_get_IsListening_mD0BB7681BF29793C36321C901A43882CD4F51F55_inline(L_7, /*hidden argument*/NULL);
-				if (!L_8)
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_6 = __this->get_U3CU3E4__this_2();
+				NullCheck(L_6);
+				bool L_7 = WindowsDictationInputProvider_get_IsListening_mD0BB7681BF29793C36321C901A43882CD4F51F55_inline(L_6, /*hidden argument*/NULL);
+				if (!L_7)
 				{
-					goto IL_004a;
+					goto IL_005e;
 				}
 			}
 
-IL_003b:
+IL_0047:
 			{
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_9 = V_1;
-				NullCheck(L_9);
-				bool L_10 = L_9->get_isTransitioning_22();
-				if (L_10)
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_8 = __this->get_U3CU3E4__this_2();
+				NullCheck(L_8);
+				bool L_9 = L_8->get_isTransitioning_22();
+				if (L_9)
 				{
-					goto IL_004a;
+					goto IL_005e;
 				}
 			}
 
-IL_0043:
+IL_0054:
 			{
-				bool L_11 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
-				if (L_11)
+				bool L_10 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
+				G_B16_0 = ((((int32_t)L_10) == ((int32_t)0))? 1 : 0);
+				goto IL_005f;
+			}
+
+IL_005e:
+			{
+				G_B16_0 = 1;
+			}
+
+IL_005f:
+			{
+				V_3 = (bool)G_B16_0;
+				bool L_11 = V_3;
+				if (!L_11)
 				{
-					goto IL_005b;
+					goto IL_0076;
 				}
 			}
 
-IL_004a:
+IL_0063:
 			{
 				// Debug.LogWarning("Unable to stop recording");
 				IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
 				Debug_LogWarning_m37338644DC81F640CCDFEAE35A223F0E965F0568(_stringLiteral494AC3D8C4EEAECDF41D31C8677620154D322DE6, /*hidden argument*/NULL);
 				// return null;
-				V_2 = (AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 *)NULL;
-				IL2CPP_LEAVE(0x1A8, FINALLY_0179);
+				V_1 = (AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 *)NULL;
+				IL2CPP_LEAVE(0x23A, FINALLY_0209);
 			}
 
-IL_005b:
+IL_0076:
 			{
 				// IsListening = false;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_12 = V_1;
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_12 = __this->get_U3CU3E4__this_2();
 				NullCheck(L_12);
 				WindowsDictationInputProvider_set_IsListening_m5088D38E5362A1A5F1248E662454FE52455537A5_inline(L_12, (bool)0, /*hidden argument*/NULL);
 				// isTransitioning = true;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_13 = V_1;
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_13 = __this->get_U3CU3E4__this_2();
 				NullCheck(L_13);
 				L_13->set_isTransitioning_22((bool)1);
 				// if (hasListener)
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_14 = V_1;
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_14 = __this->get_U3CU3E4__this_2();
 				NullCheck(L_14);
 				bool L_15 = L_14->get_hasListener_21();
-				if (!L_15)
+				V_4 = L_15;
+				bool L_16 = V_4;
+				if (!L_16)
 				{
-					goto IL_0089;
+					goto IL_00c5;
 				}
 			}
 
-IL_0071:
+IL_00a0:
 			{
 				// Service?.PopModalInputHandler();
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_16 = V_1;
-				NullCheck(L_16);
-				RuntimeObject* L_17 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(L_16, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
-				RuntimeObject* L_18 = L_17;
-				G_B12_0 = L_18;
-				if (L_18)
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_17 = __this->get_U3CU3E4__this_2();
+				NullCheck(L_17);
+				RuntimeObject* L_18 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(L_17, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
+				RuntimeObject* L_19 = L_18;
+				G_B20_0 = L_19;
+				if (L_19)
 				{
-					G_B13_0 = L_18;
-					goto IL_007d;
+					G_B21_0 = L_19;
+					goto IL_00b2;
 				}
 			}
 
-IL_007a:
+IL_00af:
 			{
-				goto IL_0082;
+				goto IL_00b8;
 			}
 
-IL_007d:
+IL_00b2:
 			{
-				NullCheck(G_B13_0);
-				InterfaceActionInvoker0::Invoke(16 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::PopModalInputHandler() */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, G_B13_0);
+				NullCheck(G_B21_0);
+				InterfaceActionInvoker0::Invoke(16 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::PopModalInputHandler() */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, G_B21_0);
 			}
 
-IL_0082:
+IL_00b8:
 			{
 				// hasListener = false;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_19 = V_1;
-				NullCheck(L_19);
-				L_19->set_hasListener_21((bool)0);
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_20 = __this->get_U3CU3E4__this_2();
+				NullCheck(L_20);
+				L_20->set_hasListener_21((bool)0);
 			}
 
-IL_0089:
+IL_00c5:
 			{
 				// Microphone.End(deviceName);
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_20 = V_1;
-				NullCheck(L_20);
-				String_t* L_21 = L_20->get_deviceName_25();
-				Microphone_End_m2E3D0E4890AE014AF687987F6160CA3D5ACDC29F(L_21, /*hidden argument*/NULL);
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_21 = __this->get_U3CU3E4__this_2();
+				NullCheck(L_21);
+				String_t* L_22 = L_21->get_deviceName_25();
+				Microphone_End_m2E3D0E4890AE014AF687987F6160CA3D5ACDC29F(L_22, /*hidden argument*/NULL);
 				// if (dictationRecognizer.Status == SpeechSystemStatus.Running)
 				IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_22 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-				NullCheck(L_22);
-				int32_t L_23 = DictationRecognizer_get_Status_mA6647775F5A7639B6BA816FD7E8911C72E61B6BF(L_22, /*hidden argument*/NULL);
-				if ((!(((uint32_t)L_23) == ((uint32_t)1))))
+				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_23 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+				NullCheck(L_23);
+				int32_t L_24 = DictationRecognizer_get_Status_mA6647775F5A7639B6BA816FD7E8911C72E61B6BF(L_23, /*hidden argument*/NULL);
+				V_5 = (bool)((((int32_t)L_24) == ((int32_t)1))? 1 : 0);
+				bool L_25 = V_5;
+				if (!L_25)
 				{
-					goto IL_00ab;
+					goto IL_00f6;
 				}
 			}
 
-IL_00a1:
+IL_00e9:
 			{
 				// dictationRecognizer.Stop();
 				IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
-				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_24 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
-				NullCheck(L_24);
-				DictationRecognizer_Stop_m42D22C5D03B17B6DDF94B13E9DC678AB4C11970E(L_24, /*hidden argument*/NULL);
+				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_26 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+				NullCheck(L_26);
+				DictationRecognizer_Stop_m42D22C5D03B17B6DDF94B13E9DC678AB4C11970E(L_26, /*hidden argument*/NULL);
 			}
 
-IL_00ab:
+IL_00f6:
 			{
 				// await waitUntilDictationRecognizerHasStopped;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_25 = V_1;
-				NullCheck(L_25);
-				WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * L_26 = L_25->get_waitUntilDictationRecognizerHasStopped_33();
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_27 = AwaiterExtensions_GetAwaiter_m36C76CD6A2384AD246743C58D6D6CB31CD2F1E4F(L_26, /*hidden argument*/NULL);
-				V_4 = L_27;
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_28 = V_4;
-				NullCheck(L_28);
-				bool L_29 = SimpleCoroutineAwaiter_get_IsCompleted_m564E77AF2AE091959C96845221E652899192A215_inline(L_28, /*hidden argument*/NULL);
-				if (L_29)
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_27 = __this->get_U3CU3E4__this_2();
+				NullCheck(L_27);
+				WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * L_28 = L_27->get_waitUntilDictationRecognizerHasStopped_33();
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_29 = AwaiterExtensions_GetAwaiter_m36C76CD6A2384AD246743C58D6D6CB31CD2F1E4F(L_28, /*hidden argument*/NULL);
+				V_6 = L_29;
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_30 = V_6;
+				NullCheck(L_30);
+				bool L_31 = SimpleCoroutineAwaiter_get_IsCompleted_m564E77AF2AE091959C96845221E652899192A215_inline(L_30, /*hidden argument*/NULL);
+				if (L_31)
 				{
-					goto IL_0102;
+					goto IL_0157;
 				}
 			}
 
-IL_00c1:
+IL_0111:
 			{
-				int32_t L_30 = 0;
-				V_0 = L_30;
-				__this->set_U3CU3E1__state_0(L_30);
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_31 = V_4;
-				__this->set_U3CU3Eu__1_4(L_31);
-				AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * L_32 = __this->get_address_of_U3CU3Et__builder_1();
-				AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mEF858E2FFF0750D94EDC944DCEC54CC657EA1558((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)L_32, (SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE **)(&V_4), (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A *)__this, /*hidden argument*/AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mEF858E2FFF0750D94EDC944DCEC54CC657EA1558_RuntimeMethod_var);
-				IL2CPP_LEAVE(0x1BC, FINALLY_0179);
+				int32_t L_32 = 0;
+				V_0 = L_32;
+				__this->set_U3CU3E1__state_0(L_32);
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_33 = V_6;
+				__this->set_U3CU3Eu__1_4(L_33);
+				V_7 = __this;
+				AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * L_34 = __this->get_address_of_U3CU3Et__builder_1();
+				AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mEF858E2FFF0750D94EDC944DCEC54CC657EA1558((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)L_34, (SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE **)(&V_6), (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A **)(&V_7), /*hidden argument*/AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mEF858E2FFF0750D94EDC944DCEC54CC657EA1558_RuntimeMethod_var);
+				IL2CPP_LEAVE(0x24F, FINALLY_0209);
 			}
 
-IL_00e5:
+IL_013a:
 			{
-				RuntimeObject * L_33 = __this->get_U3CU3Eu__1_4();
-				V_4 = ((SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE *)CastclassClass((RuntimeObject*)L_33, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_il2cpp_TypeInfo_var));
+				RuntimeObject * L_35 = __this->get_U3CU3Eu__1_4();
+				V_6 = ((SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE *)CastclassClass((RuntimeObject*)L_35, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_il2cpp_TypeInfo_var));
 				__this->set_U3CU3Eu__1_4(NULL);
-				int32_t L_34 = (-1);
-				V_0 = L_34;
-				__this->set_U3CU3E1__state_0(L_34);
+				int32_t L_36 = (-1);
+				V_0 = L_36;
+				__this->set_U3CU3E1__state_0(L_36);
 			}
 
-IL_0102:
+IL_0157:
 			{
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_35 = V_4;
-				NullCheck(L_35);
-				SimpleCoroutineAwaiter_GetResult_mA2E1941136B95442358BA03075F6AF1B0F2C159B(L_35, /*hidden argument*/NULL);
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_37 = V_6;
+				NullCheck(L_37);
+				SimpleCoroutineAwaiter_GetResult_mA2E1941136B95442358BA03075F6AF1B0F2C159B(L_37, /*hidden argument*/NULL);
+				// Debug.Assert(dictationRecognizer.Status == SpeechSystemStatus.Stopped);
+				IL2CPP_RUNTIME_CLASS_INIT(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var);
+				DictationRecognizer_tAABC39C7583FCB17ADB78BCE15E2E1AEFA85F355 * L_38 = ((WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_StaticFields*)il2cpp_codegen_static_fields_for(WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6_il2cpp_TypeInfo_var))->get_dictationRecognizer_29();
+				NullCheck(L_38);
+				int32_t L_39 = DictationRecognizer_get_Status_mA6647775F5A7639B6BA816FD7E8911C72E61B6BF(L_38, /*hidden argument*/NULL);
+				IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
+				Debug_Assert_m0283DD85C5E5F5029793C17A335DB16BC307E62E((bool)((((int32_t)L_39) == ((int32_t)0))? 1 : 0), /*hidden argument*/NULL);
 				// PhraseRecognitionSystem.Restart();
 				PhraseRecognitionSystem_Restart_m8FE23747DD233E3E42BDDC5A6F3C3B79A1F20A3F(/*hidden argument*/NULL);
 				// await waitUntilPhraseRecognitionSystemHasStarted;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_36 = V_1;
-				NullCheck(L_36);
-				WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * L_37 = L_36->get_waitUntilPhraseRecognitionSystemHasStarted_30();
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_38 = AwaiterExtensions_GetAwaiter_m36C76CD6A2384AD246743C58D6D6CB31CD2F1E4F(L_37, /*hidden argument*/NULL);
-				V_4 = L_38;
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_39 = V_4;
-				NullCheck(L_39);
-				bool L_40 = SimpleCoroutineAwaiter_get_IsCompleted_m564E77AF2AE091959C96845221E652899192A215_inline(L_39, /*hidden argument*/NULL);
-				if (L_40)
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_40 = __this->get_U3CU3E4__this_2();
+				NullCheck(L_40);
+				WaitUntil_t012561515C0E1D3DEA19DB3A05444B020C68E13F * L_41 = L_40->get_waitUntilPhraseRecognitionSystemHasStarted_30();
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_42 = AwaiterExtensions_GetAwaiter_m36C76CD6A2384AD246743C58D6D6CB31CD2F1E4F(L_41, /*hidden argument*/NULL);
+				V_8 = L_42;
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_43 = V_8;
+				NullCheck(L_43);
+				bool L_44 = SimpleCoroutineAwaiter_get_IsCompleted_m564E77AF2AE091959C96845221E652899192A215_inline(L_43, /*hidden argument*/NULL);
+				if (L_44)
 				{
-					goto IL_0162;
+					goto IL_01d9;
 				}
 			}
 
-IL_0124:
+IL_0193:
 			{
-				int32_t L_41 = 1;
-				V_0 = L_41;
-				__this->set_U3CU3E1__state_0(L_41);
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_42 = V_4;
-				__this->set_U3CU3Eu__1_4(L_42);
-				AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * L_43 = __this->get_address_of_U3CU3Et__builder_1();
-				AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mEF858E2FFF0750D94EDC944DCEC54CC657EA1558((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)L_43, (SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE **)(&V_4), (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A *)__this, /*hidden argument*/AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mEF858E2FFF0750D94EDC944DCEC54CC657EA1558_RuntimeMethod_var);
-				IL2CPP_LEAVE(0x1BC, FINALLY_0179);
-			}
-
-IL_0145:
-			{
-				RuntimeObject * L_44 = __this->get_U3CU3Eu__1_4();
-				V_4 = ((SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE *)CastclassClass((RuntimeObject*)L_44, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_il2cpp_TypeInfo_var));
-				__this->set_U3CU3Eu__1_4(NULL);
-				int32_t L_45 = (-1);
+				int32_t L_45 = 1;
 				V_0 = L_45;
 				__this->set_U3CU3E1__state_0(L_45);
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_46 = V_8;
+				__this->set_U3CU3Eu__1_4(L_46);
+				V_7 = __this;
+				AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * L_47 = __this->get_address_of_U3CU3Et__builder_1();
+				AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mEF858E2FFF0750D94EDC944DCEC54CC657EA1558((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)L_47, (SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE **)(&V_8), (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A **)(&V_7), /*hidden argument*/AsyncTaskMethodBuilder_1_AwaitOnCompleted_TisSimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_TisU3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A_mEF858E2FFF0750D94EDC944DCEC54CC657EA1558_RuntimeMethod_var);
+				IL2CPP_LEAVE(0x24F, FINALLY_0209);
 			}
 
-IL_0162:
+IL_01bc:
 			{
-				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_46 = V_4;
-				NullCheck(L_46);
-				SimpleCoroutineAwaiter_GetResult_mA2E1941136B95442358BA03075F6AF1B0F2C159B(L_46, /*hidden argument*/NULL);
+				RuntimeObject * L_48 = __this->get_U3CU3Eu__1_4();
+				V_8 = ((SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE *)CastclassClass((RuntimeObject*)L_48, SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE_il2cpp_TypeInfo_var));
+				__this->set_U3CU3Eu__1_4(NULL);
+				int32_t L_49 = (-1);
+				V_0 = L_49;
+				__this->set_U3CU3E1__state_0(L_49);
+			}
+
+IL_01d9:
+			{
+				SimpleCoroutineAwaiter_t46769B8824866227E6B839ECBE34D9621CE153BE * L_50 = V_8;
+				NullCheck(L_50);
+				SimpleCoroutineAwaiter_GetResult_mA2E1941136B95442358BA03075F6AF1B0F2C159B(L_50, /*hidden argument*/NULL);
+				// Debug.Assert(PhraseRecognitionSystem.Status == SpeechSystemStatus.Running);
+				int32_t L_51 = PhraseRecognitionSystem_get_Status_m8AEDCE0E644824367B5672B39BAA2838E08277AC(/*hidden argument*/NULL);
+				IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
+				Debug_Assert_m0283DD85C5E5F5029793C17A335DB16BC307E62E((bool)((((int32_t)L_51) == ((int32_t)1))? 1 : 0), /*hidden argument*/NULL);
 				// isTransitioning = false;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_47 = V_1;
-				NullCheck(L_47);
-				L_47->set_isTransitioning_22((bool)0);
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_52 = __this->get_U3CU3E4__this_2();
+				NullCheck(L_52);
+				L_52->set_isTransitioning_22((bool)0);
 				// return dictationAudioClip;
-				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_48 = V_1;
-				NullCheck(L_48);
-				AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_49 = L_48->get_dictationAudioClip_28();
-				V_2 = L_49;
-				IL2CPP_LEAVE(0x1A8, FINALLY_0179);
+				WindowsDictationInputProvider_t809EABD8AB25946655E49F5B36AF2C6613E16DA6 * L_53 = __this->get_U3CU3E4__this_2();
+				NullCheck(L_53);
+				AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_54 = L_53->get_dictationAudioClip_28();
+				V_1 = L_54;
+				IL2CPP_LEAVE(0x23A, FINALLY_0209);
 			}
 		} // end try (depth: 2)
 		catch(Il2CppExceptionWrapper& e)
 		{
 			__last_unhandled_exception = (Exception_t *)e.ex;
-			goto FINALLY_0179;
+			goto FINALLY_0209;
 		}
 
-FINALLY_0179:
+FINALLY_0209:
 		{ // begin finally (depth: 2)
 			{
-				int32_t L_50 = V_0;
-				if ((((int32_t)L_50) >= ((int32_t)0)))
+				int32_t L_55 = V_0;
+				if ((((int32_t)L_55) >= ((int32_t)0)))
 				{
-					goto IL_018e;
+					goto IL_021f;
 				}
 			}
 
-IL_017d:
+IL_020d:
 			{
-				AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F * L_51 = __this->get_address_of_U3CU3E7__wrap1_3();
-				AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)L_51, /*hidden argument*/NULL);
+				AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F * L_56 = __this->get_address_of_U3CU3Es__1_3();
+				AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)L_56, /*hidden argument*/NULL);
 			}
 
-IL_018e:
+IL_021f:
 			{
-				IL2CPP_END_FINALLY(377)
+				IL2CPP_END_FINALLY(521)
 			}
 		} // end finally (depth: 2)
-		IL2CPP_CLEANUP(377)
+		IL2CPP_CLEANUP(521)
 		{
 			IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-			IL2CPP_JUMP_TBL(0x1A8, IL_01a8)
-			IL2CPP_JUMP_TBL(0x1BC, IL_01bc)
+			IL2CPP_JUMP_TBL(0x23A, IL_023a)
+			IL2CPP_JUMP_TBL(0x24F, IL_024f)
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_018f;
+			goto CATCH_0220;
 		throw e;
 	}
 
-CATCH_018f:
+CATCH_0220:
 	{ // begin catch(System.Exception)
-		V_5 = ((Exception_t *)__exception_local);
+		V_9 = ((Exception_t *)__exception_local);
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * L_52 = __this->get_address_of_U3CU3Et__builder_1();
-		Exception_t * L_53 = V_5;
-		AsyncTaskMethodBuilder_1_SetException_m3546DBB6B478B7DB18842DC0782B98EBC9D05EE1((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)L_52, L_53, /*hidden argument*/AsyncTaskMethodBuilder_1_SetException_m3546DBB6B478B7DB18842DC0782B98EBC9D05EE1_RuntimeMethod_var);
-		goto IL_01bc;
+		AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * L_57 = __this->get_address_of_U3CU3Et__builder_1();
+		Exception_t * L_58 = V_9;
+		AsyncTaskMethodBuilder_1_SetException_m3546DBB6B478B7DB18842DC0782B98EBC9D05EE1((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)L_57, L_58, /*hidden argument*/AsyncTaskMethodBuilder_1_SetException_m3546DBB6B478B7DB18842DC0782B98EBC9D05EE1_RuntimeMethod_var);
+		goto IL_024f;
 	} // end catch (depth: 1)
 
-IL_01a8:
+IL_023a:
 	{
 		// }
 		__this->set_U3CU3E1__state_0(((int32_t)-2));
-		AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * L_54 = __this->get_address_of_U3CU3Et__builder_1();
-		AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_55 = V_2;
-		AsyncTaskMethodBuilder_1_SetResult_mD5596BF881B6EC3D7675495E22695C03E96D0101((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)L_54, L_55, /*hidden argument*/AsyncTaskMethodBuilder_1_SetResult_mD5596BF881B6EC3D7675495E22695C03E96D0101_RuntimeMethod_var);
+		AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * L_59 = __this->get_address_of_U3CU3Et__builder_1();
+		AudioClip_tCC3C35F579203CE2601243585AB3D6953C3BA051 * L_60 = V_1;
+		AsyncTaskMethodBuilder_1_SetResult_mD5596BF881B6EC3D7675495E22695C03E96D0101((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)L_59, L_60, /*hidden argument*/AsyncTaskMethodBuilder_1_SetResult_mD5596BF881B6EC3D7675495E22695C03E96D0101_RuntimeMethod_var);
 	}
 
-IL_01bc:
+IL_024f:
 	{
 		return;
 	}
-}
-IL2CPP_EXTERN_C  void U3CStopRecordingAsyncU3Ed__12_MoveNext_m7C48D7ED48F1A3E7D5DC9BDBDEBC6354D24EE617_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * _thisAdjusted = reinterpret_cast<U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A *>(__this + _offset);
-	U3CStopRecordingAsyncU3Ed__12_MoveNext_m7C48D7ED48F1A3E7D5DC9BDBDEBC6354D24EE617(_thisAdjusted, method);
 }
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsDictationInputProvider/<StopRecordingAsync>d__12::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStopRecordingAsyncU3Ed__12_SetStateMachine_mADE4018C50E0BE436B4D1D73FBAED7EB84359017 (U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (U3CStopRecordingAsyncU3Ed__12_SetStateMachine_mADE4018C50E0BE436B4D1D73FBAED7EB84359017_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 * L_0 = __this->get_address_of_U3CU3Et__builder_1();
-		RuntimeObject* L_1 = ___stateMachine0;
-		AsyncTaskMethodBuilder_1_SetStateMachine_m6D0E84B2F66A998AE916997EB96A356441721D76((AsyncTaskMethodBuilder_1_tD2F8773433ABAC7266323C8FBDFE204289FE17B6 *)L_0, L_1, /*hidden argument*/AsyncTaskMethodBuilder_1_SetStateMachine_m6D0E84B2F66A998AE916997EB96A356441721D76_RuntimeMethod_var);
 		return;
 	}
-}
-IL2CPP_EXTERN_C  void U3CStopRecordingAsyncU3Ed__12_SetStateMachine_mADE4018C50E0BE436B4D1D73FBAED7EB84359017_AdjustorThunk (RuntimeObject * __this, RuntimeObject* ___stateMachine0, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A * _thisAdjusted = reinterpret_cast<U3CStopRecordingAsyncU3Ed__12_t9B75A92522A1D2058E9C00D4301B6ACF3DF4A76A *>(__this + _offset);
-	U3CStopRecordingAsyncU3Ed__12_SetStateMachine_mADE4018C50E0BE436B4D1D73FBAED7EB84359017(_thisAdjusted, ___stateMachine0, method);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -7345,6 +7681,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider__ctor_mC617FE
 		s_Il2CppMethodInitialized = true;
 	}
 	{
+		// public IMixedRealityInputSource InputSource = null;
+		__this->set_InputSource_17((RuntimeObject*)NULL);
 		// BaseMixedRealityProfile profile = null) : base(inputSystem, name, priority, profile) { }
 		RuntimeObject* L_0 = ___inputSystem0;
 		String_t* L_1 = ___name1;
@@ -7363,7 +7701,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC4022
 		// private SpeechCommands[] Commands => InputSystemProfile.SpeechCommandsProfile.SpeechCommands;
 		MixedRealityInputSystemProfile_tE6382BBDB73ACDFF6F3D0C3B4AD9B1B7F2D5BAC2 * L_0 = BaseInputDeviceManager_get_InputSystemProfile_mE2FE4CB8744076CD1A05987279ECA9FED4623626(__this, /*hidden argument*/NULL);
 		NullCheck(L_0);
-		MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_1 = MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E_inline(L_0, /*hidden argument*/NULL);
+		MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_1 = MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E(L_0, /*hidden argument*/NULL);
 		NullCheck(L_1);
 		SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_2 = MixedRealitySpeechCommandsProfile_get_SpeechCommands_m1BAA28B890C02DD8984C7FBA1EF1B905BDBAD6B9_inline(L_1, /*hidden argument*/NULL);
 		return L_2;
@@ -7393,6 +7731,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WindowsSpeechInputProvider_get_IsRecogni
 {
 	KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * G_B2_0 = NULL;
 	KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * G_B1_0 = NULL;
+	int32_t G_B3_0 = 0;
 	{
 		//             keywordRecognizer?.IsRunning ??
 		// #endif
@@ -7403,49 +7742,81 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WindowsSpeechInputProvider_get_IsRecogni
 		if (L_1)
 		{
 			G_B2_0 = L_1;
-			goto IL_000c;
+			goto IL_000d;
 		}
 	}
 	{
-		return (bool)0;
+		G_B3_0 = 0;
+		goto IL_0012;
 	}
 
-IL_000c:
+IL_000d:
 	{
 		NullCheck(G_B2_0);
 		bool L_2 = PhraseRecognizer_get_IsRunning_m26DF9151D332930662ACB87E00D2498DCC87F7E1(G_B2_0, /*hidden argument*/NULL);
-		return L_2;
+		G_B3_0 = ((int32_t)(L_2));
+	}
+
+IL_0012:
+	{
+		return (bool)G_B3_0;
 	}
 }
 // System.Boolean Microsoft.MixedReality.Toolkit.Windows.Input.WindowsSpeechInputProvider::CheckCapability(Microsoft.MixedReality.Toolkit.MixedRealityCapability)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WindowsSpeechInputProvider_CheckCapability_m867CD85AFA5D2BD0F46C8D381653120813B2A6C2 (WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE * __this, int32_t ___capability0, const RuntimeMethod* method)
 {
+	bool V_0 = false;
 	{
 		// return capability == MixedRealityCapability.VoiceCommand;
 		int32_t L_0 = ___capability0;
-		return (bool)((((int32_t)L_0) == ((int32_t)4))? 1 : 0);
+		V_0 = (bool)((((int32_t)L_0) == ((int32_t)4))? 1 : 0);
+		goto IL_0008;
+	}
+
+IL_0008:
+	{
+		// }
+		bool L_1 = V_0;
+		return L_1;
 	}
 }
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsSpeechInputProvider::StartRecognition()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_StartRecognition_m9799DAFEC06E5F78EC639BC903A9371B06CF17EF (WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE * __this, const RuntimeMethod* method)
 {
+	bool V_0 = false;
+	bool V_1 = false;
+	int32_t G_B3_0 = 0;
+	int32_t G_B8_0 = 0;
 	{
 		// if (keywordRecognizer == null && InputSystemProfile.SpeechCommandsProfile.SpeechRecognizerStartBehavior == AutoStartBehavior.ManualStart)
 		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_0 = __this->get_keywordRecognizer_19();
 		if (L_0)
 		{
-			goto IL_0021;
+			goto IL_001e;
 		}
 	}
 	{
 		MixedRealityInputSystemProfile_tE6382BBDB73ACDFF6F3D0C3B4AD9B1B7F2D5BAC2 * L_1 = BaseInputDeviceManager_get_InputSystemProfile_mE2FE4CB8744076CD1A05987279ECA9FED4623626(__this, /*hidden argument*/NULL);
 		NullCheck(L_1);
-		MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_2 = MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E_inline(L_1, /*hidden argument*/NULL);
+		MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_2 = MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E(L_1, /*hidden argument*/NULL);
 		NullCheck(L_2);
 		int32_t L_3 = MixedRealitySpeechCommandsProfile_get_SpeechRecognizerStartBehavior_m8DB42B73900D75367BCCADE158634F41C237363A_inline(L_2, /*hidden argument*/NULL);
-		if ((!(((uint32_t)L_3) == ((uint32_t)1))))
+		G_B3_0 = ((((int32_t)L_3) == ((int32_t)1))? 1 : 0);
+		goto IL_001f;
+	}
+
+IL_001e:
+	{
+		G_B3_0 = 0;
+	}
+
+IL_001f:
+	{
+		V_0 = (bool)G_B3_0;
+		bool L_4 = V_0;
+		if (!L_4)
 		{
-			goto IL_0021;
+			goto IL_002c;
 		}
 	}
 	{
@@ -7453,32 +7824,45 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_StartRecognit
 		WindowsSpeechInputProvider_InitializeKeywordRecognizer_mB007EB16018114C77A8CE923F9A054228657C1BE(__this, /*hidden argument*/NULL);
 	}
 
-IL_0021:
+IL_002c:
 	{
 		// if (keywordRecognizer != null && !keywordRecognizer.IsRunning)
-		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_4 = __this->get_keywordRecognizer_19();
-		if (!L_4)
+		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_5 = __this->get_keywordRecognizer_19();
+		if (!L_5)
 		{
-			goto IL_0041;
+			goto IL_0044;
 		}
 	}
 	{
-		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_5 = __this->get_keywordRecognizer_19();
-		NullCheck(L_5);
-		bool L_6 = PhraseRecognizer_get_IsRunning_m26DF9151D332930662ACB87E00D2498DCC87F7E1(L_5, /*hidden argument*/NULL);
-		if (L_6)
+		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_6 = __this->get_keywordRecognizer_19();
+		NullCheck(L_6);
+		bool L_7 = PhraseRecognizer_get_IsRunning_m26DF9151D332930662ACB87E00D2498DCC87F7E1(L_6, /*hidden argument*/NULL);
+		G_B8_0 = ((((int32_t)L_7) == ((int32_t)0))? 1 : 0);
+		goto IL_0045;
+	}
+
+IL_0044:
+	{
+		G_B8_0 = 0;
+	}
+
+IL_0045:
+	{
+		V_1 = (bool)G_B8_0;
+		bool L_8 = V_1;
+		if (!L_8)
 		{
-			goto IL_0041;
+			goto IL_0057;
 		}
 	}
 	{
 		// keywordRecognizer.Start();
-		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_7 = __this->get_keywordRecognizer_19();
-		NullCheck(L_7);
-		PhraseRecognizer_Start_m2CDF8ABBF99C79C181488B6F0310375BC39D2459(L_7, /*hidden argument*/NULL);
+		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_9 = __this->get_keywordRecognizer_19();
+		NullCheck(L_9);
+		PhraseRecognizer_Start_m2CDF8ABBF99C79C181488B6F0310375BC39D2459(L_9, /*hidden argument*/NULL);
 	}
 
-IL_0041:
+IL_0057:
 	{
 		// }
 		return;
@@ -7487,31 +7871,46 @@ IL_0041:
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsSpeechInputProvider::StopRecognition()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_StopRecognition_mEDBAC69B9FE8A1AF26F2E1A817D5D7767E88B69C (WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE * __this, const RuntimeMethod* method)
 {
+	bool V_0 = false;
+	int32_t G_B3_0 = 0;
 	{
 		// if (keywordRecognizer != null && keywordRecognizer.IsRunning)
 		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_0 = __this->get_keywordRecognizer_19();
 		if (!L_0)
 		{
-			goto IL_0020;
+			goto IL_0016;
 		}
 	}
 	{
 		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_1 = __this->get_keywordRecognizer_19();
 		NullCheck(L_1);
 		bool L_2 = PhraseRecognizer_get_IsRunning_m26DF9151D332930662ACB87E00D2498DCC87F7E1(L_1, /*hidden argument*/NULL);
-		if (!L_2)
+		G_B3_0 = ((int32_t)(L_2));
+		goto IL_0017;
+	}
+
+IL_0016:
+	{
+		G_B3_0 = 0;
+	}
+
+IL_0017:
+	{
+		V_0 = (bool)G_B3_0;
+		bool L_3 = V_0;
+		if (!L_3)
 		{
-			goto IL_0020;
+			goto IL_0029;
 		}
 	}
 	{
 		// keywordRecognizer.Stop();
-		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_3 = __this->get_keywordRecognizer_19();
-		NullCheck(L_3);
-		PhraseRecognizer_Stop_mD94B6DDFE77D1AC1DC10C5BF015F76F607B81F19(L_3, /*hidden argument*/NULL);
+		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_4 = __this->get_keywordRecognizer_19();
+		NullCheck(L_4);
+		PhraseRecognizer_Stop_mD94B6DDFE77D1AC1DC10C5BF015F76F607B81F19(L_4, /*hidden argument*/NULL);
 	}
 
-IL_0020:
+IL_0029:
 	{
 		// }
 		return;
@@ -7520,16 +7919,19 @@ IL_0020:
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsSpeechInputProvider::Enable()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_Enable_m1ACD3641CC2B267B1E646F0200C9EC8A3B87B9BA (WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE * __this, const RuntimeMethod* method)
 {
+	bool V_0 = false;
 	{
 		// if (InputSystemProfile.SpeechCommandsProfile.SpeechRecognizerStartBehavior == AutoStartBehavior.AutoStart)
 		MixedRealityInputSystemProfile_tE6382BBDB73ACDFF6F3D0C3B4AD9B1B7F2D5BAC2 * L_0 = BaseInputDeviceManager_get_InputSystemProfile_mE2FE4CB8744076CD1A05987279ECA9FED4623626(__this, /*hidden argument*/NULL);
 		NullCheck(L_0);
-		MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_1 = MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E_inline(L_0, /*hidden argument*/NULL);
+		MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_1 = MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E(L_0, /*hidden argument*/NULL);
 		NullCheck(L_1);
 		int32_t L_2 = MixedRealitySpeechCommandsProfile_get_SpeechRecognizerStartBehavior_m8DB42B73900D75367BCCADE158634F41C237363A_inline(L_1, /*hidden argument*/NULL);
-		if (L_2)
+		V_0 = (bool)((((int32_t)L_2) == ((int32_t)0))? 1 : 0);
+		bool L_3 = V_0;
+		if (!L_3)
 		{
-			goto IL_001e;
+			goto IL_0028;
 		}
 	}
 	{
@@ -7539,7 +7941,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_Enable_m1ACD3
 		WindowsSpeechInputProvider_StartRecognition_m9799DAFEC06E5F78EC639BC903A9371B06CF17EF(__this, /*hidden argument*/NULL);
 	}
 
-IL_001e:
+IL_0028:
 	{
 		// base.Enable();
 		BaseService_Enable_m04CE0EA9BE41F36575F1B7FBDAE7CB7514EFEB49(__this, /*hidden argument*/NULL);
@@ -7557,8 +7959,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_InitializeKey
 		s_Il2CppMethodInitialized = true;
 	}
 	StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* V_0 = NULL;
-	int32_t V_1 = 0;
-	Exception_t * V_2 = NULL;
+	bool V_1 = false;
+	int32_t V_2 = 0;
+	bool V_3 = false;
+	Exception_t * V_4 = NULL;
+	bool V_5 = false;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -7566,12 +7971,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_InitializeKey
 	void* __leave_targets_storage = alloca(sizeof(int32_t) * 2);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
-	RuntimeObject* G_B8_0 = NULL;
-	WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE * G_B8_1 = NULL;
-	RuntimeObject* G_B7_0 = NULL;
-	WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE * G_B7_1 = NULL;
+	int32_t G_B6_0 = 0;
+	RuntimeObject* G_B10_0 = NULL;
+	WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE * G_B10_1 = NULL;
 	RuntimeObject* G_B9_0 = NULL;
 	WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE * G_B9_1 = NULL;
+	RuntimeObject* G_B11_0 = NULL;
+	WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE * G_B11_1 = NULL;
 	{
 		// if (!Application.isPlaying ||
 		//     (Commands == null) ||
@@ -7582,14 +7988,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_InitializeKey
 		bool L_0 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
 		if (!L_0)
 		{
-			goto IL_002e;
+			goto IL_0032;
 		}
 	}
 	{
 		SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_1 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
 		if (!L_1)
 		{
-			goto IL_002e;
+			goto IL_0032;
 		}
 	}
 	{
@@ -7597,7 +8003,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_InitializeKey
 		NullCheck(L_2);
 		if (!(((RuntimeArray*)L_2)->max_length))
 		{
-			goto IL_002e;
+			goto IL_0032;
 		}
 	}
 	{
@@ -7606,165 +8012,179 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_InitializeKey
 		bool L_4 = Object_op_Equality_mBC2401774F3BE33E8CF6F0A8148E66C95D6CFF1C(L_3, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
 		if (L_4)
 		{
-			goto IL_002e;
+			goto IL_0032;
 		}
 	}
 	{
 		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_5 = __this->get_keywordRecognizer_19();
-		if (!L_5)
-		{
-			goto IL_002f;
-		}
+		G_B6_0 = ((!(((RuntimeObject*)(KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C *)L_5) <= ((RuntimeObject*)(RuntimeObject *)NULL)))? 1 : 0);
+		goto IL_0033;
 	}
 
-IL_002e:
+IL_0032:
 	{
-		// return;
-		return;
+		G_B6_0 = 1;
 	}
 
-IL_002f:
+IL_0033:
 	{
-		// InputSource = Service?.RequestNewGenericInputSource("Windows Speech Input Source", sourceType: InputSourceType.Voice);
-		RuntimeObject* L_6 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
-		RuntimeObject* L_7 = L_6;
-		G_B7_0 = L_7;
-		G_B7_1 = __this;
-		if (L_7)
+		V_1 = (bool)G_B6_0;
+		bool L_6 = V_1;
+		if (!L_6)
 		{
-			G_B8_0 = L_7;
-			G_B8_1 = __this;
 			goto IL_003d;
 		}
 	}
 	{
-		G_B9_0 = ((RuntimeObject*)(NULL));
-		G_B9_1 = G_B7_1;
-		goto IL_0049;
+		// return;
+		goto IL_010a;
 	}
 
 IL_003d:
 	{
-		NullCheck(G_B8_0);
-		RuntimeObject* L_8 = InterfaceFuncInvoker3< RuntimeObject*, String_t*, IMixedRealityPointerU5BU5D_t39DD1136CDE343C8864073AF61557AFC03AB3778*, int32_t >::Invoke(22 /* Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RequestNewGenericInputSource(System.String,Microsoft.MixedReality.Toolkit.Input.IMixedRealityPointer[],Microsoft.MixedReality.Toolkit.Input.InputSourceType) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, G_B8_0, _stringLiteral0B759AD845C0355947EA875C903DD48C3EED47E0, (IMixedRealityPointerU5BU5D_t39DD1136CDE343C8864073AF61557AFC03AB3778*)(IMixedRealityPointerU5BU5D_t39DD1136CDE343C8864073AF61557AFC03AB3778*)NULL, 3);
+		// InputSource = Service?.RequestNewGenericInputSource("Windows Speech Input Source", sourceType: InputSourceType.Voice);
+		RuntimeObject* L_7 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
+		RuntimeObject* L_8 = L_7;
 		G_B9_0 = L_8;
-		G_B9_1 = G_B8_1;
+		G_B9_1 = __this;
+		if (L_8)
+		{
+			G_B10_0 = L_8;
+			G_B10_1 = __this;
+			goto IL_004b;
+		}
 	}
-
-IL_0049:
 	{
-		NullCheck(G_B9_1);
-		G_B9_1->set_InputSource_17(G_B9_0);
-		// var newKeywords = new string[Commands.Length];
-		SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_9 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
-		NullCheck(L_9);
-		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_10 = (StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)SZArrayNew(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E_il2cpp_TypeInfo_var, (uint32_t)(((int32_t)((int32_t)(((RuntimeArray*)L_9)->max_length)))));
-		V_0 = L_10;
-		// for (int i = 0; i < Commands.Length; i++)
-		V_1 = 0;
-		goto IL_0078;
+		G_B11_0 = ((RuntimeObject*)(NULL));
+		G_B11_1 = G_B9_1;
+		goto IL_0057;
 	}
 
-IL_0060:
+IL_004b:
+	{
+		NullCheck(G_B10_0);
+		RuntimeObject* L_9 = InterfaceFuncInvoker3< RuntimeObject*, String_t*, IMixedRealityPointerU5BU5D_t39DD1136CDE343C8864073AF61557AFC03AB3778*, int32_t >::Invoke(22 /* Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RequestNewGenericInputSource(System.String,Microsoft.MixedReality.Toolkit.Input.IMixedRealityPointer[],Microsoft.MixedReality.Toolkit.Input.InputSourceType) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, G_B10_0, _stringLiteral0B759AD845C0355947EA875C903DD48C3EED47E0, (IMixedRealityPointerU5BU5D_t39DD1136CDE343C8864073AF61557AFC03AB3778*)(IMixedRealityPointerU5BU5D_t39DD1136CDE343C8864073AF61557AFC03AB3778*)NULL, 3);
+		G_B11_0 = L_9;
+		G_B11_1 = G_B10_1;
+	}
+
+IL_0057:
+	{
+		NullCheck(G_B11_1);
+		G_B11_1->set_InputSource_17(G_B11_0);
+		// var newKeywords = new string[Commands.Length];
+		SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_10 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
+		NullCheck(L_10);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_11 = (StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)SZArrayNew(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E_il2cpp_TypeInfo_var, (uint32_t)(((int32_t)((int32_t)(((RuntimeArray*)L_10)->max_length)))));
+		V_0 = L_11;
+		// for (int i = 0; i < Commands.Length; i++)
+		V_2 = 0;
+		goto IL_0088;
+	}
+
+IL_006e:
 	{
 		// newKeywords[i] = Commands[i].LocalizedKeyword;
-		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_11 = V_0;
-		int32_t L_12 = V_1;
-		SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_13 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
-		int32_t L_14 = V_1;
-		NullCheck(L_13);
-		String_t* L_15 = SpeechCommands_get_LocalizedKeyword_m5CB14BEDBB6125BD45E76EA4EB6E66A9D8C6781D((SpeechCommands_tF37A6AFE4D69C10D0E30BC190E5C97A64354878B *)((L_13)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_14))), /*hidden argument*/NULL);
-		NullCheck(L_11);
-		ArrayElementTypeCheck (L_11, L_15);
-		(L_11)->SetAt(static_cast<il2cpp_array_size_t>(L_12), (String_t*)L_15);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_12 = V_0;
+		int32_t L_13 = V_2;
+		SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_14 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
+		int32_t L_15 = V_2;
+		NullCheck(L_14);
+		String_t* L_16 = SpeechCommands_get_LocalizedKeyword_m5CB14BEDBB6125BD45E76EA4EB6E66A9D8C6781D((SpeechCommands_tF37A6AFE4D69C10D0E30BC190E5C97A64354878B *)((L_14)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_15))), /*hidden argument*/NULL);
+		NullCheck(L_12);
+		ArrayElementTypeCheck (L_12, L_16);
+		(L_12)->SetAt(static_cast<il2cpp_array_size_t>(L_13), (String_t*)L_16);
 		// for (int i = 0; i < Commands.Length; i++)
-		int32_t L_16 = V_1;
-		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_16, (int32_t)1));
+		int32_t L_17 = V_2;
+		V_2 = ((int32_t)il2cpp_codegen_add((int32_t)L_17, (int32_t)1));
 	}
 
-IL_0078:
+IL_0088:
 	{
 		// for (int i = 0; i < Commands.Length; i++)
-		int32_t L_17 = V_1;
-		SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_18 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
-		NullCheck(L_18);
-		if ((((int32_t)L_17) < ((int32_t)(((int32_t)((int32_t)(((RuntimeArray*)L_18)->max_length)))))))
+		int32_t L_18 = V_2;
+		SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_19 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
+		NullCheck(L_19);
+		V_3 = (bool)((((int32_t)L_18) < ((int32_t)(((int32_t)((int32_t)(((RuntimeArray*)L_19)->max_length))))))? 1 : 0);
+		bool L_20 = V_3;
+		if (L_20)
 		{
-			goto IL_0060;
+			goto IL_006e;
 		}
 	}
 	{
 		// RecognitionConfidenceLevel = InputSystemProfile.SpeechCommandsProfile.SpeechRecognitionConfidenceLevel;
-		MixedRealityInputSystemProfile_tE6382BBDB73ACDFF6F3D0C3B4AD9B1B7F2D5BAC2 * L_19 = BaseInputDeviceManager_get_InputSystemProfile_mE2FE4CB8744076CD1A05987279ECA9FED4623626(__this, /*hidden argument*/NULL);
-		NullCheck(L_19);
-		MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_20 = MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E_inline(L_19, /*hidden argument*/NULL);
-		NullCheck(L_20);
-		int32_t L_21 = MixedRealitySpeechCommandsProfile_get_SpeechRecognitionConfidenceLevel_mD07EC3F0C555F0635B714CC901BD1635C8F3609A_inline(L_20, /*hidden argument*/NULL);
-		WindowsSpeechInputProvider_set_RecognitionConfidenceLevel_mC9C28B85D91B50F6181C8A832DBC2378B7E6A063_inline(__this, L_21, /*hidden argument*/NULL);
+		MixedRealityInputSystemProfile_tE6382BBDB73ACDFF6F3D0C3B4AD9B1B7F2D5BAC2 * L_21 = BaseInputDeviceManager_get_InputSystemProfile_mE2FE4CB8744076CD1A05987279ECA9FED4623626(__this, /*hidden argument*/NULL);
+		NullCheck(L_21);
+		MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_22 = MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E(L_21, /*hidden argument*/NULL);
+		NullCheck(L_22);
+		int32_t L_23 = MixedRealitySpeechCommandsProfile_get_SpeechRecognitionConfidenceLevel_mD07EC3F0C555F0635B714CC901BD1635C8F3609A_inline(L_22, /*hidden argument*/NULL);
+		WindowsSpeechInputProvider_set_RecognitionConfidenceLevel_mC9C28B85D91B50F6181C8A832DBC2378B7E6A063_inline(__this, L_23, /*hidden argument*/NULL);
 	}
 
-IL_0099:
+IL_00ae:
 	try
 	{ // begin try (depth: 1)
 		// keywordRecognizer = new KeywordRecognizer(newKeywords, (ConfidenceLevel)RecognitionConfidenceLevel);
-		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_22 = V_0;
-		int32_t L_23 = WindowsSpeechInputProvider_get_RecognitionConfidenceLevel_mD0722F8222669F932A114159E2B4AA84BA819C0E_inline(__this, /*hidden argument*/NULL);
-		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_24 = (KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C *)il2cpp_codegen_object_new(KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C_il2cpp_TypeInfo_var);
-		KeywordRecognizer__ctor_m10E461E5F20190D903506B99E53E522C589F9A56(L_24, L_22, L_23, /*hidden argument*/NULL);
-		__this->set_keywordRecognizer_19(L_24);
-		// }
-		goto IL_00ce;
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_24 = V_0;
+		int32_t L_25 = WindowsSpeechInputProvider_get_RecognitionConfidenceLevel_mD0722F8222669F932A114159E2B4AA84BA819C0E_inline(__this, /*hidden argument*/NULL);
+		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_26 = (KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C *)il2cpp_codegen_object_new(KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C_il2cpp_TypeInfo_var);
+		KeywordRecognizer__ctor_m10E461E5F20190D903506B99E53E522C589F9A56(L_26, L_24, L_25, /*hidden argument*/NULL);
+		__this->set_keywordRecognizer_19(L_26);
+		goto IL_00f2;
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t *)e.ex;
 		if(il2cpp_codegen_class_is_assignable_from (Exception_t_il2cpp_TypeInfo_var, il2cpp_codegen_object_class(e.ex)))
-			goto CATCH_00ad;
+			goto CATCH_00c4;
 		throw e;
 	}
 
-CATCH_00ad:
+CATCH_00c4:
 	{ // begin catch(System.Exception)
 		{
 			// catch (Exception ex)
-			V_2 = ((Exception_t *)__exception_local);
+			V_4 = ((Exception_t *)__exception_local);
 			// if (!Application.isBatchMode)
-			bool L_25 = Application_get_isBatchMode_m79DCFBCC7DEC6F98BA09697D73FDEEAF655E633C(/*hidden argument*/NULL);
-			if (L_25)
+			bool L_27 = Application_get_isBatchMode_m79DCFBCC7DEC6F98BA09697D73FDEEAF655E633C(/*hidden argument*/NULL);
+			V_5 = (bool)((((int32_t)L_27) == ((int32_t)0))? 1 : 0);
+			bool L_28 = V_5;
+			if (!L_28)
 			{
-				goto IL_00c5;
+				goto IL_00e9;
 			}
 		}
 
-IL_00b5:
+IL_00d5:
 		{
 			// Debug.LogWarning($"Failed to start keyword recognizer. Are microphone permissions granted? Exception: {ex}");
-			Exception_t * L_26 = V_2;
-			String_t* L_27 = String_Format_m0ACDD8B34764E4040AED0B3EEB753567E4576BFA(_stringLiteralD8259643549B7FA2D109DA0AFC1E9486946DC0C1, L_26, /*hidden argument*/NULL);
+			Exception_t * L_29 = V_4;
+			String_t* L_30 = String_Format_m0ACDD8B34764E4040AED0B3EEB753567E4576BFA(_stringLiteralD8259643549B7FA2D109DA0AFC1E9486946DC0C1, L_29, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(Debug_t7B5FCB117E2FD63B6838BC52821B252E2BFB61C4_il2cpp_TypeInfo_var);
-			Debug_LogWarning_m37338644DC81F640CCDFEAE35A223F0E965F0568(L_27, /*hidden argument*/NULL);
+			Debug_LogWarning_m37338644DC81F640CCDFEAE35A223F0E965F0568(L_30, /*hidden argument*/NULL);
 		}
 
-IL_00c5:
+IL_00e9:
 		{
 			// keywordRecognizer = null;
 			__this->set_keywordRecognizer_19((KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C *)NULL);
 			// return;
-			goto IL_00e5;
+			goto IL_010a;
 		}
 	} // end catch (depth: 1)
 
-IL_00ce:
+IL_00f2:
 	{
 		// keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
-		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_28 = __this->get_keywordRecognizer_19();
-		PhraseRecognizedDelegate_tC74E35BB76ACD314D7112D01626D41BEDC01B0D0 * L_29 = (PhraseRecognizedDelegate_tC74E35BB76ACD314D7112D01626D41BEDC01B0D0 *)il2cpp_codegen_object_new(PhraseRecognizedDelegate_tC74E35BB76ACD314D7112D01626D41BEDC01B0D0_il2cpp_TypeInfo_var);
-		PhraseRecognizedDelegate__ctor_m0D7CFE194591D6DEE1120B7E23917C77ED5027F1(L_29, __this, (intptr_t)((intptr_t)WindowsSpeechInputProvider_KeywordRecognizer_OnPhraseRecognized_m76FA2711269633BCD327F0C53648CAE4F576877F_RuntimeMethod_var), /*hidden argument*/NULL);
-		NullCheck(L_28);
-		PhraseRecognizer_add_OnPhraseRecognized_m3A70137B301880FB1CCA497AADC4457DF879B223(L_28, L_29, /*hidden argument*/NULL);
+		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_31 = __this->get_keywordRecognizer_19();
+		PhraseRecognizedDelegate_tC74E35BB76ACD314D7112D01626D41BEDC01B0D0 * L_32 = (PhraseRecognizedDelegate_tC74E35BB76ACD314D7112D01626D41BEDC01B0D0 *)il2cpp_codegen_object_new(PhraseRecognizedDelegate_tC74E35BB76ACD314D7112D01626D41BEDC01B0D0_il2cpp_TypeInfo_var);
+		PhraseRecognizedDelegate__ctor_m0D7CFE194591D6DEE1120B7E23917C77ED5027F1(L_32, __this, (intptr_t)((intptr_t)WindowsSpeechInputProvider_KeywordRecognizer_OnPhraseRecognized_m76FA2711269633BCD327F0C53648CAE4F576877F_RuntimeMethod_var), /*hidden argument*/NULL);
+		NullCheck(L_31);
+		PhraseRecognizer_add_OnPhraseRecognized_m3A70137B301880FB1CCA497AADC4457DF879B223(L_31, L_32, /*hidden argument*/NULL);
 	}
 
-IL_00e5:
+IL_010a:
 	{
 		// }
 		return;
@@ -7783,7 +8203,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_Update_mBB536
 	memset((&V_0), 0, sizeof(V_0));
 	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
 	memset((&V_1), 0, sizeof(V_1));
-	int32_t V_2 = 0;
+	bool V_2 = false;
+	int32_t V_3 = 0;
+	bool V_4 = false;
+	bool V_5 = false;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -7791,6 +8214,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_Update_mBB536
 	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
+	int32_t G_B4_0 = 0;
 	{
 		// using (UpdatePerfMarker.Auto())
 		IL2CPP_RUNTIME_CLASS_INIT(WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE_il2cpp_TypeInfo_var);
@@ -7800,7 +8224,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_Update_mBB536
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
@@ -7810,100 +8234,120 @@ IL_000e:
 			KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_2 = __this->get_keywordRecognizer_19();
 			if (!L_2)
 			{
-				goto IL_007b;
+				goto IL_002c;
 			}
 		}
 
-IL_001c:
+IL_001f:
 		{
 			KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_3 = __this->get_keywordRecognizer_19();
 			NullCheck(L_3);
 			bool L_4 = PhraseRecognizer_get_IsRunning_m26DF9151D332930662ACB87E00D2498DCC87F7E1(L_3, /*hidden argument*/NULL);
-			if (!L_4)
-			{
-				goto IL_007b;
-			}
+			G_B4_0 = ((int32_t)(L_4));
+			goto IL_002d;
 		}
 
-IL_0029:
+IL_002c:
 		{
-			// for (int i = 0; i < Commands.Length; i++)
-			V_2 = 0;
-			goto IL_0070;
+			G_B4_0 = 0;
 		}
 
 IL_002d:
 		{
-			// if (UInput.GetKeyDown(Commands[i].KeyCode))
-			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_5 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
-			int32_t L_6 = V_2;
-			NullCheck(L_5);
-			int32_t L_7 = SpeechCommands_get_KeyCode_m57FD6DCFF88FC2282A875DA0F22A262F37FAD11A_inline((SpeechCommands_tF37A6AFE4D69C10D0E30BC190E5C97A64354878B *)((L_5)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_6))), /*hidden argument*/NULL);
-			bool L_8 = Input_GetKeyDown_mEA57896808B6F484B12CD0AEEB83390A3CFCDBDC(L_7, /*hidden argument*/NULL);
-			if (!L_8)
+			V_2 = (bool)G_B4_0;
+			bool L_5 = V_2;
+			if (!L_5)
 			{
-				goto IL_006c;
+				goto IL_0094;
 			}
 		}
 
-IL_0045:
+IL_0031:
+		{
+			// for (int i = 0; i < Commands.Length; i++)
+			V_3 = 0;
+			goto IL_0082;
+		}
+
+IL_0036:
+		{
+			// if (UInput.GetKeyDown(Commands[i].KeyCode))
+			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_6 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
+			int32_t L_7 = V_3;
+			NullCheck(L_6);
+			int32_t L_8 = SpeechCommands_get_KeyCode_m57FD6DCFF88FC2282A875DA0F22A262F37FAD11A_inline((SpeechCommands_tF37A6AFE4D69C10D0E30BC190E5C97A64354878B *)((L_6)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_7))), /*hidden argument*/NULL);
+			bool L_9 = Input_GetKeyDown_mEA57896808B6F484B12CD0AEEB83390A3CFCDBDC(L_8, /*hidden argument*/NULL);
+			V_4 = L_9;
+			bool L_10 = V_4;
+			if (!L_10)
+			{
+				goto IL_007d;
+			}
+		}
+
+IL_0053:
 		{
 			// OnPhraseRecognized((ConfidenceLevel)RecognitionConfidenceLevel, TimeSpan.Zero, DateTime.UtcNow, Commands[i].LocalizedKeyword);
-			int32_t L_9 = WindowsSpeechInputProvider_get_RecognitionConfidenceLevel_mD0722F8222669F932A114159E2B4AA84BA819C0E_inline(__this, /*hidden argument*/NULL);
+			int32_t L_11 = WindowsSpeechInputProvider_get_RecognitionConfidenceLevel_mD0722F8222669F932A114159E2B4AA84BA819C0E_inline(__this, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(TimeSpan_tA8069278ACE8A74D6DF7D514A9CD4432433F64C4_il2cpp_TypeInfo_var);
-			TimeSpan_tA8069278ACE8A74D6DF7D514A9CD4432433F64C4  L_10 = ((TimeSpan_tA8069278ACE8A74D6DF7D514A9CD4432433F64C4_StaticFields*)il2cpp_codegen_static_fields_for(TimeSpan_tA8069278ACE8A74D6DF7D514A9CD4432433F64C4_il2cpp_TypeInfo_var))->get_Zero_0();
+			TimeSpan_tA8069278ACE8A74D6DF7D514A9CD4432433F64C4  L_12 = ((TimeSpan_tA8069278ACE8A74D6DF7D514A9CD4432433F64C4_StaticFields*)il2cpp_codegen_static_fields_for(TimeSpan_tA8069278ACE8A74D6DF7D514A9CD4432433F64C4_il2cpp_TypeInfo_var))->get_Zero_0();
 			IL2CPP_RUNTIME_CLASS_INIT(DateTime_t349B7449FBAAFF4192636E2B7A07694DA9236132_il2cpp_TypeInfo_var);
-			DateTime_t349B7449FBAAFF4192636E2B7A07694DA9236132  L_11 = DateTime_get_UtcNow_m171F52F4B3A213E4BAD7B78DC8E794A269DE38A1(/*hidden argument*/NULL);
-			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_12 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
-			int32_t L_13 = V_2;
-			NullCheck(L_12);
-			String_t* L_14 = SpeechCommands_get_LocalizedKeyword_m5CB14BEDBB6125BD45E76EA4EB6E66A9D8C6781D((SpeechCommands_tF37A6AFE4D69C10D0E30BC190E5C97A64354878B *)((L_12)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_13))), /*hidden argument*/NULL);
-			WindowsSpeechInputProvider_OnPhraseRecognized_mD2BA3DF559733CE98DE4EB3F20E6F7550B4F0914(__this, L_9, L_10, L_11, L_14, /*hidden argument*/NULL);
+			DateTime_t349B7449FBAAFF4192636E2B7A07694DA9236132  L_13 = DateTime_get_UtcNow_m171F52F4B3A213E4BAD7B78DC8E794A269DE38A1(/*hidden argument*/NULL);
+			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_14 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
+			int32_t L_15 = V_3;
+			NullCheck(L_14);
+			String_t* L_16 = SpeechCommands_get_LocalizedKeyword_m5CB14BEDBB6125BD45E76EA4EB6E66A9D8C6781D((SpeechCommands_tF37A6AFE4D69C10D0E30BC190E5C97A64354878B *)((L_14)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_15))), /*hidden argument*/NULL);
+			WindowsSpeechInputProvider_OnPhraseRecognized_mD2BA3DF559733CE98DE4EB3F20E6F7550B4F0914(__this, L_11, L_12, L_13, L_16, /*hidden argument*/NULL);
 		}
 
-IL_006c:
+IL_007d:
 		{
 			// for (int i = 0; i < Commands.Length; i++)
-			int32_t L_15 = V_2;
-			V_2 = ((int32_t)il2cpp_codegen_add((int32_t)L_15, (int32_t)1));
+			int32_t L_17 = V_3;
+			V_3 = ((int32_t)il2cpp_codegen_add((int32_t)L_17, (int32_t)1));
 		}
 
-IL_0070:
+IL_0082:
 		{
 			// for (int i = 0; i < Commands.Length; i++)
-			int32_t L_16 = V_2;
-			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_17 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
-			NullCheck(L_17);
-			if ((((int32_t)L_16) < ((int32_t)(((int32_t)((int32_t)(((RuntimeArray*)L_17)->max_length)))))))
+			int32_t L_18 = V_3;
+			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_19 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
+			NullCheck(L_19);
+			V_5 = (bool)((((int32_t)L_18) < ((int32_t)(((int32_t)((int32_t)(((RuntimeArray*)L_19)->max_length))))))? 1 : 0);
+			bool L_20 = V_5;
+			if (L_20)
 			{
-				goto IL_002d;
+				goto IL_0036;
 			}
 		}
 
-IL_007b:
+IL_0093:
 		{
-			// }
-			IL2CPP_LEAVE(0x8B, FINALLY_007d);
+		}
+
+IL_0094:
+		{
+			IL2CPP_LEAVE(0xA6, FINALLY_0097);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_007d;
+		goto FINALLY_0097;
 	}
 
-FINALLY_007d:
+FINALLY_0097:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(125)
+		IL2CPP_END_FINALLY(151)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(125)
+	IL2CPP_CLEANUP(151)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x8B, IL_008b)
+		IL2CPP_JUMP_TBL(0xA6, IL_00a6)
 	}
 
-IL_008b:
+IL_00a6:
 	{
 		// }
 		return;
@@ -7918,30 +8362,33 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_Disable_m73A4
 		il2cpp_codegen_initialize_method (WindowsSpeechInputProvider_Disable_m73A44C3242B6491D2AEB3D22A4440246CD64FE4D_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
 	{
 		// if (keywordRecognizer != null)
 		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_0 = __this->get_keywordRecognizer_19();
-		if (!L_0)
+		V_0 = (bool)((!(((RuntimeObject*)(KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C *)L_0) <= ((RuntimeObject*)(RuntimeObject *)NULL)))? 1 : 0);
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0030;
+			goto IL_003b;
 		}
 	}
 	{
 		// StopRecognition();
 		WindowsSpeechInputProvider_StopRecognition_mEDBAC69B9FE8A1AF26F2E1A817D5D7767E88B69C(__this, /*hidden argument*/NULL);
 		// keywordRecognizer.OnPhraseRecognized -= KeywordRecognizer_OnPhraseRecognized;
-		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_1 = __this->get_keywordRecognizer_19();
-		PhraseRecognizedDelegate_tC74E35BB76ACD314D7112D01626D41BEDC01B0D0 * L_2 = (PhraseRecognizedDelegate_tC74E35BB76ACD314D7112D01626D41BEDC01B0D0 *)il2cpp_codegen_object_new(PhraseRecognizedDelegate_tC74E35BB76ACD314D7112D01626D41BEDC01B0D0_il2cpp_TypeInfo_var);
-		PhraseRecognizedDelegate__ctor_m0D7CFE194591D6DEE1120B7E23917C77ED5027F1(L_2, __this, (intptr_t)((intptr_t)WindowsSpeechInputProvider_KeywordRecognizer_OnPhraseRecognized_m76FA2711269633BCD327F0C53648CAE4F576877F_RuntimeMethod_var), /*hidden argument*/NULL);
-		NullCheck(L_1);
-		PhraseRecognizer_remove_OnPhraseRecognized_m238073B8E92F06363AAFE5918FDF5B7328A55F69(L_1, L_2, /*hidden argument*/NULL);
+		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_2 = __this->get_keywordRecognizer_19();
+		PhraseRecognizedDelegate_tC74E35BB76ACD314D7112D01626D41BEDC01B0D0 * L_3 = (PhraseRecognizedDelegate_tC74E35BB76ACD314D7112D01626D41BEDC01B0D0 *)il2cpp_codegen_object_new(PhraseRecognizedDelegate_tC74E35BB76ACD314D7112D01626D41BEDC01B0D0_il2cpp_TypeInfo_var);
+		PhraseRecognizedDelegate__ctor_m0D7CFE194591D6DEE1120B7E23917C77ED5027F1(L_3, __this, (intptr_t)((intptr_t)WindowsSpeechInputProvider_KeywordRecognizer_OnPhraseRecognized_m76FA2711269633BCD327F0C53648CAE4F576877F_RuntimeMethod_var), /*hidden argument*/NULL);
+		NullCheck(L_2);
+		PhraseRecognizer_remove_OnPhraseRecognized_m238073B8E92F06363AAFE5918FDF5B7328A55F69(L_2, L_3, /*hidden argument*/NULL);
 		// keywordRecognizer.Dispose();
-		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_3 = __this->get_keywordRecognizer_19();
-		NullCheck(L_3);
-		PhraseRecognizer_Dispose_m617A308A831D5314CE7B10301DB0CADAD080F73A(L_3, /*hidden argument*/NULL);
+		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_4 = __this->get_keywordRecognizer_19();
+		NullCheck(L_4);
+		PhraseRecognizer_Dispose_m617A308A831D5314CE7B10301DB0CADAD080F73A(L_4, /*hidden argument*/NULL);
 	}
 
-IL_0030:
+IL_003b:
 	{
 		// keywordRecognizer = null;
 		__this->set_keywordRecognizer_19((KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C *)NULL);
@@ -7954,38 +8401,45 @@ IL_0030:
 // System.Void Microsoft.MixedReality.Toolkit.Windows.Input.WindowsSpeechInputProvider::Dispose(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_Dispose_mE4A95336C4EFF0BF6F556D9DA7C34483BE6A94A9 (WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE * __this, bool ___disposing0, const RuntimeMethod* method)
 {
+	bool V_0 = false;
 	KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * G_B3_0 = NULL;
 	KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * G_B2_0 = NULL;
 	{
 		// if (disposing)
 		bool L_0 = ___disposing0;
-		if (!L_0)
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0013;
+			goto IL_001a;
 		}
 	}
 	{
 		// keywordRecognizer?.Dispose();
-		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_1 = __this->get_keywordRecognizer_19();
-		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_2 = L_1;
-		G_B2_0 = L_2;
-		if (L_2)
+		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_2 = __this->get_keywordRecognizer_19();
+		KeywordRecognizer_t8F0A26BBF11FE0307328C06B4A9EB4268386578C * L_3 = L_2;
+		G_B2_0 = L_3;
+		if (L_3)
 		{
-			G_B3_0 = L_2;
-			goto IL_000e;
+			G_B3_0 = L_3;
+			goto IL_0013;
 		}
 	}
 	{
-		return;
+		goto IL_0019;
 	}
 
-IL_000e:
+IL_0013:
 	{
 		NullCheck(G_B3_0);
 		PhraseRecognizer_Dispose_m617A308A831D5314CE7B10301DB0CADAD080F73A(G_B3_0, /*hidden argument*/NULL);
 	}
 
-IL_0013:
+IL_0019:
+	{
+	}
+
+IL_001a:
 	{
 		// }
 		return;
@@ -8023,26 +8477,28 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_OnPhraseRecog
 	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	int32_t V_2 = 0;
-	Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB  V_3;
-	memset((&V_3), 0, sizeof(V_3));
-	Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB  V_4;
-	memset((&V_4), 0, sizeof(V_4));
+	bool V_3 = false;
+	bool V_4 = false;
+	Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB  V_5;
+	memset((&V_5), 0, sizeof(V_5));
+	Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB  V_6;
+	memset((&V_6), 0, sizeof(V_6));
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	void* __leave_targets_storage = alloca(sizeof(int32_t) * 3);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
 	RuntimeObject* G_B5_0 = NULL;
 	RuntimeObject* G_B4_0 = NULL;
+	SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* G_B10_0 = NULL;
+	int32_t G_B10_1 = 0;
 	SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* G_B9_0 = NULL;
 	int32_t G_B9_1 = 0;
-	SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* G_B8_0 = NULL;
-	int32_t G_B8_1 = 0;
-	Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB  G_B10_0;
-	memset((&G_B10_0), 0, sizeof(G_B10_0));
-	int32_t G_B10_1 = 0;
+	Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB  G_B11_0;
+	memset((&G_B11_0), 0, sizeof(G_B11_0));
+	int32_t G_B11_1 = 0;
 	{
 		// using (OnPhraseRecognizedPerfMarker.Auto())
 		IL2CPP_RUNTIME_CLASS_INIT(WindowsSpeechInputProvider_t8D9E8429149A4626D950437F554AD60F6CAF3DDE_il2cpp_TypeInfo_var);
@@ -8052,16 +8508,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider_OnPhraseRecog
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
 			// for (int i = 0; i < Commands?.Length; i++)
 			V_2 = 0;
-			goto IL_0058;
+			goto IL_0060;
 		}
 
-IL_0012:
+IL_0014:
 		{
 			// if (Commands[i].LocalizedKeyword == text)
 			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_2 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
@@ -8070,124 +8526,131 @@ IL_0012:
 			String_t* L_4 = SpeechCommands_get_LocalizedKeyword_m5CB14BEDBB6125BD45E76EA4EB6E66A9D8C6781D((SpeechCommands_tF37A6AFE4D69C10D0E30BC190E5C97A64354878B *)((L_2)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_3))), /*hidden argument*/NULL);
 			String_t* L_5 = ___text3;
 			bool L_6 = String_op_Equality_m139F0E4195AE2F856019E63B241F36F016997FCE(L_4, L_5, /*hidden argument*/NULL);
-			if (!L_6)
+			V_3 = L_6;
+			bool L_7 = V_3;
+			if (!L_7)
 			{
-				goto IL_0054;
+				goto IL_005b;
 			}
 		}
 
-IL_002c:
+IL_0031:
 		{
 			// Service?.RaiseSpeechCommandRecognized(InputSource, (RecognitionConfidenceLevel)confidence, phraseDuration, phraseStartTime, Commands[i]);
-			RuntimeObject* L_7 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
-			RuntimeObject* L_8 = L_7;
-			G_B4_0 = L_8;
-			if (L_8)
+			RuntimeObject* L_8 = BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_inline(__this, /*hidden argument*/BaseDataProvider_1_get_Service_m7EC337C959E1DC2ED760B4572120C2C82EFC7B17_RuntimeMethod_var);
+			RuntimeObject* L_9 = L_8;
+			G_B4_0 = L_9;
+			if (L_9)
 			{
-				G_B5_0 = L_8;
-				goto IL_0038;
+				G_B5_0 = L_9;
+				goto IL_003e;
 			}
 		}
 
-IL_0035:
+IL_003b:
 		{
-			IL2CPP_LEAVE(0x9A, FINALLY_008c);
+			goto IL_0059;
 		}
 
-IL_0038:
+IL_003e:
 		{
-			RuntimeObject* L_9 = __this->get_InputSource_17();
-			int32_t L_10 = ___confidence0;
-			TimeSpan_tA8069278ACE8A74D6DF7D514A9CD4432433F64C4  L_11 = ___phraseDuration1;
-			DateTime_t349B7449FBAAFF4192636E2B7A07694DA9236132  L_12 = ___phraseStartTime2;
-			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_13 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
-			int32_t L_14 = V_2;
-			NullCheck(L_13);
-			int32_t L_15 = L_14;
-			SpeechCommands_tF37A6AFE4D69C10D0E30BC190E5C97A64354878B  L_16 = (L_13)->GetAt(static_cast<il2cpp_array_size_t>(L_15));
+			RuntimeObject* L_10 = __this->get_InputSource_17();
+			int32_t L_11 = ___confidence0;
+			TimeSpan_tA8069278ACE8A74D6DF7D514A9CD4432433F64C4  L_12 = ___phraseDuration1;
+			DateTime_t349B7449FBAAFF4192636E2B7A07694DA9236132  L_13 = ___phraseStartTime2;
+			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_14 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
+			int32_t L_15 = V_2;
+			NullCheck(L_14);
+			int32_t L_16 = L_15;
+			SpeechCommands_tF37A6AFE4D69C10D0E30BC190E5C97A64354878B  L_17 = (L_14)->GetAt(static_cast<il2cpp_array_size_t>(L_16));
 			NullCheck(G_B5_0);
-			InterfaceActionInvoker5< RuntimeObject*, int32_t, TimeSpan_tA8069278ACE8A74D6DF7D514A9CD4432433F64C4 , DateTime_t349B7449FBAAFF4192636E2B7A07694DA9236132 , SpeechCommands_tF37A6AFE4D69C10D0E30BC190E5C97A64354878B  >::Invoke(57 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RaiseSpeechCommandRecognized(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource,Microsoft.MixedReality.Toolkit.Utilities.RecognitionConfidenceLevel,System.TimeSpan,System.DateTime,Microsoft.MixedReality.Toolkit.Input.SpeechCommands) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, G_B5_0, L_9, L_10, L_11, L_12, L_16);
-			// break;
-			IL2CPP_LEAVE(0x9A, FINALLY_008c);
+			InterfaceActionInvoker5< RuntimeObject*, int32_t, TimeSpan_tA8069278ACE8A74D6DF7D514A9CD4432433F64C4 , DateTime_t349B7449FBAAFF4192636E2B7A07694DA9236132 , SpeechCommands_tF37A6AFE4D69C10D0E30BC190E5C97A64354878B  >::Invoke(57 /* System.Void Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem::RaiseSpeechCommandRecognized(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource,Microsoft.MixedReality.Toolkit.Utilities.RecognitionConfidenceLevel,System.TimeSpan,System.DateTime,Microsoft.MixedReality.Toolkit.Input.SpeechCommands) */, IMixedRealityInputSystem_t5CCAA5BAD9D45403FCE5D1B3FEEB2E45BA65B22B_il2cpp_TypeInfo_var, G_B5_0, L_10, L_11, L_12, L_13, L_17);
 		}
 
-IL_0054:
+IL_0059:
 		{
-			// for (int i = 0; i < Commands?.Length; i++)
-			int32_t L_17 = V_2;
-			V_2 = ((int32_t)il2cpp_codegen_add((int32_t)L_17, (int32_t)1));
+			// break;
+			goto IL_009a;
 		}
 
-IL_0058:
+IL_005b:
 		{
 			// for (int i = 0; i < Commands?.Length; i++)
 			int32_t L_18 = V_2;
-			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_19 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
-			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_20 = L_19;
-			G_B8_0 = L_20;
-			G_B8_1 = L_18;
-			if (L_20)
+			V_2 = ((int32_t)il2cpp_codegen_add((int32_t)L_18, (int32_t)1));
+		}
+
+IL_0060:
+		{
+			// for (int i = 0; i < Commands?.Length; i++)
+			int32_t L_19 = V_2;
+			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_20 = WindowsSpeechInputProvider_get_Commands_m5E794CB29A7524A9B5F2FEFFD681307D80CFC314(__this, /*hidden argument*/NULL);
+			SpeechCommandsU5BU5D_t78420D7B2EBEAB886AC40221CA5E4C7B5FA675C3* L_21 = L_20;
+			G_B9_0 = L_21;
+			G_B9_1 = L_19;
+			if (L_21)
 			{
-				G_B9_0 = L_20;
-				G_B9_1 = L_18;
-				goto IL_006f;
+				G_B10_0 = L_21;
+				G_B10_1 = L_19;
+				goto IL_0077;
 			}
 		}
 
-IL_0062:
+IL_006a:
 		{
-			il2cpp_codegen_initobj((&V_4), sizeof(Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB ));
-			Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB  L_21 = V_4;
-			G_B10_0 = L_21;
-			G_B10_1 = G_B8_1;
-			goto IL_0076;
+			il2cpp_codegen_initobj((&V_6), sizeof(Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB ));
+			Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB  L_22 = V_6;
+			G_B11_0 = L_22;
+			G_B11_1 = G_B9_1;
+			goto IL_007e;
 		}
 
-IL_006f:
+IL_0077:
 		{
-			NullCheck(G_B9_0);
-			Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB  L_22;
-			memset((&L_22), 0, sizeof(L_22));
-			Nullable_1__ctor_m11F9C228CFDF836DDFCD7880C09CB4098AB9D7F2((&L_22), (((int32_t)((int32_t)(((RuntimeArray*)G_B9_0)->max_length)))), /*hidden argument*/Nullable_1__ctor_m11F9C228CFDF836DDFCD7880C09CB4098AB9D7F2_RuntimeMethod_var);
-			G_B10_0 = L_22;
-			G_B10_1 = G_B9_1;
+			NullCheck(G_B10_0);
+			Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB  L_23;
+			memset((&L_23), 0, sizeof(L_23));
+			Nullable_1__ctor_m11F9C228CFDF836DDFCD7880C09CB4098AB9D7F2((&L_23), (((int32_t)((int32_t)(((RuntimeArray*)G_B10_0)->max_length)))), /*hidden argument*/Nullable_1__ctor_m11F9C228CFDF836DDFCD7880C09CB4098AB9D7F2_RuntimeMethod_var);
+			G_B11_0 = L_23;
+			G_B11_1 = G_B10_1;
 		}
 
-IL_0076:
+IL_007e:
 		{
-			V_3 = G_B10_0;
-			int32_t L_23 = Nullable_1_GetValueOrDefault_mE89BB8F302DF31EE202251F4746859285860B6B6_inline((Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB *)(&V_3), /*hidden argument*/Nullable_1_GetValueOrDefault_mE89BB8F302DF31EE202251F4746859285860B6B6_RuntimeMethod_var);
-			bool L_24 = Nullable_1_get_HasValue_mB664E2C41CADA8413EF8842E6601B8C696A7CE15_inline((Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB *)(&V_3), /*hidden argument*/Nullable_1_get_HasValue_mB664E2C41CADA8413EF8842E6601B8C696A7CE15_RuntimeMethod_var);
-			if (((int32_t)((int32_t)((((int32_t)G_B10_1) < ((int32_t)L_23))? 1 : 0)&(int32_t)L_24)))
+			V_5 = G_B11_0;
+			int32_t L_24 = Nullable_1_GetValueOrDefault_mE89BB8F302DF31EE202251F4746859285860B6B6_inline((Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB *)(&V_5), /*hidden argument*/Nullable_1_GetValueOrDefault_mE89BB8F302DF31EE202251F4746859285860B6B6_RuntimeMethod_var);
+			bool L_25 = Nullable_1_get_HasValue_mB664E2C41CADA8413EF8842E6601B8C696A7CE15_inline((Nullable_1_t0D03270832B3FFDDC0E7C2D89D4A0EA25376A1EB *)(&V_5), /*hidden argument*/Nullable_1_get_HasValue_mB664E2C41CADA8413EF8842E6601B8C696A7CE15_RuntimeMethod_var);
+			V_4 = (bool)((int32_t)((int32_t)((((int32_t)G_B11_1) < ((int32_t)L_24))? 1 : 0)&(int32_t)L_25));
+			bool L_26 = V_4;
+			if (L_26)
 			{
-				goto IL_0012;
+				goto IL_0014;
 			}
 		}
 
-IL_008a:
+IL_009a:
 		{
-			// }
-			IL2CPP_LEAVE(0x9A, FINALLY_008c);
+			IL2CPP_LEAVE(0xAC, FINALLY_009d);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_008c;
+		goto FINALLY_009d;
 	}
 
-FINALLY_008c:
+FINALLY_009d:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(140)
+		IL2CPP_END_FINALLY(157)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(140)
+	IL2CPP_CLEANUP(157)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x9A, IL_009a)
+		IL2CPP_JUMP_TBL(0xAC, IL_00ac)
 	}
 
-IL_009a:
+IL_00ac:
 	{
 		// }
 		return;
@@ -8219,14 +8682,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WindowsSpeechInputProvider__cctor_mEED8C
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * MixedRealityInputSystemProfile_get_SpeechCommandsProfile_m112B9F7B5EE6ACDBF893BB69A8AED00ABF0F949E_inline (MixedRealityInputSystemProfile_tE6382BBDB73ACDFF6F3D0C3B4AD9B1B7F2D5BAC2 * __this, const RuntimeMethod* method)
-{
-	{
-		// get { return speechCommandsProfile; }
-		MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * L_0 = __this->get_speechCommandsProfile_15();
-		return L_0;
-	}
-}
 IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR int32_t MixedRealitySpeechCommandsProfile_get_SpeechRecognizerStartBehavior_m8DB42B73900D75367BCCADE158634F41C237363A_inline (MixedRealitySpeechCommandsProfile_t73EF505A304D3B94E486F30B64A9A002FBD858CD * __this, const RuntimeMethod* method)
 {
 	{

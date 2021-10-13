@@ -1,10 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 using Lean.Common;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+using FSA = UnityEngine.Serialization.FormerlySerializedAsAttribute;
 
 namespace Lean.Touch
 {
@@ -27,35 +24,38 @@ namespace Lean.Touch
 		[System.Serializable] public class Vector3Vector3Event : UnityEvent<Vector3, Vector3> {}
 
 		/// <summary>Ignore fingers with StartedOverGui?</summary>
-		public bool IgnoreStartedOverGui = true;
+		public bool IgnoreStartedOverGui { set { ignoreStartedOverGui = value; } get { return ignoreStartedOverGui; } } [FSA("IgnoreStartedOverGui")] [SerializeField] private bool ignoreStartedOverGui = true;
 
-		/// <summary>Ignore fingers with IsOverGui?</summary>
-		public bool IgnoreIsOverGui;
+		/// <summary>Ignore fingers with OverGui?</summary>
+		public bool IgnoreIsOverGui { set { ignoreIsOverGui = value; } get { return ignoreIsOverGui; } } [FSA("IgnoreIsOverGui")] [SerializeField] private bool ignoreIsOverGui;
 
 		/// <summary>If the finger didn't move, ignore it?</summary>
-		public bool IgnoreIfStatic;
+		public bool IgnoreIfStatic { set { ignoreIfStatic = value; } get { return ignoreIfStatic; } } [FSA("IgnoreIfStatic")] [SerializeField] private bool ignoreIfStatic;
 
 		/// <summary>If the finger just began touching the screen, ignore it?</summary>
-		public bool IgnoreIfDown;
+		public bool IgnoreIfDown { set { ignoreIfDown = value; } get { return ignoreIfDown; } } [FSA("IgnoreIfDown")] [SerializeField] private bool ignoreIfDown;
 
 		/// <summary>If the finger just stopped touching the screen, ignore it?</summary>
-		public bool IgnoreIfUp;
+		public bool IgnoreIfUp { set { ignoreIfUp = value; } get { return ignoreIfUp; } } [FSA("IgnoreIfUp")] [SerializeField] private bool ignoreIfUp;
 
-		/// <summary>If RequiredSelectable.IsSelected is false, ignore?</summary>
-		public LeanSelectable RequiredSelectable;
+		/// <summary>If the finger is the mouse hover, ignore it?</summary>
+		public bool IgnoreIfHover { set { ignoreIfHover = value; } get { return ignoreIfHover; } } [SerializeField] private bool ignoreIfHover = true;
+
+		/// <summary>If the specified object is set and isn't selected, then this component will do nothing.</summary>
+		public LeanSelectable RequiredSelectable { set { requiredSelectable = value; } get { return requiredSelectable; } } [FSA("RequiredSelectable")] [SerializeField] private LeanSelectable requiredSelectable;
 
 		/// <summary>Called on every frame the conditions are met.</summary>
-		public LeanFingerEvent OnFinger { get { if (onFinger == null) onFinger = new LeanFingerEvent(); return onFinger; } } [FormerlySerializedAs("onDrag")] [SerializeField] private LeanFingerEvent onFinger;
+		public LeanFingerEvent OnFinger { get { if (onFinger == null) onFinger = new LeanFingerEvent(); return onFinger; } } [FSA("onDrag")] [SerializeField] private LeanFingerEvent onFinger;
 
 		/// <summary>The coordinate space of the OnDelta values.</summary>
-		public CoordinateType Coordinate;
+		public CoordinateType Coordinate { set { coordinate = value; } get { return coordinate; } } [FSA("Coordinate")] [SerializeField] private CoordinateType coordinate;
 
 		/// <summary>The delta values will be multiplied by this when output.</summary>
-		public float Multiplier = 1.0f;
+		public float Multiplier { set { multiplier = value; } get { return multiplier; } } [FSA("Multiplier")] [SerializeField] private float multiplier = 1.0f;
 
 		/// <summary>This event is invoked when the requirements are met.
 		/// Vector2 = Position Delta based on your Coordinates setting.</summary>
-		public Vector2Event OnDelta { get { if (onDelta == null) onDelta = new Vector2Event(); return onDelta; } } [FormerlySerializedAs("onDragDelta")] [SerializeField] private Vector2Event onDelta;
+		public Vector2Event OnDelta { get { if (onDelta == null) onDelta = new Vector2Event(); return onDelta; } } [FSA("onDragDelta")] [SerializeField] private Vector2Event onDelta;
 
 		/// <summary>Called on the first frame the conditions are met.
 		/// Float = The distance/magnitude/length of the swipe delta vector.</summary>
@@ -80,17 +80,19 @@ namespace Lean.Touch
 		/// Vector3 = Start point in world space.
 		/// Vector3 = End point in world space.</summary>
 		public Vector3Vector3Event OnWorldFromTo { get { if (onWorldFromTo == null) onWorldFromTo = new Vector3Vector3Event(); return onWorldFromTo; } } [SerializeField] private Vector3Vector3Event onWorldFromTo;
+
 #if UNITY_EDITOR
 		protected virtual void Reset()
 		{
-			RequiredSelectable = GetComponentInParent<LeanSelectable>();
+			requiredSelectable = GetComponentInParent<LeanSelectable>();
 		}
 #endif
+
 		protected virtual void Awake()
 		{
-			if (RequiredSelectable == null)
+			if (requiredSelectable == null)
 			{
-				RequiredSelectable = GetComponentInParent<LeanSelectable>();
+				requiredSelectable = GetComponentInParent<LeanSelectable>();
 			}
 		}
 
@@ -106,32 +108,37 @@ namespace Lean.Touch
 
 		private void HandleFingerUpdate(LeanFinger finger)
 		{
-			if (IgnoreStartedOverGui == true && finger.StartedOverGui == true)
+			if (ignoreStartedOverGui == true && finger.StartedOverGui == true)
 			{
 				return;
 			}
 
-			if (IgnoreIsOverGui == true && finger.IsOverGui == true)
+			if (ignoreIsOverGui == true && finger.IsOverGui == true)
 			{
 				return;
 			}
 
-			if (IgnoreIfStatic == true && finger.ScreenDelta.magnitude <= 0.0f)
+			if (ignoreIfStatic == true && finger.ScreenDelta.magnitude <= 0.0f)
 			{
 				return;
 			}
 
-			if (IgnoreIfDown == true && finger.Down == true)
+			if (ignoreIfDown == true && finger.Down == true)
 			{
 				return;
 			}
 
-			if (IgnoreIfUp == true && finger.Up == true)
+			if (ignoreIfUp == true && finger.Up == true)
 			{
 				return;
 			}
 
-			if (RequiredSelectable != null && RequiredSelectable.IsSelected == false)
+			if (ignoreIfHover == true && finger.Index == LeanTouch.HOVER_FINGER_INDEX)
+			{
+				return;
+			}
+
+			if (requiredSelectable != null && requiredSelectable.IsSelected == false)
 			{
 				return;
 			}
@@ -143,13 +150,13 @@ namespace Lean.Touch
 
 			var finalDelta = finger.ScreenDelta;
 
-			switch (Coordinate)
+			switch (coordinate)
 			{
 				case CoordinateType.ScaledPixels:     finalDelta *= LeanTouch.ScalingFactor; break;
 				case CoordinateType.ScreenPercentage: finalDelta *= LeanTouch.ScreenFactor;  break;
 			}
 
-			finalDelta *= Multiplier;
+			finalDelta *= multiplier;
 
 			if (onDelta != null)
 			{
@@ -188,38 +195,37 @@ namespace Lean.Touch
 }
 
 #if UNITY_EDITOR
-namespace Lean.Touch
+namespace Lean.Touch.Editor
 {
-	[CanEditMultipleObjects]
-	[CustomEditor(typeof(LeanFingerUpdate))]
-	public class LeanFingerUpdate_Inspector : LeanInspector<LeanFingerUpdate>
+	using TARGET = LeanFingerUpdate;
+
+	[UnityEditor.CanEditMultipleObjects]
+	[UnityEditor.CustomEditor(typeof(TARGET))]
+	public class LeanFingerUpdate_Editor : LeanEditor
 	{
-		private bool showUnusedEvents;
-
-		protected override void DrawInspector()
+		protected override void OnInspector()
 		{
-			Draw("IgnoreStartedOverGui", "Ignore fingers with StartedOverGui?");
-			Draw("IgnoreIsOverGui", "Ignore fingers with IsOverGui?");
-			Draw("IgnoreIfStatic", "If the finger didn't move, ignore it?");
-			Draw("RequiredSelectable", "If RequiredSelectable.IsSelected is false, ignore?");
-			Draw("IgnoreIfDown", "If the finger just began touching the screen, ignore it?");
-			Draw("IgnoreIfUp", "If the finger just stopped touching the screen, ignore it?");
+			TARGET tgt; TARGET[] tgts; GetTargets(out tgt, out tgts);
 
-			EditorGUILayout.Separator();
+			Draw("ignoreStartedOverGui", "Ignore fingers with StartedOverGui?");
+			Draw("ignoreIsOverGui", "Ignore fingers with OverGui?");
+			Draw("ignoreIfStatic", "If the finger didn't move, ignore it?");
+			Draw("requiredSelectable", "If the specified object is set and isn't selected, then this component will do nothing.");
+			Draw("ignoreIfDown", "If the finger just began touching the screen, ignore it?");
+			Draw("ignoreIfUp", "If the finger just stopped touching the screen, ignore it?");
+			Draw("ignoreIfHover", "If the finger is the mouse hover, ignore it?");
 
-			var usedA = Any(t => t.OnFinger.GetPersistentEventCount() > 0);
-			var usedB = Any(t => t.OnDelta.GetPersistentEventCount() > 0);
-			var usedC = Any(t => t.OnDistance.GetPersistentEventCount() > 0);
-			var usedD = Any(t => t.OnWorldFrom.GetPersistentEventCount() > 0);
-			var usedE = Any(t => t.OnWorldTo.GetPersistentEventCount() > 0);
-			var usedF = Any(t => t.OnWorldDelta.GetPersistentEventCount() > 0);
-			var usedG = Any(t => t.OnWorldFromTo.GetPersistentEventCount() > 0);
+			Separator();
 
-			EditorGUI.BeginDisabledGroup(usedA && usedB && usedC && usedD && usedE && usedF && usedG);
-				showUnusedEvents = EditorGUILayout.Foldout(showUnusedEvents, "Show Unused Events");
-			EditorGUI.EndDisabledGroup();
+			var usedA = Any(tgts, t => t.OnFinger.GetPersistentEventCount() > 0);
+			var usedB = Any(tgts, t => t.OnDelta.GetPersistentEventCount() > 0);
+			var usedC = Any(tgts, t => t.OnDistance.GetPersistentEventCount() > 0);
+			var usedD = Any(tgts, t => t.OnWorldFrom.GetPersistentEventCount() > 0);
+			var usedE = Any(tgts, t => t.OnWorldTo.GetPersistentEventCount() > 0);
+			var usedF = Any(tgts, t => t.OnWorldDelta.GetPersistentEventCount() > 0);
+			var usedG = Any(tgts, t => t.OnWorldFromTo.GetPersistentEventCount() > 0);
 
-			EditorGUILayout.Separator();
+			var showUnusedEvents = DrawFoldout("Show Unused Events", "Show all events?");
 
 			if (usedA == true || showUnusedEvents == true)
 			{
@@ -228,8 +234,8 @@ namespace Lean.Touch
 
 			if (usedB == true || usedC == true || showUnusedEvents == true)
 			{
-				Draw("Coordinate", "The coordinate space of the OnDelta values.");
-				Draw("Multiplier", "The delta values will be multiplied by this when output.");
+				Draw("coordinate", "The coordinate space of the OnDelta values.");
+				Draw("multiplier", "The delta values will be multiplied by this when output.");
 			}
 
 			if (usedB == true || showUnusedEvents == true)

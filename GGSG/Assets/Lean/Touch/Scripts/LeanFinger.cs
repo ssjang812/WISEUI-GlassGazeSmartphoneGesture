@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using Lean.Common;
 
 namespace Lean.Touch
 {
@@ -181,7 +182,7 @@ namespace Lean.Touch
 				var b = Snapshots[Mathf.Max(0, Snapshots.Count - 2)].ScreenPosition;
 				var a = Snapshots[Mathf.Max(0, Snapshots.Count - 1)].ScreenPosition;
 
-				return Hermite(d, c, b, a, t);
+				return LeanHelper.Hermite(d, c, b, a, t);
 			}
 
 			return Vector2.LerpUnclamped(LastScreenPosition, ScreenPosition, t);
@@ -204,33 +205,11 @@ namespace Lean.Touch
 			}
 		}
 
-		private static Vector2 Hermite(Vector2 a, Vector2 b, Vector2 c, Vector2 d, float t)
-		{
-			var mu2 = t * t;
-			var mu3 = mu2 * t;
-			var x   = HermiteInterpolate(a.x, b.x, c.x, d.x, t, mu2, mu3);
-			var y   = HermiteInterpolate(a.y, b.y, c.y, d.y, t, mu2, mu3);
-
-			return new Vector2(x, y);
-		}
-
-		private static float HermiteInterpolate(float y0,float y1, float y2,float y3, float mu, float mu2, float mu3)
-		{
-			var m0 = (y1 - y0) * 0.5f + (y2 - y1) * 0.5f;
-			var m1 = (y2 - y1) * 0.5f + (y3 - y2) * 0.5f;
-			var a0 =  2.0f * mu3 - 3.0f * mu2 + 1.0f;
-			var a1 =         mu3 - 2.0f * mu2 + mu;
-			var a2 =         mu3 -        mu2;
-			var a3 = -2.0f * mu3 + 3.0f * mu2;
-
-			return(a0*y1+a1*m0+a2*m1+a3*y2);
-		}
-
 		/// <summary>This will return the ray of the finger's current position relative to the specified camera (none/null = Main Camera).</summary>
 		public Ray GetRay(Camera camera = null)
 		{
 			// Make sure the camera exists
-			camera = LeanTouch.GetCamera(camera);
+			camera = LeanHelper.GetCamera(camera);
 
 			if (camera != null)
 			{
@@ -248,7 +227,7 @@ namespace Lean.Touch
 		public Ray GetStartRay(Camera camera = null)
 		{
 			// Make sure the camera exists
-			camera = LeanTouch.GetCamera(camera);
+			camera = LeanHelper.GetCamera(camera);
 
 			if (camera != null)
 			{
@@ -288,7 +267,7 @@ namespace Lean.Touch
 		public Vector3 GetSnapshotWorldPosition(float targetAge, float distance, Camera camera = null)
 		{
 			// Make sure the camera exists
-			camera = LeanTouch.GetCamera(camera);
+			camera = LeanHelper.GetCamera(camera);
 
 			if (camera != null)
 			{
@@ -402,7 +381,7 @@ namespace Lean.Touch
 		public Vector3 GetStartWorldPosition(float distance, Camera camera = null)
 		{
 			// Make sure the camera exists
-			camera = LeanTouch.GetCamera(camera);
+			camera = LeanHelper.GetCamera(camera);
 
 			if (camera != null)
 			{
@@ -422,7 +401,7 @@ namespace Lean.Touch
 		public Vector3 GetLastWorldPosition(float distance, Camera camera = null)
 		{
 			// Make sure the camera exists
-			camera = LeanTouch.GetCamera(camera);
+			camera = LeanHelper.GetCamera(camera);
 
 			if (camera != null)
 			{
@@ -442,7 +421,7 @@ namespace Lean.Touch
 		public Vector3 GetWorldPosition(float distance, Camera camera = null)
 		{
 			// Make sure the camera exists
-			camera = LeanTouch.GetCamera(camera);
+			camera = LeanHelper.GetCamera(camera);
 
 			if (camera != null)
 			{
@@ -468,7 +447,7 @@ namespace Lean.Touch
 		public Vector3 GetWorldDelta(float lastDistance, float distance, Camera camera = null)
 		{
 			// Make sure the camera exists
-			camera = LeanTouch.GetCamera(camera);
+			camera = LeanHelper.GetCamera(camera);
 
 			if (camera != null)
 			{

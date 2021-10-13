@@ -19,12 +19,14 @@
 #include "il2cpp-object-internals.h"
 
 
+// Lean.Common.LeanSelectable
+struct LeanSelectable_t72D14166296BF7AF160E152EBEB621B8F65AD7DB;
 // Lean.Touch.LeanFinger
 struct LeanFinger_t1528CFE253E230129315FF802274B185655954CE;
+// Lean.Touch.LeanFingerFilter
+struct LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE;
 // Lean.Touch.LeanFinger[]
 struct LeanFingerU5BU5D_t73C432E5F550C45897FABE8285AA7F15F32A5D41;
-// Lean.Touch.LeanSelectable
-struct LeanSelectable_tB946CA1839F817FFA9523A6B918CA8FFEE468A79;
 // Lean.Touch.LeanTwistRotateAxis
 struct LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB;
 // System.Char[]
@@ -46,6 +48,7 @@ struct MonoBehaviour_t4A60845CF505405AF8BE8C61CC07F75CADEF6429;
 // UnityEngine.Transform
 struct Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA;
 
+IL2CPP_EXTERN_C RuntimeClass* LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C const uint32_t LeanTwistRotateAxis__ctor_m91672C83ECA848D15FE6713DE3D32135C50A6C75_MetadataUsageId;
 
@@ -806,7 +809,7 @@ public:
 
 
 // Lean.Touch.LeanFingerFilter
-struct LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE 
+struct LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE  : public RuntimeObject
 {
 public:
 	// Lean.Touch.LeanFingerFilter/FilterType Lean.Touch.LeanFingerFilter::Filter
@@ -817,10 +820,12 @@ public:
 	int32_t ___RequiredFingerCount_2;
 	// System.Int32 Lean.Touch.LeanFingerFilter::RequiredMouseButtons
 	int32_t ___RequiredMouseButtons_3;
-	// Lean.Touch.LeanSelectable Lean.Touch.LeanFingerFilter::RequiredSelectable
-	LeanSelectable_tB946CA1839F817FFA9523A6B918CA8FFEE468A79 * ___RequiredSelectable_4;
+	// Lean.Common.LeanSelectable Lean.Touch.LeanFingerFilter::RequiredSelectable
+	LeanSelectable_t72D14166296BF7AF160E152EBEB621B8F65AD7DB * ___RequiredSelectable_4;
 	// System.Collections.Generic.List`1<Lean.Touch.LeanFinger> Lean.Touch.LeanFingerFilter::fingers
 	List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * ___fingers_5;
+	// System.Collections.Generic.List`1<Lean.Touch.LeanFinger> Lean.Touch.LeanFingerFilter::filteredFingers
+	List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * ___filteredFingers_6;
 
 public:
 	inline static int32_t get_offset_of_Filter_0() { return static_cast<int32_t>(offsetof(LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE, ___Filter_0)); }
@@ -856,9 +861,9 @@ public:
 	}
 
 	inline static int32_t get_offset_of_RequiredSelectable_4() { return static_cast<int32_t>(offsetof(LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE, ___RequiredSelectable_4)); }
-	inline LeanSelectable_tB946CA1839F817FFA9523A6B918CA8FFEE468A79 * get_RequiredSelectable_4() const { return ___RequiredSelectable_4; }
-	inline LeanSelectable_tB946CA1839F817FFA9523A6B918CA8FFEE468A79 ** get_address_of_RequiredSelectable_4() { return &___RequiredSelectable_4; }
-	inline void set_RequiredSelectable_4(LeanSelectable_tB946CA1839F817FFA9523A6B918CA8FFEE468A79 * value)
+	inline LeanSelectable_t72D14166296BF7AF160E152EBEB621B8F65AD7DB * get_RequiredSelectable_4() const { return ___RequiredSelectable_4; }
+	inline LeanSelectable_t72D14166296BF7AF160E152EBEB621B8F65AD7DB ** get_address_of_RequiredSelectable_4() { return &___RequiredSelectable_4; }
+	inline void set_RequiredSelectable_4(LeanSelectable_t72D14166296BF7AF160E152EBEB621B8F65AD7DB * value)
 	{
 		___RequiredSelectable_4 = value;
 		Il2CppCodeGenWriteBarrier((void**)(&___RequiredSelectable_4), (void*)value);
@@ -872,28 +877,17 @@ public:
 		___fingers_5 = value;
 		Il2CppCodeGenWriteBarrier((void**)(&___fingers_5), (void*)value);
 	}
+
+	inline static int32_t get_offset_of_filteredFingers_6() { return static_cast<int32_t>(offsetof(LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE, ___filteredFingers_6)); }
+	inline List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * get_filteredFingers_6() const { return ___filteredFingers_6; }
+	inline List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 ** get_address_of_filteredFingers_6() { return &___filteredFingers_6; }
+	inline void set_filteredFingers_6(List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * value)
+	{
+		___filteredFingers_6 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___filteredFingers_6), (void*)value);
+	}
 };
 
-// Native definition for P/Invoke marshalling of Lean.Touch.LeanFingerFilter
-struct LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE_marshaled_pinvoke
-{
-	int32_t ___Filter_0;
-	int32_t ___IgnoreStartedOverGui_1;
-	int32_t ___RequiredFingerCount_2;
-	int32_t ___RequiredMouseButtons_3;
-	LeanSelectable_tB946CA1839F817FFA9523A6B918CA8FFEE468A79 * ___RequiredSelectable_4;
-	List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * ___fingers_5;
-};
-// Native definition for COM marshalling of Lean.Touch.LeanFingerFilter
-struct LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE_marshaled_com
-{
-	int32_t ___Filter_0;
-	int32_t ___IgnoreStartedOverGui_1;
-	int32_t ___RequiredFingerCount_2;
-	int32_t ___RequiredMouseButtons_3;
-	LeanSelectable_tB946CA1839F817FFA9523A6B918CA8FFEE468A79 * ___RequiredSelectable_4;
-	List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * ___fingers_5;
-};
 
 // UnityEngine.Component
 struct Component_t05064EF382ABCAF4B8C94F8A350EA85184C26621  : public Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0
@@ -945,39 +939,46 @@ struct LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB  : public M
 {
 public:
 	// Lean.Touch.LeanFingerFilter Lean.Touch.LeanTwistRotateAxis::Use
-	LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE  ___Use_4;
-	// UnityEngine.Vector3 Lean.Touch.LeanTwistRotateAxis::Axis
-	Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  ___Axis_5;
-	// UnityEngine.Space Lean.Touch.LeanTwistRotateAxis::Space
-	int32_t ___Space_6;
+	LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * ___Use_4;
+	// UnityEngine.Vector3 Lean.Touch.LeanTwistRotateAxis::axis
+	Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  ___axis_5;
+	// UnityEngine.Space Lean.Touch.LeanTwistRotateAxis::space
+	int32_t ___space_6;
+	// System.Single Lean.Touch.LeanTwistRotateAxis::sensitivity
+	float ___sensitivity_7;
 
 public:
 	inline static int32_t get_offset_of_Use_4() { return static_cast<int32_t>(offsetof(LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB, ___Use_4)); }
-	inline LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE  get_Use_4() const { return ___Use_4; }
-	inline LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * get_address_of_Use_4() { return &___Use_4; }
-	inline void set_Use_4(LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE  value)
+	inline LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * get_Use_4() const { return ___Use_4; }
+	inline LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE ** get_address_of_Use_4() { return &___Use_4; }
+	inline void set_Use_4(LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * value)
 	{
 		___Use_4 = value;
-		Il2CppCodeGenWriteBarrier((void**)&(((&___Use_4))->___RequiredSelectable_4), (void*)NULL);
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&(((&___Use_4))->___fingers_5), (void*)NULL);
-		#endif
+		Il2CppCodeGenWriteBarrier((void**)(&___Use_4), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_Axis_5() { return static_cast<int32_t>(offsetof(LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB, ___Axis_5)); }
-	inline Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  get_Axis_5() const { return ___Axis_5; }
-	inline Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * get_address_of_Axis_5() { return &___Axis_5; }
-	inline void set_Axis_5(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  value)
+	inline static int32_t get_offset_of_axis_5() { return static_cast<int32_t>(offsetof(LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB, ___axis_5)); }
+	inline Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  get_axis_5() const { return ___axis_5; }
+	inline Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * get_address_of_axis_5() { return &___axis_5; }
+	inline void set_axis_5(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  value)
 	{
-		___Axis_5 = value;
+		___axis_5 = value;
 	}
 
-	inline static int32_t get_offset_of_Space_6() { return static_cast<int32_t>(offsetof(LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB, ___Space_6)); }
-	inline int32_t get_Space_6() const { return ___Space_6; }
-	inline int32_t* get_address_of_Space_6() { return &___Space_6; }
-	inline void set_Space_6(int32_t value)
+	inline static int32_t get_offset_of_space_6() { return static_cast<int32_t>(offsetof(LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB, ___space_6)); }
+	inline int32_t get_space_6() const { return ___space_6; }
+	inline int32_t* get_address_of_space_6() { return &___space_6; }
+	inline void set_space_6(int32_t value)
 	{
-		___Space_6 = value;
+		___space_6 = value;
+	}
+
+	inline static int32_t get_offset_of_sensitivity_7() { return static_cast<int32_t>(offsetof(LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB, ___sensitivity_7)); }
+	inline float get_sensitivity_7() const { return ___sensitivity_7; }
+	inline float* get_address_of_sensitivity_7() { return &___sensitivity_7; }
+	inline void set_sensitivity_7(float value)
+	{
+		___sensitivity_7 = value;
 	}
 };
 
@@ -997,8 +998,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeanFingerFilter_RemoveAllFingers_m8ACE3
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * Component_get_gameObject_m0B0570BA8DDD3CD78A9DB568EA18D7317686603C (Component_t05064EF382ABCAF4B8C94F8A350EA85184C26621 * __this, const RuntimeMethod* method);
 // System.Void Lean.Touch.LeanFingerFilter::UpdateRequiredSelectable(UnityEngine.GameObject)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeanFingerFilter_UpdateRequiredSelectable_m95F2B9448D29AC691627452BCFB6F4F84B3F8410 (LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * __this, GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___gameObject0, const RuntimeMethod* method);
-// System.Collections.Generic.List`1<Lean.Touch.LeanFinger> Lean.Touch.LeanFingerFilter::GetFingers(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * LeanFingerFilter_GetFingers_m6AE7C247C4DB5115BBA9A50E092DF8C55E570514 (LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * __this, bool ___ignoreUpFingers0, const RuntimeMethod* method);
+// System.Collections.Generic.List`1<Lean.Touch.LeanFinger> Lean.Touch.LeanFingerFilter::UpdateAndGetFingers(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * LeanFingerFilter_UpdateAndGetFingers_m6EEB92AD83318EB37FB53DBB1F3677EC39BFEB18 (LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * __this, bool ___ignoreUpFingers0, const RuntimeMethod* method);
 // System.Single Lean.Touch.LeanGesture::GetTwistDegrees(System.Collections.Generic.List`1<Lean.Touch.LeanFinger>)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float LeanGesture_GetTwistDegrees_m776BF95A03D529AB0FFAD764090AA2F2E5C262E3 (List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * ___fingers0, const RuntimeMethod* method);
 // UnityEngine.Transform UnityEngine.Component::get_transform()
@@ -1016,14 +1017,103 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_mEAEC84B222C60319D59
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void Lean.Touch.LeanTwistRotateAxis::set_Axis(UnityEngine.Vector3)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeanTwistRotateAxis_set_Axis_mF25E90D20023835B147C3CD07728323DAAF51F96 (LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB * __this, Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  ___value0, const RuntimeMethod* method)
+{
+	{
+		// public Vector3 Axis { set { axis = value; } get { return axis; } } [FSA("Axis")] [SerializeField] private Vector3 axis = Vector3.down;
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_0 = ___value0;
+		__this->set_axis_5(L_0);
+		// public Vector3 Axis { set { axis = value; } get { return axis; } } [FSA("Axis")] [SerializeField] private Vector3 axis = Vector3.down;
+		return;
+	}
+}
+// UnityEngine.Vector3 Lean.Touch.LeanTwistRotateAxis::get_Axis()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  LeanTwistRotateAxis_get_Axis_mCDC6D88F04FA0F959CE1FFF98BBBF90106040F8D (LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB * __this, const RuntimeMethod* method)
+{
+	Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		// public Vector3 Axis { set { axis = value; } get { return axis; } } [FSA("Axis")] [SerializeField] private Vector3 axis = Vector3.down;
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_0 = __this->get_axis_5();
+		V_0 = L_0;
+		goto IL_000a;
+	}
+
+IL_000a:
+	{
+		// public Vector3 Axis { set { axis = value; } get { return axis; } } [FSA("Axis")] [SerializeField] private Vector3 axis = Vector3.down;
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_1 = V_0;
+		return L_1;
+	}
+}
+// System.Void Lean.Touch.LeanTwistRotateAxis::set_Space(UnityEngine.Space)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeanTwistRotateAxis_set_Space_m455EB14A3A8EEFFFC73C748B420C98F67792E486 (LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB * __this, int32_t ___value0, const RuntimeMethod* method)
+{
+	{
+		// public Space Space { set { space = value; } get { return space; } } [FSA("Sensitivity")] [SerializeField] private Space space = Space.Self;
+		int32_t L_0 = ___value0;
+		__this->set_space_6(L_0);
+		// public Space Space { set { space = value; } get { return space; } } [FSA("Sensitivity")] [SerializeField] private Space space = Space.Self;
+		return;
+	}
+}
+// UnityEngine.Space Lean.Touch.LeanTwistRotateAxis::get_Space()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t LeanTwistRotateAxis_get_Space_mCFC7A2E087F0EB50F875492120D77B52D17205C9 (LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB * __this, const RuntimeMethod* method)
+{
+	int32_t V_0 = 0;
+	{
+		// public Space Space { set { space = value; } get { return space; } } [FSA("Sensitivity")] [SerializeField] private Space space = Space.Self;
+		int32_t L_0 = __this->get_space_6();
+		V_0 = L_0;
+		goto IL_000a;
+	}
+
+IL_000a:
+	{
+		// public Space Space { set { space = value; } get { return space; } } [FSA("Sensitivity")] [SerializeField] private Space space = Space.Self;
+		int32_t L_1 = V_0;
+		return L_1;
+	}
+}
+// System.Void Lean.Touch.LeanTwistRotateAxis::set_Sensitivity(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeanTwistRotateAxis_set_Sensitivity_m7A93F021EA7E104F2BC9DD9FDA3B0F6244C6A98C (LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB * __this, float ___value0, const RuntimeMethod* method)
+{
+	{
+		// public float Sensitivity { set { sensitivity = value; } get { return sensitivity; } } [FSA("Sensitivity")] [SerializeField] private float sensitivity = 1.0f;
+		float L_0 = ___value0;
+		__this->set_sensitivity_7(L_0);
+		// public float Sensitivity { set { sensitivity = value; } get { return sensitivity; } } [FSA("Sensitivity")] [SerializeField] private float sensitivity = 1.0f;
+		return;
+	}
+}
+// System.Single Lean.Touch.LeanTwistRotateAxis::get_Sensitivity()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float LeanTwistRotateAxis_get_Sensitivity_m89F3C936D22B6803212614A18B6228B943C53B8A (LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB * __this, const RuntimeMethod* method)
+{
+	float V_0 = 0.0f;
+	{
+		// public float Sensitivity { set { sensitivity = value; } get { return sensitivity; } } [FSA("Sensitivity")] [SerializeField] private float sensitivity = 1.0f;
+		float L_0 = __this->get_sensitivity_7();
+		V_0 = L_0;
+		goto IL_000a;
+	}
+
+IL_000a:
+	{
+		// public float Sensitivity { set { sensitivity = value; } get { return sensitivity; } } [FSA("Sensitivity")] [SerializeField] private float sensitivity = 1.0f;
+		float L_1 = V_0;
+		return L_1;
+	}
+}
 // System.Void Lean.Touch.LeanTwistRotateAxis::AddFinger(Lean.Touch.LeanFinger)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeanTwistRotateAxis_AddFinger_m472F1F34EB5A8551B790C14A613B6D1A505FCE8B (LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB * __this, LeanFinger_t1528CFE253E230129315FF802274B185655954CE * ___finger0, const RuntimeMethod* method)
 {
 	{
 		// Use.AddFinger(finger);
-		LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * L_0 = __this->get_address_of_Use_4();
+		LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * L_0 = __this->get_Use_4();
 		LeanFinger_t1528CFE253E230129315FF802274B185655954CE * L_1 = ___finger0;
-		LeanFingerFilter_AddFinger_m6B113D01F1E8ECB840C7431A7A84659A469AF786((LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE *)L_0, L_1, /*hidden argument*/NULL);
+		NullCheck(L_0);
+		LeanFingerFilter_AddFinger_m6B113D01F1E8ECB840C7431A7A84659A469AF786(L_0, L_1, /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -1033,9 +1123,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeanTwistRotateAxis_RemoveFinger_m902F8D
 {
 	{
 		// Use.RemoveFinger(finger);
-		LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * L_0 = __this->get_address_of_Use_4();
+		LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * L_0 = __this->get_Use_4();
 		LeanFinger_t1528CFE253E230129315FF802274B185655954CE * L_1 = ___finger0;
-		LeanFingerFilter_RemoveFinger_m513503B42E2817E64911B792255E840D21B648C6((LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE *)L_0, L_1, /*hidden argument*/NULL);
+		NullCheck(L_0);
+		LeanFingerFilter_RemoveFinger_m513503B42E2817E64911B792255E840D21B648C6(L_0, L_1, /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -1045,8 +1136,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeanTwistRotateAxis_RemoveAllFingers_mAE
 {
 	{
 		// Use.RemoveAllFingers();
-		LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * L_0 = __this->get_address_of_Use_4();
-		LeanFingerFilter_RemoveAllFingers_m8ACE3CA311AD977A4520482F40CA4DD0E9840950((LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE *)L_0, /*hidden argument*/NULL);
+		LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * L_0 = __this->get_Use_4();
+		NullCheck(L_0);
+		LeanFingerFilter_RemoveAllFingers_m8ACE3CA311AD977A4520482F40CA4DD0E9840950(L_0, /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -1056,9 +1148,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeanTwistRotateAxis_Awake_mA8ABD75293085
 {
 	{
 		// Use.UpdateRequiredSelectable(gameObject);
-		LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * L_0 = __this->get_address_of_Use_4();
+		LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * L_0 = __this->get_Use_4();
 		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_1 = Component_get_gameObject_m0B0570BA8DDD3CD78A9DB568EA18D7317686603C(__this, /*hidden argument*/NULL);
-		LeanFingerFilter_UpdateRequiredSelectable_m95F2B9448D29AC691627452BCFB6F4F84B3F8410((LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE *)L_0, L_1, /*hidden argument*/NULL);
+		NullCheck(L_0);
+		LeanFingerFilter_UpdateRequiredSelectable_m95F2B9448D29AC691627452BCFB6F4F84B3F8410(L_0, L_1, /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -1066,21 +1159,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeanTwistRotateAxis_Awake_mA8ABD75293085
 // System.Void Lean.Touch.LeanTwistRotateAxis::Update()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeanTwistRotateAxis_Update_mD30AF2C46ABD26829536DDD515A9A1CB5998EE18 (LeanTwistRotateAxis_t5CD00B8340DDB7991416A9FCE451A003CA5FEEDB * __this, const RuntimeMethod* method)
 {
-	float V_0 = 0.0f;
+	List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * V_0 = NULL;
+	float V_1 = 0.0f;
 	{
-		// var fingers = Use.GetFingers();
-		LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * L_0 = __this->get_address_of_Use_4();
-		List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * L_1 = LeanFingerFilter_GetFingers_m6AE7C247C4DB5115BBA9A50E092DF8C55E570514((LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE *)L_0, (bool)0, /*hidden argument*/NULL);
-		// var twistDegrees = LeanGesture.GetTwistDegrees(fingers);
-		float L_2 = LeanGesture_GetTwistDegrees_m776BF95A03D529AB0FFAD764090AA2F2E5C262E3(L_1, /*hidden argument*/NULL);
-		V_0 = L_2;
-		// transform.Rotate(Axis, twistDegrees, Space);
-		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_3 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(__this, /*hidden argument*/NULL);
-		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_4 = __this->get_Axis_5();
-		float L_5 = V_0;
-		int32_t L_6 = __this->get_Space_6();
-		NullCheck(L_3);
-		Transform_Rotate_mF23DA7E98F655E8A0D633A2757D7F88B2EFA945C(L_3, L_4, L_5, L_6, /*hidden argument*/NULL);
+		// var fingers = Use.UpdateAndGetFingers();
+		LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * L_0 = __this->get_Use_4();
+		NullCheck(L_0);
+		List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * L_1 = LeanFingerFilter_UpdateAndGetFingers_m6EEB92AD83318EB37FB53DBB1F3677EC39BFEB18(L_0, (bool)0, /*hidden argument*/NULL);
+		V_0 = L_1;
+		// var twistDegrees = LeanGesture.GetTwistDegrees(fingers) * sensitivity;
+		List_1_tB1DF2B8FC195BD5D840F844999C1786A71FEA422 * L_2 = V_0;
+		float L_3 = LeanGesture_GetTwistDegrees_m776BF95A03D529AB0FFAD764090AA2F2E5C262E3(L_2, /*hidden argument*/NULL);
+		float L_4 = __this->get_sensitivity_7();
+		V_1 = ((float)il2cpp_codegen_multiply((float)L_3, (float)L_4));
+		// transform.Rotate(axis, twistDegrees, space);
+		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_5 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(__this, /*hidden argument*/NULL);
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_6 = __this->get_axis_5();
+		float L_7 = V_1;
+		int32_t L_8 = __this->get_space_6();
+		NullCheck(L_5);
+		Transform_Rotate_mF23DA7E98F655E8A0D633A2757D7F88B2EFA945C(L_5, L_6, L_7, L_8, /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -1096,16 +1194,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeanTwistRotateAxis__ctor_m91672C83ECA84
 	}
 	{
 		// public LeanFingerFilter Use = new LeanFingerFilter(true);
-		LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE  L_0;
-		memset((&L_0), 0, sizeof(L_0));
-		LeanFingerFilter__ctor_m6E7D29E87A578087403792B75F11D592FEEA5171((&L_0), (bool)1, /*hidden argument*/NULL);
+		LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE * L_0 = (LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE *)il2cpp_codegen_object_new(LeanFingerFilter_t4FC239CF4B54658AC2E2A26AB6B14661556D46DE_il2cpp_TypeInfo_var);
+		LeanFingerFilter__ctor_m6E7D29E87A578087403792B75F11D592FEEA5171(L_0, (bool)1, /*hidden argument*/NULL);
 		__this->set_Use_4(L_0);
-		// public Vector3 Axis = Vector3.down;
+		// public Vector3 Axis { set { axis = value; } get { return axis; } } [FSA("Axis")] [SerializeField] private Vector3 axis = Vector3.down;
 		IL2CPP_RUNTIME_CLASS_INIT(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720_il2cpp_TypeInfo_var);
 		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_1 = Vector3_get_down_m3F76A48E5B7C82B35EE047375538AFD91A305F55(/*hidden argument*/NULL);
-		__this->set_Axis_5(L_1);
-		// public Space Space = Space.Self;
-		__this->set_Space_6(1);
+		__this->set_axis_5(L_1);
+		// public Space Space { set { space = value; } get { return space; } } [FSA("Sensitivity")] [SerializeField] private Space space = Space.Self;
+		__this->set_space_6(1);
+		// public float Sensitivity { set { sensitivity = value; } get { return sensitivity; } } [FSA("Sensitivity")] [SerializeField] private float sensitivity = 1.0f;
+		__this->set_sensitivity_7((1.0f));
 		MonoBehaviour__ctor_mEAEC84B222C60319D593E456D769B3311DFCEF97(__this, /*hidden argument*/NULL);
 		return;
 	}

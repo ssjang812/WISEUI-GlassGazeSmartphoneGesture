@@ -1,7 +1,5 @@
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+using Lean.Common;
 
 namespace Lean.Touch
 {
@@ -32,18 +30,15 @@ namespace Lean.Touch
 
 		/// <summary>The camera the depth calculations will be done using.
 		/// None = MainCamera.</summary>
-		[Tooltip("The camera the depth calculations will be done using.\n\nNone = MainCamera.")]
 		public Camera Camera;
 
 		/// <summary>The plane/path/etc that will be intercepted.</summary>
-		[Tooltip("The plane/path/etc that will be intercepted.")]
 		public Object Object;
 
 		/// <summary>The layers used in the raycast.</summary>
-		[Tooltip("The layers used in the raycast.")]
 		public LayerMask Layers;
 
-		/// <summary>Toolips are modified at runtime based on Conversion setting.</summary>
+		/// <summary>Tooltips are modified at runtime based on Conversion setting.</summary>
 		public float Distance;
 
 		/// <summary>When performing a ScreenDepth conversion, the converted point can have a normal associated with it. This stores that.</summary>
@@ -82,7 +77,7 @@ namespace Lean.Touch
 		// This will do the actual conversion
 		public bool TryConvert(ref Vector3 position, Vector2 screenPoint, GameObject gameObject = null, Transform ignore = null)
 		{
-			var camera = LeanTouch.GetCamera(Camera, gameObject);
+			var camera = LeanHelper.GetCamera(Camera, gameObject);
 
 			if (camera != null)
 			{
@@ -288,8 +283,10 @@ namespace Lean.Touch
 }
 
 #if UNITY_EDITOR
-namespace Lean.Touch
+namespace Lean.Touch.Editor
 {
+	using UnityEditor;
+
 	[CustomPropertyDrawer(typeof(LeanScreenDepth))]
 	public class LeanScreenDepth_Drawer : PropertyDrawer
 	{
@@ -324,15 +321,15 @@ namespace Lean.Touch
 
 			EditorGUI.indentLevel++;
 			{
-				DrawProperty(ref rect, property, label, "Camera");
+				DrawProperty(ref rect, property, label, "Camera", null, "The camera the depth calculations will be done using.\n\nNone = MainCamera.");
 
 				switch (conversion)
 				{
 					case LeanScreenDepth.ConversionType.FixedDistance:
 					{
-						var color = GUI.color; if (property.FindPropertyRelative("Distance").floatValue == 0.0f) GUI.color = Color.red;
+						LeanEditor.BeginError(property.FindPropertyRelative("Distance").floatValue == 0.0f);
 						DrawProperty(ref rect, property, label, "Distance", "Distance", "The world space distance from the camera the point will be placed. This should be greater than 0.");
-						GUI.color = color;
+						LeanEditor.EndError();
 					}
 					break;
 
@@ -344,23 +341,23 @@ namespace Lean.Touch
 
 					case LeanScreenDepth.ConversionType.PhysicsRaycast:
 					{
-						var color = GUI.color; if (property.FindPropertyRelative("Layers").intValue == 0) GUI.color = Color.red;
-							DrawProperty(ref rect, property, label, "Layers");
-						GUI.color = color;
+						LeanEditor.BeginError(property.FindPropertyRelative("Layers").intValue == 0);
+							DrawProperty(ref rect, property, label, "Layers", "The layers used in the raycast.");
+						LeanEditor.EndError();
 						DrawProperty(ref rect, property, label, "Distance", "Offset", "The world space offset from the raycast hit point.");
 					}
 					break;
 
 					case LeanScreenDepth.ConversionType.PlaneIntercept:
 					{
-						DrawObjectProperty<LeanPlane>(ref rect, property, "Plane");
+						DrawObjectProperty<LeanPlane>(ref rect, property, "Plane", "The plane that will be intercepted.");
 						DrawProperty(ref rect, property, label, "Distance", "Offset", "The world space offset from the intercept hit point.");
 					}
 					break;
 
 					case LeanScreenDepth.ConversionType.PathClosest:
 					{
-						DrawObjectProperty<LeanPath>(ref rect, property, "Path");
+						DrawObjectProperty<LeanPath>(ref rect, property, "Path", "The path that will be intercepted.");
 						DrawProperty(ref rect, property, label, "Distance", "Max Delta", "The maximum amount of segments that can be moved between.");
 					}
 					break;
@@ -381,7 +378,7 @@ namespace Lean.Touch
 			EditorGUI.indentLevel--;
 		}
 
-		private void DrawObjectProperty<T>(ref Rect rect, SerializedProperty property, string title)
+		private void DrawObjectProperty<T>(ref Rect rect, SerializedProperty property, string title, string tooltip)
 			where T : Object
 		{
 			var propertyObject = property.FindPropertyRelative("Object");
@@ -389,7 +386,7 @@ namespace Lean.Touch
 
 			var color = GUI.color; if (oldValue == null) GUI.color = Color.red;
 				var mixed = EditorGUI.showMixedValue; EditorGUI.showMixedValue = propertyObject.hasMultipleDifferentValues;
-					var newValue = EditorGUI.ObjectField(rect, title, oldValue, typeof(T), true);
+					var newValue = EditorGUI.ObjectField(rect, new GUIContent(title, tooltip), oldValue, typeof(T), true);
 				EditorGUI.showMixedValue = mixed;
 			GUI.color = color;
 

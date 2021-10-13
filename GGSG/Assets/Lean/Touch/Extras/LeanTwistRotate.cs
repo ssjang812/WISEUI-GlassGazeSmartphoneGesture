@@ -1,4 +1,6 @@
 using UnityEngine;
+using Lean.Common;
+using FSA = UnityEngine.Serialization.FormerlySerializedAsAttribute;
 
 namespace Lean.Touch
 {
@@ -11,26 +13,21 @@ namespace Lean.Touch
 		public LeanFingerFilter Use = new LeanFingerFilter(true);
 
 		/// <summary>The camera we will be used to calculate relative rotations.
-		/// None = MainCamera.</summary>
-		[Tooltip("The camera we will be used to calculate relative rotations.\n\nNone = MainCamera.")]
-		public Camera Camera;
+		/// None/null = MainCamera.</summary>
+		public Camera Camera { set { _camera = value; } get { return _camera; } } [FSA("Camera")] [SerializeField] private Camera _camera;
 
-		/// <summary>Should the rotation be performanced relative to the finger center?</summary>
-		[Tooltip("Should the rotation be performanced relative to the finger center?")]
-		public bool Relative;
+		/// <summary>Should the rotation be performed relative to the finger center?</summary>
+		public bool Relative { set { relative = value; } get { return relative; } } [FSA("Relative")] [SerializeField] private bool relative;
 
 		/// <summary>If you want this component to change smoothly over time, then this allows you to control how quick the changes reach their target value.
 		/// -1 = Instantly change.
 		/// 1 = Slowly change.
 		/// 10 = Quickly change.</summary>
-		[Tooltip("If you want this component to change smoothly over time, then this allows you to control how quick the changes reach their target value.\n\n-1 = Instantly change.\n\n1 = Slowly change.\n\n10 = Quickly change.")]
-		public float Dampening = -1.0f;
+		public float Damping { set { damping = value; } get { return damping; } } [FSA("Damping")] [FSA("Dampening")] [SerializeField] private float damping = -1.0f;
 
-		[HideInInspector]
 		[SerializeField]
 		private Vector3 remainingTranslation;
 
-		[HideInInspector]
 		[SerializeField]
 		private Quaternion remainingRotation = Quaternion.identity;
 
@@ -51,12 +48,14 @@ namespace Lean.Touch
 		{
 			Use.RemoveAllFingers();
 		}
+
 #if UNITY_EDITOR
 		protected virtual void Reset()
 		{
 			Use.UpdateRequiredSelectable(gameObject);
 		}
 #endif
+
 		protected virtual void Awake()
 		{
 			Use.UpdateRequiredSelectable(gameObject);
@@ -69,14 +68,14 @@ namespace Lean.Touch
 			var oldRotation = transform.localRotation;
 
 			// Get the fingers we want to use
-			var fingers = Use.GetFingers();
+			var fingers = Use.UpdateAndGetFingers();
 
 			// Calculate the rotation values based on these fingers
 			var twistDegrees = LeanGesture.GetTwistDegrees(fingers);
 
 			if (twistDegrees != 0.0f)
 			{
-				if (Relative == true)
+				if (relative == true)
 				{
 					var twistScreenCenter = LeanGesture.GetScreenCenter(fingers);
 
@@ -109,7 +108,7 @@ namespace Lean.Touch
 			remainingRotation    *= Quaternion.Inverse(oldRotation) * transform.localRotation;
 
 			// Get t value
-			var factor = LeanTouch.GetDampenFactor(Dampening, Time.deltaTime);
+			var factor = LeanHelper.GetDampenFactor(damping, Time.deltaTime);
 
 			// Dampen remainingDelta
 			var newRemainingTranslation = Vector3.Lerp(remainingTranslation, Vector3.zero, factor);
@@ -126,7 +125,7 @@ namespace Lean.Touch
 
 		protected virtual void TranslateUI(float twistDegrees, Vector2 twistScreenCenter)
 		{
-			var camera = Camera;
+			var camera = _camera;
 
 			if (camera == null)
 			{
@@ -160,7 +159,7 @@ namespace Lean.Touch
 		protected virtual void Translate(float twistDegrees, Vector2 twistScreenCenter)
 		{
 			// Make sure the camera exists
-			var camera = LeanTouch.GetCamera(Camera, gameObject);
+			var camera = LeanHelper.GetCamera(_camera, gameObject);
 
 			if (camera != null)
 			{
@@ -191,7 +190,7 @@ namespace Lean.Touch
 		protected virtual void Rotate(float twistDegrees)
 		{
 			// Make sure the camera exists
-			var camera = LeanTouch.GetCamera(Camera, gameObject);
+			var camera = LeanHelper.GetCamera(_camera, gameObject);
 
 			if (camera != null)
 			{
@@ -206,3 +205,25 @@ namespace Lean.Touch
 		}
 	}
 }
+
+#if UNITY_EDITOR
+namespace Lean.Touch.Editor
+{
+	using TARGET = LeanTwistRotate;
+
+	[UnityEditor.CanEditMultipleObjects]
+	[UnityEditor.CustomEditor(typeof(TARGET))]
+	public class LeanTwistRotate_Editor : LeanEditor
+	{
+		protected override void OnInspector()
+		{
+			TARGET tgt; TARGET[] tgts; GetTargets(out tgt, out tgts);
+
+			Draw("Use");
+			Draw("_camera", "The camera we will be used to calculate relative rotations.\n\nNone/null = MainCamera.");
+			Draw("relative", "Should the rotation be performed relative to the finger center?");
+			Draw("damping", "If you want this component to change smoothly over time, then this allows you to control how quick the changes reach their target value.\n\n-1 = Instantly change.\n\n1 = Slowly change.\n\n10 = Quickly change.");
+		}
+	}
+}
+#endif

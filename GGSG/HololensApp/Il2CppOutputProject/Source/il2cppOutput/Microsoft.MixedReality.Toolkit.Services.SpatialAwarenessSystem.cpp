@@ -2147,7 +2147,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealitySpatialAwarenessSystem_Initi
 // System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1 (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 * ___x0, Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 * ___y1, const RuntimeMethod* method);
 // Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialObserverConfiguration[] Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystemProfile::get_ObserverConfigurations()
-IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR MixedRealitySpatialObserverConfigurationU5BU5D_t978B5D883EE40458BBF6B3A702E16CB36865EF90* MixedRealitySpatialAwarenessSystemProfile_get_ObserverConfigurations_m0AF7A14431DDE492EE8B07BAB2AE86C4877476CE_inline (MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * __this, const RuntimeMethod* method);
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MixedRealitySpatialObserverConfigurationU5BU5D_t978B5D883EE40458BBF6B3A702E16CB36865EF90* MixedRealitySpatialAwarenessSystemProfile_get_ObserverConfigurations_m0AF7A14431DDE492EE8B07BAB2AE86C4877476CE (MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * __this, const RuntimeMethod* method);
 // System.String Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialObserverConfiguration::get_ComponentName()
 IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR String_t* MixedRealitySpatialObserverConfiguration_get_ComponentName_mF03FC23EE9C9C8C071621929D5B20000855988EC_inline (MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 * __this, const RuntimeMethod* method);
 // System.UInt32 Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialObserverConfiguration::get_Priority()
@@ -2255,6 +2255,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealitySpatialAwarenessSystem__ctor
 	{
 		// public override string Name { get; protected set; } = "Mixed Reality Spatial Awareness System";
 		__this->set_U3CNameU3Ek__BackingField_20(_stringLiteral306293B4D4A8E6238C3F25BB12EF44DF6E94C8B3);
+		// private MixedRealitySpatialAwarenessEventData<SpatialAwarenessMeshObject> meshEventData = null;
+		__this->set_meshEventData_21((MixedRealitySpatialAwarenessEventData_1_tBEE29FC913C599C0EDA702339F32E271DA24D9C3 *)NULL);
+		// private GameObject spatialAwarenessObjectParent = null;
+		__this->set_spatialAwarenessObjectParent_22((GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F *)NULL);
+		// private uint nextSourceId = 0;
+		__this->set_nextSourceId_23(0);
+		// private MixedRealitySpatialAwarenessSystemProfile spatialAwarenessSystemProfile = null;
+		__this->set_spatialAwarenessSystemProfile_24((MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 *)NULL);
 		// MixedRealitySpatialAwarenessSystemProfile profile) : base(profile)
 		MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * L_0 = ___profile0;
 		IL2CPP_RUNTIME_CLASS_INIT(BaseDataProviderAccessCoreSystem_t8C4C42F058DFD6188A5D363BE3864EFB84BE9F9A_il2cpp_TypeInfo_var);
@@ -2293,7 +2301,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MixedRealitySpatialAwarenessSystem_Check
 	}
 	RuntimeObject* V_0 = NULL;
 	RuntimeObject* V_1 = NULL;
-	bool V_2 = false;
+	RuntimeObject* V_2 = NULL;
+	bool V_3 = false;
+	bool V_4 = false;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
@@ -2301,6 +2311,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MixedRealitySpatialAwarenessSystem_Check
 	void* __leave_targets_storage = alloca(sizeof(int32_t) * 2);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
+	int32_t G_B5_0 = 0;
 	{
 		// foreach (var observer in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
 		RuntimeObject* L_0 = GenericVirtFuncInvoker0< RuntimeObject* >::Invoke(BaseDataProviderAccessCoreSystem_GetDataProviders_TisIMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_mA7DEE8A56910ED6101DE69DD921A00CB149FD1D2_RuntimeMethod_var, __this);
@@ -2309,111 +2320,131 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MixedRealitySpatialAwarenessSystem_Check
 		V_0 = L_1;
 	}
 
-IL_000c:
+IL_000e:
 	try
 	{ // begin try (depth: 1)
 		{
-			goto IL_002a;
+			goto IL_0037;
 		}
 
-IL_000e:
+IL_0010:
 		{
 			// foreach (var observer in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
 			RuntimeObject* L_2 = V_0;
 			NullCheck(L_2);
 			RuntimeObject* L_3 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(0 /* !0 System.Collections.Generic.IEnumerator`1<Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver>::get_Current() */, IEnumerator_1_tD92EF4EFA4599B8B89B3545BA3E512989DEB265F_il2cpp_TypeInfo_var, L_2);
+			V_1 = L_3;
 			// if (observer is IMixedRealityCapabilityCheck capabilityChecker &&
 			//     capabilityChecker.CheckCapability(capability))
-			RuntimeObject* L_4 = ((RuntimeObject*)IsInst((RuntimeObject*)L_3, IMixedRealityCapabilityCheck_t98FB379C0B498E07667EBA7D2E2343B39230EA42_il2cpp_TypeInfo_var));
-			V_1 = L_4;
-			if (!L_4)
+			RuntimeObject* L_4 = V_1;
+			RuntimeObject* L_5 = ((RuntimeObject*)IsInst((RuntimeObject*)L_4, IMixedRealityCapabilityCheck_t98FB379C0B498E07667EBA7D2E2343B39230EA42_il2cpp_TypeInfo_var));
+			V_2 = L_5;
+			if (!L_5)
 			{
-				goto IL_002a;
+				goto IL_002b;
 			}
 		}
 
-IL_001d:
+IL_0022:
 		{
-			RuntimeObject* L_5 = V_1;
-			int32_t L_6 = ___capability0;
-			NullCheck(L_5);
-			bool L_7 = InterfaceFuncInvoker1< bool, int32_t >::Invoke(0 /* System.Boolean Microsoft.MixedReality.Toolkit.IMixedRealityCapabilityCheck::CheckCapability(Microsoft.MixedReality.Toolkit.MixedRealityCapability) */, IMixedRealityCapabilityCheck_t98FB379C0B498E07667EBA7D2E2343B39230EA42_il2cpp_TypeInfo_var, L_5, L_6);
-			if (!L_7)
+			RuntimeObject* L_6 = V_2;
+			int32_t L_7 = ___capability0;
+			NullCheck(L_6);
+			bool L_8 = InterfaceFuncInvoker1< bool, int32_t >::Invoke(0 /* System.Boolean Microsoft.MixedReality.Toolkit.IMixedRealityCapabilityCheck::CheckCapability(Microsoft.MixedReality.Toolkit.MixedRealityCapability) */, IMixedRealityCapabilityCheck_t98FB379C0B498E07667EBA7D2E2343B39230EA42_il2cpp_TypeInfo_var, L_6, L_7);
+			G_B5_0 = ((int32_t)(L_8));
+			goto IL_002c;
+		}
+
+IL_002b:
+		{
+			G_B5_0 = 0;
+		}
+
+IL_002c:
+		{
+			V_3 = (bool)G_B5_0;
+			bool L_9 = V_3;
+			if (!L_9)
 			{
-				goto IL_002a;
+				goto IL_0036;
 			}
 		}
 
-IL_0026:
+IL_0030:
 		{
 			// return true;
-			V_2 = (bool)1;
-			IL2CPP_LEAVE(0x40, FINALLY_0034);
+			V_4 = (bool)1;
+			IL2CPP_LEAVE(0x51, FINALLY_0041);
 		}
 
-IL_002a:
+IL_0036:
+		{
+		}
+
+IL_0037:
 		{
 			// foreach (var observer in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
-			RuntimeObject* L_8 = V_0;
-			NullCheck(L_8);
-			bool L_9 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean System.Collections.IEnumerator::MoveNext() */, IEnumerator_t8789118187258CC88B77AFAC6315B5AF87D3E18A_il2cpp_TypeInfo_var, L_8);
-			if (L_9)
+			RuntimeObject* L_10 = V_0;
+			NullCheck(L_10);
+			bool L_11 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean System.Collections.IEnumerator::MoveNext() */, IEnumerator_t8789118187258CC88B77AFAC6315B5AF87D3E18A_il2cpp_TypeInfo_var, L_10);
+			if (L_11)
 			{
-				goto IL_000e;
+				goto IL_0010;
 			}
 		}
 
-IL_0032:
+IL_003f:
 		{
-			IL2CPP_LEAVE(0x3E, FINALLY_0034);
+			IL2CPP_LEAVE(0x4C, FINALLY_0041);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_0034;
+		goto FINALLY_0041;
 	}
 
-FINALLY_0034:
+FINALLY_0041:
 	{ // begin finally (depth: 1)
 		{
-			RuntimeObject* L_10 = V_0;
-			if (!L_10)
+			RuntimeObject* L_12 = V_0;
+			if (!L_12)
 			{
-				goto IL_003d;
+				goto IL_004b;
 			}
 		}
 
-IL_0037:
+IL_0044:
 		{
-			RuntimeObject* L_11 = V_0;
-			NullCheck(L_11);
-			InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t7218B22548186B208D65EA5B7870503810A2D15A_il2cpp_TypeInfo_var, L_11);
+			RuntimeObject* L_13 = V_0;
+			NullCheck(L_13);
+			InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t7218B22548186B208D65EA5B7870503810A2D15A_il2cpp_TypeInfo_var, L_13);
 		}
 
-IL_003d:
+IL_004b:
 		{
-			IL2CPP_END_FINALLY(52)
+			IL2CPP_END_FINALLY(65)
 		}
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(52)
+	IL2CPP_CLEANUP(65)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x40, IL_0040)
-		IL2CPP_JUMP_TBL(0x3E, IL_003e)
+		IL2CPP_JUMP_TBL(0x51, IL_0051)
+		IL2CPP_JUMP_TBL(0x4C, IL_004c)
 	}
 
-IL_003e:
+IL_004c:
 	{
 		// return false;
-		return (bool)0;
+		V_4 = (bool)0;
+		goto IL_0051;
 	}
 
-IL_0040:
+IL_0051:
 	{
 		// }
-		bool L_12 = V_2;
-		return L_12;
+		bool L_14 = V_4;
+		return L_14;
 	}
 }
 // System.Void Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystem::Initialize()
@@ -2450,10 +2481,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealitySpatialAwarenessSystem_Initi
 		s_Il2CppMethodInitialized = true;
 	}
 	MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * V_0 = NULL;
-	int32_t V_1 = 0;
-	MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90  V_2;
-	memset((&V_2), 0, sizeof(V_2));
-	ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* V_3 = NULL;
+	bool V_1 = false;
+	int32_t V_2 = 0;
+	MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90  V_3;
+	memset((&V_3), 0, sizeof(V_3));
+	ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* V_4 = NULL;
+	bool V_5 = false;
+	int32_t G_B3_0 = 0;
 	{
 		// MixedRealitySpatialAwarenessSystemProfile profile = ConfigurationProfile as MixedRealitySpatialAwarenessSystemProfile;
 		BaseMixedRealityProfile_tB4DC16619B37D298D22571CE017070A78EF826E8 * L_0 = VirtFuncInvoker0< BaseMixedRealityProfile_tB4DC16619B37D298D22571CE017070A78EF826E8 * >::Invoke(22 /* Microsoft.MixedReality.Toolkit.BaseMixedRealityProfile Microsoft.MixedReality.Toolkit.BaseService::get_ConfigurationProfile() */, __this);
@@ -2464,91 +2498,108 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealitySpatialAwarenessSystem_Initi
 		bool L_2 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_1, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
 		if (!L_2)
 		{
-			goto IL_0092;
+			goto IL_0026;
 		}
 	}
 	{
 		RuntimeObject* L_3 = GenericVirtFuncInvoker0< RuntimeObject* >::Invoke(BaseDataProviderAccessCoreSystem_GetDataProviders_TisIMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_mA7DEE8A56910ED6101DE69DD921A00CB149FD1D2_RuntimeMethod_var, __this);
 		NullCheck(L_3);
 		int32_t L_4 = InterfaceFuncInvoker0< int32_t >::Invoke(0 /* System.Int32 System.Collections.Generic.IReadOnlyCollection`1<Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver>::get_Count() */, IReadOnlyCollection_1_t867A975FDE62708B894D4C6CA5F1A3FD290703C3_il2cpp_TypeInfo_var, L_3);
-		if (L_4)
-		{
-			goto IL_0092;
-		}
-	}
-	{
-		// for (int i = 0; i < profile.ObserverConfigurations.Length; i++)
-		V_1 = 0;
-		goto IL_0087;
+		G_B3_0 = ((((int32_t)L_4) == ((int32_t)0))? 1 : 0);
+		goto IL_0027;
 	}
 
 IL_0026:
 	{
+		G_B3_0 = 0;
+	}
+
+IL_0027:
+	{
+		V_1 = (bool)G_B3_0;
+		bool L_5 = V_1;
+		if (!L_5)
+		{
+			goto IL_00a7;
+		}
+	}
+	{
+		// for (int i = 0; i < profile.ObserverConfigurations.Length; i++)
+		V_2 = 0;
+		goto IL_0095;
+	}
+
+IL_0030:
+	{
 		// MixedRealitySpatialObserverConfiguration configuration = profile.ObserverConfigurations[i];
-		MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * L_5 = V_0;
-		NullCheck(L_5);
-		MixedRealitySpatialObserverConfigurationU5BU5D_t978B5D883EE40458BBF6B3A702E16CB36865EF90* L_6 = MixedRealitySpatialAwarenessSystemProfile_get_ObserverConfigurations_m0AF7A14431DDE492EE8B07BAB2AE86C4877476CE_inline(L_5, /*hidden argument*/NULL);
-		int32_t L_7 = V_1;
+		MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * L_6 = V_0;
 		NullCheck(L_6);
-		int32_t L_8 = L_7;
-		MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90  L_9 = (L_6)->GetAt(static_cast<il2cpp_array_size_t>(L_8));
-		V_2 = L_9;
+		MixedRealitySpatialObserverConfigurationU5BU5D_t978B5D883EE40458BBF6B3A702E16CB36865EF90* L_7 = MixedRealitySpatialAwarenessSystemProfile_get_ObserverConfigurations_m0AF7A14431DDE492EE8B07BAB2AE86C4877476CE(L_6, /*hidden argument*/NULL);
+		int32_t L_8 = V_2;
+		NullCheck(L_7);
+		int32_t L_9 = L_8;
+		MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90  L_10 = (L_7)->GetAt(static_cast<il2cpp_array_size_t>(L_9));
+		V_3 = L_10;
 		// object[] args = { this, configuration.ComponentName, configuration.Priority, configuration.ObserverProfile };
-		ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_10 = (ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A*)(ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A*)SZArrayNew(ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A_il2cpp_TypeInfo_var, (uint32_t)4);
-		ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_11 = L_10;
-		NullCheck(L_11);
-		ArrayElementTypeCheck (L_11, __this);
-		(L_11)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)__this);
+		ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_11 = (ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A*)(ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A*)SZArrayNew(ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A_il2cpp_TypeInfo_var, (uint32_t)4);
 		ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_12 = L_11;
-		String_t* L_13 = MixedRealitySpatialObserverConfiguration_get_ComponentName_mF03FC23EE9C9C8C071621929D5B20000855988EC_inline((MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 *)(&V_2), /*hidden argument*/NULL);
 		NullCheck(L_12);
-		ArrayElementTypeCheck (L_12, L_13);
-		(L_12)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject *)L_13);
-		ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_14 = L_12;
-		uint32_t L_15 = MixedRealitySpatialObserverConfiguration_get_Priority_m1A0393FCB51FF7241AA0FD293B1873554994AC07_inline((MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 *)(&V_2), /*hidden argument*/NULL);
-		uint32_t L_16 = L_15;
-		RuntimeObject * L_17 = Box(UInt32_t4980FA09003AFAAB5A6E361BA2748EA9A005709B_il2cpp_TypeInfo_var, &L_16);
-		NullCheck(L_14);
-		ArrayElementTypeCheck (L_14, L_17);
-		(L_14)->SetAt(static_cast<il2cpp_array_size_t>(2), (RuntimeObject *)L_17);
-		ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_18 = L_14;
-		BaseSpatialAwarenessObserverProfile_tEE30EA47A4C33A81B773F9E53EA3306BBB7FDADC * L_19 = MixedRealitySpatialObserverConfiguration_get_ObserverProfile_m7D3036686651D44965AA54A3721A5E204FBD15E4_inline((MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 *)(&V_2), /*hidden argument*/NULL);
-		NullCheck(L_18);
-		ArrayElementTypeCheck (L_18, L_19);
-		(L_18)->SetAt(static_cast<il2cpp_array_size_t>(3), (RuntimeObject *)L_19);
-		V_3 = L_18;
+		ArrayElementTypeCheck (L_12, __this);
+		(L_12)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)__this);
+		ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_13 = L_12;
+		String_t* L_14 = MixedRealitySpatialObserverConfiguration_get_ComponentName_mF03FC23EE9C9C8C071621929D5B20000855988EC_inline((MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 *)(&V_3), /*hidden argument*/NULL);
+		NullCheck(L_13);
+		ArrayElementTypeCheck (L_13, L_14);
+		(L_13)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject *)L_14);
+		ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_15 = L_13;
+		uint32_t L_16 = MixedRealitySpatialObserverConfiguration_get_Priority_m1A0393FCB51FF7241AA0FD293B1873554994AC07_inline((MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 *)(&V_3), /*hidden argument*/NULL);
+		uint32_t L_17 = L_16;
+		RuntimeObject * L_18 = Box(UInt32_t4980FA09003AFAAB5A6E361BA2748EA9A005709B_il2cpp_TypeInfo_var, &L_17);
+		NullCheck(L_15);
+		ArrayElementTypeCheck (L_15, L_18);
+		(L_15)->SetAt(static_cast<il2cpp_array_size_t>(2), (RuntimeObject *)L_18);
+		ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_19 = L_15;
+		BaseSpatialAwarenessObserverProfile_tEE30EA47A4C33A81B773F9E53EA3306BBB7FDADC * L_20 = MixedRealitySpatialObserverConfiguration_get_ObserverProfile_m7D3036686651D44965AA54A3721A5E204FBD15E4_inline((MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 *)(&V_3), /*hidden argument*/NULL);
+		NullCheck(L_19);
+		ArrayElementTypeCheck (L_19, L_20);
+		(L_19)->SetAt(static_cast<il2cpp_array_size_t>(3), (RuntimeObject *)L_20);
+		V_4 = L_19;
 		// RegisterDataProvider<IMixedRealitySpatialAwarenessObserver>(
 		//     configuration.ComponentType.Type,
 		//     configuration.ComponentName,
 		//     configuration.RuntimePlatform,
 		//     args);
-		SystemType_t9696BD865921F75894EBD4D6EF913158A8BF3432 * L_20 = MixedRealitySpatialObserverConfiguration_get_ComponentType_m500A536AB1E8CBD9C098557C089945F15DFABE01_inline((MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 *)(&V_2), /*hidden argument*/NULL);
-		NullCheck(L_20);
-		Type_t * L_21 = SystemType_get_Type_m70CD613DEBD1A8545E792EF73F88358CC375A1CD_inline(L_20, /*hidden argument*/NULL);
-		String_t* L_22 = MixedRealitySpatialObserverConfiguration_get_ComponentName_mF03FC23EE9C9C8C071621929D5B20000855988EC_inline((MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 *)(&V_2), /*hidden argument*/NULL);
-		int32_t L_23 = MixedRealitySpatialObserverConfiguration_get_RuntimePlatform_m8638143C2B8F8AF732377D374B3D6A0F4898AC1B_inline((MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 *)(&V_2), /*hidden argument*/NULL);
-		ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_24 = V_3;
-		BaseDataProviderAccessCoreSystem_RegisterDataProvider_TisIMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_mA902F23A6E90B75BBBFB5C93E42B1DA4B49F84FE(__this, L_21, L_22, L_23, L_24, /*hidden argument*/BaseDataProviderAccessCoreSystem_RegisterDataProvider_TisIMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_mA902F23A6E90B75BBBFB5C93E42B1DA4B49F84FE_RuntimeMethod_var);
+		SystemType_t9696BD865921F75894EBD4D6EF913158A8BF3432 * L_21 = MixedRealitySpatialObserverConfiguration_get_ComponentType_m500A536AB1E8CBD9C098557C089945F15DFABE01_inline((MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 *)(&V_3), /*hidden argument*/NULL);
+		NullCheck(L_21);
+		Type_t * L_22 = SystemType_get_Type_m70CD613DEBD1A8545E792EF73F88358CC375A1CD_inline(L_21, /*hidden argument*/NULL);
+		String_t* L_23 = MixedRealitySpatialObserverConfiguration_get_ComponentName_mF03FC23EE9C9C8C071621929D5B20000855988EC_inline((MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 *)(&V_3), /*hidden argument*/NULL);
+		int32_t L_24 = MixedRealitySpatialObserverConfiguration_get_RuntimePlatform_m8638143C2B8F8AF732377D374B3D6A0F4898AC1B_inline((MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 *)(&V_3), /*hidden argument*/NULL);
+		ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_25 = V_4;
+		BaseDataProviderAccessCoreSystem_RegisterDataProvider_TisIMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_mA902F23A6E90B75BBBFB5C93E42B1DA4B49F84FE(__this, L_22, L_23, L_24, L_25, /*hidden argument*/BaseDataProviderAccessCoreSystem_RegisterDataProvider_TisIMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_mA902F23A6E90B75BBBFB5C93E42B1DA4B49F84FE_RuntimeMethod_var);
 		// for (int i = 0; i < profile.ObserverConfigurations.Length; i++)
-		int32_t L_25 = V_1;
-		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_25, (int32_t)1));
+		int32_t L_26 = V_2;
+		V_2 = ((int32_t)il2cpp_codegen_add((int32_t)L_26, (int32_t)1));
 	}
 
-IL_0087:
+IL_0095:
 	{
 		// for (int i = 0; i < profile.ObserverConfigurations.Length; i++)
-		int32_t L_26 = V_1;
-		MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * L_27 = V_0;
-		NullCheck(L_27);
-		MixedRealitySpatialObserverConfigurationU5BU5D_t978B5D883EE40458BBF6B3A702E16CB36865EF90* L_28 = MixedRealitySpatialAwarenessSystemProfile_get_ObserverConfigurations_m0AF7A14431DDE492EE8B07BAB2AE86C4877476CE_inline(L_27, /*hidden argument*/NULL);
+		int32_t L_27 = V_2;
+		MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * L_28 = V_0;
 		NullCheck(L_28);
-		if ((((int32_t)L_26) < ((int32_t)(((int32_t)((int32_t)(((RuntimeArray*)L_28)->max_length)))))))
+		MixedRealitySpatialObserverConfigurationU5BU5D_t978B5D883EE40458BBF6B3A702E16CB36865EF90* L_29 = MixedRealitySpatialAwarenessSystemProfile_get_ObserverConfigurations_m0AF7A14431DDE492EE8B07BAB2AE86C4877476CE(L_28, /*hidden argument*/NULL);
+		NullCheck(L_29);
+		V_5 = (bool)((((int32_t)L_27) < ((int32_t)(((int32_t)((int32_t)(((RuntimeArray*)L_29)->max_length))))))? 1 : 0);
+		bool L_30 = V_5;
+		if (L_30)
 		{
-			goto IL_0026;
+			goto IL_0030;
 		}
 	}
+	{
+	}
 
-IL_0092:
+IL_00a7:
 	{
 		// }
 		return;
@@ -2582,14 +2633,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealitySpatialAwarenessSystem_Disab
 		V_0 = L_1;
 	}
 
-IL_0012:
+IL_0015:
 	try
 	{ // begin try (depth: 1)
 		{
-			goto IL_0023;
+			goto IL_0028;
 		}
 
-IL_0014:
+IL_0017:
 		{
 			// foreach (var provider in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
 			RuntimeObject* L_2 = V_0;
@@ -2601,7 +2652,7 @@ IL_0014:
 			BaseDataProviderAccessCoreSystem_UnregisterDataProvider_TisIMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_mF041E720A27B388AE25792199976E16D933215AE(__this, L_4, /*hidden argument*/BaseDataProviderAccessCoreSystem_UnregisterDataProvider_TisIMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_mF041E720A27B388AE25792199976E16D933215AE_RuntimeMethod_var);
 		}
 
-IL_0023:
+IL_0028:
 		{
 			// foreach (var provider in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
 			RuntimeObject* L_5 = V_0;
@@ -2609,50 +2660,50 @@ IL_0023:
 			bool L_6 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean System.Collections.IEnumerator::MoveNext() */, IEnumerator_t8789118187258CC88B77AFAC6315B5AF87D3E18A_il2cpp_TypeInfo_var, L_5);
 			if (L_6)
 			{
-				goto IL_0014;
+				goto IL_0017;
 			}
 		}
 
-IL_002b:
+IL_0030:
 		{
-			IL2CPP_LEAVE(0x37, FINALLY_002d);
+			IL2CPP_LEAVE(0x3D, FINALLY_0032);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_002d;
+		goto FINALLY_0032;
 	}
 
-FINALLY_002d:
+FINALLY_0032:
 	{ // begin finally (depth: 1)
 		{
 			RuntimeObject* L_7 = V_0;
 			if (!L_7)
 			{
-				goto IL_0036;
+				goto IL_003c;
 			}
 		}
 
-IL_0030:
+IL_0035:
 		{
 			RuntimeObject* L_8 = V_0;
 			NullCheck(L_8);
 			InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t7218B22548186B208D65EA5B7870503810A2D15A_il2cpp_TypeInfo_var, L_8);
 		}
 
-IL_0036:
+IL_003c:
 		{
-			IL2CPP_END_FINALLY(45)
+			IL2CPP_END_FINALLY(50)
 		}
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(45)
+	IL2CPP_CLEANUP(50)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x37, IL_0037)
+		IL2CPP_JUMP_TBL(0x3D, IL_003d)
 	}
 
-IL_0037:
+IL_003d:
 	{
 		// }
 		return;
@@ -2695,62 +2746,74 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealitySpatialAwarenessSystem_Destr
 		il2cpp_codegen_initialize_method (MixedRealitySpatialAwarenessSystem_Destroy_mD9BAB95563CBD780310E1AB212A72DAC0446D5B4_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
+	bool V_1 = false;
+	bool V_2 = false;
 	{
 		// if (Application.isPlaying)
 		bool L_0 = Application_get_isPlaying_mF43B519662E7433DD90D883E5AE22EC3CFB65CA5(/*hidden argument*/NULL);
-		if (!L_0)
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_004b;
+			goto IL_005d;
 		}
 	}
 	{
 		// if (spatialAwarenessObjectParent != null)
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_1 = __this->get_spatialAwarenessObjectParent_22();
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_2 = __this->get_spatialAwarenessObjectParent_22();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
-		bool L_2 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_1, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
-		if (!L_2)
+		bool L_3 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_2, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
+		V_1 = L_3;
+		bool L_4 = V_1;
+		if (!L_4)
 		{
-			goto IL_004b;
+			goto IL_005c;
 		}
 	}
 	{
 		// if (Application.isEditor)
-		bool L_3 = Application_get_isEditor_m347E6EE16E5109EF613C83ED98DB1EC6E3EF5E26(/*hidden argument*/NULL);
-		if (!L_3)
+		bool L_5 = Application_get_isEditor_m347E6EE16E5109EF613C83ED98DB1EC6E3EF5E26(/*hidden argument*/NULL);
+		V_2 = L_5;
+		bool L_6 = V_2;
+		if (!L_6)
 		{
-			goto IL_0029;
+			goto IL_0035;
 		}
 	}
 	{
 		// Object.DestroyImmediate(spatialAwarenessObjectParent);
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_4 = __this->get_spatialAwarenessObjectParent_22();
-		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
-		Object_DestroyImmediate_mF6F4415EF22249D6E650FAA40E403283F19B7446(L_4, /*hidden argument*/NULL);
-		// }
-		goto IL_0044;
-	}
-
-IL_0029:
-	{
-		// spatialAwarenessObjectParent.transform.DetachChildren();
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_5 = __this->get_spatialAwarenessObjectParent_22();
-		NullCheck(L_5);
-		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_6 = GameObject_get_transform_mA5C38857137F137CB96C69FAA624199EB1C2FB2C(L_5, /*hidden argument*/NULL);
-		NullCheck(L_6);
-		Transform_DetachChildren_m33C6052FA253DC8781DAD266726587B8DCB61A23(L_6, /*hidden argument*/NULL);
-		// Object.Destroy(spatialAwarenessObjectParent);
 		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_7 = __this->get_spatialAwarenessObjectParent_22();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
-		Object_Destroy_m23B4562495BA35A74266D4372D45368F8C05109A(L_7, /*hidden argument*/NULL);
+		Object_DestroyImmediate_mF6F4415EF22249D6E650FAA40E403283F19B7446(L_7, /*hidden argument*/NULL);
+		goto IL_0054;
 	}
 
-IL_0044:
+IL_0035:
+	{
+		// spatialAwarenessObjectParent.transform.DetachChildren();
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_8 = __this->get_spatialAwarenessObjectParent_22();
+		NullCheck(L_8);
+		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_9 = GameObject_get_transform_mA5C38857137F137CB96C69FAA624199EB1C2FB2C(L_8, /*hidden argument*/NULL);
+		NullCheck(L_9);
+		Transform_DetachChildren_m33C6052FA253DC8781DAD266726587B8DCB61A23(L_9, /*hidden argument*/NULL);
+		// Object.Destroy(spatialAwarenessObjectParent);
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_10 = __this->get_spatialAwarenessObjectParent_22();
+		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
+		Object_Destroy_m23B4562495BA35A74266D4372D45368F8C05109A(L_10, /*hidden argument*/NULL);
+	}
+
+IL_0054:
 	{
 		// spatialAwarenessObjectParent = null;
 		__this->set_spatialAwarenessObjectParent_22((GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F *)NULL);
 	}
 
-IL_004b:
+IL_005c:
+	{
+	}
+
+IL_005d:
 	{
 		// base.Destroy();
 		BaseEventSystem_Destroy_m7B3C5682C43FE55F078723094DB38FCEBF56674E(__this, /*hidden argument*/NULL);
@@ -2768,6 +2831,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5C
 		s_Il2CppMethodInitialized = true;
 	}
 	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * V_0 = NULL;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * G_B3_0 = NULL;
 	{
 		// public GameObject SpatialAwarenessObjectParent => spatialAwarenessObjectParent != null ? spatialAwarenessObjectParent : (spatialAwarenessObjectParent = CreateSpatialAwarenessObjectParent);
 		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_0 = __this->get_spatialAwarenessObjectParent_22();
@@ -2775,7 +2839,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5C
 		bool L_1 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_0, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
 		if (L_1)
 		{
-			goto IL_001e;
+			goto IL_001f;
 		}
 	}
 	{
@@ -2784,13 +2848,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5C
 		V_0 = L_3;
 		__this->set_spatialAwarenessObjectParent_22(L_3);
 		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_4 = V_0;
-		return L_4;
+		G_B3_0 = L_4;
+		goto IL_0025;
 	}
 
-IL_001e:
+IL_001f:
 	{
 		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_5 = __this->get_spatialAwarenessObjectParent_22();
-		return L_5;
+		G_B3_0 = L_5;
+	}
+
+IL_0025:
+	{
+		return G_B3_0;
 	}
 }
 // UnityEngine.GameObject Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystem::get_CreateSpatialAwarenessObjectParent()
@@ -2802,12 +2872,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5C
 		il2cpp_codegen_initialize_method (MixedRealitySpatialAwarenessSystem_get_CreateSpatialAwarenessObjectParent_m079E024BCFD7CD360485BE5B6AE1E5258C06527C_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * V_0 = NULL;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * V_1 = NULL;
 	{
 		// GameObject newParent = new GameObject("Spatial Awareness System");
 		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_0 = (GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F *)il2cpp_codegen_object_new(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F_il2cpp_TypeInfo_var);
 		GameObject__ctor_mBB454E679AD9CF0B84D3609A01E6A9753ACF4686(L_0, _stringLiteral3466954DD3E2B08B6AB8DA213A8E68936D6BE028, /*hidden argument*/NULL);
+		V_0 = L_0;
 		// newParent.transform.SetParent(MixedRealityPlayspace.Transform, false);
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_1 = L_0;
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_1 = V_0;
 		NullCheck(L_1);
 		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_2 = GameObject_get_transform_mA5C38857137F137CB96C69FAA624199EB1C2FB2C(L_1, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(MixedRealityPlayspace_t26F34BB4D1D53C64B140AF101E96EB151A9770A4_il2cpp_TypeInfo_var);
@@ -2815,7 +2888,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5C
 		NullCheck(L_2);
 		Transform_SetParent_m268E3814921D90882EFECE244A797264DE2A5E35(L_2, L_3, (bool)0, /*hidden argument*/NULL);
 		// return newParent;
-		return L_1;
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_4 = V_0;
+		V_1 = L_4;
+		goto IL_0022;
+	}
+
+IL_0022:
+	{
+		// }
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_5 = V_1;
+		return L_5;
 	}
 }
 // UnityEngine.GameObject Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystem::CreateSpatialAwarenessObservationParent(System.String)
@@ -2827,13 +2909,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5C
 		il2cpp_codegen_initialize_method (MixedRealitySpatialAwarenessSystem_CreateSpatialAwarenessObservationParent_mCB70EEBF15514FBA4574363DC85119B42A1869A5_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * V_0 = NULL;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * V_1 = NULL;
 	{
 		// GameObject objectParent = new GameObject(name);
 		String_t* L_0 = ___name0;
 		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_1 = (GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F *)il2cpp_codegen_object_new(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F_il2cpp_TypeInfo_var);
 		GameObject__ctor_mBB454E679AD9CF0B84D3609A01E6A9753ACF4686(L_1, L_0, /*hidden argument*/NULL);
+		V_0 = L_1;
 		// objectParent.transform.SetParent(SpatialAwarenessObjectParent.transform, false);
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_2 = L_1;
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_2 = V_0;
 		NullCheck(L_2);
 		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_3 = GameObject_get_transform_mA5C38857137F137CB96C69FAA624199EB1C2FB2C(L_2, /*hidden argument*/NULL);
 		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_4 = MixedRealitySpatialAwarenessSystem_get_SpatialAwarenessObjectParent_m9845795ADDF285FB5EA4E20B01B8305A9AE03ABD(__this, /*hidden argument*/NULL);
@@ -2842,13 +2927,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5C
 		NullCheck(L_3);
 		Transform_SetParent_m268E3814921D90882EFECE244A797264DE2A5E35(L_3, L_5, (bool)0, /*hidden argument*/NULL);
 		// return objectParent;
-		return L_2;
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_6 = V_0;
+		V_1 = L_6;
+		goto IL_0024;
+	}
+
+IL_0024:
+	{
+		// }
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_7 = V_1;
+		return L_7;
 	}
 }
 // System.UInt32 Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystem::GenerateNewSourceId()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t MixedRealitySpatialAwarenessSystem_GenerateNewSourceId_m8E66D13774253169DFE8A865411D2408896A6288 (MixedRealitySpatialAwarenessSystem_t13EE13EDC677C67D3309E5D15282D50F568571B4 * __this, const RuntimeMethod* method)
 {
 	uint32_t V_0 = 0;
+	uint32_t V_1 = 0;
 	{
 		// return nextSourceId++;
 		uint32_t L_0 = __this->get_nextSourceId_23();
@@ -2856,7 +2951,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t MixedRealitySpatialAwarenessSystem_G
 		uint32_t L_1 = V_0;
 		__this->set_nextSourceId_23(((int32_t)il2cpp_codegen_add((int32_t)L_1, (int32_t)1)));
 		uint32_t L_2 = V_0;
-		return L_2;
+		V_1 = L_2;
+		goto IL_0015;
+	}
+
+IL_0015:
+	{
+		// }
+		uint32_t L_3 = V_1;
+		return L_3;
 	}
 }
 // Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystemProfile Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystem::get_SpatialAwarenessSystemProfile()
@@ -2868,27 +2971,39 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MixedRealitySpatialAwarenessSystemProfile_t3B
 		il2cpp_codegen_initialize_method (MixedRealitySpatialAwarenessSystem_get_SpatialAwarenessSystemProfile_m7C972D4042A372D7BFD53E35F0D7626CF3F4F9BD_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
+	MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * V_1 = NULL;
 	{
 		// if (spatialAwarenessSystemProfile == null)
 		MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * L_0 = __this->get_spatialAwarenessSystemProfile_24();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
 		bool L_1 = Object_op_Equality_mBC2401774F3BE33E8CF6F0A8148E66C95D6CFF1C(L_0, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
-		if (!L_1)
+		V_0 = L_1;
+		bool L_2 = V_0;
+		if (!L_2)
 		{
-			goto IL_001f;
+			goto IL_0024;
 		}
 	}
 	{
 		// spatialAwarenessSystemProfile = ConfigurationProfile as MixedRealitySpatialAwarenessSystemProfile;
-		BaseMixedRealityProfile_tB4DC16619B37D298D22571CE017070A78EF826E8 * L_2 = VirtFuncInvoker0< BaseMixedRealityProfile_tB4DC16619B37D298D22571CE017070A78EF826E8 * >::Invoke(22 /* Microsoft.MixedReality.Toolkit.BaseMixedRealityProfile Microsoft.MixedReality.Toolkit.BaseService::get_ConfigurationProfile() */, __this);
-		__this->set_spatialAwarenessSystemProfile_24(((MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 *)IsInstClass((RuntimeObject*)L_2, MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7_il2cpp_TypeInfo_var)));
+		BaseMixedRealityProfile_tB4DC16619B37D298D22571CE017070A78EF826E8 * L_3 = VirtFuncInvoker0< BaseMixedRealityProfile_tB4DC16619B37D298D22571CE017070A78EF826E8 * >::Invoke(22 /* Microsoft.MixedReality.Toolkit.BaseMixedRealityProfile Microsoft.MixedReality.Toolkit.BaseService::get_ConfigurationProfile() */, __this);
+		__this->set_spatialAwarenessSystemProfile_24(((MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 *)IsInstClass((RuntimeObject*)L_3, MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7_il2cpp_TypeInfo_var)));
 	}
 
-IL_001f:
+IL_0024:
 	{
 		// return spatialAwarenessSystemProfile;
-		MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * L_3 = __this->get_spatialAwarenessSystemProfile_24();
-		return L_3;
+		MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * L_4 = __this->get_spatialAwarenessSystemProfile_24();
+		V_1 = L_4;
+		goto IL_002d;
+	}
+
+IL_002d:
+	{
+		// }
+		MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * L_5 = V_1;
+		return L_5;
 	}
 }
 // System.Collections.Generic.IReadOnlyList`1<Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver> Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystem::GetObservers()
@@ -2921,32 +3036,32 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MixedRealitySpatialAwarenessSy
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		// return GetDataProviders() as IReadOnlyList<IMixedRealitySpatialAwarenessObserver>;
 		RuntimeObject* L_2 = VirtFuncInvoker0< RuntimeObject* >::Invoke(53 /* System.Collections.Generic.IReadOnlyList`1<Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider> Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem::GetDataProviders() */, __this);
 		V_2 = ((RuntimeObject*)IsInst((RuntimeObject*)L_2, IReadOnlyList_1_t15E8098D3D51BAD90CDA62E1ED51E8C12C78BDFF_il2cpp_TypeInfo_var));
-		IL2CPP_LEAVE(0x2A, FINALLY_001c);
+		IL2CPP_LEAVE(0x2D, FINALLY_001e);
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_001c;
+		goto FINALLY_001e;
 	}
 
-FINALLY_001c:
+FINALLY_001e:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(28)
+		IL2CPP_END_FINALLY(30)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(28)
+	IL2CPP_CLEANUP(30)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x2A, IL_002a)
+		IL2CPP_JUMP_TBL(0x2D, IL_002d)
 	}
 
-IL_002a:
+IL_002d:
 	{
 		// }
 		RuntimeObject* L_3 = V_2;
@@ -2983,33 +3098,33 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MixedRealitySpatialAwarenessSy
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		// return GetDataProvider(name) as IMixedRealitySpatialAwarenessObserver;
 		String_t* L_2 = ___name0;
 		RuntimeObject* L_3 = VirtFuncInvoker1< RuntimeObject*, String_t* >::Invoke(55 /* Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem::GetDataProvider(System.String) */, __this, L_2);
 		V_2 = ((RuntimeObject*)IsInst((RuntimeObject*)L_3, IMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_il2cpp_TypeInfo_var));
-		IL2CPP_LEAVE(0x2B, FINALLY_001d);
+		IL2CPP_LEAVE(0x2E, FINALLY_001f);
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_001d;
+		goto FINALLY_001f;
 	}
 
-FINALLY_001d:
+FINALLY_001f:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(29)
+		IL2CPP_END_FINALLY(31)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(29)
+	IL2CPP_CLEANUP(31)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x2B, IL_002b)
+		IL2CPP_JUMP_TBL(0x2E, IL_002e)
 	}
 
-IL_002b:
+IL_002e:
 	{
 		// }
 		RuntimeObject* L_4 = V_2;
@@ -3030,11 +3145,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealitySpatialAwarenessSystem_Resum
 	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	RuntimeObject* V_2 = NULL;
+	RuntimeObject* V_3 = NULL;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 2);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
 	{
@@ -3046,7 +3162,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealitySpatialAwarenessSystem_Resum
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
@@ -3057,93 +3173,100 @@ IL_000e:
 			V_2 = L_3;
 		}
 
-IL_001a:
+IL_001d:
 		try
 		{ // begin try (depth: 2)
 			{
-				goto IL_0027;
+				goto IL_002f;
 			}
 
-IL_001c:
+IL_001f:
 			{
 				// foreach (var observer in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
 				RuntimeObject* L_4 = V_2;
 				NullCheck(L_4);
 				RuntimeObject* L_5 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(0 /* !0 System.Collections.Generic.IEnumerator`1<Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver>::get_Current() */, IEnumerator_1_tD92EF4EFA4599B8B89B3545BA3E512989DEB265F_il2cpp_TypeInfo_var, L_4);
+				V_3 = L_5;
 				// observer.Resume();
-				NullCheck(L_5);
-				InterfaceActionInvoker0::Invoke(16 /* System.Void Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver::Resume() */, IMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_il2cpp_TypeInfo_var, L_5);
-			}
-
-IL_0027:
-			{
-				// foreach (var observer in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
-				RuntimeObject* L_6 = V_2;
+				RuntimeObject* L_6 = V_3;
 				NullCheck(L_6);
-				bool L_7 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean System.Collections.IEnumerator::MoveNext() */, IEnumerator_t8789118187258CC88B77AFAC6315B5AF87D3E18A_il2cpp_TypeInfo_var, L_6);
-				if (L_7)
-				{
-					goto IL_001c;
-				}
+				InterfaceActionInvoker0::Invoke(16 /* System.Void Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver::Resume() */, IMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_il2cpp_TypeInfo_var, L_6);
 			}
 
 IL_002f:
 			{
-				IL2CPP_LEAVE(0x49, FINALLY_0031);
+				// foreach (var observer in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
+				RuntimeObject* L_7 = V_2;
+				NullCheck(L_7);
+				bool L_8 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean System.Collections.IEnumerator::MoveNext() */, IEnumerator_t8789118187258CC88B77AFAC6315B5AF87D3E18A_il2cpp_TypeInfo_var, L_7);
+				if (L_8)
+				{
+					goto IL_001f;
+				}
+			}
+
+IL_0037:
+			{
+				IL2CPP_LEAVE(0x44, FINALLY_0039);
 			}
 		} // end try (depth: 2)
 		catch(Il2CppExceptionWrapper& e)
 		{
 			__last_unhandled_exception = (Exception_t *)e.ex;
-			goto FINALLY_0031;
+			goto FINALLY_0039;
 		}
 
-FINALLY_0031:
+FINALLY_0039:
 		{ // begin finally (depth: 2)
 			{
-				RuntimeObject* L_8 = V_2;
-				if (!L_8)
+				RuntimeObject* L_9 = V_2;
+				if (!L_9)
 				{
-					goto IL_003a;
+					goto IL_0043;
 				}
 			}
 
-IL_0034:
+IL_003c:
 			{
-				RuntimeObject* L_9 = V_2;
-				NullCheck(L_9);
-				InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t7218B22548186B208D65EA5B7870503810A2D15A_il2cpp_TypeInfo_var, L_9);
+				RuntimeObject* L_10 = V_2;
+				NullCheck(L_10);
+				InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t7218B22548186B208D65EA5B7870503810A2D15A_il2cpp_TypeInfo_var, L_10);
 			}
 
-IL_003a:
+IL_0043:
 			{
-				IL2CPP_END_FINALLY(49)
+				IL2CPP_END_FINALLY(57)
 			}
 		} // end finally (depth: 2)
-		IL2CPP_CLEANUP(49)
+		IL2CPP_CLEANUP(57)
 		{
 			IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-			IL2CPP_END_CLEANUP(0x49, FINALLY_003b);
+			IL2CPP_JUMP_TBL(0x44, IL_0044)
+		}
+
+IL_0044:
+		{
+			IL2CPP_LEAVE(0x56, FINALLY_0047);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_003b;
+		goto FINALLY_0047;
 	}
 
-FINALLY_003b:
+FINALLY_0047:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(59)
+		IL2CPP_END_FINALLY(71)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(59)
+	IL2CPP_CLEANUP(71)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x49, IL_0049)
+		IL2CPP_JUMP_TBL(0x56, IL_0056)
 	}
 
-IL_0049:
+IL_0056:
 	{
 		// }
 		return;
@@ -3163,11 +3286,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealitySpatialAwarenessSystem_Suspe
 	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	RuntimeObject* V_2 = NULL;
+	RuntimeObject* V_3 = NULL;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 2);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
 	{
@@ -3179,7 +3303,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealitySpatialAwarenessSystem_Suspe
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
@@ -3190,93 +3314,100 @@ IL_000e:
 			V_2 = L_3;
 		}
 
-IL_001a:
+IL_001d:
 		try
 		{ // begin try (depth: 2)
 			{
-				goto IL_0027;
+				goto IL_002f;
 			}
 
-IL_001c:
+IL_001f:
 			{
 				// foreach (var observer in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
 				RuntimeObject* L_4 = V_2;
 				NullCheck(L_4);
 				RuntimeObject* L_5 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(0 /* !0 System.Collections.Generic.IEnumerator`1<Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver>::get_Current() */, IEnumerator_1_tD92EF4EFA4599B8B89B3545BA3E512989DEB265F_il2cpp_TypeInfo_var, L_4);
+				V_3 = L_5;
 				// observer.Suspend();
-				NullCheck(L_5);
-				InterfaceActionInvoker0::Invoke(17 /* System.Void Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver::Suspend() */, IMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_il2cpp_TypeInfo_var, L_5);
-			}
-
-IL_0027:
-			{
-				// foreach (var observer in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
-				RuntimeObject* L_6 = V_2;
+				RuntimeObject* L_6 = V_3;
 				NullCheck(L_6);
-				bool L_7 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean System.Collections.IEnumerator::MoveNext() */, IEnumerator_t8789118187258CC88B77AFAC6315B5AF87D3E18A_il2cpp_TypeInfo_var, L_6);
-				if (L_7)
-				{
-					goto IL_001c;
-				}
+				InterfaceActionInvoker0::Invoke(17 /* System.Void Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver::Suspend() */, IMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_il2cpp_TypeInfo_var, L_6);
 			}
 
 IL_002f:
 			{
-				IL2CPP_LEAVE(0x49, FINALLY_0031);
+				// foreach (var observer in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
+				RuntimeObject* L_7 = V_2;
+				NullCheck(L_7);
+				bool L_8 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean System.Collections.IEnumerator::MoveNext() */, IEnumerator_t8789118187258CC88B77AFAC6315B5AF87D3E18A_il2cpp_TypeInfo_var, L_7);
+				if (L_8)
+				{
+					goto IL_001f;
+				}
+			}
+
+IL_0037:
+			{
+				IL2CPP_LEAVE(0x44, FINALLY_0039);
 			}
 		} // end try (depth: 2)
 		catch(Il2CppExceptionWrapper& e)
 		{
 			__last_unhandled_exception = (Exception_t *)e.ex;
-			goto FINALLY_0031;
+			goto FINALLY_0039;
 		}
 
-FINALLY_0031:
+FINALLY_0039:
 		{ // begin finally (depth: 2)
 			{
-				RuntimeObject* L_8 = V_2;
-				if (!L_8)
+				RuntimeObject* L_9 = V_2;
+				if (!L_9)
 				{
-					goto IL_003a;
+					goto IL_0043;
 				}
 			}
 
-IL_0034:
+IL_003c:
 			{
-				RuntimeObject* L_9 = V_2;
-				NullCheck(L_9);
-				InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t7218B22548186B208D65EA5B7870503810A2D15A_il2cpp_TypeInfo_var, L_9);
+				RuntimeObject* L_10 = V_2;
+				NullCheck(L_10);
+				InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t7218B22548186B208D65EA5B7870503810A2D15A_il2cpp_TypeInfo_var, L_10);
 			}
 
-IL_003a:
+IL_0043:
 			{
-				IL2CPP_END_FINALLY(49)
+				IL2CPP_END_FINALLY(57)
 			}
 		} // end finally (depth: 2)
-		IL2CPP_CLEANUP(49)
+		IL2CPP_CLEANUP(57)
 		{
 			IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-			IL2CPP_END_CLEANUP(0x49, FINALLY_003b);
+			IL2CPP_JUMP_TBL(0x44, IL_0044)
+		}
+
+IL_0044:
+		{
+			IL2CPP_LEAVE(0x56, FINALLY_0047);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_003b;
+		goto FINALLY_0047;
 	}
 
-FINALLY_003b:
+FINALLY_0047:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(59)
+		IL2CPP_END_FINALLY(71)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(59)
+	IL2CPP_CLEANUP(71)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x49, IL_0049)
+		IL2CPP_JUMP_TBL(0x56, IL_0056)
 	}
 
-IL_0049:
+IL_0056:
 	{
 		// }
 		return;
@@ -3296,11 +3427,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealitySpatialAwarenessSystem_Clear
 	ProfilerMarker_t41096870004E8A2081E31E01BC0552F2F01F2B86  V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	RuntimeObject* V_2 = NULL;
+	RuntimeObject* V_3 = NULL;
 	Exception_t * __last_unhandled_exception = 0;
 	NO_UNUSED_WARNING (__last_unhandled_exception);
 	Exception_t * __exception_local = 0;
 	NO_UNUSED_WARNING (__exception_local);
-	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 2);
 	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
 	NO_UNUSED_WARNING (__leave_targets);
 	{
@@ -3312,7 +3444,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MixedRealitySpatialAwarenessSystem_Clear
 		V_0 = L_1;
 	}
 
-IL_000e:
+IL_000f:
 	try
 	{ // begin try (depth: 1)
 		{
@@ -3323,93 +3455,100 @@ IL_000e:
 			V_2 = L_3;
 		}
 
-IL_001a:
+IL_001d:
 		try
 		{ // begin try (depth: 2)
 			{
-				goto IL_0027;
+				goto IL_002f;
 			}
 
-IL_001c:
+IL_001f:
 			{
 				// foreach (var observer in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
 				RuntimeObject* L_4 = V_2;
 				NullCheck(L_4);
 				RuntimeObject* L_5 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(0 /* !0 System.Collections.Generic.IEnumerator`1<Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver>::get_Current() */, IEnumerator_1_tD92EF4EFA4599B8B89B3545BA3E512989DEB265F_il2cpp_TypeInfo_var, L_4);
+				V_3 = L_5;
 				// observer.ClearObservations();
-				NullCheck(L_5);
-				InterfaceActionInvoker0::Invoke(18 /* System.Void Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver::ClearObservations() */, IMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_il2cpp_TypeInfo_var, L_5);
-			}
-
-IL_0027:
-			{
-				// foreach (var observer in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
-				RuntimeObject* L_6 = V_2;
+				RuntimeObject* L_6 = V_3;
 				NullCheck(L_6);
-				bool L_7 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean System.Collections.IEnumerator::MoveNext() */, IEnumerator_t8789118187258CC88B77AFAC6315B5AF87D3E18A_il2cpp_TypeInfo_var, L_6);
-				if (L_7)
-				{
-					goto IL_001c;
-				}
+				InterfaceActionInvoker0::Invoke(18 /* System.Void Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver::ClearObservations() */, IMixedRealitySpatialAwarenessObserver_tCB76329493A19ED9653B62207AD8DCE1ED1AF3D6_il2cpp_TypeInfo_var, L_6);
 			}
 
 IL_002f:
 			{
-				IL2CPP_LEAVE(0x49, FINALLY_0031);
+				// foreach (var observer in GetDataProviders<IMixedRealitySpatialAwarenessObserver>())
+				RuntimeObject* L_7 = V_2;
+				NullCheck(L_7);
+				bool L_8 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean System.Collections.IEnumerator::MoveNext() */, IEnumerator_t8789118187258CC88B77AFAC6315B5AF87D3E18A_il2cpp_TypeInfo_var, L_7);
+				if (L_8)
+				{
+					goto IL_001f;
+				}
+			}
+
+IL_0037:
+			{
+				IL2CPP_LEAVE(0x44, FINALLY_0039);
 			}
 		} // end try (depth: 2)
 		catch(Il2CppExceptionWrapper& e)
 		{
 			__last_unhandled_exception = (Exception_t *)e.ex;
-			goto FINALLY_0031;
+			goto FINALLY_0039;
 		}
 
-FINALLY_0031:
+FINALLY_0039:
 		{ // begin finally (depth: 2)
 			{
-				RuntimeObject* L_8 = V_2;
-				if (!L_8)
+				RuntimeObject* L_9 = V_2;
+				if (!L_9)
 				{
-					goto IL_003a;
+					goto IL_0043;
 				}
 			}
 
-IL_0034:
+IL_003c:
 			{
-				RuntimeObject* L_9 = V_2;
-				NullCheck(L_9);
-				InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t7218B22548186B208D65EA5B7870503810A2D15A_il2cpp_TypeInfo_var, L_9);
+				RuntimeObject* L_10 = V_2;
+				NullCheck(L_10);
+				InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t7218B22548186B208D65EA5B7870503810A2D15A_il2cpp_TypeInfo_var, L_10);
 			}
 
-IL_003a:
+IL_0043:
 			{
-				IL2CPP_END_FINALLY(49)
+				IL2CPP_END_FINALLY(57)
 			}
 		} // end finally (depth: 2)
-		IL2CPP_CLEANUP(49)
+		IL2CPP_CLEANUP(57)
 		{
 			IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-			IL2CPP_END_CLEANUP(0x49, FINALLY_003b);
+			IL2CPP_JUMP_TBL(0x44, IL_0044)
+		}
+
+IL_0044:
+		{
+			IL2CPP_LEAVE(0x56, FINALLY_0047);
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FINALLY_003b;
+		goto FINALLY_0047;
 	}
 
-FINALLY_003b:
+FINALLY_0047:
 	{ // begin finally (depth: 1)
 		AutoScope_Dispose_m3663B79F5E62F2FA39FAAB5956A5EA141BA98AF2_inline((AutoScope_tFCF9F27FF85DCD3A3880FAADCB520F29B1543A7F *)(&V_0), /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(59)
+		IL2CPP_END_FINALLY(71)
 	} // end finally (depth: 1)
-	IL2CPP_CLEANUP(59)
+	IL2CPP_CLEANUP(71)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
-		IL2CPP_JUMP_TBL(0x49, IL_0049)
+		IL2CPP_JUMP_TBL(0x56, IL_0056)
 	}
 
-IL_0049:
+IL_0056:
 	{
 		// }
 		return;
@@ -3508,14 +3647,6 @@ IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR void BaseCoreSystem_set_Registrar_mB5
 		RuntimeObject* L_0 = ___value0;
 		__this->set_U3CRegistrarU3Ek__BackingField_16(L_0);
 		return;
-	}
-}
-IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR MixedRealitySpatialObserverConfigurationU5BU5D_t978B5D883EE40458BBF6B3A702E16CB36865EF90* MixedRealitySpatialAwarenessSystemProfile_get_ObserverConfigurations_m0AF7A14431DDE492EE8B07BAB2AE86C4877476CE_inline (MixedRealitySpatialAwarenessSystemProfile_t3B2F1DD1352DB8A6A7892D9F3A2401333846D4A7 * __this, const RuntimeMethod* method)
-{
-	{
-		// get { return observerConfigurations; }
-		MixedRealitySpatialObserverConfigurationU5BU5D_t978B5D883EE40458BBF6B3A702E16CB36865EF90* L_0 = __this->get_observerConfigurations_5();
-		return L_0;
 	}
 }
 IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR String_t* MixedRealitySpatialObserverConfiguration_get_ComponentName_mF03FC23EE9C9C8C071621929D5B20000855988EC_inline (MixedRealitySpatialObserverConfiguration_tB23D0A3BC6604415558EA7F9D1D04C2220B95A90 * __this, const RuntimeMethod* method)

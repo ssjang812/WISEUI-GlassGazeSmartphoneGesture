@@ -87,9 +87,9 @@ extern void CullingHandler_OnPhotonSerializeView_m4E810C30AD25A4B2978220C58E9DC2
 // 0x00000021 System.Void Photon.Pun.UtilityScripts.CullingHandler::.ctor()
 extern void CullingHandler__ctor_mAD383C1510B81CB6D8A07CCBB2464A9E6FA6E444 (void);
 // 0x00000022 ExitGames.Client.Photon.PhotonPeer Photon.Pun.UtilityScripts.PhotonLagSimulationGui::get_Peer()
-extern void PhotonLagSimulationGui_get_Peer_m7252F563AD01111A7FD20E0582D6B6CFCBEBB4C9 (void);
+extern void PhotonLagSimulationGui_get_Peer_mC365F4FEC19160AA0F593B6389B8F612F7AC8439 (void);
 // 0x00000023 System.Void Photon.Pun.UtilityScripts.PhotonLagSimulationGui::set_Peer(ExitGames.Client.Photon.PhotonPeer)
-extern void PhotonLagSimulationGui_set_Peer_mA60999524CCCEA8D8B81A2C1AA2F259BB48910EF (void);
+extern void PhotonLagSimulationGui_set_Peer_mD1A0D15BAB5797188BCF5E075F1B2AA40663E8DE (void);
 // 0x00000024 System.Void Photon.Pun.UtilityScripts.PhotonLagSimulationGui::Start()
 extern void PhotonLagSimulationGui_Start_m8B982B323CA5B5360471FA01969C27E7C3E1A6DA (void);
 // 0x00000025 System.Void Photon.Pun.UtilityScripts.PhotonLagSimulationGui::OnGUI()
@@ -157,7 +157,7 @@ extern void PhotonTeamsManager_Photon_Realtime_IMatchmakingCallbacks_OnJoinedRoo
 // 0x00000044 System.Void Photon.Pun.UtilityScripts.PhotonTeamsManager::Photon.Realtime.IMatchmakingCallbacks.OnLeftRoom()
 extern void PhotonTeamsManager_Photon_Realtime_IMatchmakingCallbacks_OnLeftRoom_m902C100EA17A06AEFBF98574758C753F24312690 (void);
 // 0x00000045 System.Void Photon.Pun.UtilityScripts.PhotonTeamsManager::Photon.Realtime.IInRoomCallbacks.OnPlayerPropertiesUpdate(Photon.Realtime.Player,ExitGames.Client.Photon.Hashtable)
-extern void PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnPlayerPropertiesUpdate_m64DC94077D7BC8EE4A444551C7A18DAD3F66DE57 (void);
+extern void PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnPlayerPropertiesUpdate_m7B4EA3A7BD3A003759B9EE16CC1623FDFD462BA7 (void);
 // 0x00000046 System.Void Photon.Pun.UtilityScripts.PhotonTeamsManager::Photon.Realtime.IInRoomCallbacks.OnPlayerLeftRoom(Photon.Realtime.Player)
 extern void PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnPlayerLeftRoom_m6E6450F44DF319B886B9131E8948B2D6EFA95739 (void);
 // 0x00000047 System.Void Photon.Pun.UtilityScripts.PhotonTeamsManager::Photon.Realtime.IInRoomCallbacks.OnPlayerEnteredRoom(Photon.Realtime.Player)
@@ -197,7 +197,7 @@ extern void PhotonTeamsManager_Photon_Realtime_IMatchmakingCallbacks_OnJoinRoomF
 // 0x00000058 System.Void Photon.Pun.UtilityScripts.PhotonTeamsManager::Photon.Realtime.IMatchmakingCallbacks.OnJoinRandomFailed(System.Int16,System.String)
 extern void PhotonTeamsManager_Photon_Realtime_IMatchmakingCallbacks_OnJoinRandomFailed_m1974AC26678B2573AF45BA0D70B6F56382430F75 (void);
 // 0x00000059 System.Void Photon.Pun.UtilityScripts.PhotonTeamsManager::Photon.Realtime.IInRoomCallbacks.OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable)
-extern void PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnRoomPropertiesUpdate_m71772E17F17C28B4D567DC136CBC19083E089F7B (void);
+extern void PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnRoomPropertiesUpdate_mFE5401BA4EBD6F6C7158783D971E9979E1362E11 (void);
 // 0x0000005A System.Void Photon.Pun.UtilityScripts.PhotonTeamsManager::Photon.Realtime.IInRoomCallbacks.OnMasterClientSwitched(Photon.Realtime.Player)
 extern void PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnMasterClientSwitched_m9E54D5BB7C3B6F19DE7EDE66B18DC95E72F98082 (void);
 // 0x0000005B System.Void Photon.Pun.UtilityScripts.PhotonTeamsManager::.ctor()
@@ -235,7 +235,7 @@ extern void PlayerNumbering_OnPlayerEnteredRoom_m75855BDCF5ED752936BEBC982161E87
 // 0x0000006B System.Void Photon.Pun.UtilityScripts.PlayerNumbering::OnPlayerLeftRoom(Photon.Realtime.Player)
 extern void PlayerNumbering_OnPlayerLeftRoom_mCB5F3D5C8B61831FCEF7901F09D814C413EDB794 (void);
 // 0x0000006C System.Void Photon.Pun.UtilityScripts.PlayerNumbering::OnPlayerPropertiesUpdate(Photon.Realtime.Player,ExitGames.Client.Photon.Hashtable)
-extern void PlayerNumbering_OnPlayerPropertiesUpdate_m4F02F52F461AEC6CD1298BE8816CF099D38CD8C1 (void);
+extern void PlayerNumbering_OnPlayerPropertiesUpdate_m40757BCFD04483C14109438414D7D834E01044FE (void);
 // 0x0000006D System.Void Photon.Pun.UtilityScripts.PlayerNumbering::RefreshData()
 extern void PlayerNumbering_RefreshData_m4E59F85EBA6AFDE343C2678AF7BD709DE2A11281 (void);
 // 0x0000006E System.Void Photon.Pun.UtilityScripts.PlayerNumbering::.ctor()
@@ -279,7 +279,7 @@ extern void PunTeams_OnJoinedRoom_m2ADF942CDCE5996E217402CA880422E54003B0D9 (voi
 // 0x00000081 System.Void Photon.Pun.UtilityScripts.PunTeams::OnLeftRoom()
 extern void PunTeams_OnLeftRoom_mDAE09691C06B7EA3847FCF678BED16CE837A7F0F (void);
 // 0x00000082 System.Void Photon.Pun.UtilityScripts.PunTeams::OnPlayerPropertiesUpdate(Photon.Realtime.Player,ExitGames.Client.Photon.Hashtable)
-extern void PunTeams_OnPlayerPropertiesUpdate_m303DE45FB8129F2FAEEA4CA2A86FDD808A957945 (void);
+extern void PunTeams_OnPlayerPropertiesUpdate_m308ECFB5178FCAB751EA922FFE38E988C81BB3B5 (void);
 // 0x00000083 System.Void Photon.Pun.UtilityScripts.PunTeams::OnPlayerLeftRoom(Photon.Realtime.Player)
 extern void PunTeams_OnPlayerLeftRoom_m753099B988BD1B9CD74F81535CF88F19EC8E3E37 (void);
 // 0x00000084 System.Void Photon.Pun.UtilityScripts.PunTeams::OnPlayerEnteredRoom(Photon.Realtime.Player)
@@ -419,7 +419,7 @@ extern void CountdownTimer_OnTimerRuns_m402F44CF1FFC3768AEFD66E0907BFE368CDC4A3D
 // 0x000000C7 System.Void Photon.Pun.UtilityScripts.CountdownTimer::OnTimerEnds()
 extern void CountdownTimer_OnTimerEnds_m0A386CD51BD8E5B347044CF2014D36E11602C27B (void);
 // 0x000000C8 System.Void Photon.Pun.UtilityScripts.CountdownTimer::OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable)
-extern void CountdownTimer_OnRoomPropertiesUpdate_mE2C3A964B3FE725BF0A10C57D9B248065A9D33C1 (void);
+extern void CountdownTimer_OnRoomPropertiesUpdate_mA9107A57ECF96275CD30B2EE0725FB97C2D76973 (void);
 // 0x000000C9 System.Void Photon.Pun.UtilityScripts.CountdownTimer::Initialize()
 extern void CountdownTimer_Initialize_m24E91465BBEA7F9563F212A81C636C68AAE98CB7 (void);
 // 0x000000CA System.Single Photon.Pun.UtilityScripts.CountdownTimer::TimeRemaining()
@@ -465,9 +465,9 @@ extern void PunTurnManager_GetPlayerFinishedTurn_m8CA4D763B13F0BEDDBBB9004DB18CE
 // 0x000000DE System.Void Photon.Pun.UtilityScripts.PunTurnManager::ProcessOnEvent(System.Byte,System.Object,System.Int32)
 extern void PunTurnManager_ProcessOnEvent_m36CB8011840FC8FDBCE8A98F71285CD0A9A422AE (void);
 // 0x000000DF System.Void Photon.Pun.UtilityScripts.PunTurnManager::OnEvent(ExitGames.Client.Photon.EventData)
-extern void PunTurnManager_OnEvent_m30700BD75A26468FE56FC80BBABA672FFA1F4913 (void);
+extern void PunTurnManager_OnEvent_m0CE03DFC36B076070A95EB229CD380BC6265477B (void);
 // 0x000000E0 System.Void Photon.Pun.UtilityScripts.PunTurnManager::OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable)
-extern void PunTurnManager_OnRoomPropertiesUpdate_m46B7366F794578BB73010FEF751D2BE5622E0505 (void);
+extern void PunTurnManager_OnRoomPropertiesUpdate_m32632D449D47CA354BB5B2B166E34F74DDBD94F5 (void);
 // 0x000000E1 System.Void Photon.Pun.UtilityScripts.PunTurnManager::.ctor()
 extern void PunTurnManager__ctor_mFD57E2642E0F0DC84FF38DCD3A47BDB22BE23259 (void);
 // 0x000000E2 System.Void Photon.Pun.UtilityScripts.IPunTurnManagerCallbacks::OnTurnBegins(System.Int32)
@@ -594,8 +594,8 @@ static Il2CppMethodPointer s_methodPointers[272] =
 	CullingHandler_UpdateInterestGroups_mC0C8CEC9072E461D4FD3AB526FB24170D5D6F836,
 	CullingHandler_OnPhotonSerializeView_m4E810C30AD25A4B2978220C58E9DC288A1EF14A8,
 	CullingHandler__ctor_mAD383C1510B81CB6D8A07CCBB2464A9E6FA6E444,
-	PhotonLagSimulationGui_get_Peer_m7252F563AD01111A7FD20E0582D6B6CFCBEBB4C9,
-	PhotonLagSimulationGui_set_Peer_mA60999524CCCEA8D8B81A2C1AA2F259BB48910EF,
+	PhotonLagSimulationGui_get_Peer_mC365F4FEC19160AA0F593B6389B8F612F7AC8439,
+	PhotonLagSimulationGui_set_Peer_mD1A0D15BAB5797188BCF5E075F1B2AA40663E8DE,
 	PhotonLagSimulationGui_Start_m8B982B323CA5B5360471FA01969C27E7C3E1A6DA,
 	PhotonLagSimulationGui_OnGUI_m36D9BF5A4CDCD6617FF1DAB026DC26942BB85AAB,
 	PhotonLagSimulationGui_NetSimHasNoPeerWindow_m445907C5DC9ADB637668119B64433F57819C53A4,
@@ -629,7 +629,7 @@ static Il2CppMethodPointer s_methodPointers[272] =
 	PhotonTeamsManager_Init_m810E8A3C75EFE7CC1CBE06CB16A64C05BD75F07B,
 	PhotonTeamsManager_Photon_Realtime_IMatchmakingCallbacks_OnJoinedRoom_m7670B552649DC29B99F569875A15F73A80BE6FF6,
 	PhotonTeamsManager_Photon_Realtime_IMatchmakingCallbacks_OnLeftRoom_m902C100EA17A06AEFBF98574758C753F24312690,
-	PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnPlayerPropertiesUpdate_m64DC94077D7BC8EE4A444551C7A18DAD3F66DE57,
+	PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnPlayerPropertiesUpdate_m7B4EA3A7BD3A003759B9EE16CC1623FDFD462BA7,
 	PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnPlayerLeftRoom_m6E6450F44DF319B886B9131E8948B2D6EFA95739,
 	PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnPlayerEnteredRoom_m4F8FE00752C8CB51C6617AA6F5525208E97AC2AB,
 	PhotonTeamsManager_UpdateTeams_mA28154947B9D5238557B19E602261D8D5341B440,
@@ -649,7 +649,7 @@ static Il2CppMethodPointer s_methodPointers[272] =
 	PhotonTeamsManager_Photon_Realtime_IMatchmakingCallbacks_OnCreateRoomFailed_m4657C54FFAB1FABDCDFBEEF0AC46D9203C880BD9,
 	PhotonTeamsManager_Photon_Realtime_IMatchmakingCallbacks_OnJoinRoomFailed_mCB0F1BF6D52A7EDF969275128E5D4FBD40A3CD26,
 	PhotonTeamsManager_Photon_Realtime_IMatchmakingCallbacks_OnJoinRandomFailed_m1974AC26678B2573AF45BA0D70B6F56382430F75,
-	PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnRoomPropertiesUpdate_m71772E17F17C28B4D567DC136CBC19083E089F7B,
+	PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnRoomPropertiesUpdate_mFE5401BA4EBD6F6C7158783D971E9979E1362E11,
 	PhotonTeamsManager_Photon_Realtime_IInRoomCallbacks_OnMasterClientSwitched_m9E54D5BB7C3B6F19DE7EDE66B18DC95E72F98082,
 	PhotonTeamsManager__ctor_m7474CC4EBDEE36A00B1C7E73AC8CF20F9394914D,
 	PhotonTeamExtensions_GetPhotonTeam_m879C93331D2355BE1C04744F39BF3FC3B6BBBEAB,
@@ -668,7 +668,7 @@ static Il2CppMethodPointer s_methodPointers[272] =
 	PlayerNumbering_OnLeftRoom_m21A182F9CB9193502657ABD746E165E4EC9C6E02,
 	PlayerNumbering_OnPlayerEnteredRoom_m75855BDCF5ED752936BEBC982161E876AEFD9CDC,
 	PlayerNumbering_OnPlayerLeftRoom_mCB5F3D5C8B61831FCEF7901F09D814C413EDB794,
-	PlayerNumbering_OnPlayerPropertiesUpdate_m4F02F52F461AEC6CD1298BE8816CF099D38CD8C1,
+	PlayerNumbering_OnPlayerPropertiesUpdate_m40757BCFD04483C14109438414D7D834E01044FE,
 	PlayerNumbering_RefreshData_m4E59F85EBA6AFDE343C2678AF7BD709DE2A11281,
 	PlayerNumbering__ctor_m173E655F311CDE5CDF5D65778837F89D8F9DDC60,
 	PlayerNumberingChanged__ctor_m1C8A80A7508AB82C31540564E2F6D0F675D1CE58,
@@ -690,7 +690,7 @@ static Il2CppMethodPointer s_methodPointers[272] =
 	PunTeams_OnDisable_m4E9E779622869D5B9A6DDFC1F6BF5B278214190D,
 	PunTeams_OnJoinedRoom_m2ADF942CDCE5996E217402CA880422E54003B0D9,
 	PunTeams_OnLeftRoom_mDAE09691C06B7EA3847FCF678BED16CE837A7F0F,
-	PunTeams_OnPlayerPropertiesUpdate_m303DE45FB8129F2FAEEA4CA2A86FDD808A957945,
+	PunTeams_OnPlayerPropertiesUpdate_m308ECFB5178FCAB751EA922FFE38E988C81BB3B5,
 	PunTeams_OnPlayerLeftRoom_m753099B988BD1B9CD74F81535CF88F19EC8E3E37,
 	PunTeams_OnPlayerEnteredRoom_mC913226A533743870A9C202FD5C87780EEE7F8BD,
 	PunTeams_UpdateTeams_m6B693A3002A62B0994CCEAC22BBCCB6E83CA921E,
@@ -760,7 +760,7 @@ static Il2CppMethodPointer s_methodPointers[272] =
 	CountdownTimer_Update_mE7F78CA1E31935CF62EFDF161939C1E934B8D28E,
 	CountdownTimer_OnTimerRuns_m402F44CF1FFC3768AEFD66E0907BFE368CDC4A3D,
 	CountdownTimer_OnTimerEnds_m0A386CD51BD8E5B347044CF2014D36E11602C27B,
-	CountdownTimer_OnRoomPropertiesUpdate_mE2C3A964B3FE725BF0A10C57D9B248065A9D33C1,
+	CountdownTimer_OnRoomPropertiesUpdate_mA9107A57ECF96275CD30B2EE0725FB97C2D76973,
 	CountdownTimer_Initialize_m24E91465BBEA7F9563F212A81C636C68AAE98CB7,
 	CountdownTimer_TimeRemaining_mD9A9A7A642A8D2BEDC264EA6EF59496BDB2C4BD3,
 	CountdownTimer_TryGetStartTime_m671A8D683D6DE0D2E580DB29DD6EF0D7F452E8A2,
@@ -783,8 +783,8 @@ static Il2CppMethodPointer s_methodPointers[272] =
 	PunTurnManager_SendMove_m9C37BD7A99C3A7F914421A8AE64F045232ECBAF0,
 	PunTurnManager_GetPlayerFinishedTurn_m8CA4D763B13F0BEDDBBB9004DB18CED5E37E64E9,
 	PunTurnManager_ProcessOnEvent_m36CB8011840FC8FDBCE8A98F71285CD0A9A422AE,
-	PunTurnManager_OnEvent_m30700BD75A26468FE56FC80BBABA672FFA1F4913,
-	PunTurnManager_OnRoomPropertiesUpdate_m46B7366F794578BB73010FEF751D2BE5622E0505,
+	PunTurnManager_OnEvent_m0CE03DFC36B076070A95EB229CD380BC6265477B,
+	PunTurnManager_OnRoomPropertiesUpdate_m32632D449D47CA354BB5B2B166E34F74DDBD94F5,
 	PunTurnManager__ctor_mFD57E2642E0F0DC84FF38DCD3A47BDB22BE23259,
 	NULL,
 	NULL,
@@ -848,26 +848,26 @@ static const int32_t s_InvokerIndices[272] =
 	144,
 	23,
 	89,
-	2391,
+	2326,
 	23,
 	14,
 	26,
 	23,
 	26,
 	23,
-	866,
+	867,
 	26,
 	23,
-	3065,
-	3066,
-	3066,
+	3050,
+	3051,
+	3051,
 	23,
 	23,
 	23,
 	23,
 	89,
 	23,
-	2761,
+	2942,
 	23,
 	14,
 	26,
@@ -909,30 +909,30 @@ static const int32_t s_InvokerIndices[272] =
 	26,
 	23,
 	23,
-	3020,
-	832,
+	2641,
+	831,
 	14,
-	3020,
-	832,
-	832,
-	832,
+	2641,
+	831,
+	831,
+	831,
 	232,
 	121,
 	121,
 	26,
 	23,
-	1158,
-	1158,
-	1158,
+	1159,
+	1159,
+	1159,
 	26,
 	26,
 	23,
 	0,
 	128,
-	641,
+	640,
 	128,
 	128,
-	641,
+	640,
 	128,
 	109,
 	233,
@@ -956,10 +956,10 @@ static const int32_t s_InvokerIndices[272] =
 	121,
 	121,
 	94,
-	390,
+	387,
 	23,
-	390,
-	390,
+	387,
+	387,
 	94,
 	23,
 	23,
@@ -971,16 +971,16 @@ static const int32_t s_InvokerIndices[272] =
 	23,
 	23,
 	109,
-	634,
+	633,
 	23,
-	2761,
-	23,
-	23,
+	2942,
 	23,
 	23,
 	23,
 	23,
-	1158,
+	23,
+	23,
+	1159,
 	32,
 	23,
 	23,
@@ -1017,13 +1017,13 @@ static const int32_t s_InvokerIndices[272] =
 	31,
 	26,
 	23,
-	1158,
-	1158,
-	1158,
+	1159,
+	1159,
+	1159,
 	23,
-	592,
+	591,
 	14,
-	1555,
+	1507,
 	23,
 	23,
 	23,
@@ -1037,8 +1037,8 @@ static const int32_t s_InvokerIndices[272] =
 	23,
 	26,
 	23,
-	749,
-	404,
+	748,
+	401,
 	3,
 	23,
 	138,
@@ -1047,8 +1047,8 @@ static const int32_t s_InvokerIndices[272] =
 	26,
 	10,
 	32,
-	749,
-	749,
+	748,
+	748,
 	89,
 	89,
 	89,
@@ -1057,7 +1057,7 @@ static const int32_t s_InvokerIndices[272] =
 	23,
 	102,
 	9,
-	3067,
+	3052,
 	26,
 	26,
 	23,
@@ -1066,11 +1066,11 @@ static const int32_t s_InvokerIndices[272] =
 	116,
 	116,
 	32,
-	3068,
+	3053,
 	94,
 	94,
 	94,
-	390,
+	387,
 	3,
 	23,
 	26,

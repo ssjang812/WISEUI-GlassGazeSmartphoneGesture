@@ -399,6 +399,8 @@ struct ThreadStaticAttribute_tCE2B939D689C66D29B18B265822F96F79DAAF393;
 struct AbandonedMutexException_tCE41515409705F64C8D2AE1AAB4C1864905803C9;
 // System.Threading.AsyncLocal`1<System.Globalization.CultureInfo>
 struct AsyncLocal_1_tD39651C2EDD14B144FF3D9B9C716F807EB57655A;
+// System.Threading.AtomicBoolean
+struct AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076;
 // System.Threading.AutoResetEvent
 struct AutoResetEvent_t2A1182CEEE4E184587D4DEAA4F382B810B21D3B7;
 // System.Threading.CancellationCallbackInfo
@@ -439,8 +441,6 @@ struct U3CU3Ec_tF56235C2F126DA27E663F79EB666B5A6802E5C96;
 struct InvocationContext_tD91309100896CC0F6903346C4BA67CCA517C8643;
 // System.Threading.OSSpecificSynchronizationContext/InvocationEntryDelegate
 struct InvocationEntryDelegate_t30A130DE7AE7AE681112D6036577446D1CC18F1B;
-// System.Threading.OSSpecificSynchronizationContext/MonoPInvokeCallbackAttribute
-struct MonoPInvokeCallbackAttribute_tEEAAB0F3648FFA951EA4A673946571F47C0D157A;
 // System.Threading.SendOrPostCallback
 struct SendOrPostCallback_t3F9C0164860E4AA5138DF8B4488DFB0D33147F01;
 // System.Threading.SparselyPopulatedArrayFragment`1<System.Object>
@@ -483,6 +483,7 @@ IL2CPP_EXTERN_C RuntimeClass* AppContextSwitches_tAF0B2C874D2BB57032B24C11819205
 IL2CPP_EXTERN_C RuntimeClass* ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ArgumentOutOfRangeException_t94D19DF918A54511AEDF4784C9A08741BAD1DEDA_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* BitConverter_tD5DF1CB5C5A5CB087D90BD881C8E75A332E546EE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Boolean_tB53F6830F670160873277339AA58F15CAED4399C_il2cpp_TypeInfo_var;
@@ -520,7 +521,6 @@ IL2CPP_EXTERN_C RuntimeClass* IAsyncLocal_tE256E53573305DF8C65DE4F1AC64F0112314B
 IL2CPP_EXTERN_C RuntimeClass* IOException_t60E052020EDE4D3075F57A1DCC224FF8864354BA_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IllogicalCallContext_t86AF2EA64B3A9BB99C979A1C2EC3578C5D7EB179_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Int32_t585191389E07734F19F3156FF88FB3EF4800D102_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* IntPtr_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* InvalidOperationException_t0530E734D823F78310CAFAFA424CA5164D93A1F1_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* InvocationContext_tD91309100896CC0F6903346C4BA67CCA517C8643_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* InvocationEntryDelegate_t30A130DE7AE7AE681112D6036577446D1CC18F1B_il2cpp_TypeInfo_var;
@@ -548,6 +548,7 @@ IL2CPP_EXTERN_C RuntimeClass* StringBuilder_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* String_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* SynchronizationLockException_tF7171C6D19DE436F50DC40B3F453EFC83CB116D4_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* TimerCallback_tC89F2FB1294A86F64DEB2C1F68024954018AA219_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Timer_t67FAB8E41573B4FA09CA56AE30725AF4297C2553_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Type_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_tF56235C2F126DA27E663F79EB666B5A6802E5C96_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* UTF32Decoder_tAC53E2E444BF297D681C2A4682D1A9CFC66F55B3_il2cpp_TypeInfo_var;
@@ -612,6 +613,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralB4D5B37BF7A986C138EDE89E0806F366B5CB1830
 IL2CPP_EXTERN_C String_t* _stringLiteralB74C55E1D5CD1B1C4FB5CC2072A70B5E054B8578;
 IL2CPP_EXTERN_C String_t* _stringLiteralB95EFA8990E2BB5BCCEF52DF47A31FC66F723D4B;
 IL2CPP_EXTERN_C String_t* _stringLiteralB9C11BBCAFC0075C6FDDAEAD6F538B2A3297BB32;
+IL2CPP_EXTERN_C String_t* _stringLiteralC345D79431223595C0658582F663D5FE489CE4EA;
 IL2CPP_EXTERN_C String_t* _stringLiteralC5B646E5851539C7B5F892DEFF9F820B34C3589B;
 IL2CPP_EXTERN_C String_t* _stringLiteralC94AEC48B21CADC5BB8B140753EE1FF89E29C7BC;
 IL2CPP_EXTERN_C String_t* _stringLiteralD72E5435917F6F46D498A64D5E536D56DC28C0FC;
@@ -631,6 +633,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* CancellationTokenSource_LinkedTokenCancelDe
 IL2CPP_EXTERN_C const RuntimeMethod* CancellationTokenSource_NotifyCancellation_m1C3A5219D3E867C853814B778B0F469E678E1936_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* CancellationTokenSource_ThrowObjectDisposedException_m30B520555080BCD70DD6F2A976CE6591AF4C2929_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* CancellationTokenSource_TimerCallbackLogic_m3F4005918CD6D2C017A0EC40AB6DB5FB2ADD399E_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* CancellationTokenSource__ctor_m282A9AF96A92487F7B0B391F00F3083C1832A53F_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* CancellationToken_ActionToActionObjShunt_mFEFE0634A530A4AAD46923F69CE24CEFD9C7CD02_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* CancellationToken_Register_mA4F60EC40A8B9EB0239341CE450F6BE2CEFA8931_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* CancellationToken_Register_mD300585BB9E11B4EA78DD0799363B7FC08BA2AB6_RuntimeMethod_var;
@@ -765,6 +768,7 @@ IL2CPP_EXTERN_C const RuntimeType* LogicalCallContext_t3A9A7C02A28577F0879F6E950
 IL2CPP_EXTERN_C const uint32_t AbandonedMutexException_SetupException_m3620C49DD4CA315DDAD5F436A7D698865597212A_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t AbandonedMutexException__ctor_m5D2377FCE41D4EA1068C207B0105C7322D521666_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t AbandonedMutexException__ctor_mD789CDEE6F2EFECA949F0205C4AA37F140476E05_MetadataUsageId;
+IL2CPP_EXTERN_C const uint32_t AtomicBoolean_Equals_m0915204E0C1210A25AD9E92871825C5ED7F1DB1E_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationCallbackInfo_ExecuteCallback_m0DDF290EAF97174E7804CFCFF0E4046A462359E8_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationCallbackInfo_ExecutionContextCallback_mB1FBA4F85DEFE0E6A4C2E8EE4356328F84C568BF_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationTokenRegistration_Equals_m10EEB16AA8BC130896117762D369A9F4BA60D212_MetadataUsageId;
@@ -776,6 +780,7 @@ IL2CPP_EXTERN_C const uint32_t CancellationTokenSource_CancellationCallbackCoreW
 IL2CPP_EXTERN_C const uint32_t CancellationTokenSource_CreateLinkedTokenSource_m2C81DC36FDD60133E058DFCFCF84043F93631206_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationTokenSource_Dispose_m355F31379114D84277E98F75E23D5001762B03D4_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationTokenSource_ExecuteCallbackHandlers_m76E8C9E760A83EE908F32C66264252B1179AF6FE_MetadataUsageId;
+IL2CPP_EXTERN_C const uint32_t CancellationTokenSource_InitializeWithTimer_m651A6B414CC287352C410A8C46F87435DB7BBF49_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationTokenSource_InternalGetStaticSource_mC9F17578A05A8DBA185E77FAA41716018049D780_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationTokenSource_InternalRegister_mE96AC3A0397A2A1FEEE19AE7E87BB9875A643B4C_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationTokenSource_LinkedTokenCancelDelegate_m18C92FD7D9FD687B2FD23E20DB257B8235E72290_MetadataUsageId;
@@ -784,6 +789,7 @@ IL2CPP_EXTERN_C const uint32_t CancellationTokenSource_ThrowIfDisposed_m8961F344
 IL2CPP_EXTERN_C const uint32_t CancellationTokenSource_ThrowObjectDisposedException_m30B520555080BCD70DD6F2A976CE6591AF4C2929_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationTokenSource_TimerCallbackLogic_m3F4005918CD6D2C017A0EC40AB6DB5FB2ADD399E_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationTokenSource__cctor_m8203245EF49D134509404F757D0458F972A40049_MetadataUsageId;
+IL2CPP_EXTERN_C const uint32_t CancellationTokenSource__ctor_m282A9AF96A92487F7B0B391F00F3083C1832A53F_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationToken_ActionToActionObjShunt_mFEFE0634A530A4AAD46923F69CE24CEFD9C7CD02_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationToken_Equals_m2837C59A5008EBB7F0A470DA0C9FF41B34C174EB_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t CancellationToken_Equals_m8E3FA5F24457451D6D5BF428D9D9F8DACE633F3B_MetadataUsageId;
@@ -827,7 +833,6 @@ IL2CPP_EXTERN_C const uint32_t ExecutionContext__ctor_m65F7362F5355A02FCDD0AF489
 IL2CPP_EXTERN_C const uint32_t ExecutionContext_get_IllogicalCallContext_mF40D7B86635406455FB7449EAFF7545C3342E576_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t ExecutionContext_get_LogicalCallContext_m8BC3B30F9A6E55E7739BA1DF28913107CC4B20E3_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t ExecutionContext_get_PreAllocatedDefault_m67D699DE0503E4BC8FB524A9F46669087705FF8E_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t InvocationEntryDelegate_BeginInvoke_m3DEF0481A228CEEA3E7437B9E6521F6B2C11C1AF_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t LockRecursionException__ctor_m02935695289AA1D17CF009C33041AE52BD57EFBA_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t LockRecursionException__ctor_m52DB782195FFB9EED4C8E5BD37B46D0748E02CB8_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t LockRecursionException__ctor_mC4B847F5F4421F0B7EA18E302D346C35C8A2F9E1_MetadataUsageId;
@@ -2585,6 +2590,24 @@ public:
 	{
 		___CachedInstance_0 = value;
 		Il2CppCodeGenWriteBarrier((void**)(&___CachedInstance_0), (void*)value);
+	}
+};
+
+
+// System.Threading.AtomicBoolean
+struct AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076  : public RuntimeObject
+{
+public:
+	// System.Int32 System.Threading.AtomicBoolean::flag
+	int32_t ___flag_0;
+
+public:
+	inline static int32_t get_offset_of_flag_0() { return static_cast<int32_t>(offsetof(AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076, ___flag_0)); }
+	inline int32_t get_flag_0() const { return ___flag_0; }
+	inline int32_t* get_address_of_flag_0() { return &___flag_0; }
+	inline void set_flag_0(int32_t value)
+	{
+		___flag_0 = value;
 	}
 };
 
@@ -4685,15 +4708,6 @@ struct Reader_t5766DE258B6B590281150D8DB517B651F9F4F33B_marshaled_com
 {
 	ExecutionContext_t0E11C30308A4CC964D8A2EA9132F9BDCE5362C70 * ___m_ec_0;
 };
-
-// System.Threading.OSSpecificSynchronizationContext/MonoPInvokeCallbackAttribute
-struct MonoPInvokeCallbackAttribute_tEEAAB0F3648FFA951EA4A673946571F47C0D157A  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
-{
-public:
-
-public:
-};
-
 
 // System.Threading.SparselyPopulatedArrayAddInfo`1<System.Object>
 struct SparselyPopulatedArrayAddInfo_1_tE2FD5B8C39028B875C42E17AA5865FC55F2A0C0B 
@@ -9643,12 +9657,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Exception_SetErrorCode_m742C1E687C82E56F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AbandonedMutexException_SetupException_m3620C49DD4CA315DDAD5F436A7D698865597212A (AbandonedMutexException_tCE41515409705F64C8D2AE1AAB4C1864905803C9 * __this, int32_t ___location0, WaitHandle_tFD46B5B45A6BB296EA3A104C91DF2A7C03C10AC6 * ___handle1, const RuntimeMethod* method);
 // System.Void System.SystemException::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SystemException__ctor_mB0550111A1A8D18B697B618F811A5B20C160D949 (SystemException_t5380468142AA850BE4A341D7AF3EAB9C78746782 * __this, SerializationInfo_t1BB80E9C9DEA52DBF464487234B045E2930ADA26 * ___info0, StreamingContext_t2CCDC54E0E8D078AF4A50E3A8B921B828A900034  ___context1, const RuntimeMethod* method);
+// System.Boolean System.Threading.AtomicBoolean::Exchange(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AtomicBoolean_Exchange_m43BFF3AD3CAF6EA6EC8F05B6D497B516CABED7C4 (AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 * __this, bool ___newVal0, const RuntimeMethod* method);
+// System.Int32 System.Threading.Interlocked::Exchange(System.Int32&,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Interlocked_Exchange_mD5CC61AF0F002355912FAAF84F26BE93639B5FD5 (int32_t* ___location10, int32_t ___value1, const RuntimeMethod* method);
+// System.Boolean System.Threading.AtomicBoolean::Equals(System.Threading.AtomicBoolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AtomicBoolean_Equals_m919E5EAFE32959C0BC455A20473ED585F203F3AD (AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 * __this, AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 * ___rhs0, const RuntimeMethod* method);
+// System.Int32 System.Int32::GetHashCode()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Int32_GetHashCode_m245C424ECE351E5FE3277A88EEB02132DAB8C25A (int32_t* __this, const RuntimeMethod* method);
+// System.Void System.Object::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0 (RuntimeObject * __this, const RuntimeMethod* method);
 // System.Void System.Threading.EventWaitHandle::.ctor(System.Boolean,System.Threading.EventResetMode)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventWaitHandle__ctor_m9EA7029408FF8BBCB1F527C940FAC6C1796DE3C1 (EventWaitHandle_t7603BF1D3D30FE42DD07A450C8D09E2684DC4D98 * __this, bool ___initialState0, int32_t ___mode1, const RuntimeMethod* method);
 // System.Void System.Threading.CancellationCallbackCoreWorkArguments::.ctor(System.Threading.SparselyPopulatedArrayFragment`1<System.Threading.CancellationCallbackInfo>,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CancellationCallbackCoreWorkArguments__ctor_mBE862E6F44CE055B535C63E55A6D41774244207E (CancellationCallbackCoreWorkArguments_t6290788CA17D8028FC4BC98AE2EDD437396675DB * __this, SparselyPopulatedArrayFragment_1_tA54224D01E2FDC03AC2867CDDC8C53E17FA933D7 * ___currArrayFragment0, int32_t ___currArrayIndex1, const RuntimeMethod* method);
-// System.Void System.Object::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0 (RuntimeObject * __this, const RuntimeMethod* method);
 // System.Void System.Threading.ContextCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ContextCallback__ctor_m079F8FC3EE21C47D9FDD09FD90C14BDD34539493 (ContextCallback_t8AE8A965AC6C7ECD396F527F15CDC8E683BE1676 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method);
 // System.Void System.Threading.ExecutionContext::Run(System.Threading.ExecutionContext,System.Threading.ContextCallback,System.Object)
@@ -9748,14 +9770,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CancellationTokenRegistration_Dispose_m1
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CancellationTokenRegistration_Equals_m9E14BA0279256C70D29B34972246160746E6D923 (CancellationTokenRegistration_tCDB9825D1854DD0D7FF737C82B099FC468107BB2 * __this, CancellationTokenRegistration_tCDB9825D1854DD0D7FF737C82B099FC468107BB2  ___other0, const RuntimeMethod* method);
 // System.Boolean System.Threading.CancellationTokenRegistration::Equals(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CancellationTokenRegistration_Equals_m10EEB16AA8BC130896117762D369A9F4BA60D212 (CancellationTokenRegistration_tCDB9825D1854DD0D7FF737C82B099FC468107BB2 * __this, RuntimeObject * ___obj0, const RuntimeMethod* method);
-// System.Int32 System.Int32::GetHashCode()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Int32_GetHashCode_m245C424ECE351E5FE3277A88EEB02132DAB8C25A (int32_t* __this, const RuntimeMethod* method);
 // System.Int32 System.Threading.CancellationTokenRegistration::GetHashCode()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t CancellationTokenRegistration_GetHashCode_mC3D4E862DCD10D81390A03351B19C279F92E9F47 (CancellationTokenRegistration_tCDB9825D1854DD0D7FF737C82B099FC468107BB2 * __this, const RuntimeMethod* method);
 // System.Void System.Threading.CancellationTokenSource::Cancel()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CancellationTokenSource_Cancel_m33023D4CB46117A4C6A7C1ED0076918871A1E2DF (CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * __this, const RuntimeMethod* method);
 // System.Void System.Threading.CancellationTokenSource::ThrowIfDisposed()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CancellationTokenSource_ThrowIfDisposed_m8961F3447AA0E13EA0BDE1319CE0EE474107F1CB (CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * __this, const RuntimeMethod* method);
+// System.Void System.ArgumentOutOfRangeException::.ctor(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentOutOfRangeException__ctor_m6B36E60C989DC798A8B44556DB35960282B133A6 (ArgumentOutOfRangeException_t94D19DF918A54511AEDF4784C9A08741BAD1DEDA * __this, String_t* ___paramName0, const RuntimeMethod* method);
+// System.Void System.Threading.CancellationTokenSource::InitializeWithTimer(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CancellationTokenSource_InitializeWithTimer_m651A6B414CC287352C410A8C46F87435DB7BBF49 (CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * __this, int32_t ___millisecondsDelay0, const RuntimeMethod* method);
+// System.Void System.Threading.Timer::.ctor(System.Threading.TimerCallback,System.Object,System.Int32,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Timer__ctor_mD4A4B4616E25E39A422DD8083930951535AE8BA1 (Timer_t67FAB8E41573B4FA09CA56AE30725AF4297C2553 * __this, TimerCallback_tC89F2FB1294A86F64DEB2C1F68024954018AA219 * ___callback0, RuntimeObject * ___state1, int32_t ___dueTime2, int32_t ___period3, const RuntimeMethod* method);
 // System.Void System.Threading.CancellationTokenSource::Cancel(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CancellationTokenSource_Cancel_m5C01193ACA3D619FA46FA52AAA5636C92DAA25F6 (CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * __this, bool ___throwOnFirstException0, const RuntimeMethod* method);
 // System.Void System.Threading.CancellationTokenSource::NotifyCancellation(System.Boolean)
@@ -9786,8 +9812,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CancellationTokenSource_set_ThreadIDExec
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool EventWaitHandle_Set_m7959A86A39735296FC949EC86FDA42A6CFAAB94C (EventWaitHandle_t7603BF1D3D30FE42DD07A450C8D09E2684DC4D98 * __this, const RuntimeMethod* method);
 // System.Void System.Threading.CancellationTokenSource::ExecuteCallbackHandlers(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CancellationTokenSource_ExecuteCallbackHandlers_m76E8C9E760A83EE908F32C66264252B1179AF6FE (CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * __this, bool ___throwOnFirstException0, const RuntimeMethod* method);
-// System.Int32 System.Threading.Interlocked::Exchange(System.Int32&,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Interlocked_Exchange_mD5CC61AF0F002355912FAAF84F26BE93639B5FD5 (int32_t* ___location10, int32_t ___value1, const RuntimeMethod* method);
 // System.Threading.SparselyPopulatedArrayFragment`1<T> System.Threading.SparselyPopulatedArray`1<System.Threading.CancellationCallbackInfo>::get_Tail()
 inline SparselyPopulatedArrayFragment_1_tA54224D01E2FDC03AC2867CDDC8C53E17FA933D7 * SparselyPopulatedArray_1_get_Tail_mF13EC01FF86BF3A82F1D835C37E1290C4B3CE7D1 (SparselyPopulatedArray_1_t6C18912A03E790E63F07FB9BCE36BE2EAAAF2EEC * __this, const RuntimeMethod* method)
 {
@@ -10059,8 +10083,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ManualResetEventSlim_ExtractStatePort
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_m0ACDD8B34764E4040AED0B3EEB753567E4576BFA (String_t* ___format0, RuntimeObject * ___arg01, const RuntimeMethod* method);
 // System.Void System.Threading.ManualResetEventSlim::Initialize(System.Boolean,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ManualResetEventSlim_Initialize_m7B805D837A447A1A15C9B6E998B8CFF1037DF242 (ManualResetEventSlim_t085E880B24016C42F7DE42113674D0A41B4FB445 * __this, bool ___initialState0, int32_t ___spinCount1, const RuntimeMethod* method);
-// System.Void System.ArgumentOutOfRangeException::.ctor(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentOutOfRangeException__ctor_m6B36E60C989DC798A8B44556DB35960282B133A6 (ArgumentOutOfRangeException_t94D19DF918A54511AEDF4784C9A08741BAD1DEDA * __this, String_t* ___paramName0, const RuntimeMethod* method);
 // System.Boolean System.Threading.PlatformHelper::get_IsSingleProcessor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlatformHelper_get_IsSingleProcessor_m87507D435831F72BC807223D20139EE006CC3106 (const RuntimeMethod* method);
 // System.Void System.Threading.ManualResetEventSlim::set_SpinCount(System.Int32)
@@ -28934,6 +28956,120 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AbandonedMutexException__ctor_mBD51FDB95
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Boolean System.Threading.AtomicBoolean::TryRelaxedSet()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AtomicBoolean_TryRelaxedSet_mC72D9A21D5F490B20E79625BDCBB5C43615D6D42 (AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 * __this, const RuntimeMethod* method)
+{
+	{
+		int32_t L_0 = __this->get_flag_0();
+		if (L_0)
+		{
+			goto IL_0013;
+		}
+	}
+	{
+		bool L_1 = AtomicBoolean_Exchange_m43BFF3AD3CAF6EA6EC8F05B6D497B516CABED7C4(__this, (bool)1, /*hidden argument*/NULL);
+		return (bool)((((int32_t)L_1) == ((int32_t)0))? 1 : 0);
+	}
+
+IL_0013:
+	{
+		return (bool)0;
+	}
+}
+// System.Boolean System.Threading.AtomicBoolean::Exchange(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AtomicBoolean_Exchange_m43BFF3AD3CAF6EA6EC8F05B6D497B516CABED7C4 (AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 * __this, bool ___newVal0, const RuntimeMethod* method)
+{
+	int32_t V_0 = 0;
+	int32_t G_B3_0 = 0;
+	{
+		bool L_0 = ___newVal0;
+		if (L_0)
+		{
+			goto IL_0006;
+		}
+	}
+	{
+		G_B3_0 = 0;
+		goto IL_0007;
+	}
+
+IL_0006:
+	{
+		G_B3_0 = 1;
+	}
+
+IL_0007:
+	{
+		V_0 = G_B3_0;
+		int32_t* L_1 = __this->get_address_of_flag_0();
+		int32_t L_2 = V_0;
+		int32_t L_3 = Interlocked_Exchange_mD5CC61AF0F002355912FAAF84F26BE93639B5FD5((int32_t*)L_1, L_2, /*hidden argument*/NULL);
+		return (bool)((((int32_t)L_3) == ((int32_t)1))? 1 : 0);
+	}
+}
+// System.Boolean System.Threading.AtomicBoolean::Equals(System.Threading.AtomicBoolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AtomicBoolean_Equals_m919E5EAFE32959C0BC455A20473ED585F203F3AD (AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 * __this, AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 * ___rhs0, const RuntimeMethod* method)
+{
+	{
+		int32_t L_0 = __this->get_flag_0();
+		AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 * L_1 = ___rhs0;
+		NullCheck(L_1);
+		int32_t L_2 = L_1->get_flag_0();
+		return (bool)((((int32_t)L_0) == ((int32_t)L_2))? 1 : 0);
+	}
+}
+// System.Boolean System.Threading.AtomicBoolean::Equals(System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AtomicBoolean_Equals_m0915204E0C1210A25AD9E92871825C5ED7F1DB1E (AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 * __this, RuntimeObject * ___rhs0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (AtomicBoolean_Equals_m0915204E0C1210A25AD9E92871825C5ED7F1DB1E_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		RuntimeObject * L_0 = ___rhs0;
+		if (((AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 *)IsInstClass((RuntimeObject*)L_0, AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076_il2cpp_TypeInfo_var)))
+		{
+			goto IL_000a;
+		}
+	}
+	{
+		return (bool)0;
+	}
+
+IL_000a:
+	{
+		RuntimeObject * L_1 = ___rhs0;
+		bool L_2 = AtomicBoolean_Equals_m919E5EAFE32959C0BC455A20473ED585F203F3AD(__this, ((AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 *)CastclassClass((RuntimeObject*)L_1, AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
+		return L_2;
+	}
+}
+// System.Int32 System.Threading.AtomicBoolean::GetHashCode()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AtomicBoolean_GetHashCode_mD273B0F1A5DCA67C0861B6D379E4D241FA8F72C8 (AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 * __this, const RuntimeMethod* method)
+{
+	{
+		int32_t* L_0 = __this->get_address_of_flag_0();
+		int32_t L_1 = Int32_GetHashCode_m245C424ECE351E5FE3277A88EEB02132DAB8C25A((int32_t*)L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
+// System.Void System.Threading.AtomicBoolean::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AtomicBoolean__ctor_m269D5BB4B6E2E6FA0BF61F5CE8886B935B106CC1 (AtomicBoolean_t47FFC6E3BB9866F941EAFCB4BD1FD337E7B53076 * __this, const RuntimeMethod* method)
+{
+	{
+		Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 // System.Void System.Threading.AutoResetEvent::.ctor(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AutoResetEvent__ctor_m2A6F4D44E005E07021957D5134037747AE9890BE (AutoResetEvent_t2A1182CEEE4E184587D4DEAA4F382B810B21D3B7 * __this, bool ___initialState0, const RuntimeMethod* method)
 {
@@ -30172,6 +30308,60 @@ IL_0017:
 		NullCheck(G_B3_1);
 		il2cpp_codegen_memory_barrier();
 		G_B3_1->set_m_state_9(G_B3_0);
+		return;
+	}
+}
+// System.Void System.Threading.CancellationTokenSource::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CancellationTokenSource__ctor_m282A9AF96A92487F7B0B391F00F3083C1832A53F (CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * __this, int32_t ___millisecondsDelay0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (CancellationTokenSource__ctor_m282A9AF96A92487F7B0B391F00F3083C1832A53F_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_memory_barrier();
+		__this->set_m_threadIDExecutingCallbacks_10((-1));
+		Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0(__this, /*hidden argument*/NULL);
+		int32_t L_0 = ___millisecondsDelay0;
+		if ((((int32_t)L_0) >= ((int32_t)(-1))))
+		{
+			goto IL_001e;
+		}
+	}
+	{
+		ArgumentOutOfRangeException_t94D19DF918A54511AEDF4784C9A08741BAD1DEDA * L_1 = (ArgumentOutOfRangeException_t94D19DF918A54511AEDF4784C9A08741BAD1DEDA *)il2cpp_codegen_object_new(ArgumentOutOfRangeException_t94D19DF918A54511AEDF4784C9A08741BAD1DEDA_il2cpp_TypeInfo_var);
+		ArgumentOutOfRangeException__ctor_m6B36E60C989DC798A8B44556DB35960282B133A6(L_1, _stringLiteralC345D79431223595C0658582F663D5FE489CE4EA, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, CancellationTokenSource__ctor_m282A9AF96A92487F7B0B391F00F3083C1832A53F_RuntimeMethod_var);
+	}
+
+IL_001e:
+	{
+		int32_t L_2 = ___millisecondsDelay0;
+		CancellationTokenSource_InitializeWithTimer_m651A6B414CC287352C410A8C46F87435DB7BBF49(__this, L_2, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void System.Threading.CancellationTokenSource::InitializeWithTimer(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CancellationTokenSource_InitializeWithTimer_m651A6B414CC287352C410A8C46F87435DB7BBF49 (CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE * __this, int32_t ___millisecondsDelay0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (CancellationTokenSource_InitializeWithTimer_m651A6B414CC287352C410A8C46F87435DB7BBF49_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_memory_barrier();
+		__this->set_m_state_9(1);
+		IL2CPP_RUNTIME_CLASS_INIT(CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE_il2cpp_TypeInfo_var);
+		TimerCallback_tC89F2FB1294A86F64DEB2C1F68024954018AA219 * L_0 = ((CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE_StaticFields*)il2cpp_codegen_static_fields_for(CancellationTokenSource_tF480B7E74A032667AFBD31F0530D619FB43AD3FE_il2cpp_TypeInfo_var))->get_s_timerCallback_16();
+		int32_t L_1 = ___millisecondsDelay0;
+		Timer_t67FAB8E41573B4FA09CA56AE30725AF4297C2553 * L_2 = (Timer_t67FAB8E41573B4FA09CA56AE30725AF4297C2553 *)il2cpp_codegen_object_new(Timer_t67FAB8E41573B4FA09CA56AE30725AF4297C2553_il2cpp_TypeInfo_var);
+		Timer__ctor_mD4A4B4616E25E39A422DD8083930951535AE8BA1(L_2, L_0, __this, L_1, (-1), /*hidden argument*/NULL);
+		il2cpp_codegen_memory_barrier();
+		__this->set_m_timer_15(L_2);
 		return;
 	}
 }
@@ -36466,141 +36656,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InvocationContext_Invoke_m76E761774D3E8A
 		RuntimeObject * L_1 = __this->get_m_State_1();
 		NullCheck(L_0);
 		SendOrPostCallback_Invoke_m10442BF6A452A4408C3DDD1885D6809C4549C2AC(L_0, L_1, /*hidden argument*/NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_InvocationEntryDelegate_t30A130DE7AE7AE681112D6036577446D1CC18F1B (InvocationEntryDelegate_t30A130DE7AE7AE681112D6036577446D1CC18F1B * __this, intptr_t ___arg0, const RuntimeMethod* method)
-{
-	typedef void (DEFAULT_CALL *PInvokeFunc)(intptr_t);
-	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(il2cpp_codegen_get_method_pointer(((RuntimeDelegate*)__this)->method));
-
-	// Native function invocation
-	il2cppPInvokeFunc(___arg0);
-
-}
-// System.Void System.Threading.OSSpecificSynchronizationContext/InvocationEntryDelegate::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InvocationEntryDelegate__ctor_m08DACD8320C4A07179090B31E54725D2AB9F4431 (InvocationEntryDelegate_t30A130DE7AE7AE681112D6036577446D1CC18F1B * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
-{
-	__this->set_method_ptr_0(il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1));
-	__this->set_method_3(___method1);
-	__this->set_m_target_2(___object0);
-}
-// System.Void System.Threading.OSSpecificSynchronizationContext/InvocationEntryDelegate::Invoke(System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InvocationEntryDelegate_Invoke_m567AF3A6F31F25BA06B75067C2E6AC9AB9A2B15E (InvocationEntryDelegate_t30A130DE7AE7AE681112D6036577446D1CC18F1B * __this, intptr_t ___arg0, const RuntimeMethod* method)
-{
-	DelegateU5BU5D_tDFCDEE2A6322F96C0FE49AF47E9ADB8C4B294E86* delegateArrayToInvoke = __this->get_delegates_11();
-	Delegate_t** delegatesToInvoke;
-	il2cpp_array_size_t length;
-	if (delegateArrayToInvoke != NULL)
-	{
-		length = delegateArrayToInvoke->max_length;
-		delegatesToInvoke = reinterpret_cast<Delegate_t**>(delegateArrayToInvoke->GetAddressAtUnchecked(0));
-	}
-	else
-	{
-		length = 1;
-		delegatesToInvoke = reinterpret_cast<Delegate_t**>(&__this);
-	}
-
-	for (il2cpp_array_size_t i = 0; i < length; i++)
-	{
-		Delegate_t* currentDelegate = delegatesToInvoke[i];
-		Il2CppMethodPointer targetMethodPointer = currentDelegate->get_method_ptr_0();
-		RuntimeObject* targetThis = currentDelegate->get_m_target_2();
-		RuntimeMethod* targetMethod = (RuntimeMethod*)(currentDelegate->get_method_3());
-		if (!il2cpp_codegen_method_is_virtual(targetMethod))
-		{
-			il2cpp_codegen_raise_execution_engine_exception_if_method_is_not_found(targetMethod);
-		}
-		bool ___methodIsStatic = MethodIsStatic(targetMethod);
-		int ___parameterCount = il2cpp_codegen_method_parameter_count(targetMethod);
-		if (___methodIsStatic)
-		{
-			if (___parameterCount == 1)
-			{
-				// open
-				typedef void (*FunctionPointerType) (intptr_t, const RuntimeMethod*);
-				((FunctionPointerType)targetMethodPointer)(___arg0, targetMethod);
-			}
-			else
-			{
-				// closed
-				typedef void (*FunctionPointerType) (void*, intptr_t, const RuntimeMethod*);
-				((FunctionPointerType)targetMethodPointer)(targetThis, ___arg0, targetMethod);
-			}
-		}
-		else
-		{
-			// closed
-			if (targetThis != NULL && il2cpp_codegen_method_is_virtual(targetMethod) && !il2cpp_codegen_object_is_of_sealed_type(targetThis) && il2cpp_codegen_delegate_has_invoker((Il2CppDelegate*)__this))
-			{
-				if (il2cpp_codegen_method_is_generic_instance(targetMethod))
-				{
-					if (il2cpp_codegen_method_is_interface_method(targetMethod))
-						GenericInterfaceActionInvoker1< intptr_t >::Invoke(targetMethod, targetThis, ___arg0);
-					else
-						GenericVirtActionInvoker1< intptr_t >::Invoke(targetMethod, targetThis, ___arg0);
-				}
-				else
-				{
-					if (il2cpp_codegen_method_is_interface_method(targetMethod))
-						InterfaceActionInvoker1< intptr_t >::Invoke(il2cpp_codegen_method_get_slot(targetMethod), il2cpp_codegen_method_get_declaring_type(targetMethod), targetThis, ___arg0);
-					else
-						VirtActionInvoker1< intptr_t >::Invoke(il2cpp_codegen_method_get_slot(targetMethod), targetThis, ___arg0);
-				}
-			}
-			else
-			{
-				if (targetThis == NULL && il2cpp_codegen_class_is_value_type(il2cpp_codegen_method_get_declaring_type(targetMethod)))
-				{
-					typedef void (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
-					((FunctionPointerType)targetMethodPointer)((reinterpret_cast<RuntimeObject*>(&___arg0) - 1), targetMethod);
-				}
-				typedef void (*FunctionPointerType) (void*, intptr_t, const RuntimeMethod*);
-				((FunctionPointerType)targetMethodPointer)(targetThis, ___arg0, targetMethod);
-			}
-		}
-	}
-}
-// System.IAsyncResult System.Threading.OSSpecificSynchronizationContext/InvocationEntryDelegate::BeginInvoke(System.IntPtr,System.AsyncCallback,System.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InvocationEntryDelegate_BeginInvoke_m3DEF0481A228CEEA3E7437B9E6521F6B2C11C1AF (InvocationEntryDelegate_t30A130DE7AE7AE681112D6036577446D1CC18F1B * __this, intptr_t ___arg0, AsyncCallback_t3F3DA3BEDAEE81DD1D24125DF8EB30E85EE14DA4 * ___callback1, RuntimeObject * ___object2, const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (InvocationEntryDelegate_BeginInvoke_m3DEF0481A228CEEA3E7437B9E6521F6B2C11C1AF_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	void *__d_args[2] = {0};
-	__d_args[0] = Box(IntPtr_t_il2cpp_TypeInfo_var, &___arg0);
-	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback1, (RuntimeObject*)___object2);
-}
-// System.Void System.Threading.OSSpecificSynchronizationContext/InvocationEntryDelegate::EndInvoke(System.IAsyncResult)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InvocationEntryDelegate_EndInvoke_m174FD72C6B25110DA66E2A56CB3052B485AFB619 (InvocationEntryDelegate_t30A130DE7AE7AE681112D6036577446D1CC18F1B * __this, RuntimeObject* ___result0, const RuntimeMethod* method)
-{
-	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result0, 0);
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void System.Threading.OSSpecificSynchronizationContext/MonoPInvokeCallbackAttribute::.ctor(System.Type)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoPInvokeCallbackAttribute__ctor_m23B353973CA1C795904C78A4E9327BF6C4C58FD1 (MonoPInvokeCallbackAttribute_tEEAAB0F3648FFA951EA4A673946571F47C0D157A * __this, Type_t * ___t0, const RuntimeMethod* method)
-{
-	{
-		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
 		return;
 	}
 }

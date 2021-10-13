@@ -14669,25 +14669,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WorldAnchor_get_isLocated_mBD0794267AA2F
 	bool retVal = _il2cpp_icall_func(__this);
 	return retVal;
 }
-// System.Void UnityEngine.XR.WSA.WorldAnchor::SetNativeSpatialAnchorPtr(System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WorldAnchor_SetNativeSpatialAnchorPtr_mE33668880408C89E8D0FD1AECD88C1058619B675 (WorldAnchor_tD6275232D14415769601A3BD6AE1E7D5622F96EE * __this, intptr_t ___spatialAnchorPtr0, const RuntimeMethod* method)
-{
-	typedef void (*WorldAnchor_SetNativeSpatialAnchorPtr_mE33668880408C89E8D0FD1AECD88C1058619B675_ftn) (WorldAnchor_tD6275232D14415769601A3BD6AE1E7D5622F96EE *, intptr_t);
-	static WorldAnchor_SetNativeSpatialAnchorPtr_mE33668880408C89E8D0FD1AECD88C1058619B675_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (WorldAnchor_SetNativeSpatialAnchorPtr_mE33668880408C89E8D0FD1AECD88C1058619B675_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.XR.WSA.WorldAnchor::SetNativeSpatialAnchorPtr(System.IntPtr)");
-	_il2cpp_icall_func(__this, ___spatialAnchorPtr0);
-}
-// System.IntPtr UnityEngine.XR.WSA.WorldAnchor::GetNativeSpatialAnchorPtr()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t WorldAnchor_GetNativeSpatialAnchorPtr_m1075A839F6054A0F6A6AA313B935E889773D6C91 (WorldAnchor_tD6275232D14415769601A3BD6AE1E7D5622F96EE * __this, const RuntimeMethod* method)
-{
-	typedef intptr_t (*WorldAnchor_GetNativeSpatialAnchorPtr_m1075A839F6054A0F6A6AA313B935E889773D6C91_ftn) (WorldAnchor_tD6275232D14415769601A3BD6AE1E7D5622F96EE *);
-	static WorldAnchor_GetNativeSpatialAnchorPtr_m1075A839F6054A0F6A6AA313B935E889773D6C91_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (WorldAnchor_GetNativeSpatialAnchorPtr_m1075A839F6054A0F6A6AA313B935E889773D6C91_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.XR.WSA.WorldAnchor::GetNativeSpatialAnchorPtr()");
-	intptr_t retVal = _il2cpp_icall_func(__this);
-	return retVal;
-}
 // System.Void UnityEngine.XR.WSA.WorldAnchor::Internal_TriggerEventOnTrackingLost(UnityEngine.XR.WSA.WorldAnchor,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WorldAnchor_Internal_TriggerEventOnTrackingLost_m30225CE01803079AAA7C81877ABE5A4150960B3A (WorldAnchor_tD6275232D14415769601A3BD6AE1E7D5622F96EE * ___worldAnchor0, bool ___located1, const RuntimeMethod* method)
 {

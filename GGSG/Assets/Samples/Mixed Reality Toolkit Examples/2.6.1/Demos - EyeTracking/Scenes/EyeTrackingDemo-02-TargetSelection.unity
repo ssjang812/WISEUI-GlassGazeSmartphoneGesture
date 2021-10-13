@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -952,7 +952,7 @@ PrefabInstance:
     - target: {fileID: 1308668585, guid: fda837e43ea42874b8a9941a5968b1d1, type: 3}
       propertyPath: configProfile
       value: 
-      objectReference: {fileID: 11400000, guid: 05ac33e3c1414d942acf5e82450df32d,
+      objectReference: {fileID: 11400000, guid: 2957f92fb6a942e4aa16ae002e9b12db,
         type: 2}
     - target: {fileID: 1246486283575610215, guid: fda837e43ea42874b8a9941a5968b1d1,
         type: 3}
@@ -1123,6 +1123,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EyeTrackingDemos ManagerComponents
+      objectReference: {fileID: 0}
+    - target: {fileID: 6460956429361780253, guid: fda837e43ea42874b8a9941a5968b1d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8156331670825583612, guid: fda837e43ea42874b8a9941a5968b1d1,
         type: 3}

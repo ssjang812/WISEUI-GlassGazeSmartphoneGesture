@@ -4,52 +4,46 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - WorldEvent
-  - DebugText
-  - DebugText2
   - Sphere_FindSameImage
-  - Cube_FindSameImage
-  - Capsule_FindSameImage
-  - Cylinder_FindSameImage
-  - Sphere_FindSameObject
   - Cube_FindSameObject
+  - WorldEvent
+  - Spot4_PlaceWithEyeGaze
+  - Cylinder_FindSameImage
+  - FindSameImageScene
+  - Sphere_FindSameObject
   - Capsule_FindSameObject
+  - PracticeSelectButton
+  - Spot3_PlaceWithEyeGaze
+  - RetrieveInfoScene
+  - Cube_RetrieveInfo
+  - Capsule_FindSameImage
+  - Cube_FindSameImage
+  - FindSameObjectScene
+  - Sphere_RetrieveInfo
+  - PlaceWithEyeGazeScene
+  - ExpStartButton
   - Cylinder_FindSameObject
   - Spot1_PlaceWithEyeGaze
   - Spot2_PlaceWithEyeGaze
-  - Spot3_PlaceWithEyeGaze
-  - Spot4_PlaceWithEyeGaze
-  - Sphere_RetrieveInfo
-  - Cube_RetrieveInfo
-  - Capsule_RetrieveInfo
   - Cylinder_RetrieveInfo
-  - FindSameImageScene
-  - FindSameObjectScene
-  - PlaceWithEyeGazeScene
-  - RetrieveInfoScene
-  - ExpStartButton
-  - PracticeSelectButton
+  - Capsule_RetrieveInfo
+  - CylinderButton_FindSameImage
   - FindSameImageCanvas
-  - FindSameObjectCanvas
-  - PlaceWithEyeGazeCanvas
   - RetrieveInfoCanvas
+  - PlaceWithEyeGazeCanvas
+  - SphereButton_FindSameObject
+  - CapsuleButton_PlaceWithEyeGaze
+  - FindSameObjectCanvas
   - SphereButton_FindSameImage
   - CubeButton_FindSameImage
-  - CapsuleButton_FindSameImage
-  - CylinderButton_FindSameImage
-  - SphereButton_FindSameObject
+  - CylinderButton_PlaceWithEyeGaze
+  - CylinderButton_FindSameObject
+  - CubeButton_PlaceWithEyeGaze
   - CubeButton_FindSameObject
   - CapsuleButton_FindSameObject
-  - CylinderButton_FindSameObject
   - SphereButton_PlaceWithEyeGaze
-  - CubeButton_PlaceWithEyeGaze
-  - CapsuleButton_PlaceWithEyeGaze
-  - CylinderButton_PlaceWithEyeGaze
-  - SphereButton_RetrieveInfo
-  - CubeButton_RetrieveInfo
-  - CapsuleButton_RetrieveInfo
-  - CylinderButton_RetrieveInfo
-  - ExperimentManager
+  - CapsuleButton_FindSameImage
+  - PlaceableWithGaze
   layers:
   - Default
   - TransparentFX
@@ -59,7 +53,7 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - 
   - 
   - 
   - 

@@ -168,7 +168,9 @@ extern void TrackableId__cctor_m874A4E0F53AF39A7D95AEA9A0E8164BA2B6EA32F (void);
 // 0x00000051 System.Void UnityEngine.XR.ARSubsystems.TrackableChanges`1::.ctor(Unity.Collections.NativeArray`1<T>,Unity.Collections.NativeArray`1<T>,Unity.Collections.NativeArray`1<UnityEngine.XR.ARSubsystems.TrackableId>)
 // 0x00000052 System.Boolean UnityEngine.XR.ARSubsystems.TrackingSubsystem`2::get_running()
 // 0x00000053 System.Void UnityEngine.XR.ARSubsystems.TrackingSubsystem`2::.ctor()
-static Il2CppMethodPointer s_methodPointers[83] = 
+// 0x00000054 System.Void UnityEngine.XR.ARSubsystems.ValidationUtility`1::.ctor()
+// 0x00000055 System.Void UnityEngine.XR.ARSubsystems.ValidationUtility`1::.cctor()
+static Il2CppMethodPointer s_methodPointers[85] = 
 {
 	NULL,
 	NULL,
@@ -253,6 +255,8 @@ static Il2CppMethodPointer s_methodPointers[83] =
 	NULL,
 	NULL,
 	NULL,
+	NULL,
+	NULL,
 };
 extern void XRReferencePoint__ctor_mD4597D205E31CBA88C523E616E7A45D78C95BF3E_AdjustorThunk (void);
 extern void XRReferencePoint_GetHashCode_mAA9EDDD897E7DDD88AA10A7B9E10FC2025E4F7CA_AdjustorThunk (void);
@@ -313,7 +317,7 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[28] =
 	{ 0x06000049, TrackableId_Equals_m513A2978A536C42A1AFE1A4D42BEE78EE056BD28_AdjustorThunk },
 	{ 0x0600004A, TrackableId_Equals_mB8FF48A7F895DEE1E826EDD6126475258BE9ADC2_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[83] = 
+static const int32_t s_InvokerIndices[85] = 
 {
 	-1,
 	-1,
@@ -324,10 +328,10 @@ static const int32_t s_InvokerIndices[83] =
 	-1,
 	-1,
 	-1,
-	2865,
-	2866,
+	2967,
+	2968,
 	10,
-	2867,
+	2969,
 	9,
 	23,
 	23,
@@ -337,13 +341,13 @@ static const int32_t s_InvokerIndices[83] =
 	23,
 	23,
 	23,
-	2868,
-	2869,
-	2870,
+	2970,
+	2971,
+	2972,
 	23,
 	31,
-	2871,
-	2872,
+	2973,
+	2974,
 	14,
 	26,
 	14,
@@ -352,7 +356,7 @@ static const int32_t s_InvokerIndices[83] =
 	31,
 	10,
 	9,
-	2873,
+	2975,
 	89,
 	23,
 	23,
@@ -371,8 +375,8 @@ static const int32_t s_InvokerIndices[83] =
 	23,
 	31,
 	31,
-	2874,
-	2875,
+	2976,
+	2977,
 	89,
 	31,
 	89,
@@ -382,14 +386,14 @@ static const int32_t s_InvokerIndices[83] =
 	26,
 	10,
 	9,
-	2876,
-	2877,
-	1038,
+	2978,
+	2979,
+	1039,
 	14,
 	10,
 	9,
-	2870,
-	2878,
+	2972,
+	2980,
 	3,
 	-1,
 	-1,
@@ -398,53 +402,57 @@ static const int32_t s_InvokerIndices[83] =
 	-1,
 	-1,
 	-1,
+	-1,
+	-1,
 };
-static const Il2CppTokenRangePair s_rgctxIndices[5] = 
+static const Il2CppTokenRangePair s_rgctxIndices[6] = 
 {
 	{ 0x02000004, { 4, 4 } },
 	{ 0x02000005, { 8, 3 } },
 	{ 0x02000013, { 11, 8 } },
 	{ 0x02000014, { 19, 2 } },
+	{ 0x02000015, { 21, 1 } },
 	{ 0x06000001, { 0, 4 } },
 };
-static const Il2CppRGCTXDefinition s_rgctxValues[21] = 
+static const Il2CppRGCTXDefinition s_rgctxValues[22] = 
 {
-	{ (Il2CppRGCTXDataType)3, 58403 },
-	{ (Il2CppRGCTXDataType)3, 58404 },
-	{ (Il2CppRGCTXDataType)3, 58405 },
-	{ (Il2CppRGCTXDataType)3, 58406 },
-	{ (Il2CppRGCTXDataType)3, 58407 },
-	{ (Il2CppRGCTXDataType)2, 65612 },
-	{ (Il2CppRGCTXDataType)3, 58408 },
-	{ (Il2CppRGCTXDataType)3, 58409 },
-	{ (Il2CppRGCTXDataType)3, 58410 },
-	{ (Il2CppRGCTXDataType)2, 60705 },
-	{ (Il2CppRGCTXDataType)3, 58411 },
-	{ (Il2CppRGCTXDataType)3, 58412 },
-	{ (Il2CppRGCTXDataType)3, 58413 },
-	{ (Il2CppRGCTXDataType)3, 58414 },
-	{ (Il2CppRGCTXDataType)2, 60739 },
-	{ (Il2CppRGCTXDataType)3, 58415 },
-	{ (Il2CppRGCTXDataType)3, 58416 },
-	{ (Il2CppRGCTXDataType)3, 58417 },
-	{ (Il2CppRGCTXDataType)3, 58418 },
-	{ (Il2CppRGCTXDataType)3, 58419 },
-	{ (Il2CppRGCTXDataType)2, 60744 },
+	{ (Il2CppRGCTXDataType)3, 56212 },
+	{ (Il2CppRGCTXDataType)3, 56213 },
+	{ (Il2CppRGCTXDataType)3, 56214 },
+	{ (Il2CppRGCTXDataType)3, 56215 },
+	{ (Il2CppRGCTXDataType)3, 56216 },
+	{ (Il2CppRGCTXDataType)2, 59512 },
+	{ (Il2CppRGCTXDataType)3, 56217 },
+	{ (Il2CppRGCTXDataType)3, 56218 },
+	{ (Il2CppRGCTXDataType)3, 56219 },
+	{ (Il2CppRGCTXDataType)2, 56410 },
+	{ (Il2CppRGCTXDataType)3, 56220 },
+	{ (Il2CppRGCTXDataType)3, 56221 },
+	{ (Il2CppRGCTXDataType)3, 56222 },
+	{ (Il2CppRGCTXDataType)3, 56223 },
+	{ (Il2CppRGCTXDataType)2, 56445 },
+	{ (Il2CppRGCTXDataType)3, 56224 },
+	{ (Il2CppRGCTXDataType)3, 56225 },
+	{ (Il2CppRGCTXDataType)3, 56226 },
+	{ (Il2CppRGCTXDataType)3, 56227 },
+	{ (Il2CppRGCTXDataType)3, 56228 },
+	{ (Il2CppRGCTXDataType)2, 56450 },
+	{ (Il2CppRGCTXDataType)2, 59513 },
 };
 extern const Il2CppCodeGenModule g_Unity_XR_ARSubsystemsCodeGenModule;
 const Il2CppCodeGenModule g_Unity_XR_ARSubsystemsCodeGenModule = 
 {
 	"Unity.XR.ARSubsystems.dll",
-	83,
+	85,
 	s_methodPointers,
 	28,
 	s_adjustorThunks,
 	s_InvokerIndices,
 	0,
 	NULL,
-	5,
+	6,
 	s_rgctxIndices,
-	21,
+	22,
 	s_rgctxValues,
 	NULL,
 };

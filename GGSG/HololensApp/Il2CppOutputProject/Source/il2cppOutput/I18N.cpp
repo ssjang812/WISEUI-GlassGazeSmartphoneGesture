@@ -8946,7 +8946,7 @@ IL_0006:
 			Hashtable_t978F65B8006C8F5504B286526AEC6608FF983FC9 * L_1 = __this->get_active_2();
 			String_t* L_2 = ___name0;
 			NullCheck(L_1);
-			RuntimeObject * L_3 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(29 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_1, L_2);
+			RuntimeObject * L_3 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(30 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_1, L_2);
 			V_0 = L_3;
 			RuntimeObject * L_4 = V_0;
 			if (!L_4)
@@ -8967,7 +8967,7 @@ IL_0027:
 			Hashtable_t978F65B8006C8F5504B286526AEC6608FF983FC9 * L_6 = __this->get_handlers_1();
 			String_t* L_7 = ___name0;
 			NullCheck(L_6);
-			RuntimeObject * L_8 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(29 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_6, L_7);
+			RuntimeObject * L_8 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(30 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_6, L_7);
 			V_1 = ((String_t*)CastclassSealed((RuntimeObject*)L_8, String_t_il2cpp_TypeInfo_var));
 			String_t* L_9 = V_1;
 			if (L_9)
@@ -8987,7 +8987,7 @@ IL_0044:
 			Hashtable_t978F65B8006C8F5504B286526AEC6608FF983FC9 * L_10 = __this->get_assemblies_3();
 			String_t* L_11 = V_1;
 			NullCheck(L_10);
-			RuntimeObject * L_12 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(29 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_10, L_11);
+			RuntimeObject * L_12 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(30 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_10, L_11);
 			V_2 = ((Assembly_t *)CastclassClass((RuntimeObject*)L_12, Assembly_t_il2cpp_TypeInfo_var));
 			Assembly_t * L_13 = V_2;
 			bool L_14 = Assembly_op_Equality_m4B6A318CE4104781ABF30A2BBBCCCFB0FE342316(L_13, (Assembly_t *)NULL, /*hidden argument*/NULL);
@@ -9051,7 +9051,7 @@ IL_0095:
 			String_t* L_25 = V_1;
 			Assembly_t * L_26 = V_2;
 			NullCheck(L_24);
-			VirtActionInvoker2< RuntimeObject *, RuntimeObject * >::Invoke(30 /* System.Void System.Collections.Hashtable::set_Item(System.Object,System.Object) */, L_24, L_25, L_26);
+			VirtActionInvoker2< RuntimeObject *, RuntimeObject * >::Invoke(31 /* System.Void System.Collections.Hashtable::set_Item(System.Object,System.Object) */, L_24, L_25, L_26);
 		}
 
 IL_00a2:

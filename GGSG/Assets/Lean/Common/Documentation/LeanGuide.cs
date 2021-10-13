@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
-namespace Lean.Common.Examples
+namespace Lean.Common
 {
 	/// <summary>This class defines documentation data that can be viewed in the inspector.</summary>
 	public class LeanGuide : ScriptableObject
@@ -58,10 +55,12 @@ namespace Lean.Common.Examples
 }
 
 #if UNITY_EDITOR
-namespace Lean.Common.Examples
+namespace Lean.Common.Editor
 {
+	using UnityEditor;
+
 	[CustomEditor(typeof(LeanGuide))]
-	public class LeanGuide_Inspector : Editor
+	public class LeanGuide_Editor : UnityEditor.Editor
 	{
 		private static GUIStyle titleStyle;
 
@@ -98,8 +97,6 @@ namespace Lean.Common.Examples
 
 			UpdateStyles();
 
-			EditorGUI.EndDisabledGroup();
-
 			EditorGUILayout.LabelField("Thank You For Using " + tgt.LongName + "!", headerStyle);
 			EditorGUILayout.LabelField("The documentation can be opened below. To understand how this asset works I also recommend you run the example scenes, and read their description text.", bodyStyle);
 
@@ -110,7 +107,7 @@ namespace Lean.Common.Examples
 
 			if (GUILayout.Button(new GUIContent("Online Documentation", "Open In Web Browser")) == true)
 			{
-				Application.OpenURL("http://CarlosWilkes.com/Documentation/" + tgt.ShortName);
+				Application.OpenURL("https://CarlosWilkes.com/Documentation/" + tgt.ShortName);
 			}
 
 			EditorGUILayout.Separator();
@@ -121,7 +118,7 @@ namespace Lean.Common.Examples
 
 			if (GUILayout.Button(new GUIContent("Forum Thread", "Unity Forums")) == true)
 			{
-				Application.OpenURL("http://CarlosWilkes.com/Forum/" + tgt.ShortName);
+				Application.OpenURL("https://CarlosWilkes.com/Forum/" + tgt.ShortName);
 			}
 				
 			if (GUILayout.Button(new GUIContent("E-Mail Me", "carlos.wilkes@gmail.com")) == true)
@@ -131,7 +128,7 @@ namespace Lean.Common.Examples
 
 			if (GUILayout.Button(new GUIContent("Private Message", "Unity Forum Profile")) == true)
 			{
-				Application.OpenURL("http://forum.unity.com/members/41960");
+				Application.OpenURL("https://forum.unity.com/members/41960");
 			}
 
 			EditorGUILayout.Separator();
@@ -142,7 +139,7 @@ namespace Lean.Common.Examples
 
 			if (GUILayout.Button(new GUIContent("Rate This Asset", tgt.LongName + " Asset Page")) == true)
 			{
-				Application.OpenURL("http://CarlosWilkes.com/Get/" + tgt.ShortName);
+				Application.OpenURL("https://CarlosWilkes.com/Get/" + tgt.ShortName);
 			}
 
 			EditorGUILayout.Separator();
@@ -164,7 +161,7 @@ namespace Lean.Common.Examples
 
 			if (GUILayout.Button(new GUIContent("My Website", "CarlosWilkes.com")) == true)
 			{
-				Application.OpenURL("http://CarlosWilkes.com");
+				Application.OpenURL("https://CarlosWilkes.com");
 			}
 		}
 

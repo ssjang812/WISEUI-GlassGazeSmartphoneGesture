@@ -53,12 +53,12 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
         [Tooltip("Transparency of the target itself while dragging is active.")]
         [SerializeField]
         [Range(0, 1)]
-        private float transparency_inTransition = 130 / 255f;
+        private float transparency_inTransition = 130 / 255f; // relative 방식
 
         [Tooltip("Transparency of the target preview while dragging it around.")]
         [SerializeField]
         [Range(0, 1)]
-        private float transparency_preview = 50 / 255f;
+        private float transparency_preview = 50 / 255f; // direct 방식 (시선)
 
         [Tooltip("Minimal distance between the old and new preview. This is to prevent the preview to always follow the eye gaze immediately. " +
             "The value should depend on the size of the target.")]
@@ -125,10 +125,10 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
         private Vector3? plausibleLocation;
         private bool placePreviewAtHitPoint = true;
 
-        private bool manualTargetManip = false;
+        private bool manualTargetManip = false; // 메뉴얼 방식이 위치 지정해서 옮기는 방식인듯 <-> relative 방식
 
         private Vector3 initalGazeDir;
-        private static bool isManipulatingUsing_Hands = false;
+        private static bool isManipulatingUsing_Hands = false;  // hand가 drag중인지 아닌지
         private static bool isManipulatingUsing_Voice = false;
         private Vector3 handPos_absolute;
         private Vector3 handPos_relative;
@@ -164,6 +164,7 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
 
         private void Update()
         {
+            // pinch를 하는중에는 시선이 가는곳에 프리뷰를 표시하는 기능
             if (objIsGrabbed && useEyeSupportedTargetPlacement)
             {
                 // Check whether the user is still looking within the proximity of the target
@@ -174,7 +175,7 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
                     {
                         plausibleLocation = null;
 
-                        if (EyeTrackingProvider?.GazeTarget.GetComponent<SnapTo>() != null)
+                        if (EyeTrackingProvider?.GazeTarget.GetComponent<SnapTo>() != null) // 상자끼리 찰싹 붙도록 설정되어있으면 찰싹 붙는것 같다.
                         {
                             plausibleLocation = EyeTrackingProvider?.GazeTarget.transform.position;
                         }
@@ -253,6 +254,7 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
         #endregion
 
         #region Hand input handler
+        // 손 조인트가 업데이트될때마다 실시간 손의 절대위치와 델타를 구하는 파트 + pinch중일때는 손의 델타값을 움직임에 반영
         void IMixedRealityHandJointHandler.OnHandJointsUpdated(InputEventData<IDictionary<TrackedHandJoint, MixedRealityPose>> eventData)
         {
             MixedRealityPose pose;
@@ -327,7 +329,7 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
                 handPos_relative = Vector3.zero;
                 handPos_absolute = Vector3.zero;
                 DragAndDrop_Start();
-                CoreServices.InputSystem.PushModalInputHandler(gameObject);
+                CoreServices.InputSystem.PushModalInputHandler(gameObject); // 입력에 영향을 받는 최우선으로 본 객체를 지정하는 것 같다. (focused)
             }
         }
 
@@ -381,8 +383,8 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
                 return true;
             }
 
-            Vector3 eyes2PrevPreview = prevPreviewPos.Value - EyeTrackingProvider.GazeOrigin;
-            Vector3 eye2HitPos = EyeTrackingProvider.GazeDirection;
+            Vector3 eyes2PrevPreview = prevPreviewPos.Value - EyeTrackingProvider.GazeOrigin; // 눈 ~ 이전 프리뷰까지의 벡터
+            Vector3 eye2HitPos = EyeTrackingProvider.GazeDirection; // 눈 ~ 시선이 닿은곳 벡터
 
             float angle = Vector3.Angle(eyes2PrevPreview, eye2HitPos);
             float distance = EyeTrackingDemoUtils.VisAngleInDegreesToMeters(Vector3.Angle(eyes2PrevPreview, eye2HitPos), eye2HitPos.magnitude);
@@ -620,6 +622,8 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
             return head_isInMotion;
         }
 
+
+        //relative(continuous) 방식을 위한 거지만 먼저 discrete방식 이동조건이 됬는지 체크하고 진행을함
         public void MoveTargetBy(Vector3 delta)
         {
             // Check that this game object is currently selected
@@ -637,6 +641,7 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
                 float angle_ToCurrHitTarget = Angle_ToCurrHitTarget(gameObject);
 
                 // If manipulated via manual controller:
+                // onlyEyeWarpOnRelease로 설정된상태일때는 pinch를 놓았을때만 manualTargetManip이 true가 되기때문에 relative모드일때 gaze를 통해 객체가 이동하는 일은 발생하지않는다.
                 if (ShouldObjBeWarped(deltaHand, angle_ToCurrHitTarget, headIsInMotion))
                 {
                     // Discrete cursor-based target movement
@@ -705,6 +710,7 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
             }
         }
 
+        // Discrete gaze-supported target movement방식(pinch가 끝났을때 warp가 일어나야하는지 판단하고 맞다면 gaze로 바라본곳으로 바로이동)
         public void MoveTargetTo(Vector3 destination)
         {
             // Check that this game object is currently selected
@@ -742,6 +748,8 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
             }
         }
 
+        // 현재 상태가 discrete한 방식으로 이동을 시켜야하는 상황인지, continuous한 방식으로 이동을 시켜야하는 상황인지를 판단 (객체를 이동시키는 것이아니라 상태만 파악)
+        // onlyEyeWarpOnRelease로 설정된상태일때는 pinch를 놓았을때만 manualTargetManip이 true가 되기때문에 relative모드일때 gaze를 통해 객체가 이동하는 일은 발생하지않는다.
         private bool ShouldObjBeWarped(float deltaHand, float distTargetAndHitPos, bool headIsInMotion)
         {
             if ((manualTargetManip && (previewGameObject != null) && (previewGameObject.activeSelf)) ||
